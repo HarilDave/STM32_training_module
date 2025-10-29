@@ -1,0 +1,11 @@
+../Core/Src/main.c:69:6:I2C_GPIO_Init	6
+../Core/Src/main.c:96:6:I2C_Init	4
+../Core/Src/main.c:111:6:I2C_Start	2
+../Core/Src/main.c:117:6:I2C_WriteAddr	2
+../Core/Src/main.c:125:6:I2C_WriteData	3
+../Core/Src/main.c:132:6:I2C_Stop	1
+../Core/Src/main.c:143:5:main	1
+../Core/Src/main.c:206:6:SystemClock_Config	3
+../Core/Src/main.c:253:13:MX_USART2_UART_Init	2
+../Core/Src/main.c:286:13:MX_GPIO_Init	1
+../Core/Src/main.c:328:6:Error_Handler	1

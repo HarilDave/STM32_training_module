@@ -1,0 +1,17 @@
+09:40:54 **** Incremental Build of configuration Debug for project DMA_ADC_driver_try2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "DMA_ADC_driver_try2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Creation\Folder7_DMA_ADC\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA_ADC_driver_try2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: DMA_ADC_driver_try2.elf
+ 
+arm-none-eabi-size  DMA_ADC_driver_try2.elf 
+arm-none-eabi-objdump -h -S DMA_ADC_driver_try2.elf  > "DMA_ADC_driver_try2.list"
+   text	   data	    bss	    dec	    hex	filename
+  10036	     12	   1716	  11764	   2df4	DMA_ADC_driver_try2.elf
+Finished building: default.size.stdout
+ 
+Finished building: DMA_ADC_driver_try2.list
+ 
+
+09:40:56 Build Finished. 0 errors, 0 warnings. (took 1s.680ms)
+
