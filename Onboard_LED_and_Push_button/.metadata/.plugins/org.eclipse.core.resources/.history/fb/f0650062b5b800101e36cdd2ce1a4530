@@ -1,0 +1,294 @@
+/* USER CODE BEGIN Header */
+/**
+ ******************************************************************************
+ * @file           : main.c
+ * @brief          : Main program body
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2025 STMicroelectronics.
+ * All rights reserved.
+ *
+ ******************************************************************************
+ */
+/* USER CODE END Header */
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+#include <stdint.h>
+#include <stdio.h>
+
+/* Private define ------------------------------------------------------------*/
+#define I2C_SCL_PIN 8U
+#define I2C_SDA_PIN 9U
+
+/* Private variables ---------------------------------------------------------*/
+UART_HandleTypeDef huart2;
+
+/* USER CODE BEGIN 0 */
+
+typedef struct {
+    I2C_TypeDef *Instance;
+    GPIO_TypeDef *GPIOx;
+    uint8_t SCL_Pin;
+    uint8_t SDA_Pin;
+    uint8_t AF;
+} I2C_Handle_t;
+
+static void I2C_GPIO_Init(I2C_Handle_t *hi2c)
+{
+    uint32_t pos_scl = (uint32_t)hi2c->SCL_Pin * 2U;
+    uint32_t pos_sda = (uint32_t)hi2c->SDA_Pin * 2U;
+
+    if (hi2c->GPIOx == GPIOB) RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;
+    if (hi2c->GPIOx == GPIOA) RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+    if (hi2c->GPIOx == GPIOC) RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;
+
+    /* mode = AF (10) */
+    hi2c->GPIOx->MODER &= ~((3U << pos_scl) | (3U << pos_sda));
+    hi2c->GPIOx->MODER |=  ((2U << pos_scl) | (2U << pos_sda));
+
+    /* output type = open-drain */
+    hi2c->GPIOx->OTYPER |= (1U << hi2c->SCL_Pin) | (1U << hi2c->SDA_Pin);
+
+    /* high speed */
+    hi2c->GPIOx->OSPEEDR |= (3U << pos_scl) | (3U << pos_sda);
+
+    /* pull-up */
+    hi2c->GPIOx->PUPDR &= ~((3U << pos_scl) | (3U << pos_sda));
+    hi2c->GPIOx->PUPDR |=  ((1U << pos_scl) | (1U << pos_sda));
+
+    /* alternate function */
+    if (hi2c->SCL_Pin < 8U) {
+        hi2c->GPIOx->AFR[0] &= ~(0xFU << (hi2c->SCL_Pin * 4U));
+        hi2c->GPIOx->AFR[0] |=  ((uint32_t)hi2c->AF << (hi2c->SCL_Pin * 4U));
+    } else {
+        hi2c->GPIOx->AFR[1] &= ~(0xFU << ((hi2c->SCL_Pin - 8U) * 4U));
+        hi2c->GPIOx->AFR[1] |=  ((uint32_t)hi2c->AF << ((hi2c->SCL_Pin - 8U) * 4U));
+    }
+
+    if (hi2c->SDA_Pin < 8U) {
+        hi2c->GPIOx->AFR[0] &= ~(0xFU << (hi2c->SDA_Pin * 4U));
+        hi2c->GPIOx->AFR[0] |=  ((uint32_t)hi2c->AF << (hi2c->SDA_Pin * 4U));
+    } else {
+        hi2c->GPIOx->AFR[1] &= ~(0xFU << ((hi2c->SDA_Pin - 8U) * 4U));
+        hi2c->GPIOx->AFR[1] |=  ((uint32_t)hi2c->AF << ((hi2c->SDA_Pin - 8U) * 4U));
+    }
+}
+
+static void I2C_Init(I2C_Handle_t *hi2c)
+{
+    if (hi2c->Instance == I2C1) RCC->APB1ENR |= RCC_APB1ENR_I2C1EN;
+    if (hi2c->Instance == I2C2) RCC->APB1ENR |= RCC_APB1ENR_I2C2EN;
+    if (hi2c->Instance == I2C3) RCC->APB1ENR |= RCC_APB1ENR_I2C3EN;
+
+    I2C_GPIO_Init(hi2c);
+
+    /* Basic timing/config for 16 MHz APB1 (example values) */
+    hi2c->Instance->CR1 = 0U;
+    hi2c->Instance->CR2 = 16U;    /* APB1 frequency in MHz */
+    hi2c->Instance->CCR = 80U;    /* Tlow/thigh ratio (example for 100kHz) */
+    hi2c->Instance->TRISE = 17U;
+    hi2c->Instance->CR1 |= I2C_CR1_PE;
+}
+
+static int I2C_Start(I2C_Handle_t *hi2c, uint32_t timeout_ms)
+{
+    uint32_t tick = HAL_GetTick();
+    hi2c->Instance->CR1 |= I2C_CR1_START;
+    while (!(hi2c->Instance->SR1 & I2C_SR1_SB)) {
+        if ((HAL_GetTick() - tick) > timeout_ms) return 0;
+    }
+    return 1;
+}
+
+static int I2C_WriteAddr(I2C_Handle_t *hi2c, uint8_t addr, uint32_t timeout_ms)
+{
+    uint32_t tick = HAL_GetTick();
+
+    /* clear ADDR by reading SR1 then SR2 after address sent */
+    (void)hi2c->Instance->SR1;
+    hi2c->Instance->DR = (uint8_t)(addr << 1); /* write operation */
+
+    while (1) {
+        if (hi2c->Instance->SR1 & I2C_SR1_ADDR) {
+            (void)hi2c->Instance->SR2;
+            return 1;
+        }
+        if (hi2c->Instance->SR1 & I2C_SR1_AF) {
+            /* clear AF by writing 0 to SR1? AF is cleared by writing to SR1? clear by writing 0 to AF in SR1 by reading SR1 then writing CR1 STOP */
+            hi2c->Instance->SR1 &= ~I2C_SR1_AF;
+            return 0;
+        }
+        if ((HAL_GetTick() - tick) > timeout_ms) return 0;
+    }
+}
+
+static int I2C_WriteData(I2C_Handle_t *hi2c, uint8_t data, uint32_t timeout_ms)
+{
+    uint32_t tick = HAL_GetTick();
+    while (!(hi2c->Instance->SR1 & I2C_SR1_TXE)) {
+        if ((HAL_GetTick() - tick) > timeout_ms) return 0;
+    }
+    hi2c->Instance->DR = data;
+    tick = HAL_GetTick();
+    while (!(hi2c->Instance->SR1 & I2C_SR1_BTF)) {
+        if ((HAL_GetTick() - tick) > timeout_ms) return 0;
+    }
+    return 1;
+}
+
+static void I2C_Stop(I2C_Handle_t *hi2c)
+{
+    hi2c->Instance->CR1 |= I2C_CR1_STOP;
+}
+
+/* Simple device ready check using start/address/stop */
+static int I2C_IsDeviceReady(I2C_Handle_t *hi2c, uint8_t addr, uint32_t trials, uint32_t timeout_ms)
+{
+    for (uint32_t t = 0; t < trials; ++t) {
+        if (!I2C_Start(hi2c, timeout_ms)) {
+            I2C_Stop(hi2c);
+            continue;
+        }
+        if (I2C_WriteAddr(hi2c, addr, timeout_ms)) {
+            I2C_Stop(hi2c);
+            return 1;
+        }
+        I2C_Stop(hi2c);
+        HAL_Delay(2);
+    }
+    return 0;
+}
+
+/* USER CODE END 0 */
+
+/**
+ * @brief  The application entry point.
+ * @retval int
+ */
+int main(void)
+{
+    uint8_t i2c_address = 0x28U;
+    I2C_Handle_t hi2c1_custom;
+
+    HAL_Init();
+    SystemClock_Config();
+    MX_GPIO_Init();
+    MX_USART2_UART_Init();
+
+    hi2c1_custom.Instance = I2C1;
+    hi2c1_custom.GPIOx = GPIOB;
+    hi2c1_custom.SCL_Pin = I2C_SCL_PIN;
+    hi2c1_custom.SDA_Pin = I2C_SDA_PIN;
+    hi2c1_custom.AF = 4U;
+
+    I2C_Init(&hi2c1_custom);
+
+    /* simple write example: write 0xAA to device 0x50 at registerless form */
+    if (I2C_Start(&hi2c1_custom, 10)) {
+        if (I2C_WriteAddr(&hi2c1_custom, 0x50U, 10)) {
+            (void)I2C_WriteData(&hi2c1_custom, 0xAAU, 10);
+        }
+        I2C_Stop(&hi2c1_custom);
+    }
+
+    while (1)
+    {
+        if (I2C_IsDeviceReady(&hi2c1_custom, i2c_address, 2, 50)) {
+            HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+            HAL_Delay(1000);
+        } else {
+            HAL_Delay(100);
+        }
+    }
+}
+
+/* SystemClock_Config, MX_USART2_UART_Init and MX_GPIO_Init remain unchanged (keep as provided) */
+
+void SystemClock_Config(void)
+{
+    RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+    RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+
+    __HAL_RCC_PWR_CLK_ENABLE();
+    __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+
+    RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+    RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+    RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+    RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+    RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+    RCC_OscInitStruct.PLL.PLLM = 16;
+    RCC_OscInitStruct.PLL.PLLN = 336;
+    RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV4;
+    RCC_OscInitStruct.PLL.PLLQ = 4;
+    if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+    {
+        Error_Handler();
+    }
+
+    RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+            |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+    RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+    RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+    RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+    RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+
+    if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
+    {
+        Error_Handler();
+    }
+}
+
+static void MX_USART2_UART_Init(void)
+{
+    huart2.Instance = USART2;
+    huart2.Init.BaudRate = 115200;
+    huart2.Init.WordLength = UART_WORDLENGTH_8B;
+    huart2.Init.StopBits = UART_STOPBITS_1;
+    huart2.Init.Parity = UART_PARITY_NONE;
+    huart2.Init.Mode = UART_MODE_TX_RX;
+    huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+    huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+    if (HAL_UART_Init(&huart2) != HAL_OK)
+    {
+        Error_Handler();
+    }
+}
+
+static void MX_GPIO_Init(void)
+{
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+    __HAL_RCC_GPIOC_CLK_ENABLE();
+    __HAL_RCC_GPIOH_CLK_ENABLE();
+    __HAL_RCC_GPIOA_CLK_ENABLE();
+    __HAL_RCC_GPIOB_CLK_ENABLE();
+
+    HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+
+    GPIO_InitStruct.Pin = B1_Pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin = LD2_Pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
+}
+
+void Error_Handler(void)
+{
+    __disable_irq();
+    while (1)
+    {
+    }
+}
+
+#ifdef USE_FULL_ASSERT
+void assert_failed(uint8_t *file, uint32_t line)
+{
+}
+#endif
