@@ -1,0 +1,40 @@
+18:32:42 **** Incremental Build of configuration Debug for project I2C_proj1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:171:9: warning: implicit declaration of function 'I2C1_GPIO_Init'; did you mean 'I2C_GPIO_Init'? [-Wimplicit-function-declaration]
+  171 |         I2C1_GPIO_Init();
+      |         ^~~~~~~~~~~~~~
+      |         I2C_GPIO_Init
+../Core/Src/main.c:172:9: warning: implicit declaration of function 'I2C1_Init'; did you mean 'I2C_Init'? [-Wimplicit-function-declaration]
+  172 |         I2C1_Init();
+      |         ^~~~~~~~~
+      |         I2C_Init
+../Core/Src/main.c:174:9: warning: implicit declaration of function 'I2C1_Start'; did you mean 'I2C_Start'? [-Wimplicit-function-declaration]
+  174 |         I2C1_Start();
+      |         ^~~~~~~~~~
+      |         I2C_Start
+../Core/Src/main.c:175:9: warning: implicit declaration of function 'I2C1_WriteAddr'; did you mean 'I2C_WriteAddr'? [-Wimplicit-function-declaration]
+  175 |         I2C1_WriteAddr(0x50);  /// any address we can write here
+      |         ^~~~~~~~~~~~~~
+      |         I2C_WriteAddr
+../Core/Src/main.c:176:9: warning: implicit declaration of function 'I2C1_WriteData'; did you mean 'I2C_WriteData'? [-Wimplicit-function-declaration]
+  176 |         I2C1_WriteData(0xAA);
+      |         ^~~~~~~~~~~~~~
+      |         I2C_WriteData
+../Core/Src/main.c:177:9: warning: implicit declaration of function 'I2C1_Stop'; did you mean 'I2C_Stop'? [-Wimplicit-function-declaration]
+  177 |         I2C1_Stop();
+      |         ^~~~~~~~~
+      |         I2C_Stop
+../Core/Src/main.c:187:31: warning: implicit declaration of function 'HAL_I2C_IsDeviceReady' [-Wimplicit-function-declaration]
+  187 |                 uint8_t ret = HAL_I2C_IsDeviceReady(&hi2c1, i2c_address << 1, 2, 100);
+      |                               ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:187:54: error: 'hi2c1' undeclared (first use in this function)
+  187 |                 uint8_t ret = HAL_I2C_IsDeviceReady(&hi2c1, i2c_address << 1, 2, 100);
+      |                                                      ^~~~~
+../Core/Src/main.c:187:54: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+18:32:43 Build Failed. 2 errors, 7 warnings. (took 886ms)
+

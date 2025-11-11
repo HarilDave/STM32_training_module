@@ -1,0 +1,21 @@
+17:47:47 **** Incremental Build of configuration Debug for project ADC_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:147:18: warning: variable 'val' set but not used [-Wunused-but-set-variable]
+  147 |         uint16_t val;
+      |                  ^~~
+arm-none-eabi-gcc -o "ADC_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Creation\folder6_adc\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADC_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ADC_driver.elf
+ 
+arm-none-eabi-size  ADC_driver.elf 
+arm-none-eabi-objdump -h -S ADC_driver.elf  > "ADC_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+  10120	     12	   1788	  11920	   2e90	ADC_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: ADC_driver.list
+ 
+
+17:47:48 Build Finished. 0 errors, 1 warnings. (took 1s.133ms)
+

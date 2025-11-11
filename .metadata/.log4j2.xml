@@ -2,7 +2,11 @@
 <Configuration status="info">
     <ThresholdFilter level="INFO"/>
     <Appenders>
+<<<<<<< HEAD
         <RollingFile name="DEBUGFILE" fileName="C:/Haril_bitsilica/STM_training_module/driver_playist_2/.metadata/.ide.log" filePattern="C:/Haril_bitsilica/STM_training_module/driver_playist_2/.metadata/.ide.log-%d{yyyy-MM-dd}.log">
+=======
+        <RollingFile name="DEBUGFILE" fileName="C:/Haril_bitsilica/STM_training_module/Creation/.metadata/.ide.log" filePattern="C:/Haril_bitsilica/STM_training_module/Creation/.metadata/.ide.log-%d{yyyy-MM-dd}.log">
+>>>>>>> 77f37f05205c58bbbfe436e72a468a229b46df03
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} [%p] %c{1}:%L - %m%n" />
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1" modulate="true" />

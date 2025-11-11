@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2025-10-31 10:30:09,921 [INFO] Activator:176 - 
 
 
@@ -365,3 +366,87 @@
 2025-10-31 16:56:57,609 [INFO] WebApp:194 - Connection lost
 2025-10-31 16:56:58,338 [INFO] WebApp:191 - Connection restablished
 2025-10-31 16:57:03,654 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+=======
+2025-10-30 15:59:51,082 [INFO] Activator:176 - 
+
+
+2025-10-30 15:59:51,084 [INFO] Activator:177 - !SESSION log4j initialized
+2025-10-30 15:59:54,717 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2025-10-30 15:59:57,140 [INFO] ApplicationProperties:184 - Using Application install path: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659
+2025-10-30 15:59:57,166 [INFO] DbMcusXml:78 - Set database path to: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\/mcu/
+2025-10-30 15:59:57,166 [INFO] ApiDb:274 - Set plugin database path to: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\/plugins/boardmanager/
+2025-10-30 15:59:57,167 [WARN] ApiDb:259 - Overriding images path with different value:  => C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\/plugins/mcufinder/images/
+2025-10-30 15:59:57,182 [INFO] ApiDb:250 - Set database path to: C:\Users\Himshree\.stmcufinder\plugins\mcufinder//mcu/
+2025-10-30 15:59:57,183 [INFO] DbMcusAds:125 - Set database path to: C:\Users\Himshree\.stmcufinder\plugins\mcufinder//mcu/
+2025-10-30 15:59:57,187 [INFO] CrossReferenceDbSqlite:203 - Set database path to: C:\Users\Himshree\.stmcufinder\plugins\mcufinder//mcu/cs/
+2025-10-30 15:59:57,327 [INFO] RulesReader:64 - Compatibility file has been processed (317 Rules)
+2025-10-30 15:59:57,433 [INFO] DbMcusXml:78 - Set database path to: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\/mcu/
+2025-10-30 15:59:57,434 [INFO] ApiDb:274 - Set plugin database path to: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\/plugins/boardmanager/
+2025-10-30 15:59:57,434 [INFO] ApiDb:261 - Set plugin images path to: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\/plugins/mcufinder/images/
+2025-10-30 15:59:57,434 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\Himshree\.stmcufinder\plugins\mcufinder/ => C:\Users\Himshree\.stmcufinder\plugins\mcufinder
+2025-10-30 15:59:57,434 [INFO] ApiDb:250 - Set database path to: C:\Users\Himshree\.stmcufinder\plugins\mcufinder//mcu/
+2025-10-30 15:59:57,434 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\Himshree\.stmcufinder\plugins\mcufinder/ => C:\Users\Himshree\.stmcufinder\plugins\mcufinder
+2025-10-30 15:59:57,435 [INFO] DbMcusAds:125 - Set database path to: C:\Users\Himshree\.stmcufinder\plugins\mcufinder//mcu/
+2025-10-30 15:59:57,435 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\Himshree\.stmcufinder\plugins\mcufinder/ => C:\Users\Himshree\.stmcufinder\plugins\mcufinder
+2025-10-30 15:59:57,435 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\Himshree\.stmcufinder\plugins\mcufinder/ => C:\Users\Himshree\.stmcufinder\plugins\mcufinder
+2025-10-30 15:59:57,435 [INFO] CrossReferenceDbSqlite:203 - Set database path to: C:\Users\Himshree\.stmcufinder\plugins\mcufinder//mcu/cs/
+2025-10-30 15:59:57,552 [INFO] MainPanel:274 - HeapMemory: 268435456
+2025-10-30 15:59:57,687 [INFO] DbMcusXml:78 - Set database path to: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\/mcu/
+2025-10-30 15:59:57,687 [INFO] ApiDb:274 - Set plugin database path to: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\/plugins/boardmanager/
+2025-10-30 15:59:57,687 [INFO] ApiDb:261 - Set plugin images path to: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\/plugins/mcufinder/images/
+2025-10-30 15:59:57,687 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\Himshree\.stmcufinder\plugins\mcufinder/ => C:\Users\Himshree\.stmcufinder\plugins\mcufinder
+2025-10-30 15:59:57,687 [INFO] ApiDb:250 - Set database path to: C:\Users\Himshree\.stmcufinder\plugins\mcufinder//mcu/
+2025-10-30 15:59:57,689 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\Himshree\.stmcufinder\plugins\mcufinder/ => C:\Users\Himshree\.stmcufinder\plugins\mcufinder
+2025-10-30 15:59:57,689 [INFO] DbMcusAds:125 - Set database path to: C:\Users\Himshree\.stmcufinder\plugins\mcufinder//mcu/
+2025-10-30 15:59:57,689 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\Himshree\.stmcufinder\plugins\mcufinder/ => C:\Users\Himshree\.stmcufinder\plugins\mcufinder
+2025-10-30 15:59:57,689 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\Himshree\.stmcufinder\plugins\mcufinder/ => C:\Users\Himshree\.stmcufinder\plugins\mcufinder
+2025-10-30 15:59:57,689 [INFO] CrossReferenceDbSqlite:203 - Set database path to: C:\Users\Himshree\.stmcufinder\plugins\mcufinder//mcu/cs/
+2025-10-30 15:59:57,710 [INFO] ApplicationProperties:184 - Using Application install path: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659
+2025-10-30 15:59:57,712 [INFO] PluginManage:196 - Search for loadable plugins [exclusion list=, ]
+2025-10-30 15:59:57,715 [INFO] PluginManage:310 - Check plugin analytics
+2025-10-30 15:59:58,009 [INFO] AnalyticsPlugin:253 - Accepted Software Licenses: 
+2025-10-30 15:59:58,010 [INFO] AnalyticsPlugin:255 - Accepted CMSIS Pack Licenses: 
+2025-10-30 15:59:58,010 [INFO] AnalyticsPlugin:257 - Accepted Firmware Licenses: FW.F4.1.28.0,FW.L4.1.18.0
+2025-10-30 15:59:58,019 [INFO] PluginManage:359 - Loaded plugin analytics (category:tool,tabindex:-1)
+2025-10-30 15:59:58,020 [INFO] PluginManage:310 - Check plugin cadmodel
+2025-10-30 15:59:58,029 [INFO] CADModel:105 - Init CAD model plugin
+2025-10-30 15:59:58,029 [INFO] PluginManage:359 - Loaded plugin cadmodel (category:power,tabindex:5)
+2025-10-30 15:59:58,031 [INFO] PluginManage:310 - Check plugin clock
+2025-10-30 15:59:58,046 [INFO] PluginManage:359 - Loaded plugin clock (category:base,tabindex:2)
+2025-10-30 15:59:58,047 [INFO] PluginManage:310 - Check plugin ddr
+2025-10-30 15:59:58,053 [INFO] PluginManage:359 - Loaded plugin ddr (category:tool,tabindex:6)
+2025-10-30 15:59:58,053 [INFO] PluginManage:310 - Check plugin filemanager
+2025-10-30 15:59:58,367 [INFO] PluginManage:359 - Loaded plugin filemanager (category:base,tabindex:10)
+2025-10-30 15:59:58,368 [INFO] PluginManage:310 - Check plugin ipmanager
+2025-10-30 15:59:58,378 [INFO] PluginManage:359 - Loaded plugin ipmanager (category:base,tabindex:5)
+2025-10-30 15:59:58,379 [INFO] PluginManage:310 - Check plugin lpbam
+2025-10-30 15:59:58,391 [INFO] PluginManage:359 - Loaded plugin lpbam (category:base,tabindex:0)
+2025-10-30 15:59:58,391 [INFO] PluginManage:310 - Check plugin memorymap
+2025-10-30 15:59:58,409 [INFO] PluginManage:359 - Loaded plugin memorymap (category:base,tabindex:4)
+2025-10-30 15:59:58,409 [INFO] PluginManage:310 - Check plugin pinoutandconfiguration
+2025-10-30 15:59:58,420 [INFO] PluginManage:359 - Loaded plugin pinoutandconfiguration (category:base,tabindex:1)
+2025-10-30 15:59:58,420 [INFO] PluginManage:310 - Check plugin pinoutconfig
+2025-10-30 15:59:58,556 [WARN] SupportedApi:132 - Cannot load RTOS API schema: s4s-elt-must-match.1: The content of 'definitions' must match (annotation?, (simpleType | complexType)?, (unique | key | keyref)*)). A problem was found starting at: attribute.
+2025-10-30 15:59:58,827 [INFO] PluginManage:359 - Loaded plugin pinoutconfig (category:base,tabindex:0)
+2025-10-30 15:59:58,827 [INFO] PluginManage:310 - Check plugin power
+2025-10-30 15:59:58,849 [INFO] PluginManage:359 - Loaded plugin power (category:power,tabindex:4)
+2025-10-30 15:59:58,850 [INFO] PluginManage:310 - Check plugin projectmanager
+2025-10-30 15:59:58,889 [INFO] PluginManage:359 - Loaded plugin projectmanager (category:projectmanager,tabindex:4)
+2025-10-30 15:59:58,890 [INFO] PluginManage:310 - Check plugin rif
+2025-10-30 15:59:58,907 [INFO] PluginManage:359 - Loaded plugin rif (category:base,tabindex:3)
+2025-10-30 15:59:58,907 [INFO] PluginManage:310 - Check plugin thirdparty
+2025-10-30 15:59:59,376 [INFO] PluginManage:359 - Loaded plugin thirdparty (category:base,tabindex:-1)
+2025-10-30 15:59:59,376 [WARN] IntegrityCheckThread:84 - waiting for thirdparty lock release [integrity check]
+2025-10-30 15:59:59,377 [INFO] PluginManage:310 - Check plugin tools
+2025-10-30 15:59:59,377 [INFO] IntegrityCheckThread:86 - entering critical section [integrity check]
+2025-10-30 15:59:59,378 [INFO] ThirdPartyUpdaterWithRetryManager:70 - Updater plugin not ready yet. [1/15]
+2025-10-30 15:59:59,389 [INFO] PluginManage:359 - Loaded plugin tools (category:base,tabindex:7)
+2025-10-30 15:59:59,390 [INFO] PluginManage:310 - Check plugin tutovideos
+2025-10-30 16:00:00,124 [INFO] PluginManage:359 - Loaded plugin tutovideos (category:base,tabindex:-1)
+2025-10-30 16:00:00,124 [INFO] PluginManage:310 - Check plugin updater
+2025-10-30 16:00:00,166 [INFO] PluginManage:359 - Loaded plugin updater (category:base,tabindex:12)
+2025-10-30 16:00:00,166 [INFO] PluginManage:310 - Check plugin userauth
+2025-10-30 16:00:00,174 [INFO] UserAuth:118 - Init User Auth plugin
+2025-10-30 16:00:00,175 [INFO] PluginManage:359 - Loaded plugin userauth (category:base,tabindex:14)
+2025-10-30 16:00:00,177 [INFO] PluginManage:283 - PluginManage : Loaded plugins [18]
+>>>>>>> 77f37f05205c58bbbfe436e72a468a229b46df03

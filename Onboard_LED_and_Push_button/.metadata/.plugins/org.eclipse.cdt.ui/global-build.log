@@ -1,0 +1,291 @@
+11:32:11 **** Incremental Build of configuration Debug for project SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "SPI_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Creation\folder5_spi\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI_driver.elf
+ 
+arm-none-eabi-size  SPI_driver.elf 
+arm-none-eabi-objdump -h -S SPI_driver.elf  > "SPI_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+  11236	     12	   1732	  12980	   32b4	SPI_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI_driver.list
+ 
+11:32:15 **** Incremental Build of configuration Debug for project SPI_driver ****
+make -j8 all 
+arm-none-eabi-size  SPI_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11236	     12	   1732	  12980	   32b4	SPI_driver.elf
+Finished building: default.size.stdout
+ 
+18:22:22 **** Build of configuration Debug for project I2C_proj1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:174:9: warning: implicit declaration of function 'I2C1_Start'; did you mean 'I2C_Start'? [-Wimplicit-function-declaration]
+  174 |         I2C1_Start();
+      |         ^~~~~~~~~~
+      |         I2C_Start
+../Core/Src/main.c:175:9: warning: implicit declaration of function 'I2C1_WriteAddr'; did you mean 'I2C_WriteAddr'? [-Wimplicit-function-declaration]
+  175 |         I2C1_WriteAddr(0x50);  /// any address we can write here
+      |         ^~~~~~~~~~~~~~
+      |         I2C_WriteAddr
+../Core/Src/main.c:176:9: warning: implicit declaration of function 'I2C1_WriteData'; did you mean 'I2C_WriteData'? [-Wimplicit-function-declaration]
+  176 |         I2C1_WriteData(0xAA);
+      |         ^~~~~~~~~~~~~~
+      |         I2C_WriteData
+../Core/Src/main.c:177:9: warning: implicit declaration of function 'I2C1_Stop'; did you mean 'I2C_Stop'? [-Wimplicit-function-declaration]
+  177 |         I2C1_Stop();
+      |         ^~~~~~~~~
+      |         I2C_Stop
+../Core/Src/main.c:187:17: error: 'ret' undeclared (first use in this function)
+  187 |                 ret = HAL_I2C_IsDeviceReady(&hi2c1, i2c_address << 1, 2, 100);
+      |                 ^~~
+../Core/Src/main.c:187:17: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:187:23: warning: implicit declaration of function 'HAL_I2C_IsDeviceReady' [-Wimplicit-function-declaration]
+  187 |                 ret = HAL_I2C_IsDeviceReady(&hi2c1, i2c_address << 1, 2, 100);
+      |                       ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:187:46: error: 'hi2c1' undeclared (first use in this function)
+  187 |                 ret = HAL_I2C_IsDeviceReady(&hi2c1, i2c_address << 1, 2, 100);
+      |                                              ^~~~~
+../Core/Src/main.c:187:53: error: 'i2c_address' undeclared (first use in this function)
+  187 |                 ret = HAL_I2C_IsDeviceReady(&hi2c1, i2c_address << 1, 2, 100);
+      |                                                     ^~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+18:22:48 **** Incremental Build of configuration Debug for project I2C_proj1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:174:9: warning: implicit declaration of function 'I2C1_Start'; did you mean 'I2C_Start'? [-Wimplicit-function-declaration]
+  174 |         I2C1_Start();
+      |         ^~~~~~~~~~
+      |         I2C_Start
+../Core/Src/main.c:175:9: warning: implicit declaration of function 'I2C1_WriteAddr'; did you mean 'I2C_WriteAddr'? [-Wimplicit-function-declaration]
+  175 |         I2C1_WriteAddr(0x50);  /// any address we can write here
+      |         ^~~~~~~~~~~~~~
+      |         I2C_WriteAddr
+../Core/Src/main.c:176:9: warning: implicit declaration of function 'I2C1_WriteData'; did you mean 'I2C_WriteData'? [-Wimplicit-function-declaration]
+  176 |         I2C1_WriteData(0xAA);
+      |         ^~~~~~~~~~~~~~
+      |         I2C_WriteData
+../Core/Src/main.c:177:9: warning: implicit declaration of function 'I2C1_Stop'; did you mean 'I2C_Stop'? [-Wimplicit-function-declaration]
+  177 |         I2C1_Stop();
+      |         ^~~~~~~~~
+      |         I2C_Stop
+../Core/Src/main.c:187:31: warning: implicit declaration of function 'HAL_I2C_IsDeviceReady' [-Wimplicit-function-declaration]
+  187 |                 uint8_t ret = HAL_I2C_IsDeviceReady(&hi2c1, i2c_address << 1, 2, 100);
+      |                               ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:187:54: error: 'hi2c1' undeclared (first use in this function)
+  187 |                 uint8_t ret = HAL_I2C_IsDeviceReady(&hi2c1, i2c_address << 1, 2, 100);
+      |                                                      ^~~~~
+../Core/Src/main.c:187:54: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:187:61: error: 'i2c_address' undeclared (first use in this function)
+  187 |                 uint8_t ret = HAL_I2C_IsDeviceReady(&hi2c1, i2c_address << 1, 2, 100);
+      |                                                             ^~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+18:24:28 **** Incremental Build of configuration Debug for project I2C_proj1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:174:9: warning: implicit declaration of function 'I2C1_Start'; did you mean 'I2C_Start'? [-Wimplicit-function-declaration]
+  174 |         I2C1_Start();
+      |         ^~~~~~~~~~
+      |         I2C_Start
+../Core/Src/main.c:175:9: warning: implicit declaration of function 'I2C1_WriteAddr'; did you mean 'I2C_WriteAddr'? [-Wimplicit-function-declaration]
+  175 |         I2C1_WriteAddr(0x50);  /// any address we can write here
+      |         ^~~~~~~~~~~~~~
+      |         I2C_WriteAddr
+../Core/Src/main.c:176:9: warning: implicit declaration of function 'I2C1_WriteData'; did you mean 'I2C_WriteData'? [-Wimplicit-function-declaration]
+  176 |         I2C1_WriteData(0xAA);
+      |         ^~~~~~~~~~~~~~
+      |         I2C_WriteData
+../Core/Src/main.c:177:9: warning: implicit declaration of function 'I2C1_Stop'; did you mean 'I2C_Stop'? [-Wimplicit-function-declaration]
+  177 |         I2C1_Stop();
+      |         ^~~~~~~~~
+      |         I2C_Stop
+../Core/Src/main.c:187:31: warning: implicit declaration of function 'HAL_I2C_IsDeviceReady' [-Wimplicit-function-declaration]
+  187 |                 uint8_t ret = HAL_I2C_IsDeviceReady(&hi2c1, i2c_address << 1, 2, 100);
+      |                               ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:187:54: error: 'hi2c1' undeclared (first use in this function)
+  187 |                 uint8_t ret = HAL_I2C_IsDeviceReady(&hi2c1, i2c_address << 1, 2, 100);
+      |                                                      ^~~~~
+../Core/Src/main.c:187:54: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+18:24:50 **** Incremental Build of configuration Debug for project I2C_proj1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:171:9: warning: implicit declaration of function 'I2C1_GPIO_Init'; did you mean 'I2C_GPIO_Init'? [-Wimplicit-function-declaration]
+  171 |         I2C1_GPIO_Init();
+      |         ^~~~~~~~~~~~~~
+      |         I2C_GPIO_Init
+../Core/Src/main.c:172:9: warning: implicit declaration of function 'I2C1_Init'; did you mean 'I2C_Init'? [-Wimplicit-function-declaration]
+  172 |         I2C1_Init();
+      |         ^~~~~~~~~
+      |         I2C_Init
+../Core/Src/main.c:174:9: warning: implicit declaration of function 'I2C1_Start'; did you mean 'I2C_Start'? [-Wimplicit-function-declaration]
+  174 |         I2C1_Start();
+      |         ^~~~~~~~~~
+      |         I2C_Start
+../Core/Src/main.c:175:9: warning: implicit declaration of function 'I2C1_WriteAddr'; did you mean 'I2C_WriteAddr'? [-Wimplicit-function-declaration]
+  175 |         I2C1_WriteAddr(0x50);  /// any address we can write here
+      |         ^~~~~~~~~~~~~~
+      |         I2C_WriteAddr
+../Core/Src/main.c:176:9: warning: implicit declaration of function 'I2C1_WriteData'; did you mean 'I2C_WriteData'? [-Wimplicit-function-declaration]
+  176 |         I2C1_WriteData(0xAA);
+      |         ^~~~~~~~~~~~~~
+      |         I2C_WriteData
+../Core/Src/main.c:177:9: warning: implicit declaration of function 'I2C1_Stop'; did you mean 'I2C_Stop'? [-Wimplicit-function-declaration]
+  177 |         I2C1_Stop();
+      |         ^~~~~~~~~
+      |         I2C_Stop
+../Core/Src/main.c:187:31: warning: implicit declaration of function 'HAL_I2C_IsDeviceReady' [-Wimplicit-function-declaration]
+  187 |                 uint8_t ret = HAL_I2C_IsDeviceReady(&hi2c1, i2c_address << 1, 2, 100);
+      |                               ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:187:54: error: 'hi2c1' undeclared (first use in this function)
+  187 |                 uint8_t ret = HAL_I2C_IsDeviceReady(&hi2c1, i2c_address << 1, 2, 100);
+      |                                                      ^~~~~
+../Core/Src/main.c:187:54: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+18:32:30 **** Incremental Build of configuration Debug for project I2C_proj1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:175:5: warning: implicit declaration of function 'SystemClock_Config'; did you mean 'SysTick_Config'? [-Wimplicit-function-declaration]
+  175 |     SystemClock_Config();
+      |     ^~~~~~~~~~~~~~~~~~
+      |     SysTick_Config
+../Core/Src/main.c:176:5: warning: implicit declaration of function 'MX_GPIO_Init'; did you mean 'I2C_GPIO_Init'? [-Wimplicit-function-declaration]
+  176 |     MX_GPIO_Init();
+      |     ^~~~~~~~~~~~
+      |     I2C_GPIO_Init
+../Core/Src/main.c:177:5: warning: implicit declaration of function 'MX_USART2_UART_Init' [-Wimplicit-function-declaration]
+  177 |     MX_USART2_UART_Init();
+      |     ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:208:6: warning: conflicting types for 'SystemClock_Config'; have 'void(void)'
+  208 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:175:5: note: previous implicit declaration of 'SystemClock_Config' with type 'void(void)'
+  175 |     SystemClock_Config();
+      |     ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:243:13: warning: conflicting types for 'MX_USART2_UART_Init'; have 'void(void)'
+  243 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:243:13: error: static declaration of 'MX_USART2_UART_Init' follows non-static declaration
+../Core/Src/main.c:177:5: note: previous implicit declaration of 'MX_USART2_UART_Init' with type 'void(void)'
+  177 |     MX_USART2_UART_Init();
+      |     ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:259:13: warning: conflicting types for 'MX_GPIO_Init'; have 'void(void)'
+  259 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:259:13: error: static declaration of 'MX_GPIO_Init' follows non-static declaration
+../Core/Src/main.c:176:5: note: previous implicit declaration of 'MX_GPIO_Init' with type 'void(void)'
+  176 |     MX_GPIO_Init();
+      |     ^~~~~~~~~~~~
+../Core/Src/main.c:259:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  259 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:243:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  243 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+18:32:42 **** Incremental Build of configuration Debug for project I2C_proj1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:171:9: warning: implicit declaration of function 'I2C1_GPIO_Init'; did you mean 'I2C_GPIO_Init'? [-Wimplicit-function-declaration]
+  171 |         I2C1_GPIO_Init();
+      |         ^~~~~~~~~~~~~~
+      |         I2C_GPIO_Init
+../Core/Src/main.c:172:9: warning: implicit declaration of function 'I2C1_Init'; did you mean 'I2C_Init'? [-Wimplicit-function-declaration]
+  172 |         I2C1_Init();
+      |         ^~~~~~~~~
+      |         I2C_Init
+../Core/Src/main.c:174:9: warning: implicit declaration of function 'I2C1_Start'; did you mean 'I2C_Start'? [-Wimplicit-function-declaration]
+  174 |         I2C1_Start();
+      |         ^~~~~~~~~~
+      |         I2C_Start
+../Core/Src/main.c:175:9: warning: implicit declaration of function 'I2C1_WriteAddr'; did you mean 'I2C_WriteAddr'? [-Wimplicit-function-declaration]
+  175 |         I2C1_WriteAddr(0x50);  /// any address we can write here
+      |         ^~~~~~~~~~~~~~
+      |         I2C_WriteAddr
+../Core/Src/main.c:176:9: warning: implicit declaration of function 'I2C1_WriteData'; did you mean 'I2C_WriteData'? [-Wimplicit-function-declaration]
+  176 |         I2C1_WriteData(0xAA);
+      |         ^~~~~~~~~~~~~~
+      |         I2C_WriteData
+../Core/Src/main.c:177:9: warning: implicit declaration of function 'I2C1_Stop'; did you mean 'I2C_Stop'? [-Wimplicit-function-declaration]
+  177 |         I2C1_Stop();
+      |         ^~~~~~~~~
+      |         I2C_Stop
+../Core/Src/main.c:187:31: warning: implicit declaration of function 'HAL_I2C_IsDeviceReady' [-Wimplicit-function-declaration]
+  187 |                 uint8_t ret = HAL_I2C_IsDeviceReady(&hi2c1, i2c_address << 1, 2, 100);
+      |                               ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:187:54: error: 'hi2c1' undeclared (first use in this function)
+  187 |                 uint8_t ret = HAL_I2C_IsDeviceReady(&hi2c1, i2c_address << 1, 2, 100);
+      |                                                      ^~~~~
+../Core/Src/main.c:187:54: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+18:39:40 **** Build of configuration Debug for project Interrupt_timer ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Interrupt_timer.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Creation\HAL_timer_interrupt\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Interrupt_timer.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Interrupt_timer.elf
+ 
+arm-none-eabi-size  Interrupt_timer.elf 
+arm-none-eabi-objdump -h -S Interrupt_timer.elf  > "Interrupt_timer.list"
+   text	   data	    bss	    dec	    hex	filename
+   9496	     12	   1716	  11224	   2bd8	Interrupt_timer.elf
+Finished building: default.size.stdout
+ 
+Finished building: Interrupt_timer.list
+ 
+18:39:59 **** Incremental Build of configuration Debug for project Interrupt_timer ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Interrupt_timer.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Creation\HAL_timer_interrupt\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Interrupt_timer.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Interrupt_timer.elf
+ 
+arm-none-eabi-size  Interrupt_timer.elf 
+arm-none-eabi-objdump -h -S Interrupt_timer.elf  > "Interrupt_timer.list"
+   text	   data	    bss	    dec	    hex	filename
+   9556	     12	   1716	  11284	   2c14	Interrupt_timer.elf
+Finished building: default.size.stdout
+ 
+Finished building: Interrupt_timer.list
+ 
+18:40:20 **** Incremental Build of configuration Debug for project Interrupt_timer ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Interrupt_timer.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Creation\HAL_timer_interrupt\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Interrupt_timer.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Interrupt_timer.elf
+ 
+arm-none-eabi-size  Interrupt_timer.elf 
+arm-none-eabi-objdump -h -S Interrupt_timer.elf  > "Interrupt_timer.list"
+   text	   data	    bss	    dec	    hex	filename
+   9664	     12	   1716	  11392	   2c80	Interrupt_timer.elf
+Finished building: default.size.stdout
+ 
+Finished building: Interrupt_timer.list
+ 
+18:40:29 **** Incremental Build of configuration Debug for project Interrupt_timer ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Interrupt_timer.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Creation\HAL_timer_interrupt\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Interrupt_timer.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Interrupt_timer.elf
+ 
+arm-none-eabi-size  Interrupt_timer.elf 
+arm-none-eabi-objdump -h -S Interrupt_timer.elf  > "Interrupt_timer.list"
+   text	   data	    bss	    dec	    hex	filename
+   9664	     12	   1716	  11392	   2c80	Interrupt_timer.elf
+Finished building: default.size.stdout
+ 
+Finished building: Interrupt_timer.list
+ 
