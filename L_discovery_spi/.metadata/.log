@@ -1,0 +1,33 @@
+!SESSION 2025-10-31 11:49:17.319 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-10-31 11:49:47.896
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-10-31 11:49:47.900
+!MESSAGE Log4j2 initialized with config file C:\Haril_bitsilica\STM_training_module\L_series_spi\L_discovery_spi\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-10-31 11:49:52.531
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-10-31 11:51:16.693
+!MESSAGE Indexed 'SPI_try1' (27 sources, 89 headers) in 6.47 sec: 6,387 declarations; 46,126 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0038%)
+!SESSION 2025-11-03 11:17:14.256 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-11-03 11:17:48.609
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-11-03 11:17:48.612
+!MESSAGE Log4j2 initialized with config file C:\Haril_bitsilica\STM_training_module\L_series_spi\L_discovery_spi\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-11-03 11:17:58.095
+!MESSAGE Started RMI Server, listening on port 41338

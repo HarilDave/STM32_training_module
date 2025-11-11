@@ -1,0 +1,17 @@
+11:10:06 **** Incremental Build of configuration Debug for project I2C_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "I2C_driver.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Haril_bitsilica\STM_training_module\driver_playist_2\L_series_I2c_driver\I2C_driver\STM32L053C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_driver.elf
+ 
+arm-none-eabi-size  I2C_driver.elf 
+arm-none-eabi-objdump -h -S I2C_driver.elf  > "I2C_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   1572	      0	   1584	   3156	    c54	I2C_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_driver.list
+ 
+
+11:10:07 Build Finished. 0 errors, 0 warnings. (took 687ms)
+

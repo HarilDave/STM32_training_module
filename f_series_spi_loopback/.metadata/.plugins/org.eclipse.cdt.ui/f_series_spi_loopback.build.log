@@ -1,0 +1,10 @@
+12:54:02 **** Incremental Build of configuration Debug for project f_series_spi_loopback ****
+make -j8 all 
+arm-none-eabi-size  f_series_spi_loopback.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10428	     12	   1732	  12172	   2f8c	f_series_spi_loopback.elf
+Finished building: default.size.stdout
+ 
+
+12:54:02 Build Finished. 0 errors, 0 warnings. (took 389ms)
+
