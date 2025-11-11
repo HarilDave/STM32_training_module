@@ -1,0 +1,12 @@
+17:47:17 **** Incremental Build of configuration Debug for project UART_DMA_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:65:52: error: invalid use of void expression
+   65 |     UART2_DMA_Config();-----------------------------
+      |                                                    ^
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+17:47:18 Build Failed. 2 errors, 0 warnings. (took 1s.234ms)
+

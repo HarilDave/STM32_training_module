@@ -1,0 +1,18 @@
+16:09:16 **** Incremental Build of configuration Debug for project UART_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/gpio_driver.d" -MT"Src/gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/gpio_driver.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "UART_driver.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Haril_bitsilica\STM_training_module\driver_playist_2\L_series_Uart_driver\UART_driver\STM32L053C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_driver.elf
+ 
+arm-none-eabi-size  UART_driver.elf 
+arm-none-eabi-objdump -h -S UART_driver.elf  > "UART_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   1612	      0	   1568	   3180	    c6c	UART_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_driver.list
+ 
+
+16:09:17 Build Finished. 0 errors, 0 warnings. (took 1s.224ms)
+

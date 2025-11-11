@@ -1,0 +1,19 @@
+/*
+ * stm32F411xx.h
+ *
+ *  Created on: Oct 30, 2025
+ *      Author: Himshree
+ */
+
+#ifndef DRIVERS_INC_STM32F411XX_H_
+#define DRIVERS_INC_STM32F411XX_H_
+
+#define FLASH_BASEADDR  0X08000000U
+#define SRAM1_BASEADDR  0X20000000U
+#define SRAM2_BASEADDR  0X20001C00U
+#define ROM             0X1FFF0000U
+#define SRAM 			SRAM1_BASEADDR
+
+
+
+#endif /* DRIVERS_INC_STM32F411XX_H_ */

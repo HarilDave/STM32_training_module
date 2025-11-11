@@ -1,0 +1,19 @@
+#ifndef ULTRASONIC_H
+#define ULTRASONIC_H
+
+#include "main.h"
+
+/* Configure your ultrasonic pins and timer here */
+#define ULTRASONIC_TRIG_PORT   GPIOA
+#define ULTRASONIC_TRIG_PIN    GPIO_PIN_0
+#define ULTRASONIC_ECHO_PORT   GPIOA
+#define ULTRASONIC_ECHO_PIN    GPIO_PIN_1
+#define ULTRASONIC_TIMER       htim2   // Use TIM2
+
+extern TIM_HandleTypeDef ULTRASONIC_TIMER;
+
+/* Function prototypes */
+void Ultrasonic_Init(void);
+float Ultrasonic_Read(void);
+
+#endif

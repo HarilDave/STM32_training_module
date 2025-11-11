@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;nbm&apos;" deleteContents="true" description="Delete resource &apos;nbm&apos;" element1="/nbm" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1762261312619"/>&#x0A;<refactoring comment="Delete resource &apos;STM32_ultrasonic sensor_HAL&apos;" deleteContents="true" description="Delete resource &apos;STM32_ultrasonic sensor_HAL&apos;" element1="/STM32_ultrasonic sensor_HAL" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1762314870373"/>
+</session>

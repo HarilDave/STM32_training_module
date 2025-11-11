@@ -1,0 +1,13 @@
+/*
+ * uart_int_driver.h
+ *
+ *  Created on: Nov 4, 2025
+ *      Author: Himshree
+ */
+
+#ifndef UART_INT_DRIVER_H_
+#define UART_INT_DRIVER_H_
+
+
+
+#endif /* UART_INT_DRIVER_H_ */

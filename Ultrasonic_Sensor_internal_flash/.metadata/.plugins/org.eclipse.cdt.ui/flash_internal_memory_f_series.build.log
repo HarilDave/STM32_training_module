@@ -1,0 +1,10 @@
+16:31:36 **** Incremental Build of configuration Debug for project flash_internal_memory_f_series ****
+make -j8 all 
+arm-none-eabi-size  flash_internal_memory_f_series.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7956	     12	   1644	   9612	   258c	flash_internal_memory_f_series.elf
+Finished building: default.size.stdout
+ 
+
+16:31:37 Build Finished. 0 errors, 0 warnings. (took 505ms)
+

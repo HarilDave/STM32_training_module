@@ -1,0 +1,13 @@
+../Core/Src/main.c:58:13:delay_us	2
+../Core/Src/main.c:64:6:GPIO_Init	1
+../Core/Src/main.c:76:6:TIM2_Init	1
+../Core/Src/main.c:84:10:Ultrasonic_Read	3
+../Core/Src/main.c:103:6:Flash_Unlock	2
+../Core/Src/main.c:112:6:Flash_Lock	1
+../Core/Src/main.c:117:6:Flash_Wait	2
+../Core/Src/main.c:122:6:Flash_Erase_Page	1
+../Core/Src/main.c:137:6:Flash_Write	1
+../Core/Src/main.c:152:10:Flash_Read	1
+../Core/Src/main.c:162:5:main	2
+../Core/Src/main.c:214:6:SystemClock_Config	4
+../Core/Src/main.c:268:6:Error_Handler	1

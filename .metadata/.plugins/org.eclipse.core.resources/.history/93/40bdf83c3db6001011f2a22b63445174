@@ -1,0 +1,53 @@
+/*
+ * uart_driver.h
+ *
+ *  Created on: Oct 30, 2025
+ *      Author: Himshree
+ */
+
+#ifndef UART_DRIVER_H_
+#define UART_DRIVER_H_
+
+#include "STM32_L0538xx.h"
+
+typedef struct
+{
+    uint32_t BaudRate;
+    uint8_t  WordLength;
+    uint8_t  StopBits;
+    uint8_t  Parity;
+    uint8_t  Mode;
+} UART_Config_t;
+
+typedef struct
+{
+    USART_RegDef_t *Instance;
+    UART_Config_t   Init;
+} UART_Handle_t;
+
+/* ---------------- UART MODES ---------------- */
+#define UART_MODE_TX         1
+#define UART_MODE_RX         2
+#define UART_MODE_TXRX       3
+
+/* ---------------- PARITY OPTIONS ---------------- */
+#define UART_PARITY_NONE     0
+#define UART_PARITY_EVEN     1
+#define UART_PARITY_ODD      2
+
+/* ---------------- STOP BITS ---------------- */
+#define UART_STOPBITS_1      0
+#define UART_STOPBITS_2      2
+
+/* ---------------- WORD LENGTH ---------------- */
+#define UART_WORDLEN_8B      0
+#define UART_WORDLEN_9B      1
+
+/* ---------------- FUNCTION PROTOTYPES ---------------- */
+void UART_Init(UART_Handle_t *huart);
+void UART_Transmit(UART_Handle_t *huart, uint8_t *pData, uint16_t Size);
+uint8_t UART_Receive(UART_Handle_t *huart);
+void UART_SendString(UART_Handle_t *huart, const char *str);
+
+
+#endif /* UART_DRIVER_H_ */

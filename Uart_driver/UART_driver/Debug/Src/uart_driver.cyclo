@@ -1,0 +1,15 @@
+../Src/uart_driver.c:4:6:UART_PeriClockControl	6
+../Src/uart_driver.c:23:6:UART_Init	8
+../Src/uart_driver.c:81:6:UART_DeInit	3
+../Src/uart_driver.c:94:6:UART_SendData	4
+../Src/uart_driver.c:106:6:UART_ReceiveData	3
+../Src/uart_driver.c:117:9:UART_SendDataIT	2
+../Src/uart_driver.c:137:9:UART_ReceiveDataIT	2
+../Src/uart_driver.c:155:6:UART_IRQHandling	11
+../Src/uart_driver.c:206:6:UART_PeripheralControl	2
+../Src/uart_driver.c:215:9:UART_GetFlagStatus	2
+../Src/uart_driver.c:223:6:UART_ClearOREFlag	1
+../Src/uart_driver.c:224:6:UART_ClearNEFlag	1
+../Src/uart_driver.c:225:6:UART_ClearFEFlag	1
+../Src/uart_driver.c:228:6:UART_IRQInterruptConfig	2
+../Src/uart_driver.c:236:6:UART_IRQPriorityConfig	1

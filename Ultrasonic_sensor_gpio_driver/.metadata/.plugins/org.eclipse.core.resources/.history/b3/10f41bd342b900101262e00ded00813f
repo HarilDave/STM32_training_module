@@ -1,0 +1,92 @@
+/*
+ * stm32L.h
+ *
+ *  Created on: Nov 4, 2025
+ *      Author: Himshree
+ */
+
+#ifndef STM32L_H
+#define STM32L_H
+#include <stdint.h>
+
+#define PERIPH_BASE        0x40000000UL
+#define AHBPERIPH_BASE     (PERIPH_BASE + 0x00020000UL)
+#define APB1PERIPH_BASE    (PERIPH_BASE + 0x00000000UL)
+#define IOPORT_BASE        (PERIPH_BASE + 0x00020000UL))
+
+typedef struct
+{
+  volatile uint32_t MODER;
+  volatile uint32_t OTYPER;
+  volatile uint32_t OSPEEDR;
+  volatile uint32_t PUPDR;
+  volatile uint32_t IDR;
+  volatile uint32_t ODR;
+  volatile uint32_t BSRR;
+  volatile uint32_t LCKR;
+  volatile uint32_t AFRL;
+  volatile uint32_t AFRH;
+} GPIO_TypeDef;
+
+typedef struct
+{
+  volatile uint32_t CR;
+  volatile uint32_t ICSCR;
+  volatile uint32_t CFGR;
+  volatile uint32_t CIR;
+  volatile uint32_t IOPRSTR;
+  volatile uint32_t AHBRSTR;
+  volatile uint32_t APB2RSTR;
+  volatile uint32_t APB1RSTR;
+  volatile uint32_t IOPENR;
+  volatile uint32_t AHBENR;
+  volatile uint32_t APB2ENR;
+  volatile uint32_t APB1ENR;
+} RCC_TypeDef;
+
+typedef struct
+{
+  volatile uint32_t CR1;
+  volatile uint32_t CR2;
+  volatile uint32_t SMCR;
+  volatile uint32_t DIER;
+  volatile uint32_t SR;
+  volatile uint32_t EGR;
+  volatile uint32_t CCMR1;
+  volatile uint32_t CCMR2;
+  volatile uint32_t CCER;
+  volatile uint32_t CNT;
+  volatile uint32_t PSC;
+  volatile uint32_t ARR;
+} TIM_TypeDef;
+
+#define RCC     ((RCC_TypeDef *) RCC_BASE)
+#define GPIOA   ((GPIO_TypeDef *) GPIOA_BASE)
+#define TIM2    ((TIM_TypeDef *) TIM2_BASE)
+
+#endif
+
+
+#define PERIPH_BASE        0x40000000UL
+#define AHBPERIPH_BASE     (PERIPH_BASE + 0x00020000UL)
+#define APB1PERIPH_BASE    (PERIPH_BASE + 0x00000000UL)
+#define APB2PERIPH_BASE    (PERIPH_BASE + 0x00010000UL)
+
+#define GPIOA_BASE         (AHBPERIPH_BASE + 0x0000)
+#define RCC_BASE           (AHBPERIPH_BASE + 0x3800)
+#define TIM2_BASE          (APB1PERIPH_BASE + 0x0000)
+
+#define RCC_AHBENR         (*(volatile unsigned long *)(RCC_BASE + 0x1C))
+#define RCC_APB1ENR        (*(volatile unsigned long *)(RCC_BASE + 0x24))
+
+#define GPIOA_MODER        (*(volatile unsigned long *)(GPIOA_BASE + 0x00))
+#define GPIOA_IDR          (*(volatile unsigned long *)(GPIOA_BASE + 0x10))
+#define GPIOA_ODR          (*(volatile unsigned long *)(GPIOA_BASE + 0x14))
+
+#define TIM2_CR1           (*(volatile unsigned long *)(TIM2_BASE + 0x00))
+#define TIM2_CNT           (*(volatile unsigned long *)(TIM2_BASE + 0x24))
+#define TIM2_PSC           (*(volatile unsigned long *)(TIM2_BASE + 0x28))
+#define TIM2_ARR           (*(volatile unsigned long *)(TIM2_BASE + 0x2C))
+
+
+#endif /* STM32L_H_ */

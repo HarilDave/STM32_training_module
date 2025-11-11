@@ -1,0 +1,70 @@
+#include "stm32l053xx.h"
+
+#define TX_LEN 13
+uint8_t TxBuffer[TX_LEN] = "DMA LOOPBACK";
+uint8_t RxBuffer[TX_LEN];
+
+void UART2_GPIO_Init(void)
+{
+    RCC->IOPENR |= (1 << 0); // Enable GPIOA clock
+
+    GPIOA->MODER &= ~((3 << (2*2)) | (3 << (3*2)));
+    GPIOA->MODER |=  ((2 << (2*2)) | (2 << (3*2))); // AF mode
+    GPIOA->AFR[0] &= ~((0xF << (4*2)) | (0xF << (4*3)));
+    GPIOA->AFR[0] |=  ((4 << (4*2)) | (4 << (4*3))); // AF4 = USART2
+}
+
+void UART2_DMA_Config(void)
+{
+    RCC->APB1ENR |= (1 << 17); // USART2 clock enable
+    RCC->AHBENR  |= (1 << 0);  // DMA1 clock enable
+
+    // ----- DMA Channel Mapping -----
+    // USART2_TX = DMA1_CH4_REQ4
+    // USART2_RX = DMA1_CH5_REQ4
+    DMA1_CSELR->CSELR &= ~((0xF << (4 * 4)) | (0xF << (4 * 5)));
+    DMA1_CSELR->CSELR |=  ((4   << (4 * 4)) | (4   << (4 * 5)));
+
+    // ----- USART2 Setup -----
+    USART2->BRR = 16000000 / 9600; // Baud = 9600 (16 MHz clock)
+    USART2->CR1 |= (1 << 2) | (1 << 3); // RE, TE enable
+    USART2->CR3 |= (1 << 6) | (1 << 7); // DMAR, DMAT enable
+    USART2->CR1 |= (1 << 13);           // USART enable
+
+    // ----- DMA1 Channel4 (USART2_TX) -----
+    DMA1_Channel4->CCR = 0;
+    DMA1_Channel4->CPAR  = (uint32_t)&USART2->TDR;
+    DMA1_Channel4->CMAR  = (uint32_t)TxBuffer;
+    DMA1_Channel4->CNDTR = TX_LEN;
+    DMA1_Channel4->CCR   = (1 << 7) | (1 << 4) | (1 << 3); // MEM2PER, MINC, DIR=1 (M→P)
+
+    // ----- DMA1 Channel5 (USART2_RX) -----
+    DMA1_Channel5->CCR = 0;
+    DMA1_Channel5->CPAR  = (uint32_t)&USART2->RDR;
+    DMA1_Channel5->CMAR  = (uint32_t)RxBuffer;
+    DMA1_Channel5->CNDTR = TX_LEN;
+    DMA1_Channel5->CCR   = (1 << 7) | (1 << 4); // PER2MEM, MINC
+
+    DMA1_Channel5->CCR |= (1 << 0); // Enable RX DMA
+}
+
+void UART2_DMA_Transmit(void)
+{
+    DMA1_Channel4->CCR &= ~(1 << 0);   // Disable TX DMA
+    DMA1_Channel4->CNDTR = TX_LEN;     // Reload length
+    DMA1_Channel4->CCR |= (1 << 0);    // Enable TX DMA
+}
+
+int main(void)
+{
+    UART2_GPIO_Init();
+    UART2_DMA_Config();
+    UART2_DMA_Transmit();
+
+    // Wait until DMA TX complete (TC4)
+    while (!(DMA1->ISR & (1 << 13)));
+    DMA1->IFCR |= (1 << 13); // Clear flag
+
+    // Check in debugger: RxBuffer should have the received data
+    while (1);
+}

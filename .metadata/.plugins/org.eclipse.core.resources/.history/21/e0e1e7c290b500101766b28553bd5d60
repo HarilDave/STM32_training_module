@@ -1,0 +1,54 @@
+/*
+ * i2c.c
+ *
+ *  Created on: Oct 30, 2025
+ *      Author: Himshree
+ */
+
+
+#include "I2c.h"
+
+void I2C_Init(I2C_Handle_t *hi2c)
+{
+    if(hi2c->Instance == I2C1)
+        RCC->APB1ENR |= RCC_APB1ENR_I2C1EN;
+    else if(hi2c->Instance == I2C2)
+        RCC->APB1ENR |= RCC_APB1ENR_I2C2EN;
+
+    hi2c->Instance->CR1 &= ~I2C_CR1_PE;
+    hi2c->Instance->TIMINGR = 0x2000090E;   // ~100kHz @ 16MHz
+    hi2c->Instance->OAR1 = (hi2c->Init.OwnAddress & 0x3FF) | I2C_OAR1_OA1EN;
+    hi2c->Instance->CR2 = 0;
+    hi2c->Instance->CR1 |= I2C_CR1_PE;
+}
+
+void I2C_Start(I2C_Handle_t *hi2c, uint8_t address, uint8_t direction)
+{
+    hi2c->Instance->CR2 = (address << 1) | (direction & 0x1) | (1 << 16);
+    hi2c->Instance->CR2 |= I2C_CR2_START;
+    while(!(hi2c->Instance->ISR & I2C_ISR_TXIS) && !(hi2c->Instance->ISR & I2C_ISR_NACKF));
+}
+
+void I2C_WriteData(I2C_Handle_t *hi2c, uint8_t data)
+{
+    while(!(hi2c->Instance->ISR & I2C_ISR_TXIS));
+    hi2c->Instance->TXDR = data;
+}
+
+uint8_t I2C_ReadData(I2C_Handle_t *hi2c)
+{
+    while(!(hi2c->Instance->ISR & I2C_ISR_RXNE));
+    return (uint8_t)hi2c->Instance->RXDR;
+}
+
+void I2C_Stop(I2C_Handle_t *hi2c)
+{
+    hi2c->Instance->CR2 |= I2C_CR2_STOP;
+    while(hi2c->Instance->ISR & I2C_ISR_STOPF);
+    hi2c->Instance->ICR |= I2C_ICR_STOPCF;
+}
+
+void I2C_WaitForFlag(I2C_Handle_t *hi2c, uint32_t flag)
+{
+    while(!(hi2c->Instance->ISR & flag));
+}

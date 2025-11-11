@@ -1,0 +1,46 @@
+17:02:09 **** Incremental Build of configuration Debug for project SPI_driver_attempt ****
+make -j8 all 
+arm-none-eabi-size  SPI_driver_attempt.elf 
+   text	   data	    bss	    dec	    hex	filename
+    612	      0	   1568	   2180	    884	SPI_driver_attempt.elf
+Finished building: default.size.stdout
+ 
+11:40:24 **** Incremental Build of configuration Debug for project SPI_driver_attempt ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:59:12: error: '__IO' undeclared (first use in this function)
+   59 |         *((__IO uint8_t *)&SPI1->DR) = tx;
+      |            ^~~~
+../Src/main.c:59:12: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:59:16: error: expected ')' before 'uint8_t'
+   59 |         *((__IO uint8_t *)&SPI1->DR) = tx;
+      |           ~    ^~~~~~~~
+      |                )
+../Src/main.c:62:21: error: expected ')' before 'uint8_t'
+   62 |         rx = *((__IO uint8_t *)&SPI1->DR);
+      |                ~    ^~~~~~~~
+      |                     )
+make: *** [Src/subdir.mk:31: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:41:18 **** Incremental Build of configuration Debug for project SPI_driver_attempt ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "SPI_driver_attempt.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Haril_bitsilica\STM_training_module\driver_playist_2\L_series_SPI_driver\SPI_driver_attempt\STM32L053C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_driver_attempt.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI_driver_attempt.elf
+ 
+arm-none-eabi-size  SPI_driver_attempt.elf 
+arm-none-eabi-objdump -h -S SPI_driver_attempt.elf  > "SPI_driver_attempt.list"
+   text	   data	    bss	    dec	    hex	filename
+    824	      0	   1568	   2392	    958	SPI_driver_attempt.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI_driver_attempt.list
+ 
+11:46:53 **** Incremental Build of configuration Debug for project SPI_driver_attempt ****
+make -j8 all 
+arm-none-eabi-size  SPI_driver_attempt.elf 
+   text	   data	    bss	    dec	    hex	filename
+    824	      0	   1568	   2392	    958	SPI_driver_attempt.elf
+Finished building: default.size.stdout
+ 

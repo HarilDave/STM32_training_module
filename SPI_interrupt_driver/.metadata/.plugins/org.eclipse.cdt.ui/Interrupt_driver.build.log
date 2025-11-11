@@ -1,0 +1,54 @@
+12:16:37 **** Build of configuration Debug for project Interrupt_driver ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m0plus -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32l053c8tx.d" -MT"Startup/startup_stm32l053c8tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32l053c8tx.o" "../Startup/startup_stm32l053c8tx.s"
+arm-none-eabi-gcc "../Src/gpio_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/gpio_driver.d" -MT"Src/gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/gpio_driver.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/spi_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_driver.d" -MT"Src/spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_driver.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+../Src/gpio_driver.c: In function 'GPIO_Init':
+../Src/gpio_driver.c:11:14: warning: comparison of distinct pointer types lacks a cast
+   11 |     if (port == GPIOA) RCC->IOPENR |= (1 << 0);
+      |              ^~
+../Src/gpio_driver.c:12:19: warning: comparison of distinct pointer types lacks a cast
+   12 |     else if (port == GPIOB) RCC->IOPENR |= (1 << 1);
+      |                   ^~
+../Src/gpio_driver.c:13:19: warning: comparison of distinct pointer types lacks a cast
+   13 |     else if (port == GPIOC) RCC->IOPENR |= (1 << 2);
+      |                   ^~
+../Src/gpio_driver.c:14:19: warning: comparison of distinct pointer types lacks a cast
+   14 |     else if (port == GPIOD) RCC->IOPENR |= (1 << 3);
+      |                   ^~
+../Src/gpio_driver.c:15:19: warning: comparison of distinct pointer types lacks a cast
+   15 |     else if (port == GPIOH) RCC->IOPENR |= (1 << 7);
+      |                   ^~
+../Src/gpio_driver.c: In function 'GPIO_DeInit':
+../Src/gpio_driver.c:49:14: warning: comparison of distinct pointer types lacks a cast
+   49 |     if (port == GPIOA)
+      |              ^~
+../Src/gpio_driver.c:54:19: warning: comparison of distinct pointer types lacks a cast
+   54 |     else if (port == GPIOB)
+      |                   ^~
+../Src/gpio_driver.c:59:19: warning: comparison of distinct pointer types lacks a cast
+   59 |     else if (port == GPIOC)
+      |                   ^~
+../Src/gpio_driver.c:64:19: warning: comparison of distinct pointer types lacks a cast
+   64 |     else if (port == GPIOD)
+      |                   ^~
+../Src/gpio_driver.c:69:19: warning: comparison of distinct pointer types lacks a cast
+   69 |     else if (port == GPIOH)
+      |                   ^~
+arm-none-eabi-gcc -o "Interrupt_driver.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Haril_bitsilica\STM_training_module\driver_playist_2\L_series_SPI_interrupt_driver\Interrupt_driver\STM32L053C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Interrupt_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Interrupt_driver.elf
+ 
+arm-none-eabi-size  Interrupt_driver.elf 
+arm-none-eabi-objdump -h -S Interrupt_driver.elf  > "Interrupt_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   1888	      4	   1612	   3504	    db0	Interrupt_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: Interrupt_driver.list
+ 
+
+12:16:39 Build Finished. 0 errors, 10 warnings. (took 1s.858ms)
+

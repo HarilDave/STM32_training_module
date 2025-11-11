@@ -1,0 +1,10 @@
+18:04:32 **** Incremental Build of configuration Debug for project uart_DMA_loopback_test ****
+make -j8 all 
+arm-none-eabi-size  uart_DMA_loopback_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1224	     16	   1584	   2824	    b08	uart_DMA_loopback_test.elf
+Finished building: default.size.stdout
+ 
+
+18:04:33 Build Finished. 0 errors, 0 warnings. (took 464ms)
+

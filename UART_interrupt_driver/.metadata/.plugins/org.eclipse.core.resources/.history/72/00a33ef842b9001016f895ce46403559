@@ -1,0 +1,63 @@
+/*
+ * uart_int_driver.c
+ *
+ *  Created on: Nov 4, 2025
+ *      Author: Himshree
+ */
+
+#include "uart_int_driver.h"
+
+volatile uint8_t rx_data = 0;
+volatile uint8_t rx_buffer[64];
+volatile uint8_t rx_index = 0;
+
+void USART1_Init(uint32_t baudrate)
+{
+    /* Enable clocks */
+    RCC->IOPENR |= (1U << 0);      // Enable GPIOA clock
+    RCC->APB2ENR |= (1U << 14);    // Enable USART1 clock
+
+    /* Configure PA9 (TX) and PA10 (RX) as alternate function AF4 */
+    GPIOA->MODER &= ~((3U << (2 * 9)) | (3U << (2 * 10)));
+    GPIOA->MODER |=  ((2U << (2 * 9)) | (2U << (2 * 10)));   // AF mode
+
+    GPIOA->AFR[1] &= ~((0xF << 4) | (0xF << 8));             // Clear AFR for pins 9,10
+    GPIOA->AFR[1] |=  ((4U << 4) | (4U << 8));                // AF4 = USART1
+
+    GPIOA->OSPEEDR |= ((3U << (2 * 9)) | (3U << (2 * 10)));   // High speed
+
+    /* Configure USART1 */
+    USART1->BRR = (32000000U / baudrate);  // Assuming 32 MHz clock
+    USART1->CR1 = (1U << 3) | (1U << 2);   // TE, RE enable
+    USART1->CR1 |= (1U << 0);              // UE enable
+}
+
+void USART1_SendChar(char c)
+{
+    while (!(USART1->ISR & (1U << 7)));    // Wait for TXE
+    USART1->TDR = c;
+}
+
+void USART1_SendString(const char *s)
+{
+    while (*s)
+        USART1_SendChar(*s++);
+}
+
+void USART1_EnableInterrupt(void)
+{
+    USART1->CR1 |= (1U << 5);              // RXNE interrupt enable
+    NVIC_EnableIRQ(USART1_IRQn);           // Enable IRQ in NVIC
+}
+
+void USART1_IRQHandler(void)
+{
+    if (USART1->ISR & (1U << 5))           // RXNE flag
+    {
+        rx_data = (uint8_t)USART1->RDR;    // Read received byte
+        rx_buffer[rx_index++] = rx_data;
+        if (rx_index >= sizeof(rx_buffer))
+            rx_index = 0;
+        USART1_SendChar(rx_data);          // Echo back
+    }
+}

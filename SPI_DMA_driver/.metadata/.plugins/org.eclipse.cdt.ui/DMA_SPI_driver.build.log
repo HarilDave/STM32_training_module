@@ -1,0 +1,17 @@
+12:19:45 **** Incremental Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "DMA_SPI_driver.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Haril_bitsilica\STM_training_module\driver_playist_2\L_series_SPI_DMA_driver\DMA_SPI_driver\STM32L053C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA_SPI_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: DMA_SPI_driver.elf
+ 
+arm-none-eabi-size  DMA_SPI_driver.elf 
+arm-none-eabi-objdump -h -S DMA_SPI_driver.elf  > "DMA_SPI_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   1876	      4	   1612	   3492	    da4	DMA_SPI_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: DMA_SPI_driver.list
+ 
+
+12:19:45 Build Finished. 0 errors, 0 warnings. (took 817ms)
+

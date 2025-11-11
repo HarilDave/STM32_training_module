@@ -1,0 +1,10 @@
+18:50:06 **** Incremental Build of configuration Debug for project printf ****
+make -j8 all 
+arm-none-eabi-size  printf.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16204	    104	   3104	  19412	   4bd4	printf.elf
+Finished building: default.size.stdout
+ 
+
+18:50:07 Build Finished. 0 errors, 0 warnings. (took 865ms)
+

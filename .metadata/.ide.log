@@ -1,0 +1,367 @@
+2025-10-31 10:30:09,921 [INFO] Activator:176 - 
+
+
+2025-10-31 10:30:09,928 [INFO] Activator:177 - !SESSION log4j initialized
+2025-10-31 10:30:16,235 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2025-10-31 10:30:18,064 [INFO] ApplicationProperties:184 - Using Application install path: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659
+2025-10-31 10:30:18,099 [INFO] DbMcusXml:78 - Set database path to: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\/mcu/
+2025-10-31 10:30:18,101 [INFO] ApiDb:274 - Set plugin database path to: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\/plugins/boardmanager/
+2025-10-31 10:30:18,102 [WARN] ApiDb:259 - Overriding images path with different value:  => C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\/plugins/mcufinder/images/
+2025-10-31 10:30:18,124 [INFO] ApiDb:250 - Set database path to: C:\Users\Himshree\.stmcufinder\plugins\mcufinder//mcu/
+2025-10-31 10:30:18,126 [INFO] DbMcusAds:125 - Set database path to: C:\Users\Himshree\.stmcufinder\plugins\mcufinder//mcu/
+2025-10-31 10:30:18,129 [INFO] CrossReferenceDbSqlite:203 - Set database path to: C:\Users\Himshree\.stmcufinder\plugins\mcufinder//mcu/cs/
+2025-10-31 10:30:18,269 [INFO] RulesReader:64 - Compatibility file has been processed (317 Rules)
+2025-10-31 10:30:18,424 [INFO] DbMcusXml:78 - Set database path to: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\/mcu/
+2025-10-31 10:30:18,424 [INFO] ApiDb:274 - Set plugin database path to: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\/plugins/boardmanager/
+2025-10-31 10:30:18,425 [INFO] ApiDb:261 - Set plugin images path to: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\/plugins/mcufinder/images/
+2025-10-31 10:30:18,425 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\Himshree\.stmcufinder\plugins\mcufinder/ => C:\Users\Himshree\.stmcufinder\plugins\mcufinder
+2025-10-31 10:30:18,425 [INFO] ApiDb:250 - Set database path to: C:\Users\Himshree\.stmcufinder\plugins\mcufinder//mcu/
+2025-10-31 10:30:18,425 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\Himshree\.stmcufinder\plugins\mcufinder/ => C:\Users\Himshree\.stmcufinder\plugins\mcufinder
+2025-10-31 10:30:18,425 [INFO] DbMcusAds:125 - Set database path to: C:\Users\Himshree\.stmcufinder\plugins\mcufinder//mcu/
+2025-10-31 10:30:18,425 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\Himshree\.stmcufinder\plugins\mcufinder/ => C:\Users\Himshree\.stmcufinder\plugins\mcufinder
+2025-10-31 10:30:18,425 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\Himshree\.stmcufinder\plugins\mcufinder/ => C:\Users\Himshree\.stmcufinder\plugins\mcufinder
+2025-10-31 10:30:18,425 [INFO] CrossReferenceDbSqlite:203 - Set database path to: C:\Users\Himshree\.stmcufinder\plugins\mcufinder//mcu/cs/
+2025-10-31 10:30:18,541 [INFO] MainPanel:274 - HeapMemory: 268435456
+2025-10-31 10:30:18,693 [INFO] DbMcusXml:78 - Set database path to: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\/mcu/
+2025-10-31 10:30:18,693 [INFO] ApiDb:274 - Set plugin database path to: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\/plugins/boardmanager/
+2025-10-31 10:30:18,693 [INFO] ApiDb:261 - Set plugin images path to: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\/plugins/mcufinder/images/
+2025-10-31 10:30:18,693 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\Himshree\.stmcufinder\plugins\mcufinder/ => C:\Users\Himshree\.stmcufinder\plugins\mcufinder
+2025-10-31 10:30:18,693 [INFO] ApiDb:250 - Set database path to: C:\Users\Himshree\.stmcufinder\plugins\mcufinder//mcu/
+2025-10-31 10:30:18,694 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\Himshree\.stmcufinder\plugins\mcufinder/ => C:\Users\Himshree\.stmcufinder\plugins\mcufinder
+2025-10-31 10:30:18,694 [INFO] DbMcusAds:125 - Set database path to: C:\Users\Himshree\.stmcufinder\plugins\mcufinder//mcu/
+2025-10-31 10:30:18,694 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\Himshree\.stmcufinder\plugins\mcufinder/ => C:\Users\Himshree\.stmcufinder\plugins\mcufinder
+2025-10-31 10:30:18,694 [WARN] DbFile:41 - Overriding database path with different value: C:\Users\Himshree\.stmcufinder\plugins\mcufinder/ => C:\Users\Himshree\.stmcufinder\plugins\mcufinder
+2025-10-31 10:30:18,694 [INFO] CrossReferenceDbSqlite:203 - Set database path to: C:\Users\Himshree\.stmcufinder\plugins\mcufinder//mcu/cs/
+2025-10-31 10:30:18,731 [INFO] ApplicationProperties:184 - Using Application install path: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659
+2025-10-31 10:30:18,736 [INFO] PluginManage:196 - Search for loadable plugins [exclusion list=, ]
+2025-10-31 10:30:18,738 [INFO] PluginManage:310 - Check plugin analytics
+2025-10-31 10:30:19,107 [INFO] AnalyticsPlugin:253 - Accepted Software Licenses: 
+2025-10-31 10:30:19,107 [INFO] AnalyticsPlugin:255 - Accepted CMSIS Pack Licenses: 
+2025-10-31 10:30:19,109 [INFO] AnalyticsPlugin:257 - Accepted Firmware Licenses: FW.F4.1.28.0,FW.L4.1.18.0
+2025-10-31 10:30:19,116 [INFO] PluginManage:359 - Loaded plugin analytics (category:tool,tabindex:-1)
+2025-10-31 10:30:19,118 [INFO] PluginManage:310 - Check plugin cadmodel
+2025-10-31 10:30:19,124 [INFO] CADModel:105 - Init CAD model plugin
+2025-10-31 10:30:19,125 [INFO] PluginManage:359 - Loaded plugin cadmodel (category:power,tabindex:5)
+2025-10-31 10:30:19,125 [INFO] PluginManage:310 - Check plugin clock
+2025-10-31 10:30:19,143 [INFO] PluginManage:359 - Loaded plugin clock (category:base,tabindex:2)
+2025-10-31 10:30:19,144 [INFO] PluginManage:310 - Check plugin ddr
+2025-10-31 10:30:19,149 [INFO] PluginManage:359 - Loaded plugin ddr (category:tool,tabindex:6)
+2025-10-31 10:30:19,150 [INFO] PluginManage:310 - Check plugin filemanager
+2025-10-31 10:30:19,408 [INFO] PluginManage:359 - Loaded plugin filemanager (category:base,tabindex:10)
+2025-10-31 10:30:19,408 [INFO] PluginManage:310 - Check plugin ipmanager
+2025-10-31 10:30:19,419 [INFO] PluginManage:359 - Loaded plugin ipmanager (category:base,tabindex:5)
+2025-10-31 10:30:19,420 [INFO] PluginManage:310 - Check plugin lpbam
+2025-10-31 10:30:19,436 [INFO] PluginManage:359 - Loaded plugin lpbam (category:base,tabindex:0)
+2025-10-31 10:30:19,437 [INFO] PluginManage:310 - Check plugin memorymap
+2025-10-31 10:30:19,467 [INFO] PluginManage:359 - Loaded plugin memorymap (category:base,tabindex:4)
+2025-10-31 10:30:19,467 [INFO] PluginManage:310 - Check plugin pinoutandconfiguration
+2025-10-31 10:30:19,480 [INFO] PluginManage:359 - Loaded plugin pinoutandconfiguration (category:base,tabindex:1)
+2025-10-31 10:30:19,481 [INFO] PluginManage:310 - Check plugin pinoutconfig
+2025-10-31 10:30:19,629 [WARN] SupportedApi:132 - Cannot load RTOS API schema: s4s-elt-must-match.1: The content of 'definitions' must match (annotation?, (simpleType | complexType)?, (unique | key | keyref)*)). A problem was found starting at: attribute.
+2025-10-31 10:30:19,801 [INFO] PluginManage:359 - Loaded plugin pinoutconfig (category:base,tabindex:0)
+2025-10-31 10:30:19,802 [INFO] PluginManage:310 - Check plugin power
+2025-10-31 10:30:19,813 [INFO] PluginManage:359 - Loaded plugin power (category:power,tabindex:4)
+2025-10-31 10:30:19,813 [INFO] PluginManage:310 - Check plugin projectmanager
+2025-10-31 10:30:19,837 [INFO] PluginManage:359 - Loaded plugin projectmanager (category:projectmanager,tabindex:4)
+2025-10-31 10:30:19,837 [INFO] PluginManage:310 - Check plugin rif
+2025-10-31 10:30:19,851 [INFO] PluginManage:359 - Loaded plugin rif (category:base,tabindex:3)
+2025-10-31 10:30:19,852 [INFO] PluginManage:310 - Check plugin thirdparty
+2025-10-31 10:30:20,089 [WARN] IntegrityCheckThread:84 - waiting for thirdparty lock release [integrity check]
+2025-10-31 10:30:20,089 [INFO] PluginManage:359 - Loaded plugin thirdparty (category:base,tabindex:-1)
+2025-10-31 10:30:20,089 [INFO] IntegrityCheckThread:86 - entering critical section [integrity check]
+2025-10-31 10:30:20,090 [INFO] PluginManage:310 - Check plugin tools
+2025-10-31 10:30:20,090 [INFO] ThirdPartyUpdaterWithRetryManager:70 - Updater plugin not ready yet. [1/15]
+2025-10-31 10:30:20,093 [INFO] PluginManage:359 - Loaded plugin tools (category:base,tabindex:7)
+2025-10-31 10:30:20,094 [INFO] PluginManage:310 - Check plugin tutovideos
+2025-10-31 10:30:20,378 [INFO] PluginManage:359 - Loaded plugin tutovideos (category:base,tabindex:-1)
+2025-10-31 10:30:20,378 [INFO] PluginManage:310 - Check plugin updater
+2025-10-31 10:30:20,403 [INFO] PluginManage:359 - Loaded plugin updater (category:base,tabindex:12)
+2025-10-31 10:30:20,403 [INFO] PluginManage:310 - Check plugin userauth
+2025-10-31 10:30:20,407 [INFO] UserAuth:118 - Init User Auth plugin
+2025-10-31 10:30:20,408 [INFO] PluginManage:359 - Loaded plugin userauth (category:base,tabindex:14)
+2025-10-31 10:30:20,409 [INFO] PluginManage:283 - PluginManage : Loaded plugins [18]
+2025-10-31 10:30:20,654 [INFO] PinOutPanel:1589 - setPackage(No Configuration,No Configuration)
+2025-10-31 10:30:20,756 [INFO] CADModel:165 - CPN selected for project level
+2025-10-31 10:30:20,756 [INFO] CADModel:114 - Register for checkConnection events
+2025-10-31 10:30:20,781 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,781 [INFO] PluginManager:220 - loadIPPluginJar : add adc
+2025-10-31 10:30:20,786 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,786 [INFO] PluginManager:220 - loadIPPluginJar : add aes
+2025-10-31 10:30:20,790 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,790 [INFO] PluginManager:220 - loadIPPluginJar : add can
+2025-10-31 10:30:20,793 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,793 [INFO] PluginManager:220 - loadIPPluginJar : add comp
+2025-10-31 10:30:20,797 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,797 [INFO] PluginManager:220 - loadIPPluginJar : add cryp
+2025-10-31 10:30:20,802 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,802 [INFO] PluginManager:220 - loadIPPluginJar : add ddr_ctrl_phy
+2025-10-31 10:30:20,805 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,805 [INFO] PluginManager:220 - loadIPPluginJar : add dfsdm
+2025-10-31 10:30:20,812 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,812 [INFO] PluginManager:220 - loadIPPluginJar : add dma
+2025-10-31 10:30:20,815 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,815 [INFO] PluginManager:220 - loadIPPluginJar : add dma3
+2025-10-31 10:30:20,821 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,821 [INFO] PluginManager:220 - loadIPPluginJar : add extmemmanager
+2025-10-31 10:30:20,824 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,824 [INFO] PluginManager:220 - loadIPPluginJar : add fatfs
+2025-10-31 10:30:20,829 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,829 [INFO] PluginManager:220 - loadIPPluginJar : add fmc
+2025-10-31 10:30:20,836 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,836 [INFO] PluginManager:220 - loadIPPluginJar : add freertos
+2025-10-31 10:30:20,838 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,839 [INFO] PluginManager:220 - loadIPPluginJar : add genericplugin
+2025-10-31 10:30:20,843 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,843 [INFO] PluginManager:220 - loadIPPluginJar : add gfxmmu
+2025-10-31 10:30:20,850 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,851 [INFO] PluginManager:220 - loadIPPluginJar : add gic
+2025-10-31 10:30:20,857 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,857 [INFO] PluginManager:220 - loadIPPluginJar : add gpio
+2025-10-31 10:30:20,861 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,861 [INFO] PluginManager:220 - loadIPPluginJar : add gtzc
+2025-10-31 10:30:20,865 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,865 [INFO] PluginManager:220 - loadIPPluginJar : add hash
+2025-10-31 10:30:20,871 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,871 [INFO] PluginManager:220 - loadIPPluginJar : add i2c
+2025-10-31 10:30:20,875 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,875 [INFO] PluginManager:220 - loadIPPluginJar : add i2s
+2025-10-31 10:30:20,879 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,879 [INFO] PluginManager:220 - loadIPPluginJar : add i3c
+2025-10-31 10:30:20,885 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,886 [INFO] PluginManager:220 - loadIPPluginJar : add ipddr
+2025-10-31 10:30:20,895 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,896 [INFO] PluginManager:220 - loadIPPluginJar : add linkedlist
+2025-10-31 10:30:20,902 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,902 [INFO] PluginManager:220 - loadIPPluginJar : add lorawan
+2025-10-31 10:30:20,904 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,906 [INFO] PluginManager:220 - loadIPPluginJar : add ltdc
+2025-10-31 10:30:20,913 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,913 [INFO] PluginManager:220 - loadIPPluginJar : add mdma
+2025-10-31 10:30:20,919 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,919 [INFO] PluginManager:220 - loadIPPluginJar : add nvic
+2025-10-31 10:30:20,923 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,923 [INFO] PluginManager:220 - loadIPPluginJar : add opamp
+2025-10-31 10:30:20,929 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,929 [INFO] PluginManager:220 - loadIPPluginJar : add openamp
+2025-10-31 10:30:20,935 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,935 [INFO] PluginManager:220 - loadIPPluginJar : add pdm2pcm
+2025-10-31 10:30:20,943 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,947 [INFO] PluginManager:220 - loadIPPluginJar : add plateformsettings
+2025-10-31 10:30:20,952 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,952 [INFO] PluginManager:220 - loadIPPluginJar : add quadspi
+2025-10-31 10:30:20,955 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,956 [INFO] PluginManager:220 - loadIPPluginJar : add radio
+2025-10-31 10:30:20,961 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,962 [INFO] PluginManager:220 - loadIPPluginJar : add resmgrutility
+2025-10-31 10:30:20,969 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,969 [INFO] PluginManager:220 - loadIPPluginJar : add sai
+2025-10-31 10:30:20,973 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,973 [INFO] PluginManager:220 - loadIPPluginJar : add spi
+2025-10-31 10:30:20,982 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,983 [INFO] PluginManager:220 - loadIPPluginJar : add stm32_wpan
+2025-10-31 10:30:20,986 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,987 [INFO] PluginManager:220 - loadIPPluginJar : add tim
+2025-10-31 10:30:20,991 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,992 [INFO] PluginManager:220 - loadIPPluginJar : add touchsensing
+2025-10-31 10:30:20,994 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,994 [INFO] PluginManager:220 - loadIPPluginJar : add tracer_emb
+2025-10-31 10:30:20,997 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:20,997 [INFO] PluginManager:220 - loadIPPluginJar : add ts
+2025-10-31 10:30:21,001 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:21,001 [INFO] PluginManager:220 - loadIPPluginJar : add tsc
+2025-10-31 10:30:21,005 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:21,005 [INFO] PluginManager:220 - loadIPPluginJar : add ucpd
+2025-10-31 10:30:21,009 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:21,009 [INFO] PluginManager:220 - loadIPPluginJar : add usart
+2025-10-31 10:30:21,013 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-10-31 10:30:21,013 [INFO] PluginManager:220 - loadIPPluginJar : add usbx
+2025-10-31 10:30:21,165 [FATAL] Updater:351 - Updater called before beeing initialized
+2025-10-31 10:30:21,194 [INFO] RulesReader:64 - Compatibility file has been processed (317 Rules)
+2025-10-31 10:30:21,207 [INFO] RulesReader:64 - Compatibility file has been processed (317 Rules)
+2025-10-31 10:30:21,216 [INFO] CADModel:165 - CPN selected for project level
+2025-10-31 10:30:21,216 [INFO] CADModel:114 - Register for checkConnection events
+2025-10-31 10:30:21,216 [FATAL] Updater:351 - Updater called before beeing initialized
+2025-10-31 10:30:21,218 [ERROR] CADModel:125 - Updater not yet initialized, retry later 
+2025-10-31 10:30:21,391 [FATAL] Updater:351 - Updater called before beeing initialized
+2025-10-31 10:30:21,393 [INFO] CADModel:165 - CPN selected for project level
+2025-10-31 10:30:21,393 [INFO] CADModel:114 - Register for checkConnection events
+2025-10-31 10:30:21,393 [FATAL] Updater:351 - Updater called before beeing initialized
+2025-10-31 10:30:21,393 [ERROR] CADModel:125 - Updater not yet initialized, retry later 
+2025-10-31 10:30:21,396 [FATAL] Updater:351 - Updater called before beeing initialized
+2025-10-31 10:30:21,581 [FATAL] Updater:351 - Updater called before beeing initialized
+2025-10-31 10:30:21,586 [INFO] DbMcusAds:53 - JSON generation date=Thu Oct 02 15:06:05 IST 2025 (1759397765645)
+2025-10-31 10:30:21,586 [FATAL] Updater:351 - Updater called before beeing initialized
+2025-10-31 10:30:21,634 [WARN] DetailPanel:346 - Failed to get advertising image, set to default
+2025-10-31 10:30:21,743 [FATAL] Updater:351 - Updater called before beeing initialized
+2025-10-31 10:30:21,744 [FATAL] Updater:351 - Updater called before beeing initialized
+2025-10-31 10:30:21,744 [FATAL] Updater:351 - Updater called before beeing initialized
+2025-10-31 10:30:21,745 [WARN] DetailPanel:346 - Failed to get advertising image, set to default
+2025-10-31 10:30:21,745 [FATAL] Updater:351 - Updater called before beeing initialized
+2025-10-31 10:30:21,797 [ERROR] Updater:1198 - MainUpdater not yet initialized. External WinMGr cannot be set.
+2025-10-31 10:30:21,800 [INFO] Updater:1134 - Updater Version found : 6.15.0
+2025-10-31 10:30:21,819 [INFO] ApplicationProperties:184 - Using Application install path: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659
+2025-10-31 10:30:23,091 [INFO] ThirdPartyUpdaterWithRetryManager:70 - Updater plugin not ready yet. [2/15]
+2025-10-31 10:30:23,393 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Oct 31, 2025 10:30:23 AM java.util.prefs.WindowsPreferences <init>
+2025-10-31 10:30:23,395 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] WARNING: Could not open/create prefs root node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegCreateKeyEx(...) returned error code 5.
+2025-10-31 10:30:23,395 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2025-10-31 10:30:26,092 [FATAL] Updater:351 - Updater called before beeing initialized
+2025-10-31 10:30:26,092 [ERROR] IntegrityCheckThread:130 - Cannot retrieve database content from updater: error 21
+2025-10-31 10:30:26,092 [INFO] ThirdParty:978 - Integrity check success = false
+2025-10-31 10:30:26,092 [INFO] IntegrityCheckThread:100 - exiting critical section [integrity check]
+2025-10-31 10:30:26,093 [INFO] IntegrityCheckThread:103 - End integrity checks thread
+2025-10-31 10:30:26,779 [INFO] MainUpdater:2872 - connection check result : 10
+2025-10-31 10:30:26,780 [INFO] MainUpdater:289 - Updater Check For Update Now.
+2025-10-31 10:30:26,781 [INFO] MicroXplorer:498 - Change Database Version : DB.6.0.150
+2025-10-31 10:30:26,790 [INFO] McuFinderGlobals:63 - Set McuFinder mode to 2 (CubeIDE integrated)
+2025-10-31 10:30:26,791 [INFO] UserAuth:487 - Internet connection configuration mode: 1
+2025-10-31 10:30:26,831 [INFO] JxBrowserEngine:152 - Initiate JxBrowser Engine with user profile folder
+2025-10-31 10:30:27,019 [INFO] CheckServerUpdateThread:120 - End of CheckServer Thread
+2025-10-31 10:30:28,072 [INFO] WebApp:169 - Instantiating new browser for Auth
+2025-10-31 10:30:29,329 [INFO] WebApp:463 - Apply proxy settings
+2025-10-31 10:30:29,329 [INFO] WebApp:548 - Chromium requires no authentication
+2025-10-31 10:30:29,353 [INFO] WebApp:491 - Direct internet connection detected
+2025-10-31 10:30:29,403 [INFO] WebApp:900 - Register for checkConnection events
+2025-10-31 10:30:29,403 [INFO] WebApp:463 - Apply proxy settings
+2025-10-31 10:30:29,404 [INFO] WebApp:548 - Chromium requires no authentication
+2025-10-31 10:30:29,404 [INFO] WebApp:491 - Direct internet connection detected
+2025-10-31 10:30:29,685 [INFO] WebApp:225 - Starting web application
+2025-10-31 10:30:29,685 [INFO] WebApp:593 - Web application path used C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\db\plugins\mcufinder\reactClient1\index.html
+2025-10-31 10:30:29,722 [INFO] WebApp:191 - Connection restablished
+2025-10-31 10:30:30,136 [INFO] UserAuth:487 - Internet connection configuration mode: 1
+2025-10-31 10:30:32,086 [INFO] WebApp:194 - Connection lost
+2025-10-31 10:30:32,348 [INFO] WebApp:191 - Connection restablished
+2025-10-31 10:30:39,073 [INFO] WebApp:194 - Connection lost
+2025-10-31 10:30:39,262 [INFO] WebApp:191 - Connection restablished
+2025-10-31 10:32:42,080 [INFO] WebApp:194 - Connection lost
+2025-10-31 10:32:42,262 [INFO] WebApp:191 - Connection restablished
+2025-10-31 10:44:56,781 [INFO] WebApp:194 - Connection lost
+2025-10-31 10:44:57,240 [INFO] WebApp:191 - Connection restablished
+2025-10-31 10:48:04,540 [INFO] WebApp:194 - Connection lost
+2025-10-31 10:48:04,701 [INFO] WebApp:191 - Connection restablished
+2025-10-31 10:50:46,052 [INFO] WebApp:194 - Connection lost
+2025-10-31 10:50:46,238 [INFO] WebApp:191 - Connection restablished
+2025-10-31 10:59:41,018 [INFO] WebApp:194 - Connection lost
+2025-10-31 10:59:41,203 [INFO] WebApp:191 - Connection restablished
+2025-10-31 11:01:06,023 [INFO] WebApp:194 - Connection lost
+2025-10-31 11:01:06,201 [INFO] WebApp:191 - Connection restablished
+2025-10-31 11:06:07,612 [INFO] WebApp:194 - Connection lost
+2025-10-31 11:06:07,831 [INFO] WebApp:191 - Connection restablished
+2025-10-31 11:11:18,513 [INFO] WebApp:194 - Connection lost
+2025-10-31 11:11:18,814 [INFO] WebApp:191 - Connection restablished
+2025-10-31 11:11:27,985 [INFO] WebApp:194 - Connection lost
+2025-10-31 11:11:28,159 [INFO] WebApp:191 - Connection restablished
+2025-10-31 11:17:02,102 [INFO] WebApp:194 - Connection lost
+2025-10-31 11:17:02,523 [INFO] WebApp:191 - Connection restablished
+2025-10-31 11:22:01,023 [INFO] WebApp:194 - Connection lost
+2025-10-31 11:22:01,219 [INFO] WebApp:191 - Connection restablished
+2025-10-31 11:34:04,822 [INFO] WebApp:194 - Connection lost
+2025-10-31 11:34:05,002 [INFO] WebApp:191 - Connection restablished
+2025-10-31 11:39:15,494 [INFO] WebApp:194 - Connection lost
+2025-10-31 11:39:15,685 [INFO] WebApp:191 - Connection restablished
+2025-10-31 11:40:05,429 [INFO] WebApp:194 - Connection lost
+2025-10-31 11:40:05,615 [INFO] WebApp:191 - Connection restablished
+2025-10-31 11:51:18,199 [INFO] WebApp:194 - Connection lost
+2025-10-31 11:51:18,647 [INFO] WebApp:191 - Connection restablished
+2025-10-31 11:56:29,174 [INFO] WebApp:194 - Connection lost
+2025-10-31 11:56:29,463 [INFO] WebApp:191 - Connection restablished
+2025-10-31 11:59:36,976 [INFO] WebApp:194 - Connection lost
+2025-10-31 11:59:37,195 [INFO] WebApp:191 - Connection restablished
+2025-10-31 12:04:47,940 [INFO] WebApp:194 - Connection lost
+2025-10-31 12:04:48,152 [INFO] WebApp:191 - Connection restablished
+2025-10-31 12:14:51,956 [INFO] WebApp:194 - Connection lost
+2025-10-31 12:14:52,209 [INFO] WebApp:191 - Connection restablished
+2025-10-31 12:21:12,920 [INFO] WebApp:194 - Connection lost
+2025-10-31 12:21:13,118 [INFO] WebApp:191 - Connection restablished
+2025-10-31 12:28:04,940 [INFO] WebApp:194 - Connection lost
+2025-10-31 12:28:05,139 [INFO] WebApp:191 - Connection restablished
+2025-10-31 12:32:39,924 [INFO] WebApp:194 - Connection lost
+2025-10-31 12:32:40,103 [INFO] WebApp:191 - Connection restablished
+2025-10-31 12:37:50,900 [INFO] WebApp:194 - Connection lost
+2025-10-31 12:37:51,185 [INFO] WebApp:191 - Connection restablished
+2025-10-31 12:43:01,984 [INFO] WebApp:194 - Connection lost
+2025-10-31 12:43:02,206 [INFO] WebApp:191 - Connection restablished
+2025-10-31 12:44:07,915 [INFO] WebApp:194 - Connection lost
+2025-10-31 12:44:08,102 [INFO] WebApp:191 - Connection restablished
+2025-10-31 12:49:18,930 [INFO] WebApp:194 - Connection lost
+2025-10-31 12:49:19,148 [INFO] WebApp:191 - Connection restablished
+2025-10-31 12:49:38,904 [INFO] WebApp:194 - Connection lost
+2025-10-31 12:49:39,070 [INFO] WebApp:191 - Connection restablished
+2025-10-31 12:54:49,941 [INFO] WebApp:194 - Connection lost
+2025-10-31 12:54:50,188 [INFO] WebApp:191 - Connection restablished
+2025-10-31 12:55:41,418 [INFO] WebApp:194 - Connection lost
+2025-10-31 12:55:41,676 [INFO] WebApp:191 - Connection restablished
+2025-10-31 13:04:33,747 [INFO] WebApp:194 - Connection lost
+2025-10-31 13:04:33,912 [INFO] WebApp:191 - Connection restablished
+2025-10-31 13:09:43,927 [INFO] WebApp:194 - Connection lost
+2025-10-31 13:09:44,138 [INFO] WebApp:191 - Connection restablished
+2025-10-31 13:26:06,454 [INFO] WebApp:194 - Connection lost
+2025-10-31 13:26:06,682 [INFO] WebApp:191 - Connection restablished
+2025-10-31 13:41:16,876 [INFO] WebApp:194 - Connection lost
+2025-10-31 13:41:17,100 [INFO] WebApp:191 - Connection restablished
+2025-10-31 14:06:38,321 [INFO] WebApp:194 - Connection lost
+2025-10-31 14:06:38,852 [INFO] WebApp:191 - Connection restablished
+2025-10-31 14:18:11,106 [INFO] WebApp:194 - Connection lost
+2025-10-31 14:18:11,435 [INFO] WebApp:191 - Connection restablished
+2025-10-31 14:28:52,758 [INFO] WebApp:194 - Connection lost
+2025-10-31 14:28:53,381 [INFO] WebApp:191 - Connection restablished
+2025-10-31 14:34:53,956 [INFO] WebApp:194 - Connection lost
+2025-10-31 14:34:54,210 [INFO] WebApp:191 - Connection restablished
+2025-10-31 14:39:54,924 [INFO] WebApp:194 - Connection lost
+2025-10-31 14:39:55,150 [INFO] WebApp:191 - Connection restablished
+2025-10-31 14:43:02,895 [INFO] WebApp:194 - Connection lost
+2025-10-31 14:43:03,097 [INFO] WebApp:191 - Connection restablished
+2025-10-31 14:58:10,647 [INFO] WebApp:194 - Connection lost
+2025-10-31 14:58:11,155 [INFO] WebApp:191 - Connection restablished
+2025-10-31 14:59:54,921 [INFO] WebApp:194 - Connection lost
+2025-10-31 14:59:55,118 [INFO] WebApp:191 - Connection restablished
+2025-10-31 15:04:12,986 [INFO] WebApp:194 - Connection lost
+2025-10-31 15:04:13,206 [INFO] WebApp:191 - Connection restablished
+2025-10-31 15:07:18,410 [INFO] WebApp:194 - Connection lost
+2025-10-31 15:07:18,624 [INFO] WebApp:191 - Connection restablished
+2025-10-31 15:09:53,399 [INFO] WebApp:194 - Connection lost
+2025-10-31 15:09:53,582 [INFO] WebApp:191 - Connection restablished
+2025-10-31 15:16:25,777 [INFO] WebApp:194 - Connection lost
+2025-10-31 15:16:26,502 [INFO] WebApp:191 - Connection restablished
+2025-10-31 15:28:03,765 [INFO] WebApp:194 - Connection lost
+2025-10-31 15:28:04,464 [INFO] WebApp:191 - Connection restablished
+2025-10-31 15:33:15,207 [INFO] WebApp:194 - Connection lost
+2025-10-31 15:33:15,548 [INFO] WebApp:191 - Connection restablished
+2025-10-31 15:34:57,544 [INFO] WebApp:194 - Connection lost
+2025-10-31 15:34:57,783 [INFO] WebApp:191 - Connection restablished
+2025-10-31 15:40:08,550 [INFO] WebApp:194 - Connection lost
+2025-10-31 15:40:09,021 [INFO] WebApp:191 - Connection restablished
+2025-10-31 15:43:13,200 [INFO] WebApp:194 - Connection lost
+2025-10-31 15:43:13,552 [INFO] WebApp:191 - Connection restablished
+2025-10-31 15:46:30,572 [INFO] WebApp:194 - Connection lost
+2025-10-31 15:46:31,076 [INFO] WebApp:191 - Connection restablished
+2025-10-31 15:51:42,047 [INFO] WebApp:194 - Connection lost
+2025-10-31 15:51:42,455 [INFO] WebApp:191 - Connection restablished
+2025-10-31 15:53:07,563 [INFO] WebApp:194 - Connection lost
+2025-10-31 15:53:07,986 [INFO] WebApp:191 - Connection restablished
+2025-10-31 15:58:19,897 [INFO] WebApp:194 - Connection lost
+2025-10-31 15:58:20,663 [INFO] WebApp:191 - Connection restablished
+2025-10-31 15:59:10,656 [INFO] WebApp:194 - Connection lost
+2025-10-31 15:59:11,174 [INFO] WebApp:191 - Connection restablished
+2025-10-31 16:04:22,454 [INFO] WebApp:194 - Connection lost
+2025-10-31 16:04:22,792 [INFO] WebApp:191 - Connection restablished
+2025-10-31 16:20:03,378 [INFO] WebApp:194 - Connection lost
+2025-10-31 16:20:04,076 [INFO] WebApp:191 - Connection restablished
+2025-10-31 16:30:04,228 [INFO] WebApp:194 - Connection lost
+2025-10-31 16:30:04,746 [INFO] WebApp:191 - Connection restablished
+2025-10-31 16:35:16,570 [INFO] WebApp:194 - Connection lost
+2025-10-31 16:35:17,420 [INFO] WebApp:191 - Connection restablished
+2025-10-31 16:36:06,432 [INFO] WebApp:194 - Connection lost
+2025-10-31 16:36:06,698 [INFO] WebApp:191 - Connection restablished
+2025-10-31 16:41:18,143 [INFO] WebApp:194 - Connection lost
+2025-10-31 16:41:18,814 [INFO] WebApp:191 - Connection restablished
+2025-10-31 16:42:08,433 [INFO] WebApp:194 - Connection lost
+2025-10-31 16:42:08,633 [INFO] WebApp:191 - Connection restablished
+2025-10-31 16:45:12,379 [INFO] WebApp:194 - Connection lost
+2025-10-31 16:45:12,615 [INFO] WebApp:191 - Connection restablished
+2025-10-31 16:48:10,400 [INFO] WebApp:194 - Connection lost
+2025-10-31 16:48:10,672 [INFO] WebApp:191 - Connection restablished
+2025-10-31 16:53:54,219 [INFO] WebApp:194 - Connection lost
+2025-10-31 16:53:54,642 [INFO] WebApp:191 - Connection restablished
+2025-10-31 16:56:57,609 [INFO] WebApp:194 - Connection lost
+2025-10-31 16:56:58,338 [INFO] WebApp:191 - Connection restablished
+2025-10-31 16:57:03,654 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 

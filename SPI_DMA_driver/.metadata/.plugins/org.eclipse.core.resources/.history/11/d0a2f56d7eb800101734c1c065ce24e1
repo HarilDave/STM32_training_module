@@ -1,0 +1,191 @@
+/*
+ * spi_driver.c
+ *
+ *  Created on: Oct 30, 2025
+ *      Author: Himshree
+ */
+
+#include "spi_driver.h"
+
+void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t EnOrDi)
+{
+	if (EnOrDi)
+	{
+		if (pSPIx == SPI1) RCC->APB2ENR |= (1 << 12);
+		else if (pSPIx == SPI2) RCC->APB1ENR |= (1 << 14);
+	}
+	else
+	{
+		if (pSPIx == SPI1) RCC->APB2ENR &= ~(1 << 12);
+		else if (pSPIx == SPI2) RCC->APB1ENR &= ~(1 << 14);
+	}
+}
+
+void SPI_Init(SPI_Handle_t *pSPIHandle)
+{
+	uint32_t tempreg = 0;
+
+
+	SPI1->CR1 |= (1 << 8);   // SSM = 1  (software slave management)
+	SPI1->CR1 |= (1 << 9);   // SSI = 1  (internal slave select high)
+	SPI1->CR1 |= (1 << 6);   // SPE = 1  (enable SPI)
+
+
+	// Configure device mode
+	tempreg |= (pSPIHandle->SPIConfig.DeviceMode << 2);
+
+	// Configure bus config
+	if (pSPIHandle->SPIConfig.BusConfig == SPI_BUS_FULL_DUPLEX)
+	{
+		tempreg &= ~(1 << 15);
+	}
+	else if (pSPIHandle->SPIConfig.BusConfig == SPI_BUS_HALF_DUPLEX)
+	{
+		tempreg |= (1 << 15);
+	}
+	else if (pSPIHandle->SPIConfig.BusConfig == SPI_BUS_SIMPLEX_RX)
+	{
+		tempreg &= ~(1 << 15);
+		tempreg |= (1 << 10);
+	}
+
+	// Configure baud rate
+	tempreg |= (pSPIHandle->SPIConfig.SclkSpeed << 3);
+
+	// Configure DFF
+	tempreg |= (pSPIHandle->SPIConfig.DFF << 11);
+
+	// Configure CPOL and CPHA
+	tempreg |= (pSPIHandle->SPIConfig.CPOL << 1);
+	tempreg |= (pSPIHandle->SPIConfig.CPHA << 0);
+
+	// Configure SSM
+	tempreg |= (pSPIHandle->SPIConfig.SSM << 9);
+
+	pSPIHandle->pSPIx->CR1 = tempreg;
+}
+
+void SPI_DeInit(SPI_RegDef_t *pSPIx)
+{
+	if (pSPIx == SPI1) RCC->APB2RSTR |= (1 << 12);
+	else if (pSPIx == SPI2) RCC->APB1RSTR |= (1 << 14);
+}
+
+void SPI_Enable(SPI_RegDef_t *pSPIx, uint8_t EnOrDi)
+{
+	if (EnOrDi)
+		pSPIx->CR1 |= (1 << 6);   // Enable SPI
+	else
+		pSPIx->CR1 &= ~(1 << 6);  // Disable SPI
+}
+
+void SPI_ClockControl(SPI_RegDef_t *pSPIx, uint8_t EnOrDi)
+{
+	if (EnOrDi == ENABLE)
+	{
+		if (pSPIx == SPI1) RCC->APB2ENR |= (1 << 12);
+		else if (pSPIx == SPI2) RCC->APB1ENR |= (1 << 14);
+	}
+	else
+	{
+		if (pSPIx == SPI1) RCC->APB2ENR &= ~(1 << 12);
+		else if (pSPIx == SPI2) RCC->APB1ENR &= ~(1 << 14);
+	}
+}
+
+
+
+
+uint8_t SPI_GetFlagStatus(SPI_RegDef_t *pSPIx, uint32_t FlagName)
+{
+	if (pSPIx->SR & FlagName)
+		return 1;
+	return 0;
+}
+
+void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxBuffer, uint32_t Len)
+{
+	while (Len > 0)
+	{
+		while (!SPI_GetFlagStatus(pSPIx, SPI_TXE_FLAG));
+		pSPIx->DR = *pTxBuffer;
+		pTxBuffer++;
+		Len--;
+	}
+	while (SPI_GetFlagStatus(pSPIx, SPI_BSY_FLAG));
+}
+
+void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len)
+{
+	while (Len > 0)
+	{
+		while (!SPI_GetFlagStatus(pSPIx, SPI_RXNE_FLAG));
+		*pRxBuffer = pSPIx->DR;
+		pRxBuffer++;
+		Len--;
+	}
+}
+
+void SPI_SSIConfig(SPI_RegDef_t *pSPIx, uint8_t EnOrDi)
+{
+	if (EnOrDi == ENABLE)
+	{
+		pSPIx->CR1 |= (1 << SPI_CR1_SSI);
+	}
+	else
+	{
+		pSPIx->CR1 &= ~(1 << SPI_CR1_SSI);
+	}
+}
+
+
+//////////////////////////               DMA
+
+void SPI1_DMA_Init(void)
+{
+    __HAL_RCC_DMA1_CLK_ENABLE();
+
+    // SPI1 TX DMA (DMA1 Channel3)
+    hdma_spi1_tx.Instance = DMA1_Channel3;
+    hdma_spi1_tx.Init.Request = DMA_REQUEST_1;
+    hdma_spi1_tx.Init.Direction = DMA_MEMORY_TO_PERIPH;
+    hdma_spi1_tx.Init.PeriphInc = DMA_PINC_DISABLE;
+    hdma_spi1_tx.Init.MemInc = DMA_MINC_ENABLE;
+    hdma_spi1_tx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
+    hdma_spi1_tx.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
+    hdma_spi1_tx.Init.Mode = DMA_NORMAL;
+    hdma_spi1_tx.Init.Priority = DMA_PRIORITY_LOW;
+    HAL_DMA_Init(&hdma_spi1_tx);
+
+    __HAL_LINKDMA(&hspi1, hdmatx, hdma_spi1_tx);
+
+    // SPI1 RX DMA (DMA1 Channel2)
+    hdma_spi1_rx.Instance = DMA1_Channel2;
+    hdma_spi1_rx.Init.Request = DMA_REQUEST_1;
+    hdma_spi1_rx.Init.Direction = DMA_PERIPH_TO_MEMORY;
+    hdma_spi1_rx.Init.PeriphInc = DMA_PINC_DISABLE;
+    hdma_spi1_rx.Init.MemInc = DMA_MINC_ENABLE;
+    hdma_spi1_rx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
+    hdma_spi1_rx.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
+    hdma_spi1_rx.Init.Mode = DMA_NORMAL;
+    hdma_spi1_rx.Init.Priority = DMA_PRIORITY_HIGH;
+    HAL_DMA_Init(&hdma_spi1_rx);
+
+    __HAL_LINKDMA(&hspi1, hdmarx, hdma_spi1_rx);
+
+    // NVIC DMA IRQs
+    HAL_NVIC_SetPriority(DMA1_Channel2_3_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(DMA1_Channel2_3_IRQn);
+}
+
+void SPI1_DMA_TransmitReceive(uint8_t *txData, uint8_t *rxData, uint16_t size)
+{
+    HAL_SPI_TransmitReceive_DMA(&hspi1, txData, rxData, size);
+}
+
+// IRQ Handler
+void DMA1_Channel2_3_IRQHandler(void)
+{
+    HAL_DMA_IRQHandler(&hdma_spi1_tx);
+    HAL_DMA_IRQHandler(&hdma_spi1_rx);
+}

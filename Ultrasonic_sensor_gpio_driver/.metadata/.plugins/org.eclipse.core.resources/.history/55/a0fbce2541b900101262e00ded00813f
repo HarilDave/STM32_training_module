@@ -1,0 +1,53 @@
+/*
+ * ultrasonic.c
+ *
+ *  Created on: Nov 4, 2025
+ *      Author: Himshree
+ */
+#include <stdint.h>
+#include"ultrasonic.h"
+
+#define TRIG_PIN 1  // PA1
+#define ECHO_PIN 2  // PA2
+
+void delay_us(uint16_t us)
+{
+    TIM2_CNT = 0;
+    while(TIM2_CNT < us);
+}
+
+//void Ultrasonic_Init(void)
+//{
+//    RCC_AHBENR |= (1 << 0);
+//    RCC_APB1ENR |= (1 << 0);
+//
+//    GPIOA_MODER &= ~((3 << (ECHO_PIN * 2)) | (3 << (TRIG_PIN * 2)));
+//    GPIOA_MODER |=  (1 << (TRIG_PIN * 2));
+//
+//    TIM2_PSC = 16 - 1;
+//    TIM2_ARR = 0xFFFF;
+//    TIM2_CR1 |= 1;
+//}
+
+//float Ultrasonic_Read(void)
+//{
+//    uint32_t count = 0;
+//
+//    GPIOA_ODR &= ~(1 << TRIG_PIN);
+//    delay_us(2);
+//    GPIOA_ODR |= (1 << TRIG_PIN);
+//    delay_us(10);
+//    GPIOA_ODR &= ~(1 << TRIG_PIN);
+//
+//    while(!(GPIOA_IDR & (1 << ECHO_PIN)));
+//    TIM2_CNT = 0;
+//
+//    while(GPIOA_IDR & (1 << ECHO_PIN))
+//    {
+//        if(TIM2_CNT > 60000) break;
+//    }
+//    count = TIM2_CNT;
+//
+//    float distance = count / 58.0f;
+//    return distance;
+//}

@@ -1,0 +1,162 @@
+/*
+ * stm32l.h
+ *
+ *  Created on: Nov 4, 2025
+ *      Author: Himshree
+ */
+
+#ifndef STM32L053_REGS_H
+#define STM32L053_REGS_H
+
+#include <stdint.h>
+#include "core_cm0plus.h"     // <-- add this line
+
+#ifndef __IO
+#define __IO volatile
+#endif
+
+
+
+
+/* Memory map (STM32L0 series)                                              */
+/* ======================================================================== */
+#define FLASH_BASE            ((uint32_t)0x08000000U)
+#define SRAM_BASE             ((uint32_t)0x20000000U)
+#define PERIPH_BASE           ((uint32_t)0x40000000U)
+#define APBPERIPH_BASE        PERIPH_BASE
+#define AHBPERIPH_BASE        (PERIPH_BASE + 0x00020000U)
+#define IOPPERIPH_BASE        (PERIPH_BASE + 0x10000000U)
+
+/* APB / AHB peripheral base addresses used below */
+#define RCC_BASE              (AHBPERIPH_BASE + 0x00001000U)
+#define GPIOA_BASE            (IOPPERIPH_BASE + 0x00000000U)
+#define GPIOB_BASE            (IOPPERIPH_BASE + 0x00000400U)
+#define USART1_BASE           (APBPERIPH_BASE + 0x00013800U)
+
+/* ======================================================================== */
+/* Peripheral register structures (subset)                                   */
+/* ======================================================================== */
+
+/* GPIO registers (relevant subset) */
+typedef struct
+{
+  __IO uint32_t MODER;    /*!< GPIO port mode register,        Address offset: 0x00 */
+  __IO uint32_t OTYPER;   /*!< GPIO port output type register, Address offset: 0x04 */
+  __IO uint32_t OSPEEDR;  /*!< GPIO port output speed register,Address offset: 0x08 */
+  __IO uint32_t PUPDR;    /*!< GPIO port pull-up/pull-down reg,Address offset: 0x0C */
+  __IO uint32_t IDR;      /*!< GPIO port input data register,  Address offset: 0x10 */
+  __IO uint32_t ODR;      /*!< GPIO port output data register, Address offset: 0x14 */
+  __IO uint32_t BSRR;     /*!< GPIO port bit set/reset register,Address offset:0x18 */
+  __IO uint32_t LCKR;     /*!< GPIO port configuration lock reg,Address offset:0x1C */
+  __IO uint32_t AFR[2];   /*!< GPIO alternate function registers,Address offset:0x20-0x24 */
+} GPIO_TypeDef;
+
+/* RCC registers (relevant subset) */
+typedef struct
+{
+  __IO uint32_t CR;        /*!< RCC clock control register,               Address offset: 0x00 */
+  __IO uint32_t ICSCR;     /*!< Internal clock sources calibration reg,  Address offset: 0x04 */
+  __IO uint32_t CFGR;      /*!< RCC clock configuration register,         Address offset: 0x0C */
+  __IO uint32_t CIER;      /*!< RCC clock interrupt enable register,      Address offset: 0x10 */
+  __IO uint32_t CIFR;      /*!< RCC clock interrupt flag register,        Address offset: 0x14 */
+  __IO uint32_t CICR;      /*!< RCC clock interrupt clear register,       Address offset: 0x18 */
+  __IO uint32_t IOPRSTR;   /*!< RCC IO port reset register,               Address offset: 0x1C */
+  __IO uint32_t AHBRSTR;   /*!< RCC AHB peripheral reset register,        Address offset: 0x20 */
+  __IO uint32_t APB2RSTR;  /*!< RCC APB2 peripheral reset register,       Address offset: 0x24 */
+  __IO uint32_t APB1RSTR;  /*!< RCC APB1 peripheral reset register,       Address offset: 0x28 */
+  __IO uint32_t IOPENR;    /*!< RCC Clock IO port enable register,        Address offset: 0x2C */
+  __IO uint32_t AHBENR;    /*!< RCC AHB peripheral clock enable register, Address offset: 0x30 */
+  __IO uint32_t APB2ENR;   /*!< RCC APB2 peripheral enable register,      Address offset: 0x34 */
+  __IO uint32_t APB1ENR;   /*!< RCC APB1 peripheral enable register,      Address offset: 0x38 */
+  __IO uint32_t IOPSMENR;  /*!< RCC IO port clock enable in sleep mode,   Address offset: 0x3C */
+  __IO uint32_t AHBSMENR;  /*!< RCC AHB peripheral clock enable in sleep, Address offset: 0x40 */
+  __IO uint32_t APB2SMENR; /*!< RCC APB2 peripheral clock enable in sleep,Address offset: 0x44 */
+  __IO uint32_t APB1SMENR; /*!< RCC APB1 peripheral clock enable in sleep,Address offset: 0x48 */
+  __IO uint32_t CCIPR;     /*!< RCC clock configuration register,        Address offset: 0x4C */
+  __IO uint32_t CSR;       /*!< RCC Control/status register,              Address offset: 0x50 */
+} RCC_TypeDef;
+
+/* USART registers (STM32L0 USART layout) */
+typedef struct
+{
+  __IO uint32_t CR1;   /*!< USART Control register 1,  Offset: 0x00 */
+  __IO uint32_t CR2;   /*!< USART Control register 2,  Offset: 0x04 */
+  __IO uint32_t CR3;   /*!< USART Control register 3,  Offset: 0x08 */
+  __IO uint32_t BRR;   /*!< USART Baud rate register,   Offset: 0x0C */
+  __IO uint32_t GTPR;  /*!< USART Guard time & presc.,  Offset: 0x10 */
+  __IO uint32_t RTOR;  /*!< Receiver timeout register,  Offset: 0x14 */
+  __IO uint32_t RQR;   /*!< Request register,           Offset: 0x18 */
+  __IO uint32_t ISR;   /*!< Interrupt & status register,Offset: 0x1C */
+  __IO uint32_t ICR;   /*!< Interrupt flag clear reg,   Offset: 0x20 */
+  __IO uint32_t RDR;   /*!< Receive data register,      Offset: 0x24 */
+  __IO uint32_t TDR;   /*!< Transmit data register,     Offset: 0x28 */
+} USART_TypeDef;
+
+/* ======================================================================== */
+/* Peripheral instances                                                      */
+/* ======================================================================== */
+#define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+#define RCC                 ((RCC_TypeDef  *) RCC_BASE)
+#define USART1              ((USART_TypeDef*) USART1_BASE)
+
+/* ======================================================================== */
+/* Useful bit definitions (USART / RCC / GPIO)                              */
+/* ======================================================================== */
+
+/* RCC IOPENR bits (IO port clocks) */
+#define RCC_IOPENR_IOPAEN    (1U << 0)   /* Enable GPIOA clock */
+
+/* RCC APB2ENR bits */
+#define RCC_APB2ENR_USART1EN (1U << 14)  /* USART1 clock enable (APB) */
+
+/* GPIO MODER modes */
+#define GPIO_MODER_INPUT(pin)   (0U << (2*(pin)))
+#define GPIO_MODER_AF(pin)      (2U << (2*(pin)))
+
+/* GPIO AFR position macro */
+#define GPIO_AFR_POS(pin)       (((pin) & 0x7) * 4)
+#define GPIO_AFR_INDEX(pin)     ((pin) >> 3)   /* 0 -> AFR[0], 1 -> AFR[1] */
+
+/* USART_CR1 bits */
+#define USART_CR1_UE       ((uint32_t)0x00000001U) /* USART Enable */
+#define USART_CR1_RE       ((uint32_t)0x00000004U) /* Receiver Enable */
+#define USART_CR1_TE       ((uint32_t)0x00000008U) /* Transmitter Enable */
+#define USART_CR1_RXNEIE   ((uint32_t)0x00000020U) /* RXNE Interrupt Enable */
+#define USART_CR1_TXEIE    ((uint32_t)0x00000080U) /* TXE Interrupt Enable */
+#define USART_CR1_TCIE     ((uint32_t)0x00000040U) /* TC Interrupt Enable */
+#define USART_CR1_OVER8    ((uint32_t)0x00008000U) /* Oversampling by 8 */
+
+/* USART_ISR bits */
+#define USART_ISR_RXNE     ((uint32_t)0x00000020U) /* Read Data Register Not Empty */
+#define USART_ISR_TXE      ((uint32_t)0x00000080U) /* Transmit Data Register Empty */
+#define USART_ISR_TC       ((uint32_t)0x00000040U) /* Transmission Complete */
+
+/* Some helpful generic macros */
+#define __IO volatile
+
+/* Alternate function number for USART1 on PA9/PA10 */
+#define GPIO_AF_USART1      4U
+
+/* ======================================================================== */
+/* Minimal NVIC helpers (use CMSIS core file if you have it; otherwise simple access) */
+/* ======================================================================== */
+#ifndef __NVIC_PRIO_BITS
+/* default priority bits for Cortex-M0+ */
+#define __NVIC_PRIO_BITS 2
+#endif
+
+/* Use CMSIS functions if available; otherwise use simple wrappers below */
+#if defined(__NVIC_EnableIRQ)
+  /* CMSIS provides NVIC_EnableIRQ / NVIC_SetPriority */
+#else
+/* Minimal prototypes (linker will resolve to CMSIS if present) */
+void NVIC_EnableIRQ(int IRQn);
+void NVIC_DisableIRQ(int IRQn);
+void NVIC_SetPriority(int IRQn, uint32_t priority);
+#endif
+
+/* IRQn number for USART1 on STM32L0 family (Cortex-M0+ vector table mapping) */
+#define USART1_IRQn  27   /* from CMSIS stm32l0xx.h (value for L0 series) */
+
+
+#endif /* STM32L_H_ */

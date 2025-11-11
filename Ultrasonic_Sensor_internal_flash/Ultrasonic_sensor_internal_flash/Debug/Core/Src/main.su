@@ -1,0 +1,10 @@
+../Core/Src/main.c:61:6:delay_us	16	static
+../Core/Src/main.c:67:6:TIM2_Init	4	static
+../Core/Src/main.c:75:6:GPIO_Init	4	static
+../Core/Src/main.c:82:10:Measure_Distance	24	static
+../Core/Src/main.c:109:6:Flash_Write	24	static
+../Core/Src/main.c:142:5:main	24	static
+../Core/Src/main.c:191:6:SystemClock_Config	96	static
+../Core/Src/main.c:242:13:MX_TIM2_Init	40	static
+../Core/Src/main.c:287:13:MX_GPIO_Init	32	static
+../Core/Src/main.c:326:6:Error_Handler	4	static,ignoring_inline_asm

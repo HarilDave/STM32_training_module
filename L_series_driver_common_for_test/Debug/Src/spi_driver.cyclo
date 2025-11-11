@@ -1,0 +1,12 @@
+../Src/spi_driver.c:10:6:SPI_PeriClockControl	6
+../Src/spi_driver.c:24:6:SPI_Init	4
+../Src/spi_driver.c:68:6:SPI_DeInit	3
+../Src/spi_driver.c:74:6:SPI_Enable	2
+../Src/spi_driver.c:82:6:SPI_ClockControl	6
+../Src/spi_driver.c:99:9:SPI_GetFlagStatus	2
+../Src/spi_driver.c:106:6:SPI_SendData	4
+../Src/spi_driver.c:118:6:SPI_ReceiveData	3
+../Src/spi_driver.c:129:6:SPI_SSIConfig	2
+../Src/spi_driver.c:141:6:SPI_PeripheralControl	2
+../Src/spi_driver.c:149:6:SPI_SendString	4
+../Src/spi_driver.c:160:6:SPI_ReceiveString	4

@@ -1,0 +1,10 @@
+17:37:26 **** Incremental Build of configuration Debug for project try_2_lcd ****
+make -j8 all 
+arm-none-eabi-size  try_2_lcd.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4516	     84	   1900	   6500	   1964	try_2_lcd.elf
+Finished building: default.size.stdout
+ 
+
+17:37:27 Build Finished. 0 errors, 0 warnings. (took 911ms)
+

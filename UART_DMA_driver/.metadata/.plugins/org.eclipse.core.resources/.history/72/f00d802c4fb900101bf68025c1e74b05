@@ -1,0 +1,86 @@
+#include "stm32l053xx.h"
+
+#define TX_LEN  13
+uint8_t TxBuffer[TX_LEN] = "DMA LOOPBACK";
+uint8_t RxBuffer[TX_LEN];
+
+void UART2_GPIO_Init(void)
+{
+    RCC->IOPENR |= (1 << 0); // Enable GPIOA clock
+
+    // PA2=AF4 (USART2_TX), PA3=AF4 (USART2_RX)
+    GPIOA->MODER &= ~((3 << (2*2)) | (3 << (3*2)));
+    GPIOA->MODER |=  ((2 << (2*2)) | (2 << (3*2)));
+    GPIOA->AFR[0] &= ~((0xF << (4*2)) | (0xF << (4*3)));
+    GPIOA->AFR[0] |=  ((4 << (4*2)) | (4 << (4*3)));
+}
+
+void UART2_DMA_Config(void)
+{
+    RCC->APB1ENR |= (1 << 17); // USART2 clock enable
+    RCC->AHBENR  |= (1 << 0);  // DMA1 clock enable
+
+    // USART2: baud = 9600, 8N1
+    USART2->BRR = 16000000 / 9600;
+    USART2->CR1 |= (1 << 2) | (1 << 3); // RE, TE
+    USART2->CR3 |= (1 << 6) | (1 << 7); // DMAR, DMAT
+    USART2->CR1 |= (1 << 13);           // UE enable
+
+    // DMA1 Channel 4 = USART2_TX
+    DMA1_Channel4->CCR &= ~(1 << 0);
+    DMA1_Channel4->CPAR = (uint32_t)&USART2->TDR;
+    DMA1_Channel4->CMAR = (uint32_t)TxBuffer;
+    DMA1_Channel4->CNDTR = TX_LEN;
+    DMA1_Channel4->CCR = (1 << 7) | (1 << 4) | (1 << 3); // MEM2PER, MINC, DIR=1
+
+    // DMA1 Channel 5 = USART2_RX
+    DMA1_Channel5->CCR &= ~(1 << 0);
+    DMA1_Channel5->CPAR = (uint32_t)&USART2->RDR;
+    DMA1_Channel5->CMAR = (uint32_t)RxBuffer;
+    DMA1_Channel5->CNDTR = TX_LEN;
+    DMA1_Channel5->CCR = (1 << 7) | (1 << 4); // PER2MEM, MINC
+
+    DMA1_Channel5->CCR |= (1 << 0); // Enable RX DMA
+}
+
+void UART2_DMA_Transmit(void)
+{
+    DMA1_Channel4->CCR &= ~(1 << 0);
+    DMA1_Channel4->CNDTR = TX_LEN;
+    DMA1_Channel4->CCR |= (1 << 0); // Enable TX DMA
+}
+
+int main(void)
+{
+    UART2_GPIO_Init();
+    UART2_DMA_Config();
+
+    UART2_DMA_Transmit();
+
+    // Wait for transfer to complete
+    while (!(DMA1->ISR & (1 << 13))); // TCIF4
+    DMA1->IFCR |= (1 << 13); // clear flag
+
+    // Small delay
+    for (volatile uint32_t d = 0; d < 100000; d++);
+
+    // Verify received data
+    uint8_t ok = 1;
+    for (int i = 0; i < TX_LEN; i++)
+    {
+        if (TxBuffer[i] != RxBuffer[i]) ok = 0;
+    }
+
+    // Indicate result (toggle LED on PC8 if available)
+    RCC->IOPENR |= (1 << 2); // GPIOC clock
+    GPIOC->MODER |= (1 << (2*8)); // PC8 output
+    while (1)
+    {
+        if (ok)
+            GPIOC->ODR ^= (1 << 8); // success blink
+        else
+            GPIOC->ODR |= (1 << 8); // solid ON = fail
+
+        for (volatile uint32_t d = 0; d < 300000; d++);
+    }
+}

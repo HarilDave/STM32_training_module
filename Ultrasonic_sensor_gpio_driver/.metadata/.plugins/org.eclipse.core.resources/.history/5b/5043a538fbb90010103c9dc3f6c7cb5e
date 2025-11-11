@@ -1,0 +1,72 @@
+#include <stdint.h>
+#include "stm32l.h"
+
+#define TRIG_PIN 1
+#define ECHO_PIN 2
+
+static void Clock_Init(void)
+{
+    RCC->CR |= (1 << 0);              // Enable HSI
+    while (!(RCC->CR & (1 << 1)));    // aWait until ready
+    RCC->CFGR = 0;                    // Use HSI as system clock
+}
+
+static void TIM2_Init(void)
+{
+    RCC->APB1ENR |= (1 << 0);         // Enable TIM2 clock
+    TIM2->PSC = 16 - 1;               // 1 MHz tick (1 µs)
+    TIM2->ARR = 0xFFFF;
+    TIM2->EGR = 1;                    // Update registers
+    TIM2->CR1 |= 1;                   // Enable counter
+}
+
+static void delay_us(uint16_t us)
+{
+    TIM2->CNT = 0;
+    while (TIM2->CNT < us);
+}
+
+void Ultrasonic_Init(void)
+{
+    RCC->IOPENR |= (1 << 0);          // Enable GPIOA
+
+    GPIOA->MODER &= ~((3 << (ECHO_PIN * 2)) | (3 << (TRIG_PIN * 2)));
+    GPIOA->MODER |=  (1 << (TRIG_PIN * 2));   // TRIG as output
+}
+
+float Ultrasonic_Read(void)
+{
+    uint32_t count = 0;
+
+    GPIOA->ODR &= ~(1 << TRIG_PIN);
+    delay_us(2);
+    GPIOA->ODR |= (1 << TRIG_PIN);
+    delay_us(10);
+    GPIOA->ODR &= ~(1 << TRIG_PIN);
+
+    while(!(GPIOA->IDR & (1 << ECHO_PIN)));
+    TIM2->CNT = 0;
+
+    while(GPIOA->IDR & (1 << ECHO_PIN))
+    {
+        if (TIM2->CNT > 60000)
+            break;
+    }
+
+    count = TIM2->CNT;
+    return (float)count / 58.0f;       // Convert to cm
+}
+
+int main(void)
+{
+    Clock_Init();
+    TIM2_Init();
+    Ultrasonic_Init();
+
+    float dist;
+    while (1)
+    {
+        dist = Ultrasonic_Read();
+        for (volatile uint32_t i = 0; i < 100000; i++);
+    }
+}

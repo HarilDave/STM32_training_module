@@ -1,0 +1,19 @@
+| No. | Register Name                    | Belongs To | Purpose / Function                                            |
+| --- | -------------------------------- | ---------- | ------------------------------------------------------------- |
+| 1   | `RCC_AHBENR` / `RCC_AHB1ENR`     | RCC        | Enable clock to GPIO port used for TX/RX pins                 |
+| 2   | `RCC_APB1ENR` / `RCC_APB2ENR`    | RCC        | Enable clock to USART peripheral                              |
+| 3   | `GPIOx_MODER`                    | GPIO       | Configure TX/RX pins as alternate function                    |
+| 4   | `GPIOx_AFRL` / `GPIOx_AFRH`      | GPIO       | Select alternate function number for UART pins                |
+| 5   | `GPIOx_OTYPER`                   | GPIO       | Set output type (push-pull) for TX pin                        |
+| 6   | `GPIOx_OSPEEDR`                  | GPIO       | Set output speed (usually high) for TX pin                    |
+| 7   | `GPIOx_PUPDR`                    | GPIO       | Configure pull-up/down for RX pin                             |
+| 8   | `USARTx_SR`                      | USART      | Status flags — TXE, RXNE, TC, ORE, FE, PE, etc.               |
+| 9   | `USARTx_DR`                      | USART      | Data register — holds transmit/receive data                   |
+| 10  | `USARTx_BRR`                     | USART      | Baud rate configuration (mantissa + fraction)                 |
+| 11  | `USARTx_CR1`                     | USART      | Enable USART, TX, RX, parity, word length, interrupts         |
+| 12  | `USARTx_CR2`                     | USART      | Configure stop bits, clock enable, LIN mode                   |
+| 13  | `USARTx_CR3`                     | USART      | DMA enable, flow control (RTS/CTS), error control             |
+| 14  | `USARTx_GTPR`                    | USART      | Guard time and prescaler — optional, smartcard mode           |
+| 15  | `NVIC_ISER`                      | NVIC       | Enable USART interrupt (if using interrupt mode)              |
+| 16  | `NVIC_ICER`                      | NVIC       | Disable USART interrupt (optional)                            |
+| 17  | `USARTx_ICR` *(on newer STM32s)* | USART      | Clear interrupt flags (replaces SR write-clear in newer MCUs) |

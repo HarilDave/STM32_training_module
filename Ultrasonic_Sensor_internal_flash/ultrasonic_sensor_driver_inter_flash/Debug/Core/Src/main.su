@@ -1,0 +1,13 @@
+../Core/Src/main.c:58:13:delay_us	16	static
+../Core/Src/main.c:64:6:GPIO_Init	4	static
+../Core/Src/main.c:76:6:TIM2_Init	4	static
+../Core/Src/main.c:84:10:Ultrasonic_Read	16	static
+../Core/Src/main.c:103:6:Flash_Unlock	4	static
+../Core/Src/main.c:112:6:Flash_Lock	4	static
+../Core/Src/main.c:117:6:Flash_Wait	4	static
+../Core/Src/main.c:122:6:Flash_Erase_Page	16	static
+../Core/Src/main.c:137:6:Flash_Write	24	static
+../Core/Src/main.c:152:10:Flash_Read	16	static
+../Core/Src/main.c:162:5:main	40	static
+../Core/Src/main.c:214:6:SystemClock_Config	96	static
+../Core/Src/main.c:268:6:Error_Handler	4	static,ignoring_inline_asm

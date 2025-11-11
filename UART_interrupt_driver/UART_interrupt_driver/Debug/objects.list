@@ -1,0 +1,5 @@
+"./Src/main.o"
+"./Src/syscalls.o"
+"./Src/sysmem.o"
+"./Src/uart_int_driver.o"
+"./Startup/startup_stm32l053c8tx.o"

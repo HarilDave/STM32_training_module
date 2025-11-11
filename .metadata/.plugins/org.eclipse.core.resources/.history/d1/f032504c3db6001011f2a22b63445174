@@ -1,0 +1,110 @@
+#ifndef UART_DRIVER_H
+#define UART_DRIVER_H
+
+#include "STM32_L0538xx.h"
+#include <stdint.h>
+
+/* ========================== Peripheral Clock Control Macros ========================== */
+#define USART1_PCLK_EN()        (RCC->APB2ENR |= (1U << 14))
+#define USART2_PCLK_EN()        (RCC->APB1ENR |= (1U << 17))
+#define USART4_PCLK_EN()        (RCC->APB1ENR |= (1U << 19))
+
+#define USART1_PCLK_DI()        (RCC->APB2ENR &= ~(1U << 14))
+#define USART2_PCLK_DI()        (RCC->APB1ENR &= ~(1U << 17))
+#define USART4_PCLK_DI()        (RCC->APB1ENR &= ~(1U << 19))
+
+/* ========================== Configuration Structure ========================== */
+typedef struct
+{
+	uint32_t BaudRate;          /* Baud rate */
+	uint8_t  WordLength;        /* UART_WORDLEN_8BITS or UART_WORDLEN_9BITS */
+	uint8_t  StopBits;          /* UART_STOPBITS_1 or UART_STOPBITS_2 */
+	uint8_t  Parity;            /* UART_PARITY_NONE / EVEN / ODD */
+	uint8_t  Mode;              /* UART_MODE_TX / RX / TXRX */
+} UART_Config_t;
+
+/* ========================== Handle Structure ========================== */
+typedef struct
+{
+	USART_TypeDef *Instance;    /* USART1, USART2, etc. */
+	UART_Config_t  Init;        /* User configuration */
+	uint8_t       *pTxBuffer;   /* Pointer to TX buffer for interrupt mode */
+	uint8_t       *pRxBuffer;   /* Pointer to RX buffer for interrupt mode */
+	uint32_t       TxLen;       /* TX length */
+	uint32_t       RxLen;       /* RX length */
+	uint8_t        TxState;     /* Transmission state */
+	uint8_t        RxState;     /* Reception state */
+} UART_Handle_t;
+
+/* ========================== UART States ========================== */
+#define UART_READY              0
+#define UART_BUSY_IN_TX         1
+#define UART_BUSY_IN_RX         2
+
+/* ========================== Word Length ========================== */
+#define UART_WORDLEN_8BITS      0
+#define UART_WORDLEN_9BITS      1
+
+/* ========================== Stop Bits ========================== */
+#define UART_STOPBITS_1         0
+#define UART_STOPBITS_2         2
+
+/* ========================== Parity ========================== */
+#define UART_PARITY_NONE        0
+#define UART_PARITY_EVEN        1
+#define UART_PARITY_ODD         2
+
+/* ========================== Mode ========================== */
+#define UART_MODE_TX            1
+#define UART_MODE_RX            2
+#define UART_MODE_TXRX          3
+
+/* ========================== Enable/Disable Macros ========================== */
+#define ENABLE                  1
+#define DISABLE                 0
+#define SET                     ENABLE
+#define RESET                   DISABLE
+
+/* ========================== Flag Macros ========================== */
+#define UART_FLAG_TXE           (1U << 7)
+#define UART_FLAG_TC            (1U << 6)
+#define UART_FLAG_RXNE          (1U << 5)
+#define UART_FLAG_IDLE          (1U << 4)
+#define UART_FLAG_ORE           (1U << 3)
+#define UART_FLAG_NE            (1U << 2)
+#define UART_FLAG_FE            (1U << 1)
+
+/* ========================== Function Prototypes ========================== */
+
+/* Clock control */
+void UART_PeriClockControl(USART_TypeDef *pUSARTx, uint8_t EnOrDi);
+
+/* Init / Deinit */
+void UART_Init(UART_Handle_t *pUARTHandle);
+void UART_DeInit(USART_TypeDef *pUSARTx);
+
+/* Blocking Data Send / Receive */
+void UART_SendData(UART_Handle_t *pUARTHandle, uint8_t *pTxBuffer, uint32_t Len);
+void UART_ReceiveData(UART_Handle_t *pUARTHandle, uint8_t *pRxBuffer, uint32_t Len);
+
+/* Interrupt-based Data Send / Receive */
+uint8_t UART_SendDataIT(UART_Handle_t *pUARTHandle, uint8_t *pTxBuffer, uint32_t Len);
+uint8_t UART_ReceiveDataIT(UART_Handle_t *pUARTHandle, uint8_t *pRxBuffer, uint32_t Len);
+
+/* IRQ Config / Priority / Handler */
+void UART_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnOrDi);
+void UART_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQPriority);
+void UART_IRQHandling(UART_Handle_t *pUARTHandle);
+
+/* Peripheral enable/disable */
+void UART_PeripheralControl(USART_TypeDef *pUSARTx, uint8_t EnOrDi);
+
+/* Flag status check */
+uint8_t UART_GetFlagStatus(USART_TypeDef *pUSARTx, uint32_t FlagName);
+
+/* Clear Error Flags */
+void UART_ClearOREFlag(USART_TypeDef *pUSARTx);
+void UART_ClearNEFlag(USART_TypeDef *pUSARTx);
+void UART_ClearFEFlag(USART_TypeDef *pUSARTx);
+
+#endif /* UART_DRIVER_H */

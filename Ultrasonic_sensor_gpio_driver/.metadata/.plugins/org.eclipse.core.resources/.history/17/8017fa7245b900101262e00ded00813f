@@ -1,0 +1,67 @@
+#include <stdint.h>
+#include "stm32l.h"
+
+#define TRIG_PIN 1
+#define ECHO_PIN 2
+
+static void TIM2_Init(void)
+{
+    RCC->APB1ENR |= (1 << 0);      // Enable TIM2 clock
+    TIM2->PSC = 16 - 1;            // 1 MHz timer clock (1 us tick at 16 MHz sysclk)
+    TIM2->ARR = 0xFFFF;            // Max auto-reload
+    TIM2->CR1 |= 1;                // Enable counter
+}
+
+
+static void delay_us(uint16_t us)
+{
+    TIM2->CNT = 0;
+    while (TIM2->CNT < us);
+}
+
+void Ultrasonic_Init(void)
+{
+    RCC->IOPENR |= (1 << 0);
+    RCC->APB1ENR |= (1 << 0);
+
+    GPIOA->MODER &= ~((3 << (ECHO_PIN * 2)) | (3 << (TRIG_PIN * 2)));
+    GPIOA->MODER |=  (1 << (TRIG_PIN * 2));
+
+    TIM2->PSC = 16 - 1;
+    TIM2->ARR = 0xFFFF;
+    TIM2->CR1 |= 1;
+}
+
+float Ultrasonic_Read(void)
+{
+    uint32_t count = 0;
+
+    GPIOA->ODR &= ~(1 << TRIG_PIN);
+    delay_us(2);
+    GPIOA->ODR |= (1 << TRIG_PIN);
+    delay_us(10);
+    GPIOA->ODR &= ~(1 << TRIG_PIN);
+
+    while(!(GPIOA->IDR & (1 << ECHO_PIN)));
+    TIM2->CNT = 0;
+
+    while(GPIOA->IDR & (1 << ECHO_PIN))
+    {
+        if(TIM2->CNT > 60000) break;
+    }
+    count = TIM2->CNT;
+
+    return (float)count / 58.0f;
+}
+
+int main(void)
+{
+	TIM2_Init();
+    Ultrasonic_Init();
+    float dist;
+    while(1)
+    {
+        dist = Ultrasonic_Read();
+      //  for(volatile uint32_t i = 0; i < 100000; i++);
+    }
+}

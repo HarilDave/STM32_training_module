@@ -1,0 +1,86 @@
+/*
+ * uart_driver.c
+ *
+ *  Created on: Oct 30, 2025
+ *      Author: Himshree
+ */
+
+
+/*
+ * uart.c
+ *
+ *  Created on: Oct 30, 2025
+ *      Author: Himshree
+ */
+
+#include "uart_driver.h"
+
+void UART_Init(UART_Handle_t *huart)
+{
+    uint32_t temp = 0;
+
+    /* Enable clock */
+    if (huart->Instance == USART1) RCC->APB2ENR |= (1 << 14);
+    if (huart->Instance == USART2) RCC->APB1ENR |= (1 << 17);
+
+    /* Disable USART before config */
+    huart->Instance->CR1 &= ~(1 << 0);
+
+    /* Word length */
+    if (huart->Init.WordLength == UART_WORDLEN_9B)
+        huart->Instance->CR1 |= (1 << 12);
+    else
+        huart->Instance->CR1 &= ~(1 << 12);
+
+    /* Parity */
+    if (huart->Init.Parity == UART_PARITY_NONE)
+        huart->Instance->CR1 &= ~((1 << 10) | (1 << 9));
+    else if (huart->Init.Parity == UART_PARITY_EVEN)
+        huart->Instance->CR1 |= (1 << 10);
+    else if (huart->Init.Parity == UART_PARITY_ODD)
+        huart->Instance->CR1 |= ((1 << 10) | (1 << 9));
+
+    /* Stop bits */
+    huart->Instance->CR2 &= ~(3 << 12);
+    huart->Instance->CR2 |= (huart->Init.StopBits << 12);
+
+    /* Baud rate (assuming 16 MHz PCLK) */
+    temp = 16000000 / huart->Init.BaudRate;
+    huart->Instance->BRR = temp;
+
+    /* Mode */
+    if (huart->Init.Mode == UART_MODE_TX)
+        huart->Instance->CR1 |= (1 << 3);
+    else if (huart->Init.Mode == UART_MODE_RX)
+        huart->Instance->CR1 |= (1 << 2);
+    else if (huart->Init.Mode == UART_MODE_TXRX)
+        huart->Instance->CR1 |= ((1 << 2) | (1 << 3));
+
+    /* Enable USART */
+    huart->Instance->CR1 |= (1 << 0);
+}
+
+void UART_Transmit(UART_Handle_t *huart, uint8_t *pData, uint16_t Size)
+{
+    for (uint16_t i = 0; i < Size; i++)
+    {
+        while (!(huart->Instance->ISR & (1 << 7)));  // TXE
+        huart->Instance->TDR = pData[i];
+    }
+    while (!(huart->Instance->ISR & (1 << 6)));      // TC
+}
+
+uint8_t UART_Receive(UART_Handle_t *huart)
+{
+    while (!(huart->Instance->ISR & (1 << 5)));      // RXNE
+    return (uint8_t)(huart->Instance->RDR);
+}
+
+void UART_SendString(UART_Handle_t *huart, const char *str)
+{
+    while (*str)
+    {
+        UART_Transmit(huart, (uint8_t*)str, 1);
+        str++;
+    }
+}

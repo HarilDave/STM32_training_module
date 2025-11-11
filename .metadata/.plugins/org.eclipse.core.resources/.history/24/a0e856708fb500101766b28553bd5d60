@@ -1,0 +1,126 @@
+/*
+ * STM32_L0538xx.h
+ *
+ *  Created on: Oct 30, 2025
+ *      Author: Himshree (fixed)
+ */
+
+#ifndef DRIVERS_INC_STM32_L0538XX_H_
+#define DRIVERS_INC_STM32_L0538XX_H_
+
+#include <stdint.h>
+
+/* ---------------------------- BASE ADDRESSES ---------------------------- */
+#define PERIPH_BASE             (0x40000000UL)
+#define APB1PERIPH_BASE         (PERIPH_BASE + 0x00000000UL)
+#define APB2PERIPH_BASE         (PERIPH_BASE + 0x00010000UL)
+#define AHBPERIPH_BASE          (PERIPH_BASE + 0x00020000UL)
+
+/* ---------------------------- RCC BASE ADDRESS ---------------------------- */
+#define RCC_BASEADDR            (AHBPERIPH_BASE + 0x1000UL)
+
+/* ---------------------------- GPIO BASE ADDRESSES ---------------------------- */
+/* GPIO ports live at 0x5000_0000 range on L0 family (AXP) */
+#define GPIOA_BASEADDR          (0x50000000UL)
+#define GPIOB_BASEADDR          (0x50000400UL)
+#define GPIOC_BASEADDR          (0x50000800UL)
+#define GPIOD_BASEADDR          (0x50000C00UL)
+#define GPIOE_BASEADDR          (0x50001000UL)
+#define GPIOH_BASEADDR          (0x50001C00UL)
+
+/* ---------------------------- RCC REGISTER DEFINITION ---------------------------- */
+typedef struct
+{
+    volatile uint32_t CR;
+    volatile uint32_t ICSCR;
+    volatile uint32_t CRRCR;
+    volatile uint32_t CFGR;
+    volatile uint32_t CIER;
+    volatile uint32_t CIFR;
+    volatile uint32_t CICR;
+    volatile uint32_t IOPRSTR;
+    volatile uint32_t AHBRSTR;
+    volatile uint32_t APB2RSTR;
+    volatile uint32_t APB1RSTR;
+    volatile uint32_t IOPENR;
+    volatile uint32_t AHBENR;
+    volatile uint32_t APB2ENR;
+    volatile uint32_t APB1ENR;
+    volatile uint32_t IOPSMEN;
+    volatile uint32_t AHBSMENR;
+    volatile uint32_t APB2SMENR;
+    volatile uint32_t APB1SMENR;
+    volatile uint32_t CCIPR;
+    volatile uint32_t CSR;
+} RCC_RegDef_t;
+
+/* ---------------------------- GPIO REGISTER DEFINITION ---------------------------- */
+/* Use AFR[0] = AFRL, AFR[1] = AFRH to match driver usage */
+typedef struct
+{
+    volatile uint32_t MODER;
+    volatile uint32_t OTYPER;
+    volatile uint32_t OSPEEDR;
+    volatile uint32_t PUPDR;
+    volatile uint32_t IDR;
+    volatile uint32_t ODR;
+    volatile uint32_t BSRR;
+    volatile uint32_t LCKR;
+    volatile uint32_t AFR[2];
+} GPIO_RegDef_t;
+
+/* ---------------------------- SPI REGISTER DEFINITION ---------------------------- */
+typedef struct
+{
+    volatile uint32_t CR1;
+    volatile uint32_t CR2;
+    volatile uint32_t SR;
+    volatile uint32_t DR;
+    volatile uint32_t CRCPR;
+    volatile uint32_t RXCRCR;
+    volatile uint32_t TXCRCR;
+    volatile uint32_t I2SCFGR;
+    volatile uint32_t I2SPR;
+} SPI_RegDef_t;
+
+/* ---------------------------- PERIPHERAL DEFINITIONS ---------------------------- */
+#define RCC     ((RCC_RegDef_t *)RCC_BASEADDR)
+#define GPIOA   ((GPIO_RegDef_t *)GPIOA_BASEADDR)
+#define GPIOB   ((GPIO_RegDef_t *)GPIOB_BASEADDR)
+#define GPIOC   ((GPIO_RegDef_t *)GPIOC_BASEADDR)
+#define GPIOD   ((GPIO_RegDef_t *)GPIOD_BASEADDR)
+#define GPIOE   ((GPIO_RegDef_t *)GPIOE_BASEADDR)
+#define GPIOH   ((GPIO_RegDef_t *)GPIOH_BASEADDR)
+
+/* SPI base addresses (L0 family typical) */
+#define SPI1_BASEADDR     (APB2PERIPH_BASE + 0x3000U)
+#define SPI2_BASEADDR     (APB1PERIPH_BASE + 0x3800U)
+
+#define SPI1    ((SPI_RegDef_t*) SPI1_BASEADDR)
+#define SPI2    ((SPI_RegDef_t*) SPI2_BASEADDR)
+
+/* ---------------------------- CLOCK ENABLE MACROS ---------------------------- */
+#define GPIOA_PCLK_EN()    (RCC->IOPENR |= (1U << 0))
+#define GPIOB_PCLK_EN()    (RCC->IOPENR |= (1U << 1))
+#define GPIOC_PCLK_EN()    (RCC->IOPENR |= (1U << 2))
+#define GPIOD_PCLK_EN()    (RCC->IOPENR |= (1U << 3))
+#define GPIOE_PCLK_EN()    (RCC->IOPENR |= (1U << 4))
+#define GPIOH_PCLK_EN()    (RCC->IOPENR |= (1U << 7))
+
+/* ---------------------------- CLOCK DISABLE MACROS ---------------------------- */
+#define GPIOA_PCLK_DI()    (RCC->IOPENR &= ~(1U << 0))
+#define GPIOB_PCLK_DI()    (RCC->IOPENR &= ~(1U << 1))
+#define GPIOC_PCLK_DI()    (RCC->IOPENR &= ~(1U << 2))
+#define GPIOD_PCLK_DI()    (RCC->IOPENR &= ~(1U << 3))
+#define GPIOE_PCLK_DI()    (RCC->IOPENR &= ~(1U << 4))
+#define GPIOH_PCLK_DI()    (RCC->IOPENR &= ~(1U << 7))
+
+/* ---------------------------- GENERIC UTILITY MACROS ---------------------------- */
+#define ENABLE              1U
+#define DISABLE             0U
+#define SET                 ENABLE
+#define RESET               DISABLE
+#define GPIO_PIN_SET        1U
+#define GPIO_PIN_RESET      0U
+
+#endif /* DRIVERS_INC_STM32_L0538XX_H_ */

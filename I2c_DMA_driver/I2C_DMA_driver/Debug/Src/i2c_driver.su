@@ -1,0 +1,13 @@
+../Src/i2c_driver.c:10:6:I2C_Init	16	static
+../Src/i2c_driver.c:24:6:I2C_Start	16	static
+../Src/i2c_driver.c:31:6:I2C_WriteData	16	static
+../Src/i2c_driver.c:37:9:I2C_ReadData	16	static
+../Src/i2c_driver.c:43:6:I2C_Stop	16	static
+../Src/i2c_driver.c:50:6:I2C_WaitForFlag	16	static
+../Src/i2c_driver.c:55:6:I2C_DMA_Init	24	static
+../Src/i2c_driver.c:65:6:I2C_DMA_Start	24	static
+../Src/i2c_driver.c:77:6:I2C_DMA_Stop	24	static
+../Src/i2c_driver.c:85:6:I2C_DMA_IRQHandler	24	static
+../Src/i2c_driver.c:102:28:I2C_DMA_TxCpltCallback	16	static
+../Src/i2c_driver.c:107:28:I2C_DMA_RxCpltCallback	16	static
+../Src/i2c_driver.c:112:28:I2C_DMA_ErrorCallback	16	static

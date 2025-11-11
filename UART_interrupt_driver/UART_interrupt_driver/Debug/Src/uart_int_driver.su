@@ -1,0 +1,5 @@
+../Inc/stm32l.h:85:20:NVIC_EnableIRQ	16	static
+../Src/uart_int_driver.c:6:6:USART2_Init	24	static
+../Src/uart_int_driver.c:21:6:USART2_SendChar	16	static
+../Src/uart_int_driver.c:27:6:USART2_EnableInterrupt	8	static
+../Src/uart_int_driver.c:33:6:USART2_IRQHandler	8	static

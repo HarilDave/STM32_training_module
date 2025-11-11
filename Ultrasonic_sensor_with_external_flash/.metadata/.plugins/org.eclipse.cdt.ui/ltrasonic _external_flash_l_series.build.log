@@ -1,0 +1,10 @@
+19:02:26 **** Incremental Build of configuration Debug for project ltrasonic _external_flash_l_series ****
+make -j8 all 
+arm-none-eabi-size  ltrasonic\ _external_flash_l_series.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21544	     12	   1884	  23440	   5b90	ltrasonic _external_flash_l_series.elf
+Finished building: default.size.stdout
+ 
+
+19:02:26 Build Finished. 0 errors, 0 warnings. (took 484ms)
+

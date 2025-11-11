@@ -1,0 +1,8 @@
+../Core/Src/main.c:9:6:SystemClock_Config	1
+../Core/Src/main.c:10:6:MX_GPIO_Init	1
+../Core/Src/main.c:11:6:Error_Handler	1
+../Core/Src/main.c:13:6:DMA_Channel_Select	1
+../Core/Src/main.c:19:6:UART2_GPIO_Init	1
+../Core/Src/main.c:27:6:UART2_Init	1
+../Core/Src/main.c:35:6:DMA_Init	1
+../Core/Src/main.c:54:5:main	2

@@ -1,0 +1,175 @@
+/*
+ * w25qxx_register.c
+ *
+ *  Created on: Nov 6, 2025
+ *      Author: Himshree
+ */
+
+#include <string.h>
+#include "spi.h"
+
+/* SPI Flash Opcodes */
+#define W25Q_SECTOR_SIZE         4096
+#define WRITE_EN                 0x06
+#define WRITE_DI                 0x04
+#define READ_STATUS_REG1         0x05
+#define READ_DATA                0x03
+#define PAGE_PGM                 0x02
+#define SECTOR_ERASE             0x20
+#define READ_JEDEC_ID            0x9F
+
+/* Enumerations */
+typedef enum {
+    ePullSlaveDown = 0,
+    ePullSlaveUp,
+    eSlaveControlMax
+} eSlaveSelectControls;
+
+typedef enum {
+    eFlashWriteEnable = 0,
+    eFlashWriteDisable,
+    eFlashWriteCtrlMax
+} eFlashWriteControls;
+
+/* Static functions */
+static void W25QxxSlaveControl(eSlaveSelectControls eControl);
+static void W25QxxSectorErase(uint32_t uiSectorAddr);
+static void W25QxxFlashWriteControl(eFlashWriteControls eCtrl);
+static eExtFlashErr W25QxxWaitForReady(void);
+
+/* ----------------- Public API ----------------- */
+void InitW25QxxFlash(void)
+{
+    SPI2_GPIO_Init();
+    SPI2_Init();
+}
+
+/* Write Data */
+eExtFlashErr W25QxxFlashWriteData(uint8_t* pucData, uint16_t uhDataSize, uint32_t uiSaveAddr)
+{
+    eExtFlashErr eFlashErr = eExtFlashWriteError;
+    if(!pucData) return eFlashErr;
+
+    uint32_t currentAddr = uiSaveAddr;
+    uint16_t bytesRemaining = uhDataSize;
+    uint8_t *dataPointer = pucData;
+
+    uint32_t sectorStart = currentAddr / W25Q_SECTOR_SIZE;
+    uint32_t sectorEnd   = (currentAddr + bytesRemaining - 1) / W25Q_SECTOR_SIZE;
+
+    /* Erase all affected sectors */
+    for(uint32_t sector = sectorStart; sector <= sectorEnd; sector++)
+    {
+        uint32_t sectorAddress = sector * W25Q_SECTOR_SIZE;
+        W25QxxFlashWriteControl(eFlashWriteEnable);
+        W25QxxSectorErase(sectorAddress);
+        W25QxxWaitForReady();
+    }
+
+    /* Write data in 256-byte pages */
+    while(bytesRemaining > 0)
+    {
+        uint16_t chunkSize = (bytesRemaining > 256) ? 256 : bytesRemaining;
+        W25QxxFlashWriteControl(eFlashWriteEnable);
+
+        uint8_t txBuff[260];
+        txBuff[0] = PAGE_PGM;
+        txBuff[1] = (currentAddr >> 16) & 0xFF;
+        txBuff[2] = (currentAddr >> 8) & 0xFF;
+        txBuff[3] = currentAddr & 0xFF;
+        memcpy(&txBuff[4], dataPointer, chunkSize);
+
+        W25QxxSlaveControl(ePullSlaveDown);
+        for(uint16_t i=0;i<chunkSize+4;i++)
+            SPI2_TransmitReceive(txBuff[i]);
+        W25QxxSlaveControl(ePullSlaveUp);
+
+        W25QxxWaitForReady();
+
+        currentAddr += chunkSize;
+        dataPointer += chunkSize;
+        bytesRemaining -= chunkSize;
+    }
+
+    W25QxxFlashWriteControl(eFlashWriteDisable);
+    eFlashErr = eExtFlashSuccess;
+    return eFlashErr;
+}
+
+/* Read Data */
+eExtFlashErr W25QxxFlashReadData(uint8_t* pucData, uint16_t uhDataSize, uint32_t uiReadAddr)
+{
+    if(!pucData) return eExtFlashReadError;
+
+    uint8_t cmd[4];
+    cmd[0] = READ_DATA;
+    cmd[1] = (uiReadAddr >> 16) & 0xFF;
+    cmd[2] = (uiReadAddr >> 8) & 0xFF;
+    cmd[3] = uiReadAddr & 0xFF;
+
+    W25QxxSlaveControl(ePullSlaveDown);
+    for(int i=0;i<4;i++) SPI2_TransmitReceive(cmd[i]);
+    for(int i=0;i<uhDataSize;i++) pucData[i] = SPI2_TransmitReceive(0xFF);
+    W25QxxSlaveControl(ePullSlaveUp);
+
+    return eExtFlashSuccess;
+}
+
+/* Read JEDEC ID */
+uint32_t GetW25QxxJEDECId(void)
+{
+    uint8_t cmd = READ_JEDEC_ID;
+    uint8_t rx[3];
+
+    W25QxxSlaveControl(ePullSlaveDown);
+    SPI2_TransmitReceive(cmd);
+    rx[0] = SPI2_TransmitReceive(0xFF);
+    rx[1] = SPI2_TransmitReceive(0xFF);
+    rx[2] = SPI2_TransmitReceive(0xFF);
+    W25QxxSlaveControl(ePullSlaveUp);
+
+    return ((uint32_t)rx[0]<<16)|((uint32_t)rx[1]<<8)|rx[2];
+}
+
+/* ----------------- Static Functions ----------------- */
+static void W25QxxSlaveControl(eSlaveSelectControls eControl)
+{
+    if(eControl==ePullSlaveDown)
+        FLASH_CS_PORT->ODR &= ~(1<<FLASH_CS_PIN);
+    else
+        FLASH_CS_PORT->ODR |= (1<<FLASH_CS_PIN);
+}
+
+static void W25QxxSectorErase(uint32_t uiSectorAddr)
+{
+    uint8_t cmd[4];
+    cmd[0] = SECTOR_ERASE;
+    cmd[1] = (uiSectorAddr >> 16) & 0xFF;
+    cmd[2] = (uiSectorAddr >> 8) & 0xFF;
+    cmd[3] = uiSectorAddr & 0xFF;
+
+    W25QxxSlaveControl(ePullSlaveDown);
+    for(int i=0;i<4;i++) SPI2_TransmitReceive(cmd[i]);
+    W25QxxSlaveControl(ePullSlaveUp);
+}
+
+static void W25QxxFlashWriteControl(eFlashWriteControls eCtrl)
+{
+    uint8_t cmd = (eCtrl==eFlashWriteEnable)?WRITE_EN:WRITE_DI;
+    W25QxxSlaveControl(ePullSlaveDown);
+    SPI2_TransmitReceive(cmd);
+    W25QxxSlaveControl(ePullSlaveUp);
+}
+
+static eExtFlashErr W25QxxWaitForReady(void)
+{
+    uint8_t status;
+    uint8_t cmd = READ_STATUS_REG1;
+    do {
+        W25QxxSlaveControl(ePullSlaveDown);
+        SPI2_TransmitReceive(cmd);
+        status = SPI2_TransmitReceive(0xFF);
+        W25QxxSlaveControl(ePullSlaveUp);
+    } while(status & 0x01); // BUSY
+    return eExtFlashSuccess;
+}

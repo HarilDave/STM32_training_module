@@ -1,0 +1,387 @@
+10:45:05 **** Incremental Build of configuration Debug for project Ultrasonic_gpio_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/ultrasonic.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/ultrasonic.d" -MT"Src/ultrasonic.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/ultrasonic.o"
+In file included from ../Src/main.c:3:
+../Inc/ultrasonic.h:12:8: error: unknown type name 'TIM_HandleTypeDef'
+   12 | extern TIM_HandleTypeDef ULTRASONIC_TIMER;
+      |        ^~~~~~~~~~~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:7:5: warning: implicit declaration of function 'HAL_Init' [-Wimplicit-function-declaration]
+    7 |     HAL_Init();
+      |     ^~~~~~~~
+../Src/main.c:8:5: warning: implicit declaration of function 'SystemClock_Config' [-Wimplicit-function-declaration]
+    8 |     SystemClock_Config();
+      |     ^~~~~~~~~~~~~~~~~~
+../Src/main.c:9:5: warning: implicit declaration of function 'MX_GPIO_Init' [-Wimplicit-function-declaration]
+    9 |     MX_GPIO_Init();
+      |     ^~~~~~~~~~~~
+../Src/main.c:10:5: warning: implicit declaration of function 'MX_TIM2_Init' [-Wimplicit-function-declaration]
+   10 |     MX_TIM2_Init();
+      |     ^~~~~~~~~~~~
+../Src/main.c:27:9: warning: implicit declaration of function 'HAL_Delay' [-Wimplicit-function-declaration]
+   27 |         HAL_Delay(200);
+      |         ^~~~~~~~~
+In file included from ../Src/ultrasonic.c:1:
+../Inc/ultrasonic.h:12:8: error: unknown type name 'TIM_HandleTypeDef'
+   12 | extern TIM_HandleTypeDef ULTRASONIC_TIMER;
+      |        ^~~~~~~~~~~~~~~~~
+../Src/ultrasonic.c: In function 'Ultrasonic_Init':
+../Src/ultrasonic.c:5:5: warning: implicit declaration of function 'HAL_TIM_Base_Start' [-Wimplicit-function-declaration]
+    5 |     HAL_TIM_Base_Start(&ULTRASONIC_TIMER);
+      |     ^~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Src/ultrasonic.c:7:5: error: unknown type name 'GPIO_InitTypeDef'; did you mean 'GPIO_TypeDef'?
+    7 |     GPIO_InitTypeDef GPIO_InitStruct = {0};
+      |     ^~~~~~~~~~~~~~~~
+      |     GPIO_TypeDef
+../Src/ultrasonic.c:10:20: error: request for member 'Pin' in something not a structure or union
+   10 |     GPIO_InitStruct.Pin = ULTRASONIC_TRIG_PIN;
+      |                    ^
+../Inc/ultrasonic.h:7:32: error: 'GPIO_PIN_0' undeclared (first use in this function)
+    7 | #define ULTRASONIC_TRIG_PIN    GPIO_PIN_0
+      |                                ^~~~~~~~~~
+../Src/ultrasonic.c:10:27: note: in expansion of macro 'ULTRASONIC_TRIG_PIN'
+   10 |     GPIO_InitStruct.Pin = ULTRASONIC_TRIG_PIN;
+      |                           ^~~~~~~~~~~~~~~~~~~
+../Inc/ultrasonic.h:7:32: note: each undeclared identifier is reported only once for each function it appears in
+    7 | #define ULTRASONIC_TRIG_PIN    GPIO_PIN_0
+      |                                ^~~~~~~~~~
+../Src/ultrasonic.c:10:27: note: in expansion of macro 'ULTRASONIC_TRIG_PIN'
+   10 |     GPIO_InitStruct.Pin = ULTRASONIC_TRIG_PIN;
+      |                           ^~~~~~~~~~~~~~~~~~~
+../Src/ultrasonic.c:11:20: error: request for member 'Mode' in something not a structure or union
+   11 |     GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+      |                    ^
+../Src/ultrasonic.c:11:28: error: 'GPIO_MODE_OUTPUT_PP' undeclared (first use in this function)
+   11 |     GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+      |                            ^~~~~~~~~~~~~~~~~~~
+../Src/ultrasonic.c:12:20: error: request for member 'Pull' in something not a structure or union
+   12 |     GPIO_InitStruct.Pull = GPIO_NOPULL;
+      |                    ^
+../Src/ultrasonic.c:12:28: error: 'GPIO_NOPULL' undeclared (first use in this function)
+   12 |     GPIO_InitStruct.Pull = GPIO_NOPULL;
+      |                            ^~~~~~~~~~~
+../Src/ultrasonic.c:13:20: error: request for member 'Speed' in something not a structure or union
+   13 |     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+      |                    ^
+../Src/ultrasonic.c:13:29: error: 'GPIO_SPEED_FREQ_LOW' undeclared (first use in this function)
+   13 |     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+      |                             ^~~~~~~~~~~~~~~~~~~
+../Src/ultrasonic.c:14:5: warning: implicit declaration of function 'HAL_GPIO_Init' [-Wimplicit-function-declaration]
+   14 |     HAL_GPIO_Init(ULTRASONIC_TRIG_PORT, &GPIO_InitStruct);
+      |     ^~~~~~~~~~~~~
+../Src/ultrasonic.c:17:20: error: request for member 'Pin' in something not a structure or union
+   17 |     GPIO_InitStruct.Pin = ULTRASONIC_ECHO_PIN;
+      |                    ^
+../Inc/ultrasonic.h:9:32: error: 'GPIO_PIN_1' undeclared (first use in this function)
+    9 | #define ULTRASONIC_ECHO_PIN    GPIO_PIN_1
+      |                                ^~~~~~~~~~
+../Src/ultrasonic.c:17:27: note: in expansion of macro 'ULTRASONIC_ECHO_PIN'
+   17 |     GPIO_InitStruct.Pin = ULTRASONIC_ECHO_PIN;
+      |                           ^~~~~~~~~~~~~~~~~~~
+../Src/ultrasonic.c:18:20: error: request for member 'Mode' in something not a structure or union
+   18 |     GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+      |                    ^
+../Src/ultrasonic.c:18:28: error: 'GPIO_MODE_INPUT' undeclared (first use in this function)
+   18 |     GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+      |                            ^~~~~~~~~~~~~~~
+../Src/ultrasonic.c:19:20: error: request for member 'Pull' in something not a structure or union
+   19 |     GPIO_InitStruct.Pull = GPIO_NOPULL;
+      |                    ^
+../Src/ultrasonic.c: In function 'Ultrasonic_Read':
+../Src/ultrasonic.c:29:5: warning: implicit declaration of function 'HAL_GPIO_WritePin' [-Wimplicit-function-declaration]
+   29 |     HAL_GPIO_WritePin(ULTRASONIC_TRIG_PORT, ULTRASONIC_TRIG_PIN, GPIO_PIN_RESET);
+      |     ^~~~~~~~~~~~~~~~~
+../Inc/ultrasonic.h:7:32: error: 'GPIO_PIN_0' undeclared (first use in this function)
+    7 | #define ULTRASONIC_TRIG_PIN    GPIO_PIN_0
+      |                                ^~~~~~~~~~
+../Src/ultrasonic.c:29:45: note: in expansion of macro 'ULTRASONIC_TRIG_PIN'
+   29 |     HAL_GPIO_WritePin(ULTRASONIC_TRIG_PORT, ULTRASONIC_TRIG_PIN, GPIO_PIN_RESET);
+      |                                             ^~~~~~~~~~~~~~~~~~~
+../Src/ultrasonic.c:29:66: error: 'GPIO_PIN_RESET' undeclared (first use in this function)
+   29 |     HAL_GPIO_WritePin(ULTRASONIC_TRIG_PORT, ULTRASONIC_TRIG_PIN, GPIO_PIN_RESET);
+      |                                                                  ^~~~~~~~~~~~~~
+../Src/ultrasonic.c:30:5: warning: implicit declaration of function 'HAL_Delay' [-Wimplicit-function-declaration]
+   30 |     HAL_Delay(2);
+      |     ^~~~~~~~~
+../Src/ultrasonic.c:31:66: error: 'GPIO_PIN_SET' undeclared (first use in this function)
+   31 |     HAL_GPIO_WritePin(ULTRASONIC_TRIG_PORT, ULTRASONIC_TRIG_PIN, GPIO_PIN_SET);
+      |                                                                  ^~~~~~~~~~~~
+../Src/ultrasonic.c:36:15: warning: implicit declaration of function 'HAL_GetTick' [-Wimplicit-function-declaration]
+   36 |     timeout = HAL_GetTick();
+      |               ^~~~~~~~~~~
+../Src/ultrasonic.c:37:12: warning: implicit declaration of function 'HAL_GPIO_ReadPin' [-Wimplicit-function-declaration]
+   37 |     while (HAL_GPIO_ReadPin(ULTRASONIC_ECHO_PORT, ULTRASONIC_ECHO_PIN) == GPIO_PIN_RESET)
+      |            ^~~~~~~~~~~~~~~~
+../Inc/ultrasonic.h:9:32: error: 'GPIO_PIN_1' undeclared (first use in this function)
+    9 | #define ULTRASONIC_ECHO_PIN    GPIO_PIN_1
+      |                                ^~~~~~~~~~
+../Src/ultrasonic.c:37:51: note: in expansion of macro 'ULTRASONIC_ECHO_PIN'
+   37 |     while (HAL_GPIO_ReadPin(ULTRASONIC_ECHO_PORT, ULTRASONIC_ECHO_PIN) == GPIO_PIN_RESET)
+      |                                                   ^~~~~~~~~~~~~~~~~~~
+../Src/ultrasonic.c:41:13: warning: implicit declaration of function '__HAL_TIM_GET_COUNTER' [-Wimplicit-function-declaration]
+   41 |     start = __HAL_TIM_GET_COUNTER(&ULTRASONIC_TIMER);
+      |             ^~~~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:28: Src/ultrasonic.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+10:45:54 **** Incremental Build of configuration Debug for project Ultrasonic_gpio_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/ultrasonic.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/ultrasonic.d" -MT"Src/ultrasonic.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/ultrasonic.o"
+In file included from ../Src/main.c:3:
+../Inc/ultrasonic.h:4:10: fatal error: stm32l0xx_hal.h: No such file or directory
+    4 | #include "stm32l0xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+In file included from ../Src/ultrasonic.c:1:
+../Inc/ultrasonic.h:4:10: fatal error: stm32l0xx_hal.h: No such file or directory
+    4 | #include "stm32l0xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+compilation terminated.
+make: *** [Src/subdir.mk:28: Src/ultrasonic.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+10:45:55 **** Incremental Build of configuration Debug for project Ultrasonic_try_1 ****
+make -j8 all 
+arm-none-eabi-size  Ultrasonic_try_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8260	     12	   1644	   9916	   26bc	Ultrasonic_try_1.elf
+Finished building: default.size.stdout
+ 
+10:46:06 **** Incremental Build of configuration Debug for project Ultrasonic_gpio_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/ultrasonic.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/ultrasonic.d" -MT"Src/ultrasonic.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/ultrasonic.o"
+In file included from ../Src/ultrasonic.c:1:
+../Inc/ultrasonic.h:4:10: fatal error: stm32l0xx_hal.h: No such file or directory
+    4 | #include "stm32l0xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ../Src/main.c:3:
+../Inc/ultrasonic.h:4:10: fatal error: stm32l0xx_hal.h: No such file or directory
+    4 | #include "stm32l0xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:28: Src/ultrasonic.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+10:50:00 **** Incremental Build of configuration Debug for project Ultrasonic_gpio_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/ultrasonic.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/ultrasonic.d" -MT"Src/ultrasonic.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/ultrasonic.o"
+In file included from ../Src/ultrasonic.c:1:
+../Inc/ultrasonic.h:4:10: fatal error: stm32l0xx_hal.h: No such file or directory
+    4 | #include "stm32l0xx_hal.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:28: Src/ultrasonic.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Src/main.c: In function 'main':
+../Src/main.c:74:15: warning: unused variable 'distance_cm' [-Wunused-variable]
+   74 |         float distance_cm = time_us * 0.017f; // (speed of sound / 2)
+      |               ^~~~~~~~~~~
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+10:50:09 **** Incremental Build of configuration Debug for project Ultrasonic_gpio_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/ultrasonic.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/ultrasonic.d" -MT"Src/ultrasonic.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/ultrasonic.o"
+In file included from ../Src/ultrasonic.c:1:
+../Inc/ultrasonic.h:12:8: error: unknown type name 'TIM_HandleTypeDef'
+   12 | extern TIM_HandleTypeDef ULTRASONIC_TIMER;
+      |        ^~~~~~~~~~~~~~~~~
+../Src/ultrasonic.c: In function 'Ultrasonic_Init':
+../Src/ultrasonic.c:5:5: warning: implicit declaration of function 'HAL_TIM_Base_Start' [-Wimplicit-function-declaration]
+    5 |     HAL_TIM_Base_Start(&ULTRASONIC_TIMER);
+      |     ^~~~~~~~~~~~~~~~~~
+../Src/ultrasonic.c:7:5: error: unknown type name 'GPIO_InitTypeDef'; did you mean 'GPIO_TypeDef'?
+    7 |     GPIO_InitTypeDef GPIO_InitStruct = {0};
+      |     ^~~~~~~~~~~~~~~~
+      |     GPIO_TypeDef
+../Src/ultrasonic.c:10:20: error: request for member 'Pin' in something not a structure or union
+   10 |     GPIO_InitStruct.Pin = ULTRASONIC_TRIG_PIN;
+      |                    ^
+../Inc/ultrasonic.h:7:32: error: 'GPIO_PIN_0' undeclared (first use in this function)
+    7 | #define ULTRASONIC_TRIG_PIN    GPIO_PIN_0
+      |                                ^~~~~~~~~~
+../Src/ultrasonic.c:10:27: note: in expansion of macro 'ULTRASONIC_TRIG_PIN'
+   10 |     GPIO_InitStruct.Pin = ULTRASONIC_TRIG_PIN;
+      |                           ^~~~~~~~~~~~~~~~~~~
+../Inc/ultrasonic.h:7:32: note: each undeclared identifier is reported only once for each function it appears in
+    7 | #define ULTRASONIC_TRIG_PIN    GPIO_PIN_0
+      |                                ^~~~~~~~~~
+../Src/ultrasonic.c:10:27: note: in expansion of macro 'ULTRASONIC_TRIG_PIN'
+   10 |     GPIO_InitStruct.Pin = ULTRASONIC_TRIG_PIN;
+      |                           ^~~~~~~~~~~~~~~~~~~
+../Src/ultrasonic.c:11:20: error: request for member 'Mode' in something not a structure or union
+   11 |     GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+      |                    ^
+../Src/ultrasonic.c:11:28: error: 'GPIO_MODE_OUTPUT_PP' undeclared (first use in this function)
+   11 |     GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+      |                            ^~~~~~~~~~~~~~~~~~~
+../Src/ultrasonic.c:12:20: error: request for member 'Pull' in something not a structure or union
+   12 |     GPIO_InitStruct.Pull = GPIO_NOPULL;
+      |                    ^
+../Src/ultrasonic.c:12:28: error: 'GPIO_NOPULL' undeclared (first use in this function)
+   12 |     GPIO_InitStruct.Pull = GPIO_NOPULL;
+      |                            ^~~~~~~~~~~
+../Src/ultrasonic.c:13:20: error: request for member 'Speed' in something not a structure or union
+   13 |     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+      |                    ^
+../Src/ultrasonic.c:13:29: error: 'GPIO_SPEED_FREQ_LOW' undeclared (first use in this function)
+   13 |     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+      |                             ^~~~~~~~~~~~~~~~~~~
+../Src/ultrasonic.c:14:5: warning: implicit declaration of function 'HAL_GPIO_Init' [-Wimplicit-function-declaration]
+   14 |     HAL_GPIO_Init(ULTRASONIC_TRIG_PORT, &GPIO_InitStruct);
+      |     ^~~~~~~~~~~~~
+../Src/ultrasonic.c:17:20: error: request for member 'Pin' in something not a structure or union
+   17 |     GPIO_InitStruct.Pin = ULTRASONIC_ECHO_PIN;
+      |                    ^
+../Inc/ultrasonic.h:9:32: error: 'GPIO_PIN_1' undeclared (first use in this function)
+    9 | #define ULTRASONIC_ECHO_PIN    GPIO_PIN_1
+      |                                ^~~~~~~~~~
+../Src/ultrasonic.c:17:27: note: in expansion of macro 'ULTRASONIC_ECHO_PIN'
+   17 |     GPIO_InitStruct.Pin = ULTRASONIC_ECHO_PIN;
+      |                           ^~~~~~~~~~~~~~~~~~~
+../Src/ultrasonic.c:18:20: error: request for member 'Mode' in something not a structure or union
+   18 |     GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+      |                    ^
+../Src/ultrasonic.c:18:28: error: 'GPIO_MODE_INPUT' undeclared (first use in this function)
+   18 |     GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+      |                            ^~~~~~~~~~~~~~~
+../Src/ultrasonic.c:19:20: error: request for member 'Pull' in something not a structure or union
+   19 |     GPIO_InitStruct.Pull = GPIO_NOPULL;
+      |                    ^
+../Src/ultrasonic.c: In function 'Ultrasonic_Read':
+../Src/ultrasonic.c:29:5: warning: implicit declaration of function 'HAL_GPIO_WritePin' [-Wimplicit-function-declaration]
+   29 |     HAL_GPIO_WritePin(ULTRASONIC_TRIG_PORT, ULTRASONIC_TRIG_PIN, GPIO_PIN_RESET);
+      |     ^~~~~~~~~~~~~~~~~
+../Inc/ultrasonic.h:7:32: error: 'GPIO_PIN_0' undeclared (first use in this function)
+    7 | #define ULTRASONIC_TRIG_PIN    GPIO_PIN_0
+      |                                ^~~~~~~~~~
+../Src/ultrasonic.c:29:45: note: in expansion of macro 'ULTRASONIC_TRIG_PIN'
+   29 |     HAL_GPIO_WritePin(ULTRASONIC_TRIG_PORT, ULTRASONIC_TRIG_PIN, GPIO_PIN_RESET);
+      |                                             ^~~~~~~~~~~~~~~~~~~
+../Src/ultrasonic.c:29:66: error: 'GPIO_PIN_RESET' undeclared (first use in this function)
+   29 |     HAL_GPIO_WritePin(ULTRASONIC_TRIG_PORT, ULTRASONIC_TRIG_PIN, GPIO_PIN_RESET);
+      |                                                                  ^~~~~~~~~~~~~~
+../Src/ultrasonic.c:30:5: warning: implicit declaration of function 'HAL_Delay' [-Wimplicit-function-declaration]
+   30 |     HAL_Delay(2);
+      |     ^~~~~~~~~
+../Src/ultrasonic.c:31:66: error: 'GPIO_PIN_SET' undeclared (first use in this function)
+   31 |     HAL_GPIO_WritePin(ULTRASONIC_TRIG_PORT, ULTRASONIC_TRIG_PIN, GPIO_PIN_SET);
+      |                                                                  ^~~~~~~~~~~~
+../Src/ultrasonic.c:36:15: warning: implicit declaration of function 'HAL_GetTick' [-Wimplicit-function-declaration]
+   36 |     timeout = HAL_GetTick();
+      |               ^~~~~~~~~~~
+../Src/ultrasonic.c:37:12: warning: implicit declaration of function 'HAL_GPIO_ReadPin' [-Wimplicit-function-declaration]
+   37 |     while (HAL_GPIO_ReadPin(ULTRASONIC_ECHO_PORT, ULTRASONIC_ECHO_PIN) == GPIO_PIN_RESET)
+      |            ^~~~~~~~~~~~~~~~
+../Inc/ultrasonic.h:9:32: error: 'GPIO_PIN_1' undeclared (first use in this function)
+    9 | #define ULTRASONIC_ECHO_PIN    GPIO_PIN_1
+      |                                ^~~~~~~~~~
+../Src/ultrasonic.c:37:51: note: in expansion of macro 'ULTRASONIC_ECHO_PIN'
+   37 |     while (HAL_GPIO_ReadPin(ULTRASONIC_ECHO_PORT, ULTRASONIC_ECHO_PIN) == GPIO_PIN_RESET)
+      |                                                   ^~~~~~~~~~~~~~~~~~~
+../Src/ultrasonic.c:41:13: warning: implicit declaration of function '__HAL_TIM_GET_COUNTER' [-Wimplicit-function-declaration]
+   41 |     start = __HAL_TIM_GET_COUNTER(&ULTRASONIC_TIMER);
+      |             ^~~~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:28: Src/ultrasonic.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+10:50:17 **** Incremental Build of configuration Debug for project Ultrasonic_gpio_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/ultrasonic.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/ultrasonic.d" -MT"Src/ultrasonic.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/ultrasonic.o"
+arm-none-eabi-gcc -o "Ultrasonic_gpio_driver.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Haril_bitsilica\STM_training_module\driver_playist_2\Ultrasonic_sensor_gpio_driver\Ultrasonic_gpio_driver\STM32L053C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ultrasonic_gpio_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ultrasonic_gpio_driver.elf
+ 
+arm-none-eabi-size  Ultrasonic_gpio_driver.elf 
+arm-none-eabi-objdump -h -S Ultrasonic_gpio_driver.elf  > "Ultrasonic_gpio_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   1800	      0	   1568	   3368	    d28	Ultrasonic_gpio_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ultrasonic_gpio_driver.list
+ 
+10:50:32 **** Incremental Build of configuration Debug for project Ultrasonic_gpio_driver ****
+make -j8 all 
+arm-none-eabi-size  Ultrasonic_gpio_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1800	      0	   1568	   3368	    d28	Ultrasonic_gpio_driver.elf
+Finished building: default.size.stdout
+ 
+10:56:20 **** Incremental Build of configuration Debug for project Ultrasonic_gpio_driver ****
+make -j8 all 
+arm-none-eabi-size  Ultrasonic_gpio_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1800	      0	   1568	   3368	    d28	Ultrasonic_gpio_driver.elf
+Finished building: default.size.stdout
+ 
+11:01:31 **** Incremental Build of configuration Debug for project Ultrasonic_gpio_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:90:15: warning: unused variable 'distance_cm' [-Wunused-variable]
+   90 |         float distance_cm = time_us * 0.017f;   // Speed of sound / 2
+      |               ^~~~~~~~~~~
+arm-none-eabi-gcc -o "Ultrasonic_gpio_driver.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Haril_bitsilica\STM_training_module\driver_playist_2\Ultrasonic_sensor_gpio_driver\Ultrasonic_gpio_driver\STM32L053C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ultrasonic_gpio_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ultrasonic_gpio_driver.elf
+ 
+arm-none-eabi-size  Ultrasonic_gpio_driver.elf 
+arm-none-eabi-objdump -h -S Ultrasonic_gpio_driver.elf  > "Ultrasonic_gpio_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   1920	      0	   1568	   3488	    da0	Ultrasonic_gpio_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ultrasonic_gpio_driver.list
+ 
+11:01:48 **** Incremental Build of configuration Debug for project Ultrasonic_gpio_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:90:15: warning: unused variable 'distance_cm' [-Wunused-variable]
+   90 |         float distance_cm = time_us * 0.017f;   // Speed of sound / 2
+      |               ^~~~~~~~~~~
+../Src/main.c:94:12: error: 'distance_cm' undeclared (first use in this function)
+   94 |     return distance_cm;
+      |            ^~~~~~~~~~~
+../Src/main.c:94:12: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:01:57 **** Incremental Build of configuration Debug for project Ultrasonic_gpio_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:90:15: warning: unused variable 'distance_cm' [-Wunused-variable]
+   90 |         float distance_cm = time_us * 0.017f;   // Speed of sound / 2
+      |               ^~~~~~~~~~~
+arm-none-eabi-gcc -o "Ultrasonic_gpio_driver.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Haril_bitsilica\STM_training_module\driver_playist_2\Ultrasonic_sensor_gpio_driver\Ultrasonic_gpio_driver\STM32L053C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ultrasonic_gpio_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ultrasonic_gpio_driver.elf
+ 
+arm-none-eabi-size  Ultrasonic_gpio_driver.elf 
+arm-none-eabi-objdump -h -S Ultrasonic_gpio_driver.elf  > "Ultrasonic_gpio_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   1920	      0	   1568	   3488	    da0	Ultrasonic_gpio_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ultrasonic_gpio_driver.list
+ 
+11:03:44 **** Incremental Build of configuration Debug for project Ultrasonic_gpio_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:90:15: warning: unused variable 'distance_cm' [-Wunused-variable]
+   90 |         float distance_cm = time_us * 0.017f;
+      |               ^~~~~~~~~~~
+arm-none-eabi-gcc -o "Ultrasonic_gpio_driver.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Haril_bitsilica\STM_training_module\driver_playist_2\Ultrasonic_sensor_gpio_driver\Ultrasonic_gpio_driver\STM32L053C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ultrasonic_gpio_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ultrasonic_gpio_driver.elf
+ 
+arm-none-eabi-size  Ultrasonic_gpio_driver.elf 
+arm-none-eabi-objdump -h -S Ultrasonic_gpio_driver.elf  > "Ultrasonic_gpio_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   1920	      0	   1568	   3488	    da0	Ultrasonic_gpio_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ultrasonic_gpio_driver.list
+ 

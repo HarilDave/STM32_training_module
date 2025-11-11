@@ -1,0 +1,113 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file    spi.c
+  * @brief   This file provides code for the configuration
+  *          of the SPI instances.
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2025 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+/* Includes ------------------------------------------------------------------*/
+#include "spi.h"
+
+/* USER CODE BEGIN 0 */
+#define FLASH_CS_PIN   12
+#define FLASH_CS_PORT  GPIOB
+
+typedef enum { FLASH_CS_LOW=0, FLASH_CS_HIGH=1 } eSlaveSelectControls;
+
+// SPI2 init and GPIO init
+void SPI2_GPIO_Init(void);
+void SPI2_Init(void);
+
+// CS control
+void W25QxxSlaveControl(eSlaveSelectControls eControl);
+
+// SPI transmit/receive
+uint8_t SPI2_TransmitReceive(uint8_t data);
+/* USER CODE END 0 */
+
+SPI_HandleTypeDef hspi2;
+
+// ---------------- Simple delay ----------------
+void delay_ms(volatile uint32_t ms)
+{
+    for(volatile uint32_t i=0; i<ms*4000; i++);
+}
+
+// ---------------- SPI2 GPIO Init ----------------
+void SPI2_GPIO_Init(void)
+{
+    // Enable GPIOB and GPIOC clocks
+    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN | RCC_AHB1ENR_GPIOCEN;
+
+    // --- PC2=MISO, PC3=MOSI → AF5 ---
+    GPIOC->MODER &= ~((0x3<<4) | (0x3<<6)); // clear mode
+    GPIOC->MODER |=  ((0x2<<4) | (0x2<<6)); // AF mode
+    GPIOC->OSPEEDR |= ((0x3<<4) | (0x3<<6)); // high speed
+    GPIOC->AFR[0] &= ~((0xF<<8) | (0xF<<12));
+    GPIOC->AFR[0] |= ((5<<8) | (5<<12));     // AF5 SPI2
+
+    // --- PB10=SCK → AF5 ---
+    GPIOB->MODER &= ~(0x3<<20);
+    GPIOB->MODER |=  (0x2<<20);   // AF mode
+    GPIOB->OSPEEDR |= (0x3<<20);  // high speed
+    GPIOB->AFR[1] &= ~(0xF<<8);
+    GPIOB->AFR[1] |=  (5<<8);     // AF5 SPI2
+
+    // --- PB0 = CS output ---
+    GPIOB->MODER &= ~(0x3<<0);
+    GPIOB->MODER |=  (0x1<<0);    // output
+    GPIOB->OTYPER &= ~(1<<0);     // push-pull
+    GPIOB->OSPEEDR |= (0x3<<0);   // high speed
+    GPIOB->ODR |= (1<<0);         // CS high
+}
+
+
+// ---------------- SPI2 Init ----------------
+void SPI2_Init(void)
+{
+    // Enable SPI2 clock
+    RCC->APB1ENR |= RCC_APB1ENR_SPI2EN;
+
+    // CR1: Master, CPOL=0, CPHA=0, MSB first, fPCLK/16
+    SPI2->CR1 = (1<<2)   | // Master
+                (0<<1)   | // CPOL=0
+                (0<<0)   | // CPHA=0
+                (0<<7)   | // MSB first
+                (0x3<<3) ; // BR[2:0] = 011 => fPCLK/16
+
+    SPI2->CR1 |= (1<<6); // SPI enable
+}
+
+// ---------------- CS Control ----------------
+void W25QxxSlaveControl(eSlaveSelectControls eControl)
+{
+    if(eControl == FLASH_CS_LOW)
+        FLASH_CS_PORT->ODR &= ~(1<<FLASH_CS_PIN);
+    else
+        FLASH_CS_PORT->ODR |= (1<<FLASH_CS_PIN);
+}
+
+// ---------------- SPI2 Transmit/Receive ----------------
+uint8_t SPI2_TransmitReceive(uint8_t data)
+{
+    while(!(SPI2->SR & (1<<1))); // wait TXE
+    SPI2->DR = data;
+    while(!(SPI2->SR & (1<<0))); // wait RXNE
+    return SPI2->DR;
+}
+
+/* USER CODE BEGIN 1 */
+
+/* USER CODE END 1 */

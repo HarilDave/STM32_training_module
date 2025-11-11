@@ -1,0 +1,140 @@
+/*
+ * stm32l053xx.h
+ *
+ *  Created on: Nov 4, 2025
+ *      Author: Himshree
+ */
+
+#ifndef STM32L053XX_H_
+#define STM32L053XX_H_
+
+#include <stdint.h>
+
+/* ----------------- Peripheral Base Addresses ----------------- */
+#define PERIPH_BASE           0x40000000UL
+#define AHBPERIPH_BASE        (PERIPH_BASE + 0x00020000UL)
+#define APB1PERIPH_BASE       (PERIPH_BASE + 0x00000000UL)
+#define IOPORT_BASE           (PERIPH_BASE + 0x10000000UL)
+
+#define GPIOA_BASE            (IOPORT_BASE + 0x0000)
+#define GPIOC_BASE            (IOPORT_BASE + 0x0800)
+#define RCC_BASE              (AHBPERIPH_BASE + 0x00001000UL)
+#define DMA1_BASE             (AHBPERIPH_BASE + 0x00000000UL)
+#define USART2_BASE           (APB1PERIPH_BASE + 0x4400UL)
+
+/* ----------------- Peripheral Register Structures ----------------- */
+typedef struct {
+    volatile uint32_t MODER;
+    volatile uint32_t OTYPER;
+    volatile uint32_t OSPEEDR;
+    volatile uint32_t PUPDR;
+    volatile uint32_t IDR;
+    volatile uint32_t ODR;
+    volatile uint32_t BSRR;
+    volatile uint32_t LCKR;
+    volatile uint32_t AFR[2];
+} GPIO_TypeDef;
+
+typedef struct {
+    volatile uint32_t ISR;
+    volatile uint32_t IFCR;
+    struct {
+        volatile uint32_t CCR;
+        volatile uint32_t CNDTR;
+        volatile uint32_t CPAR;
+        volatile uint32_t CMAR;
+        volatile uint32_t RESERVED;
+    } CH[7];
+} DMA_TypeDef;
+
+typedef struct {
+    volatile uint32_t CR;
+    volatile uint32_t ICSCR;
+    volatile uint32_t CFGR;
+    volatile uint32_t CIER;
+    volatile uint32_t CIFR;
+    volatile uint32_t CICR;
+    volatile uint32_t IOPRSTR;
+    volatile uint32_t AHBRSTR;
+    volatile uint32_t APB2RSTR;
+    volatile uint32_t APB1RSTR;
+    volatile uint32_t IOPENR;
+    volatile uint32_t AHBENR;
+    volatile uint32_t APB2ENR;
+    volatile uint32_t APB1ENR;
+} RCC_TypeDef;
+
+typedef struct {
+    volatile uint32_t CR1;
+    volatile uint32_t CR2;
+    volatile uint32_t CR3;
+    volatile uint32_t BRR;
+    volatile uint32_t GTPR;
+    volatile uint32_t RTOR;
+    volatile uint32_t RQR;
+    volatile uint32_t ISR;
+    volatile uint32_t ICR;
+    volatile uint32_t RDR;
+    volatile uint32_t TDR;
+} USART_TypeDef;
+
+/* ----------------- Peripheral Definitions ----------------- */
+#define GPIOA      ((GPIO_TypeDef *) GPIOA_BASE)
+#define GPIOC      ((GPIO_TypeDef *) GPIOC_BASE)
+#define RCC        ((RCC_TypeDef  *) RCC_BASE)
+#define DMA1       ((DMA_TypeDef  *) DMA1_BASE)
+#define USART2     ((USART_TypeDef*) USART2_BASE)
+
+/* DMA Channel Index Macros for Readability */
+#define DMA1_Channel4  (&DMA1->CH[3])
+#define DMA1_Channel5  (&DMA1->CH[4])
+
+/* ----------------- Global Buffers ----------------- */
+#define TX_LEN  13
+uint8_t TxBuffer[TX_LEN] = "DMA LOOPBACK";
+uint8_t RxBuffer[TX_LEN];
+
+/* ----------------- Functions ----------------- */
+void delay_ms(uint32_t ms)
+{
+    for (volatile uint32_t i = 0; i < ms * 1000; i++);
+}
+
+void UART2_GPIO_Init(void)
+{
+    RCC->IOPENR |= (1 << 0); // Enable GPIOA clock
+
+    GPIOA->MODER &= ~((3 << (2*2)) | (3 << (3*2)));
+    GPIOA->MODER |=  ((2 << (2*2)) | (2 << (3*2))); // AF mode
+    GPIOA->AFR[0] &= ~((0xF << (4*2)) | (0xF << (4*3)));
+    GPIOA->AFR[0] |=  ((4 << (4*2)) | (4 << (4*3))); // AF4
+}
+
+void UART2_DMA_Config(void)
+{
+    RCC->APB1ENR |= (1 << 17); // USART2 clock
+    RCC->AHBENR  |= (1 << 0);  // DMA1 clock
+
+    USART2->BRR = 16000000 / 9600;
+    USART2->CR1 |= (1 << 2) | (1 << 3); // RE, TE
+    USART2->CR3 |= (1 << 6) | (1 << 7); // DMAR, DMAT
+    USART2->CR1 |= (1 << 13);           // UE
+
+    // DMA1 Channel4 = USART2_TX
+    DMA1_Channel4->CCR = 0;
+    DMA1_Channel4->CPAR  = (uint32_t)&USART2->TDR;
+    DMA1_Channel4->CMAR  = (uint32_t)TxBuffer;
+    DMA1_Channel4->CNDTR = TX_LEN;
+    DMA1_Channel4->CCR   = (1 << 7) | (1 << 4) | (1 << 3); // MEM2PER, MINC, DIR=1
+
+    // DMA1 Channel5 = USART2_RX
+    DMA1_Channel5->CCR = 0;
+    DMA1_Channel5->CPAR  = (uint32_t)&USART2->RDR;
+    DMA1_Channel5->CMAR  = (uint32_t)RxBuffer;
+    DMA1_Channel5->CNDTR = TX_LEN;
+    DMA1_Channel5->CCR   = (1 << 7) | (1 << 4); // PER2MEM, MINC
+
+    DMA1_Channel5->CCR |= (1 << 0); // Enable RX DMA
+}
+
+#endif /* STM32L053XX_H_ */

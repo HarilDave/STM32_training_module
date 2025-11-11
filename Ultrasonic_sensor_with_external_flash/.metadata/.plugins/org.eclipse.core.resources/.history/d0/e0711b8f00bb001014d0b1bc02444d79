@@ -1,0 +1,46 @@
+/*
+ * w25qxx.h
+ *
+ *  Created on: Nov 6, 2025
+ *      Author: Himshree
+ */
+
+#ifndef INC_W25QXX_H_
+#define INC_W25QXX_H_
+
+#include <stdint.h>
+#include <stdbool.h>
+
+/******************************************************************************
+ * Macro Definitions.
+ *****************************************************************************/
+#define USER_ADDR_1				(0x000000)		 /*< Sector 0 starts address */
+#define USER_ADDR_2				(0x001000)		 /*< Sector 1 starts address */
+#define USER_ADDR_3				(0x002000)		 /*< Sector 2 starts address */
+
+/******************************************************************************
+ * Enum Definitions.
+ *****************************************************************************/
+typedef enum _eExtFlashErr_
+{
+	eExtFlashSuccess = 0,
+	eExtFlashWriteError,
+	eExtFlashReadError,
+	eExtFlashErrorMax
+} eExtFlashErr;
+
+/******************************************************************************
+ * Structure Definitions.
+ *****************************************************************************/
+
+/******************************************************************************
+ * Function Declarations.
+ *****************************************************************************/
+void InitW25QxxFlash(void);
+eExtFlashErr W25QxxFlashWriteData(uint8_t* pucData, uint16_t uhDataSize,
+									uint32_t uiSaveAddr);
+eExtFlashErr W25QxxFlashReadData(uint8_t* pucData, uint16_t uhDataSize,
+									uint32_t uiReadAddr);
+uint32_t GetW25QxxJEDECId(void);
+
+#endif /* INC_W25QXX_H_ */

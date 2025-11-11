@@ -1,0 +1,5 @@
+../Src/gpio_driver.c:10:6:GPIO_Init	8
+../Src/gpio_driver.c:47:6:GPIO_DeInit	6
+../Src/gpio_driver.c:76:6:GPIO_WritePin	2
+../Src/gpio_driver.c:84:9:GPIO_ReadPin	1
+../Src/gpio_driver.c:89:6:GPIO_TogglePin	1

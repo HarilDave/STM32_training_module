@@ -1,0 +1,58 @@
+#include "ultrasonic.h"
+
+void Ultrasonic_Init(void)
+{
+    HAL_TIM_Base_Start(&ULTRASONIC_TIMER);
+
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+    /* TRIG as output */
+    GPIO_InitStruct.Pin = ULTRASONIC_TRIG_PIN;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(ULTRASONIC_TRIG_PORT, &GPIO_InitStruct);
+
+    /* ECHO as input */
+    GPIO_InitStruct.Pin = ULTRASONIC_ECHO_PIN;
+    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    HAL_GPIO_Init(ULTRASONIC_ECHO_PORT, &GPIO_InitStruct);
+}
+
+float Ultrasonic_Read(void)
+{
+    uint32_t start = 0, end = 0;
+    uint32_t timeout;
+
+    /* Send 10 µs trigger pulse */
+    HAL_GPIO_WritePin(ULTRASONIC_TRIG_PORT, ULTRASONIC_TRIG_PIN, GPIO_PIN_RESET);
+    HAL_Delay(2);
+    HAL_GPIO_WritePin(ULTRASONIC_TRIG_PORT, ULTRASONIC_TRIG_PIN, GPIO_PIN_SET);
+    HAL_Delay(0.01);
+    HAL_GPIO_WritePin(ULTRASONIC_TRIG_PORT, ULTRASONIC_TRIG_PIN, GPIO_PIN_RESET);
+
+    /* Wait for ECHO high (rising edge) */
+    timeout = HAL_GetTick();
+    while (HAL_GPIO_ReadPin(ULTRASONIC_ECHO_PORT, ULTRASONIC_ECHO_PIN) == GPIO_PIN_RESET)
+    {
+        if (HAL_GetTick() - timeout > 50) return -1.0f; // timeout, no echo
+    }
+    start = __HAL_TIM_GET_COUNTER(&ULTRASONIC_TIMER);
+
+    /* Wait for ECHO low (falling edge) */
+    timeout = HAL_GetTick();
+    while (HAL_GPIO_ReadPin(ULTRASONIC_ECHO_PORT, ULTRASONIC_ECHO_PIN) == GPIO_PIN_SET)
+    {
+        if (HAL_GetTick() - timeout > 50) return -1.0f; // timeout, stuck high
+    }
+    end = __HAL_TIM_GET_COUNTER(&ULTRASONIC_TIMER);
+
+    /* Handle timer overflow */
+    uint32_t diff = (end >= start) ? (end - start) : ((0xFFFF - start) + end);
+
+    /* Convert to cm (speed of sound = 34300 cm/s) */
+    float distance = (float)diff * 0.0343f / 2.0f;
+
+    return distance;
+}

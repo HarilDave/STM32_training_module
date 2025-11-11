@@ -1,0 +1,10 @@
+18:40:51 **** Incremental Build of configuration Debug for project STM32_ultrasonic sensor_HAL ****
+make -j8 all 
+arm-none-eabi-size  STM32_ultrasonic\ sensor_HAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4944	     12	   1644	   6600	   19c8	STM32_ultrasonic sensor_HAL.elf
+Finished building: default.size.stdout
+ 
+
+18:40:51 Build Finished. 0 errors, 0 warnings. (took 490ms)
+

@@ -1,0 +1,1358 @@
+11:51:40 **** Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m0plus -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32l053c8tx.d" -MT"Startup/startup_stm32l053c8tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32l053c8tx.o" "../Startup/startup_stm32l053c8tx.s"
+arm-none-eabi-gcc "../Src/gpio_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/gpio_driver.d" -MT"Src/gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/gpio_driver.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/spi_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_driver.d" -MT"Src/spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_driver.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+../Src/gpio_driver.c: In function 'GPIO_Init':
+../Src/gpio_driver.c:11:14: warning: comparison of distinct pointer types lacks a cast
+   11 |     if (port == GPIOA) RCC->IOPENR |= (1 << 0);
+      |              ^~
+../Src/gpio_driver.c:12:19: warning: comparison of distinct pointer types lacks a cast
+   12 |     else if (port == GPIOB) RCC->IOPENR |= (1 << 1);
+      |                   ^~
+../Src/gpio_driver.c:13:19: warning: comparison of distinct pointer types lacks a cast
+   13 |     else if (port == GPIOC) RCC->IOPENR |= (1 << 2);
+      |                   ^~
+../Src/gpio_driver.c:14:19: warning: comparison of distinct pointer types lacks a cast
+   14 |     else if (port == GPIOD) RCC->IOPENR |= (1 << 3);
+      |                   ^~
+../Src/gpio_driver.c:15:19: warning: comparison of distinct pointer types lacks a cast
+   15 |     else if (port == GPIOH) RCC->IOPENR |= (1 << 7);
+      |                   ^~
+../Src/spi_driver.c: In function 'SPI1_DMA_Init':
+../Src/spi_driver.c:163:5: error: 'DMA1_Channel2' undeclared (first use in this function)
+  163 |     DMA1_Channel2->CCR = 0;
+      |     ^~~~~~~~~~~~~
+../Src/spi_driver.c:163:5: note: each undeclared identifier is reported only once for each function it appears in
+../Src/gpio_driver.c: In function 'GPIO_DeInit':
+../Src/spi_driver.c:164:5: error: 'DMA1_Channel3' undeclared (first use in this function)
+  164 |     DMA1_Channel3->CCR = 0;
+      |     ^~~~~~~~~~~~~
+../Src/gpio_driver.c:49:14: warning: comparison of distinct pointer types lacks a cast
+   49 |     if (port == GPIOA)
+      |              ^~
+../Src/gpio_driver.c:54:19: warning: comparison of distinct pointer types lacks a cast
+   54 |     else if (port == GPIOB)
+      |                   ^~
+../Src/gpio_driver.c:59:19: warning: comparison of distinct pointer types lacks a cast
+   59 |     else if (port == GPIOC)
+      |                   ^~
+../Src/gpio_driver.c:64:19: warning: comparison of distinct pointer types lacks a cast
+   64 |     else if (port == GPIOD)
+      |                   ^~
+../Src/spi_driver.c: In function 'SPI1_DMA_Start':
+../Src/gpio_driver.c:69:19: warning: comparison of distinct pointer types lacks a cast
+   69 |     else if (port == GPIOH)
+      |                   ^~
+../Src/spi_driver.c:179:5: error: 'DMA1_Channel3' undeclared (first use in this function)
+  179 |     DMA1_Channel3->CCR |= 1;
+      |     ^~~~~~~~~~~~~
+../Src/spi_driver.c:180:5: error: 'DMA1_Channel2' undeclared (first use in this function)
+  180 |     DMA1_Channel2->CCR |= 1;
+      |     ^~~~~~~~~~~~~
+../Src/spi_driver.c: In function 'SPI1_DMA_Stop':
+../Src/spi_driver.c:187:5: error: 'DMA1_Channel2' undeclared (first use in this function)
+  187 |     DMA1_Channel2->CCR &= ~1;
+      |     ^~~~~~~~~~~~~
+../Src/spi_driver.c:188:5: error: 'DMA1_Channel3' undeclared (first use in this function)
+  188 |     DMA1_Channel3->CCR &= ~1;
+      |     ^~~~~~~~~~~~~
+make: *** [Src/subdir.mk:31: Src/spi_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:52:33 **** Incremental Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/spi_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_driver.d" -MT"Src/spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_driver.o"
+../Src/main.c: In function 'main':
+../Src/main.c:28:5: warning: implicit declaration of function 'SPI1_DMA_Init'; did you mean 'SPI_DeInit'? [-Wimplicit-function-declaration]
+   28 |     SPI1_DMA_Init(txBuf, rxBuf, 5);
+      |     ^~~~~~~~~~~~~
+      |     SPI_DeInit
+../Src/main.c:32:9: warning: implicit declaration of function 'SPI1_DMA_Start' [-Wimplicit-function-declaration]
+   32 |         SPI1_DMA_Start();
+      |         ^~~~~~~~~~~~~~
+../Src/main.c:34:9: warning: implicit declaration of function 'SPI1_DMA_Stop' [-Wimplicit-function-declaration]
+   34 |         SPI1_DMA_Stop();
+      |         ^~~~~~~~~~~~~
+../Src/spi_driver.c: In function 'SPI1_DMA_Init':
+../Src/spi_driver.c:163:5: error: 'DMA1_Channel2' undeclared (first use in this function)
+  163 |     DMA1_Channel2->CCR = 0;
+      |     ^~~~~~~~~~~~~
+../Src/spi_driver.c:163:5: note: each undeclared identifier is reported only once for each function it appears in
+../Src/spi_driver.c:164:5: error: 'DMA1_Channel3' undeclared (first use in this function)
+  164 |     DMA1_Channel3->CCR = 0;
+      |     ^~~~~~~~~~~~~
+../Src/spi_driver.c: In function 'SPI1_DMA_Start':
+../Src/spi_driver.c:179:5: error: 'DMA1_Channel3' undeclared (first use in this function)
+  179 |     DMA1_Channel3->CCR |= 1;
+      |     ^~~~~~~~~~~~~
+../Src/spi_driver.c:180:5: error: 'DMA1_Channel2' undeclared (first use in this function)
+  180 |     DMA1_Channel2->CCR |= 1;
+      |     ^~~~~~~~~~~~~
+../Src/spi_driver.c: In function 'SPI1_DMA_Stop':
+../Src/spi_driver.c:187:5: error: 'DMA1_Channel2' undeclared (first use in this function)
+  187 |     DMA1_Channel2->CCR &= ~1;
+      |     ^~~~~~~~~~~~~
+../Src/spi_driver.c:188:5: error: 'DMA1_Channel3' undeclared (first use in this function)
+  188 |     DMA1_Channel3->CCR &= ~1;
+      |     ^~~~~~~~~~~~~
+make: *** [Src/subdir.mk:31: Src/spi_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:53:05 **** Incremental Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/spi_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_driver.d" -MT"Src/spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_driver.o"
+../Src/spi_driver.c: In function 'SPI1_DMA_Init':
+../Src/spi_driver.c:163:5: error: 'DMA1_Channel2' undeclared (first use in this function)
+  163 |     DMA1_Channel2->CCR = 0;
+      |     ^~~~~~~~~~~~~
+../Src/spi_driver.c:163:5: note: each undeclared identifier is reported only once for each function it appears in
+../Src/spi_driver.c:164:5: error: 'DMA1_Channel3' undeclared (first use in this function)
+  164 |     DMA1_Channel3->CCR = 0;
+      |     ^~~~~~~~~~~~~
+../Src/spi_driver.c: In function 'SPI1_DMA_Start':
+../Src/spi_driver.c:179:5: error: 'DMA1_Channel3' undeclared (first use in this function)
+  179 |     DMA1_Channel3->CCR |= 1;
+      |     ^~~~~~~~~~~~~
+../Src/spi_driver.c:180:5: error: 'DMA1_Channel2' undeclared (first use in this function)
+  180 |     DMA1_Channel2->CCR |= 1;
+      |     ^~~~~~~~~~~~~
+../Src/spi_driver.c: In function 'SPI1_DMA_Stop':
+../Src/spi_driver.c:187:5: error: 'DMA1_Channel2' undeclared (first use in this function)
+  187 |     DMA1_Channel2->CCR &= ~1;
+      |     ^~~~~~~~~~~~~
+../Src/spi_driver.c:188:5: error: 'DMA1_Channel3' undeclared (first use in this function)
+  188 |     DMA1_Channel3->CCR &= ~1;
+      |     ^~~~~~~~~~~~~
+make: *** [Src/subdir.mk:31: Src/spi_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:54:25 **** Incremental Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/spi_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_driver.d" -MT"Src/spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_driver.o"
+../Src/spi_driver.c:144:6: error: conflicting types for 'SPI1_DMA_Init'; have 'void(void)'
+  144 | void SPI1_DMA_Init(void)
+      |      ^~~~~~~~~~~~~
+In file included from ../Src/spi_driver.c:8:
+../Inc/spi_driver.h:93:6: note: previous declaration of 'SPI1_DMA_Init' with type 'void(uint8_t *, uint8_t *, uint16_t)' {aka 'void(unsigned char *, unsigned char *, short unsigned int)'}
+   93 | void SPI1_DMA_Init(uint8_t *txBuf, uint8_t *rxBuf, uint16_t size);
+      |      ^~~~~~~~~~~~~
+../Src/spi_driver.c: In function 'SPI1_DMA_Init':
+../Src/spi_driver.c:146:5: warning: implicit declaration of function '__HAL_RCC_DMA1_CLK_ENABLE' [-Wimplicit-function-declaration]
+  146 |     __HAL_RCC_DMA1_CLK_ENABLE();
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:149:5: error: 'hdma_spi1_tx' undeclared (first use in this function)
+  149 |     hdma_spi1_tx.Instance = DMA1_Channel3;
+      |     ^~~~~~~~~~~~
+../Src/spi_driver.c:149:5: note: each undeclared identifier is reported only once for each function it appears in
+../Src/spi_driver.c:149:29: error: 'DMA1_Channel3' undeclared (first use in this function)
+  149 |     hdma_spi1_tx.Instance = DMA1_Channel3;
+      |                             ^~~~~~~~~~~~~
+../Src/spi_driver.c:150:33: error: 'DMA_REQUEST_1' undeclared (first use in this function)
+  150 |     hdma_spi1_tx.Init.Request = DMA_REQUEST_1;
+      |                                 ^~~~~~~~~~~~~
+../Src/spi_driver.c:151:35: error: 'DMA_MEMORY_TO_PERIPH' undeclared (first use in this function)
+  151 |     hdma_spi1_tx.Init.Direction = DMA_MEMORY_TO_PERIPH;
+      |                                   ^~~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:152:35: error: 'DMA_PINC_DISABLE' undeclared (first use in this function)
+  152 |     hdma_spi1_tx.Init.PeriphInc = DMA_PINC_DISABLE;
+      |                                   ^~~~~~~~~~~~~~~~
+../Src/spi_driver.c:153:32: error: 'DMA_MINC_ENABLE' undeclared (first use in this function)
+  153 |     hdma_spi1_tx.Init.MemInc = DMA_MINC_ENABLE;
+      |                                ^~~~~~~~~~~~~~~
+../Src/spi_driver.c:154:45: error: 'DMA_PDATAALIGN_BYTE' undeclared (first use in this function)
+  154 |     hdma_spi1_tx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
+      |                                             ^~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:155:42: error: 'DMA_MDATAALIGN_BYTE' undeclared (first use in this function)
+  155 |     hdma_spi1_tx.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
+      |                                          ^~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:156:30: error: 'DMA_NORMAL' undeclared (first use in this function)
+  156 |     hdma_spi1_tx.Init.Mode = DMA_NORMAL;
+      |                              ^~~~~~~~~~
+../Src/spi_driver.c:157:34: error: 'DMA_PRIORITY_LOW' undeclared (first use in this function)
+  157 |     hdma_spi1_tx.Init.Priority = DMA_PRIORITY_LOW;
+      |                                  ^~~~~~~~~~~~~~~~
+../Src/spi_driver.c:158:5: warning: implicit declaration of function 'HAL_DMA_Init'; did you mean 'SPI1_DMA_Init'? [-Wimplicit-function-declaration]
+  158 |     HAL_DMA_Init(&hdma_spi1_tx);
+      |     ^~~~~~~~~~~~
+      |     SPI1_DMA_Init
+../Src/spi_driver.c:160:5: warning: implicit declaration of function '__HAL_LINKDMA' [-Wimplicit-function-declaration]
+  160 |     __HAL_LINKDMA(&hspi1, hdmatx, hdma_spi1_tx);
+      |     ^~~~~~~~~~~~~
+../Src/spi_driver.c:160:20: error: 'hspi1' undeclared (first use in this function)
+  160 |     __HAL_LINKDMA(&hspi1, hdmatx, hdma_spi1_tx);
+      |                    ^~~~~
+../Src/spi_driver.c:160:27: error: 'hdmatx' undeclared (first use in this function)
+  160 |     __HAL_LINKDMA(&hspi1, hdmatx, hdma_spi1_tx);
+      |                           ^~~~~~
+../Src/spi_driver.c:163:5: error: 'hdma_spi1_rx' undeclared (first use in this function)
+  163 |     hdma_spi1_rx.Instance = DMA1_Channel2;
+      |     ^~~~~~~~~~~~
+../Src/spi_driver.c:163:29: error: 'DMA1_Channel2' undeclared (first use in this function)
+  163 |     hdma_spi1_rx.Instance = DMA1_Channel2;
+      |                             ^~~~~~~~~~~~~
+../Src/spi_driver.c:165:35: error: 'DMA_PERIPH_TO_MEMORY' undeclared (first use in this function)
+  165 |     hdma_spi1_rx.Init.Direction = DMA_PERIPH_TO_MEMORY;
+      |                                   ^~~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:171:34: error: 'DMA_PRIORITY_HIGH' undeclared (first use in this function)
+  171 |     hdma_spi1_rx.Init.Priority = DMA_PRIORITY_HIGH;
+      |                                  ^~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:174:27: error: 'hdmarx' undeclared (first use in this function)
+  174 |     __HAL_LINKDMA(&hspi1, hdmarx, hdma_spi1_rx);
+      |                           ^~~~~~
+../Src/spi_driver.c:177:5: warning: implicit declaration of function 'HAL_NVIC_SetPriority' [-Wimplicit-function-declaration]
+  177 |     HAL_NVIC_SetPriority(DMA1_Channel2_3_IRQn, 0, 0);
+      |     ^~~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:177:26: error: 'DMA1_Channel2_3_IRQn' undeclared (first use in this function)
+  177 |     HAL_NVIC_SetPriority(DMA1_Channel2_3_IRQn, 0, 0);
+      |                          ^~~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:178:5: warning: implicit declaration of function 'HAL_NVIC_EnableIRQ' [-Wimplicit-function-declaration]
+  178 |     HAL_NVIC_EnableIRQ(DMA1_Channel2_3_IRQn);
+      |     ^~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c: In function 'SPI1_DMA_TransmitReceive':
+../Src/spi_driver.c:183:5: warning: implicit declaration of function 'HAL_SPI_TransmitReceive_DMA' [-Wimplicit-function-declaration]
+  183 |     HAL_SPI_TransmitReceive_DMA(&hspi1, txData, rxData, size);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:183:34: error: 'hspi1' undeclared (first use in this function)
+  183 |     HAL_SPI_TransmitReceive_DMA(&hspi1, txData, rxData, size);
+      |                                  ^~~~~
+../Src/spi_driver.c: In function 'DMA1_Channel2_3_IRQHandler':
+../Src/spi_driver.c:189:5: warning: implicit declaration of function 'HAL_DMA_IRQHandler' [-Wimplicit-function-declaration]
+  189 |     HAL_DMA_IRQHandler(&hdma_spi1_tx);
+      |     ^~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:189:25: error: 'hdma_spi1_tx' undeclared (first use in this function)
+  189 |     HAL_DMA_IRQHandler(&hdma_spi1_tx);
+      |                         ^~~~~~~~~~~~
+../Src/spi_driver.c:190:25: error: 'hdma_spi1_rx' undeclared (first use in this function)
+  190 |     HAL_DMA_IRQHandler(&hdma_spi1_rx);
+      |                         ^~~~~~~~~~~~
+make: *** [Src/subdir.mk:31: Src/spi_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:55:07 **** Incremental Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/spi_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_driver.d" -MT"Src/spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_driver.o"
+../Src/spi_driver.c:144:6: error: conflicting types for 'SPI1_DMA_Init'; have 'void(void)'
+  144 | void SPI1_DMA_Init(void)
+      |      ^~~~~~~~~~~~~
+In file included from ../Src/spi_driver.c:8:
+../Inc/spi_driver.h:93:6: note: previous declaration of 'SPI1_DMA_Init' with type 'void(uint8_t *, uint8_t *, uint16_t)' {aka 'void(unsigned char *, unsigned char *, short unsigned int)'}
+   93 | void SPI1_DMA_Init(uint8_t *txBuf, uint8_t *rxBuf, uint16_t size);
+      |      ^~~~~~~~~~~~~
+../Src/spi_driver.c: In function 'SPI1_DMA_Init':
+../Src/spi_driver.c:146:5: warning: implicit declaration of function '__HAL_RCC_DMA1_CLK_ENABLE' [-Wimplicit-function-declaration]
+  146 |     __HAL_RCC_DMA1_CLK_ENABLE();
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:149:5: error: 'hdma_spi1_tx' undeclared (first use in this function)
+  149 |     hdma_spi1_tx.Instance = DMA1_Channel3;
+      |     ^~~~~~~~~~~~
+../Src/spi_driver.c:149:5: note: each undeclared identifier is reported only once for each function it appears in
+../Src/spi_driver.c:149:29: error: 'DMA1_Channel3' undeclared (first use in this function)
+  149 |     hdma_spi1_tx.Instance = DMA1_Channel3;
+      |                             ^~~~~~~~~~~~~
+../Src/spi_driver.c:150:33: error: 'DMA_REQUEST_1' undeclared (first use in this function)
+  150 |     hdma_spi1_tx.Init.Request = DMA_REQUEST_1;
+      |                                 ^~~~~~~~~~~~~
+../Src/spi_driver.c:151:35: error: 'DMA_MEMORY_TO_PERIPH' undeclared (first use in this function)
+  151 |     hdma_spi1_tx.Init.Direction = DMA_MEMORY_TO_PERIPH;
+      |                                   ^~~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:152:35: error: 'DMA_PINC_DISABLE' undeclared (first use in this function)
+  152 |     hdma_spi1_tx.Init.PeriphInc = DMA_PINC_DISABLE;
+      |                                   ^~~~~~~~~~~~~~~~
+../Src/spi_driver.c:153:32: error: 'DMA_MINC_ENABLE' undeclared (first use in this function)
+  153 |     hdma_spi1_tx.Init.MemInc = DMA_MINC_ENABLE;
+      |                                ^~~~~~~~~~~~~~~
+../Src/spi_driver.c:154:45: error: 'DMA_PDATAALIGN_BYTE' undeclared (first use in this function)
+  154 |     hdma_spi1_tx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
+      |                                             ^~~~~~~~~~~~~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:28:5: warning: implicit declaration of function 'HAL_Init' [-Wimplicit-function-declaration]
+   28 |     HAL_Init();
+      |     ^~~~~~~~
+../Src/spi_driver.c:155:42: error: 'DMA_MDATAALIGN_BYTE' undeclared (first use in this function)
+  155 |     hdma_spi1_tx.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
+      |                                          ^~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:156:30: error: 'DMA_NORMAL' undeclared (first use in this function)
+  156 |     hdma_spi1_tx.Init.Mode = DMA_NORMAL;
+      |                              ^~~~~~~~~~
+../Src/main.c:29:5: warning: implicit declaration of function 'SystemClock_Config' [-Wimplicit-function-declaration]
+   29 |     SystemClock_Config();
+      |     ^~~~~~~~~~~~~~~~~~
+../Src/main.c:30:5: warning: implicit declaration of function 'SPI1_Init'; did you mean 'SPI_Init'? [-Wimplicit-function-declaration]
+   30 |     SPI1_Init();
+      |     ^~~~~~~~~
+      |     SPI_Init
+../Src/spi_driver.c:157:34: error: 'DMA_PRIORITY_LOW' undeclared (first use in this function)
+  157 |     hdma_spi1_tx.Init.Priority = DMA_PRIORITY_LOW;
+      |                                  ^~~~~~~~~~~~~~~~
+../Src/main.c:31:5: error: too few arguments to function 'SPI1_DMA_Init'
+   31 |     SPI1_DMA_Init();
+      |     ^~~~~~~~~~~~~
+../Src/spi_driver.c:158:5: warning: implicit declaration of function 'HAL_DMA_Init'; did you mean 'SPI1_DMA_Init'? [-Wimplicit-function-declaration]
+  158 |     HAL_DMA_Init(&hdma_spi1_tx);
+      |     ^~~~~~~~~~~~
+      |     SPI1_DMA_Init
+In file included from ../Src/main.c:20:
+../Inc/spi_driver.h:93:6: note: declared here
+   93 | void SPI1_DMA_Init(uint8_t *txBuf, uint8_t *rxBuf, uint16_t size);
+      |      ^~~~~~~~~~~~~
+../Src/main.c:35:9: warning: implicit declaration of function 'SPI1_DMA_TransmitReceive' [-Wimplicit-function-declaration]
+   35 |         SPI1_DMA_TransmitReceive(txBuf, rxBuf, 1);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:36:9: warning: implicit declaration of function 'HAL_Delay' [-Wimplicit-function-declaration]
+   36 |         HAL_Delay(1000);
+      |         ^~~~~~~~~
+../Src/spi_driver.c:160:5: warning: implicit declaration of function '__HAL_LINKDMA' [-Wimplicit-function-declaration]
+  160 |     __HAL_LINKDMA(&hspi1, hdmatx, hdma_spi1_tx);
+      |     ^~~~~~~~~~~~~
+../Src/spi_driver.c:160:20: error: 'hspi1' undeclared (first use in this function)
+  160 |     __HAL_LINKDMA(&hspi1, hdmatx, hdma_spi1_tx);
+      |                    ^~~~~
+../Src/spi_driver.c:160:27: error: 'hdmatx' undeclared (first use in this function)
+  160 |     __HAL_LINKDMA(&hspi1, hdmatx, hdma_spi1_tx);
+      |                           ^~~~~~
+../Src/spi_driver.c:163:5: error: 'hdma_spi1_rx' undeclared (first use in this function)
+  163 |     hdma_spi1_rx.Instance = DMA1_Channel2;
+      |     ^~~~~~~~~~~~
+../Src/spi_driver.c:163:29: error: 'DMA1_Channel2' undeclared (first use in this function)
+  163 |     hdma_spi1_rx.Instance = DMA1_Channel2;
+      |                             ^~~~~~~~~~~~~
+../Src/spi_driver.c:165:35: error: 'DMA_PERIPH_TO_MEMORY' undeclared (first use in this function)
+  165 |     hdma_spi1_rx.Init.Direction = DMA_PERIPH_TO_MEMORY;
+      |                                   ^~~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:171:34: error: 'DMA_PRIORITY_HIGH' undeclared (first use in this function)
+  171 |     hdma_spi1_rx.Init.Priority = DMA_PRIORITY_HIGH;
+      |                                  ^~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:174:27: error: 'hdmarx' undeclared (first use in this function)
+  174 |     __HAL_LINKDMA(&hspi1, hdmarx, hdma_spi1_rx);
+      |                           ^~~~~~
+../Src/spi_driver.c:177:5: warning: implicit declaration of function 'HAL_NVIC_SetPriority' [-Wimplicit-function-declaration]
+  177 |     HAL_NVIC_SetPriority(DMA1_Channel2_3_IRQn, 0, 0);
+      |     ^~~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:177:26: error: 'DMA1_Channel2_3_IRQn' undeclared (first use in this function)
+  177 |     HAL_NVIC_SetPriority(DMA1_Channel2_3_IRQn, 0, 0);
+      |                          ^~~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:178:5: warning: implicit declaration of function 'HAL_NVIC_EnableIRQ' [-Wimplicit-function-declaration]
+  178 |     HAL_NVIC_EnableIRQ(DMA1_Channel2_3_IRQn);
+      |     ^~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c: In function 'SPI1_DMA_TransmitReceive':
+../Src/spi_driver.c:183:5: warning: implicit declaration of function 'HAL_SPI_TransmitReceive_DMA' [-Wimplicit-function-declaration]
+  183 |     HAL_SPI_TransmitReceive_DMA(&hspi1, txData, rxData, size);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:183:34: error: 'hspi1' undeclared (first use in this function)
+  183 |     HAL_SPI_TransmitReceive_DMA(&hspi1, txData, rxData, size);
+      |                                  ^~~~~
+../Src/spi_driver.c: In function 'DMA1_Channel2_3_IRQHandler':
+../Src/spi_driver.c:189:5: warning: implicit declaration of function 'HAL_DMA_IRQHandler' [-Wimplicit-function-declaration]
+  189 |     HAL_DMA_IRQHandler(&hdma_spi1_tx);
+      |     ^~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:189:25: error: 'hdma_spi1_tx' undeclared (first use in this function)
+  189 |     HAL_DMA_IRQHandler(&hdma_spi1_tx);
+      |                         ^~~~~~~~~~~~
+../Src/spi_driver.c:190:25: error: 'hdma_spi1_rx' undeclared (first use in this function)
+  190 |     HAL_DMA_IRQHandler(&hdma_spi1_rx);
+      |                         ^~~~~~~~~~~~
+make: *** [Src/subdir.mk:31: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Src/subdir.mk:31: Src/spi_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:58:55 **** Incremental Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/spi_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_driver.d" -MT"Src/spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_driver.o"
+In file included from ../Src/main.c:20:
+../Inc/spi_driver.h:69:5: error: unknown type name 'DMA_Channel_TypeDef'
+   69 |     DMA_Channel_TypeDef *pDMA_Tx;
+      |     ^~~~~~~~~~~~~~~~~~~
+../Inc/spi_driver.h:70:5: error: unknown type name 'DMA_Channel_TypeDef'
+   70 |     DMA_Channel_TypeDef *pDMA_Rx;
+      |     ^~~~~~~~~~~~~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:28:5: warning: implicit declaration of function 'HAL_Init' [-Wimplicit-function-declaration]
+   28 |     HAL_Init();
+      |     ^~~~~~~~
+In file included from ../Src/spi_driver.c:8:
+../Inc/spi_driver.h:69:5: error: unknown type name 'DMA_Channel_TypeDef'
+   69 |     DMA_Channel_TypeDef *pDMA_Tx;
+      |     ^~~~~~~~~~~~~~~~~~~
+../Src/main.c:29:5: warning: implicit declaration of function 'SystemClock_Config' [-Wimplicit-function-declaration]
+   29 |     SystemClock_Config();
+      |     ^~~~~~~~~~~~~~~~~~
+../Inc/spi_driver.h:70:5: error: unknown type name 'DMA_Channel_TypeDef'
+   70 |     DMA_Channel_TypeDef *pDMA_Rx;
+      |     ^~~~~~~~~~~~~~~~~~~
+../Src/main.c:30:5: warning: implicit declaration of function 'SPI1_Init'; did you mean 'SPI_Init'? [-Wimplicit-function-declaration]
+   30 |     SPI1_Init();
+      |     ^~~~~~~~~
+      |     SPI_Init
+../Src/main.c:31:5: warning: implicit declaration of function 'SPI1_DMA_Init'; did you mean 'SPI_DMA_RxInit'? [-Wimplicit-function-declaration]
+   31 |     SPI1_DMA_Init();
+      |     ^~~~~~~~~~~~~
+      |     SPI_DMA_RxInit
+../Src/main.c:35:9: warning: implicit declaration of function 'SPI1_DMA_TransmitReceive' [-Wimplicit-function-declaration]
+   35 |         SPI1_DMA_TransmitReceive(txBuf, rxBuf, 1);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:36:9: warning: implicit declaration of function 'HAL_Delay' [-Wimplicit-function-declaration]
+   36 |         HAL_Delay(1000);
+      |         ^~~~~~~~~
+../Src/spi_driver.c: In function 'SPI1_DMA_Init':
+../Src/spi_driver.c:146:5: warning: implicit declaration of function '__HAL_RCC_DMA1_CLK_ENABLE' [-Wimplicit-function-declaration]
+  146 |     __HAL_RCC_DMA1_CLK_ENABLE();
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:149:5: error: 'hdma_spi1_tx' undeclared (first use in this function)
+  149 |     hdma_spi1_tx.Instance = DMA1_Channel3;
+      |     ^~~~~~~~~~~~
+../Src/spi_driver.c:149:5: note: each undeclared identifier is reported only once for each function it appears in
+../Src/spi_driver.c:149:29: error: 'DMA1_Channel3' undeclared (first use in this function)
+  149 |     hdma_spi1_tx.Instance = DMA1_Channel3;
+      |                             ^~~~~~~~~~~~~
+../Src/spi_driver.c:150:33: error: 'DMA_REQUEST_1' undeclared (first use in this function)
+  150 |     hdma_spi1_tx.Init.Request = DMA_REQUEST_1;
+      |                                 ^~~~~~~~~~~~~
+../Src/spi_driver.c:151:35: error: 'DMA_MEMORY_TO_PERIPH' undeclared (first use in this function)
+  151 |     hdma_spi1_tx.Init.Direction = DMA_MEMORY_TO_PERIPH;
+      |                                   ^~~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:152:35: error: 'DMA_PINC_DISABLE' undeclared (first use in this function)
+  152 |     hdma_spi1_tx.Init.PeriphInc = DMA_PINC_DISABLE;
+      |                                   ^~~~~~~~~~~~~~~~
+../Src/spi_driver.c:153:32: error: 'DMA_MINC_ENABLE' undeclared (first use in this function)
+  153 |     hdma_spi1_tx.Init.MemInc = DMA_MINC_ENABLE;
+      |                                ^~~~~~~~~~~~~~~
+../Src/spi_driver.c:154:45: error: 'DMA_PDATAALIGN_BYTE' undeclared (first use in this function)
+  154 |     hdma_spi1_tx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
+      |                                             ^~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:155:42: error: 'DMA_MDATAALIGN_BYTE' undeclared (first use in this function)
+  155 |     hdma_spi1_tx.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
+      |                                          ^~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:156:30: error: 'DMA_NORMAL' undeclared (first use in this function)
+  156 |     hdma_spi1_tx.Init.Mode = DMA_NORMAL;
+      |                              ^~~~~~~~~~
+../Src/spi_driver.c:157:34: error: 'DMA_PRIORITY_LOW' undeclared (first use in this function)
+  157 |     hdma_spi1_tx.Init.Priority = DMA_PRIORITY_LOW;
+      |                                  ^~~~~~~~~~~~~~~~
+../Src/spi_driver.c:158:5: warning: implicit declaration of function 'HAL_DMA_Init'; did you mean 'SPI1_DMA_Init'? [-Wimplicit-function-declaration]
+  158 |     HAL_DMA_Init(&hdma_spi1_tx);
+      |     ^~~~~~~~~~~~
+      |     SPI1_DMA_Init
+../Src/spi_driver.c:160:5: warning: implicit declaration of function '__HAL_LINKDMA' [-Wimplicit-function-declaration]
+  160 |     __HAL_LINKDMA(&hspi1, hdmatx, hdma_spi1_tx);
+      |     ^~~~~~~~~~~~~
+../Src/spi_driver.c:160:20: error: 'hspi1' undeclared (first use in this function)
+  160 |     __HAL_LINKDMA(&hspi1, hdmatx, hdma_spi1_tx);
+      |                    ^~~~~
+../Src/spi_driver.c:160:27: error: 'hdmatx' undeclared (first use in this function)
+  160 |     __HAL_LINKDMA(&hspi1, hdmatx, hdma_spi1_tx);
+      |                           ^~~~~~
+../Src/spi_driver.c:163:5: error: 'hdma_spi1_rx' undeclared (first use in this function)
+  163 |     hdma_spi1_rx.Instance = DMA1_Channel2;
+      |     ^~~~~~~~~~~~
+../Src/spi_driver.c:163:29: error: 'DMA1_Channel2' undeclared (first use in this function)
+  163 |     hdma_spi1_rx.Instance = DMA1_Channel2;
+      |                             ^~~~~~~~~~~~~
+../Src/spi_driver.c:165:35: error: 'DMA_PERIPH_TO_MEMORY' undeclared (first use in this function)
+  165 |     hdma_spi1_rx.Init.Direction = DMA_PERIPH_TO_MEMORY;
+      |                                   ^~~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:171:34: error: 'DMA_PRIORITY_HIGH' undeclared (first use in this function)
+  171 |     hdma_spi1_rx.Init.Priority = DMA_PRIORITY_HIGH;
+      |                                  ^~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:174:27: error: 'hdmarx' undeclared (first use in this function)
+  174 |     __HAL_LINKDMA(&hspi1, hdmarx, hdma_spi1_rx);
+      |                           ^~~~~~
+../Src/spi_driver.c:177:5: warning: implicit declaration of function 'HAL_NVIC_SetPriority' [-Wimplicit-function-declaration]
+  177 |     HAL_NVIC_SetPriority(DMA1_Channel2_3_IRQn, 0, 0);
+      |     ^~~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:177:26: error: 'DMA1_Channel2_3_IRQn' undeclared (first use in this function)
+  177 |     HAL_NVIC_SetPriority(DMA1_Channel2_3_IRQn, 0, 0);
+      |                          ^~~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:178:5: warning: implicit declaration of function 'HAL_NVIC_EnableIRQ' [-Wimplicit-function-declaration]
+  178 |     HAL_NVIC_EnableIRQ(DMA1_Channel2_3_IRQn);
+      |     ^~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c: In function 'SPI1_DMA_TransmitReceive':
+../Src/spi_driver.c:183:5: warning: implicit declaration of function 'HAL_SPI_TransmitReceive_DMA' [-Wimplicit-function-declaration]
+  183 |     HAL_SPI_TransmitReceive_DMA(&hspi1, txData, rxData, size);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:183:34: error: 'hspi1' undeclared (first use in this function)
+  183 |     HAL_SPI_TransmitReceive_DMA(&hspi1, txData, rxData, size);
+      |                                  ^~~~~
+../Src/spi_driver.c: In function 'DMA1_Channel2_3_IRQHandler':
+../Src/spi_driver.c:189:5: warning: implicit declaration of function 'HAL_DMA_IRQHandler' [-Wimplicit-function-declaration]
+  189 |     HAL_DMA_IRQHandler(&hdma_spi1_tx);
+      |     ^~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:189:25: error: 'hdma_spi1_tx' undeclared (first use in this function)
+  189 |     HAL_DMA_IRQHandler(&hdma_spi1_tx);
+      |                         ^~~~~~~~~~~~
+../Src/spi_driver.c:190:25: error: 'hdma_spi1_rx' undeclared (first use in this function)
+  190 |     HAL_DMA_IRQHandler(&hdma_spi1_rx);
+      |                         ^~~~~~~~~~~~
+make: *** [Src/subdir.mk:31: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Src/subdir.mk:31: Src/spi_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:59:20 **** Incremental Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/spi_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_driver.d" -MT"Src/spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_driver.o"
+In file included from ../Src/main.c:20:
+../Inc/spi_driver.h:69:5: error: unknown type name 'DMA_Channel_TypeDef'
+   69 |     DMA_Channel_TypeDef *pDMA_Tx;
+      |     ^~~~~~~~~~~~~~~~~~~
+../Inc/spi_driver.h:70:5: error: unknown type name 'DMA_Channel_TypeDef'
+   70 |     DMA_Channel_TypeDef *pDMA_Rx;
+      |     ^~~~~~~~~~~~~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:28:5: warning: implicit declaration of function 'HAL_Init' [-Wimplicit-function-declaration]
+   28 |     HAL_Init();
+      |     ^~~~~~~~
+../Src/main.c:29:5: warning: implicit declaration of function 'SystemClock_Config' [-Wimplicit-function-declaration]
+   29 |     SystemClock_Config();
+      |     ^~~~~~~~~~~~~~~~~~
+../Src/main.c:30:5: warning: implicit declaration of function 'SPI1_Init'; did you mean 'SPI_Init'? [-Wimplicit-function-declaration]
+   30 |     SPI1_Init();
+      |     ^~~~~~~~~
+      |     SPI_Init
+../Src/main.c:31:5: warning: implicit declaration of function 'SPI1_DMA_Init'; did you mean 'SPI_DMA_RxInit'? [-Wimplicit-function-declaration]
+   31 |     SPI1_DMA_Init();
+      |     ^~~~~~~~~~~~~
+      |     SPI_DMA_RxInit
+../Src/main.c:35:9: warning: implicit declaration of function 'SPI1_DMA_TransmitReceive' [-Wimplicit-function-declaration]
+   35 |         SPI1_DMA_TransmitReceive(txBuf, rxBuf, 1);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:36:9: warning: implicit declaration of function 'HAL_Delay' [-Wimplicit-function-declaration]
+   36 |         HAL_Delay(1000);
+      |         ^~~~~~~~~
+make: *** [Src/subdir.mk:31: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Src/spi_driver.c:8:
+../Inc/spi_driver.h:69:5: error: unknown type name 'DMA_Channel_TypeDef'
+   69 |     DMA_Channel_TypeDef *pDMA_Tx;
+      |     ^~~~~~~~~~~~~~~~~~~
+../Inc/spi_driver.h:70:5: error: unknown type name 'DMA_Channel_TypeDef'
+   70 |     DMA_Channel_TypeDef *pDMA_Rx;
+      |     ^~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c: In function 'SPI_DMA_TxInit':
+../Src/spi_driver.c:148:35: error: request for member 'CCR' in something not a structure or union
+  148 |         pSPIHandle->DMACfg.pDMA_Tx->CCR &= ~(1 << 0);
+      |                                   ^~
+../Src/spi_driver.c:151:35: error: request for member 'CPAR' in something not a structure or union
+  151 |         pSPIHandle->DMACfg.pDMA_Tx->CPAR = (uint32_t)&(pSPIHandle->pSPIx->DR);
+      |                                   ^~
+../Src/spi_driver.c:152:35: error: request for member 'CMAR' in something not a structure or union
+  152 |         pSPIHandle->DMACfg.pDMA_Tx->CMAR = (uint32_t)pTxBuffer;
+      |                                   ^~
+../Src/spi_driver.c:155:35: error: request for member 'CNDTR' in something not a structure or union
+  155 |         pSPIHandle->DMACfg.pDMA_Tx->CNDTR = Len;
+      |                                   ^~
+../Src/spi_driver.c:158:35: error: request for member 'CCR' in something not a structure or union
+  158 |         pSPIHandle->DMACfg.pDMA_Tx->CCR |= (1 << 4);
+      |                                   ^~
+../Src/spi_driver.c:161:35: error: request for member 'CCR' in something not a structure or union
+  161 |         pSPIHandle->DMACfg.pDMA_Tx->CCR |= (1 << 7);
+      |                                   ^~
+../Src/spi_driver.c:164:35: error: request for member 'CCR' in something not a structure or union
+  164 |         pSPIHandle->DMACfg.pDMA_Tx->CCR &= ~((1 << 8) | (1 << 10));
+      |                                   ^~
+../Src/spi_driver.c:167:35: error: request for member 'CCR' in something not a structure or union
+  167 |         pSPIHandle->DMACfg.pDMA_Tx->CCR |= (1 << 1);
+      |                                   ^~
+../Src/spi_driver.c: In function 'SPI_DMA_RxInit':
+../Src/spi_driver.c:180:35: error: request for member 'CCR' in something not a structure or union
+  180 |         pSPIHandle->DMACfg.pDMA_Rx->CCR &= ~(1 << 0);
+      |                                   ^~
+../Src/spi_driver.c:182:35: error: request for member 'CPAR' in something not a structure or union
+  182 |         pSPIHandle->DMACfg.pDMA_Rx->CPAR = (uint32_t)&(pSPIHandle->pSPIx->DR);
+      |                                   ^~
+../Src/spi_driver.c:183:35: error: request for member 'CMAR' in something not a structure or union
+  183 |         pSPIHandle->DMACfg.pDMA_Rx->CMAR = (uint32_t)pRxBuffer;
+      |                                   ^~
+../Src/spi_driver.c:184:35: error: request for member 'CNDTR' in something not a structure or union
+  184 |         pSPIHandle->DMACfg.pDMA_Rx->CNDTR = Len;
+      |                                   ^~
+../Src/spi_driver.c:187:35: error: request for member 'CCR' in something not a structure or union
+  187 |         pSPIHandle->DMACfg.pDMA_Rx->CCR &= ~(1 << 4);
+      |                                   ^~
+../Src/spi_driver.c:190:35: error: request for member 'CCR' in something not a structure or union
+  190 |         pSPIHandle->DMACfg.pDMA_Rx->CCR |= (1 << 7);
+      |                                   ^~
+../Src/spi_driver.c:193:35: error: request for member 'CCR' in something not a structure or union
+  193 |         pSPIHandle->DMACfg.pDMA_Rx->CCR &= ~((1 << 8) | (1 << 10));
+      |                                   ^~
+../Src/spi_driver.c:196:35: error: request for member 'CCR' in something not a structure or union
+  196 |         pSPIHandle->DMACfg.pDMA_Rx->CCR |= (1 << 1);
+      |                                   ^~
+../Src/spi_driver.c: In function 'SPI_DMA_Enable':
+../Src/spi_driver.c:205:43: error: request for member 'CCR' in something not a structure or union
+  205 |                 pSPIHandle->DMACfg.pDMA_Tx->CCR |= (1 << 0);
+      |                                           ^~
+../Src/spi_driver.c:208:43: error: request for member 'CCR' in something not a structure or union
+  208 |                 pSPIHandle->DMACfg.pDMA_Rx->CCR |= (1 << 0);
+      |                                           ^~
+../Src/spi_driver.c: In function 'SPI_DMA_Disable':
+../Src/spi_driver.c:213:35: error: request for member 'CCR' in something not a structure or union
+  213 |         pSPIHandle->DMACfg.pDMA_Tx->CCR &= ~(1 << 0);
+      |                                   ^~
+../Src/spi_driver.c:214:35: error: request for member 'CCR' in something not a structure or union
+  214 |         pSPIHandle->DMACfg.pDMA_Rx->CCR &= ~(1 << 0);
+      |                                   ^~
+../Src/spi_driver.c: In function 'SPI_DMA_TxCompleteCallback':
+../Src/spi_driver.c:221:35: error: request for member 'CCR' in something not a structure or union
+  221 |         pSPIHandle->DMACfg.pDMA_Tx->CCR &= ~(1 << 0);
+      |                                   ^~
+../Src/spi_driver.c: In function 'SPI_DMA_RxCompleteCallback':
+../Src/spi_driver.c:227:35: error: request for member 'CCR' in something not a structure or union
+  227 |         pSPIHandle->DMACfg.pDMA_Rx->CCR &= ~(1 << 0);
+      |                                   ^~
+make: *** [Src/subdir.mk:31: Src/spi_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:00:14 **** Incremental Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/spi_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_driver.d" -MT"Src/spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_driver.o"
+In file included from ../Src/main.c:20:
+../Inc/spi_driver.h:69:5: error: unknown type name 'DMA_Channel_TypeDef'
+   69 |     DMA_Channel_TypeDef *pDMA_Tx;
+      |     ^~~~~~~~~~~~~~~~~~~
+../Inc/spi_driver.h:70:5: error: unknown type name 'DMA_Channel_TypeDef'
+   70 |     DMA_Channel_TypeDef *pDMA_Rx;
+      |     ^~~~~~~~~~~~~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:28:5: warning: implicit declaration of function 'HAL_Init' [-Wimplicit-function-declaration]
+   28 |     HAL_Init();
+      |     ^~~~~~~~
+../Src/main.c:29:5: warning: implicit declaration of function 'SystemClock_Config' [-Wimplicit-function-declaration]
+   29 |     SystemClock_Config();
+      |     ^~~~~~~~~~~~~~~~~~
+../Src/main.c:30:5: warning: implicit declaration of function 'SPI1_Init'; did you mean 'SPI_Init'? [-Wimplicit-function-declaration]
+   30 |     SPI1_Init();
+      |     ^~~~~~~~~
+      |     SPI_Init
+../Src/main.c:31:5: warning: implicit declaration of function 'SPI1_DMA_Init'; did you mean 'SPI_DMA_RxInit'? [-Wimplicit-function-declaration]
+   31 |     SPI1_DMA_Init();
+      |     ^~~~~~~~~~~~~
+      |     SPI_DMA_RxInit
+../Src/main.c:35:9: warning: implicit declaration of function 'SPI1_DMA_TransmitReceive' [-Wimplicit-function-declaration]
+   35 |         SPI1_DMA_TransmitReceive(txBuf, rxBuf, 1);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:36:9: warning: implicit declaration of function 'HAL_Delay' [-Wimplicit-function-declaration]
+   36 |         HAL_Delay(1000);
+      |         ^~~~~~~~~
+make: *** [Src/subdir.mk:31: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Src/spi_driver.c:8:
+../Inc/spi_driver.h:69:5: error: unknown type name 'DMA_Channel_TypeDef'
+   69 |     DMA_Channel_TypeDef *pDMA_Tx;
+      |     ^~~~~~~~~~~~~~~~~~~
+../Inc/spi_driver.h:70:5: error: unknown type name 'DMA_Channel_TypeDef'
+   70 |     DMA_Channel_TypeDef *pDMA_Rx;
+      |     ^~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c: In function 'SPI_DMA_TxInit':
+../Src/spi_driver.c:148:35: error: request for member 'CCR' in something not a structure or union
+  148 |         pSPIHandle->DMACfg.pDMA_Tx->CCR &= ~(1 << 0);
+      |                                   ^~
+../Src/spi_driver.c:151:35: error: request for member 'CPAR' in something not a structure or union
+  151 |         pSPIHandle->DMACfg.pDMA_Tx->CPAR = (uint32_t)&(pSPIHandle->pSPIx->DR);
+      |                                   ^~
+../Src/spi_driver.c:152:35: error: request for member 'CMAR' in something not a structure or union
+  152 |         pSPIHandle->DMACfg.pDMA_Tx->CMAR = (uint32_t)pTxBuffer;
+      |                                   ^~
+../Src/spi_driver.c:155:35: error: request for member 'CNDTR' in something not a structure or union
+  155 |         pSPIHandle->DMACfg.pDMA_Tx->CNDTR = Len;
+      |                                   ^~
+../Src/spi_driver.c:158:35: error: request for member 'CCR' in something not a structure or union
+  158 |         pSPIHandle->DMACfg.pDMA_Tx->CCR |= (1 << 4);
+      |                                   ^~
+../Src/spi_driver.c:161:35: error: request for member 'CCR' in something not a structure or union
+  161 |         pSPIHandle->DMACfg.pDMA_Tx->CCR |= (1 << 7);
+      |                                   ^~
+../Src/spi_driver.c:164:35: error: request for member 'CCR' in something not a structure or union
+  164 |         pSPIHandle->DMACfg.pDMA_Tx->CCR &= ~((1 << 8) | (1 << 10));
+      |                                   ^~
+../Src/spi_driver.c:167:35: error: request for member 'CCR' in something not a structure or union
+  167 |         pSPIHandle->DMACfg.pDMA_Tx->CCR |= (1 << 1);
+      |                                   ^~
+../Src/spi_driver.c: In function 'SPI_DMA_RxInit':
+../Src/spi_driver.c:180:35: error: request for member 'CCR' in something not a structure or union
+  180 |         pSPIHandle->DMACfg.pDMA_Rx->CCR &= ~(1 << 0);
+      |                                   ^~
+../Src/spi_driver.c:182:35: error: request for member 'CPAR' in something not a structure or union
+  182 |         pSPIHandle->DMACfg.pDMA_Rx->CPAR = (uint32_t)&(pSPIHandle->pSPIx->DR);
+      |                                   ^~
+../Src/spi_driver.c:183:35: error: request for member 'CMAR' in something not a structure or union
+  183 |         pSPIHandle->DMACfg.pDMA_Rx->CMAR = (uint32_t)pRxBuffer;
+      |                                   ^~
+../Src/spi_driver.c:184:35: error: request for member 'CNDTR' in something not a structure or union
+  184 |         pSPIHandle->DMACfg.pDMA_Rx->CNDTR = Len;
+      |                                   ^~
+../Src/spi_driver.c:187:35: error: request for member 'CCR' in something not a structure or union
+  187 |         pSPIHandle->DMACfg.pDMA_Rx->CCR &= ~(1 << 4);
+      |                                   ^~
+../Src/spi_driver.c:190:35: error: request for member 'CCR' in something not a structure or union
+  190 |         pSPIHandle->DMACfg.pDMA_Rx->CCR |= (1 << 7);
+      |                                   ^~
+../Src/spi_driver.c:193:35: error: request for member 'CCR' in something not a structure or union
+  193 |         pSPIHandle->DMACfg.pDMA_Rx->CCR &= ~((1 << 8) | (1 << 10));
+      |                                   ^~
+../Src/spi_driver.c:196:35: error: request for member 'CCR' in something not a structure or union
+  196 |         pSPIHandle->DMACfg.pDMA_Rx->CCR |= (1 << 1);
+      |                                   ^~
+../Src/spi_driver.c: In function 'SPI_DMA_Enable':
+../Src/spi_driver.c:205:43: error: request for member 'CCR' in something not a structure or union
+  205 |                 pSPIHandle->DMACfg.pDMA_Tx->CCR |= (1 << 0);
+      |                                           ^~
+../Src/spi_driver.c:208:43: error: request for member 'CCR' in something not a structure or union
+  208 |                 pSPIHandle->DMACfg.pDMA_Rx->CCR |= (1 << 0);
+      |                                           ^~
+../Src/spi_driver.c: In function 'SPI_DMA_Disable':
+../Src/spi_driver.c:213:35: error: request for member 'CCR' in something not a structure or union
+  213 |         pSPIHandle->DMACfg.pDMA_Tx->CCR &= ~(1 << 0);
+      |                                   ^~
+../Src/spi_driver.c:214:35: error: request for member 'CCR' in something not a structure or union
+  214 |         pSPIHandle->DMACfg.pDMA_Rx->CCR &= ~(1 << 0);
+      |                                   ^~
+../Src/spi_driver.c: In function 'SPI_DMA_TxCompleteCallback':
+../Src/spi_driver.c:221:35: error: request for member 'CCR' in something not a structure or union
+  221 |         pSPIHandle->DMACfg.pDMA_Tx->CCR &= ~(1 << 0);
+      |                                   ^~
+../Src/spi_driver.c: In function 'SPI_DMA_RxCompleteCallback':
+../Src/spi_driver.c:227:5: error: unknown type name 'DMA_Channel_TypeDef'
+  227 |     DMA_Channel_TypeDef *pDMARx = pSPIHandle->DMACfg.pDMA_Rx;
+      |     ^~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:230:11: error: request for member 'CCR' in something not a structure or union
+  230 |     pDMARx->CCR &= ~(1 << 0);
+      |           ^~
+make: *** [Src/subdir.mk:31: Src/spi_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:04:04 **** Incremental Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/spi_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_driver.d" -MT"Src/spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_driver.o"
+../Src/main.c: In function 'main':
+../Src/main.c:28:5: warning: implicit declaration of function 'HAL_Init' [-Wimplicit-function-declaration]
+   28 |     HAL_Init();
+      |     ^~~~~~~~
+../Src/main.c:29:5: warning: implicit declaration of function 'SystemClock_Config' [-Wimplicit-function-declaration]
+   29 |     SystemClock_Config();
+      |     ^~~~~~~~~~~~~~~~~~
+../Src/main.c:30:5: warning: implicit declaration of function 'SPI1_Init'; did you mean 'SPI_Init'? [-Wimplicit-function-declaration]
+   30 |     SPI1_Init();
+      |     ^~~~~~~~~
+      |     SPI_Init
+../Src/main.c:31:5: warning: implicit declaration of function 'SPI1_DMA_Init'; did you mean 'SPI_DMA_RxInit'? [-Wimplicit-function-declaration]
+   31 |     SPI1_DMA_Init();
+      |     ^~~~~~~~~~~~~
+      |     SPI_DMA_RxInit
+../Src/main.c:35:9: warning: implicit declaration of function 'SPI1_DMA_TransmitReceive' [-Wimplicit-function-declaration]
+   35 |         SPI1_DMA_TransmitReceive(txBuf, rxBuf, 1);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:36:9: warning: implicit declaration of function 'HAL_Delay' [-Wimplicit-function-declaration]
+   36 |         HAL_Delay(1000);
+      |         ^~~~~~~~~
+../Src/spi_driver.c: In function 'SPI_DMA_TxInit':
+../Src/spi_driver.c:148:28: error: 'struct <anonymous>' has no member named 'pDMA_Tx'; did you mean 'pDMA_TxAddr'?
+  148 |         pSPIHandle->DMACfg.pDMA_Tx->CCR &= ~(1 << 0);
+      |                            ^~~~~~~
+      |                            pDMA_TxAddr
+../Src/spi_driver.c:151:28: error: 'struct <anonymous>' has no member named 'pDMA_Tx'; did you mean 'pDMA_TxAddr'?
+  151 |         pSPIHandle->DMACfg.pDMA_Tx->CPAR = (uint32_t)&(pSPIHandle->pSPIx->DR);
+      |                            ^~~~~~~
+      |                            pDMA_TxAddr
+../Src/spi_driver.c:152:28: error: 'struct <anonymous>' has no member named 'pDMA_Tx'; did you mean 'pDMA_TxAddr'?
+  152 |         pSPIHandle->DMACfg.pDMA_Tx->CMAR = (uint32_t)pTxBuffer;
+      |                            ^~~~~~~
+      |                            pDMA_TxAddr
+../Src/spi_driver.c:155:28: error: 'struct <anonymous>' has no member named 'pDMA_Tx'; did you mean 'pDMA_TxAddr'?
+  155 |         pSPIHandle->DMACfg.pDMA_Tx->CNDTR = Len;
+      |                            ^~~~~~~
+      |                            pDMA_TxAddr
+../Src/spi_driver.c:158:28: error: 'struct <anonymous>' has no member named 'pDMA_Tx'; did you mean 'pDMA_TxAddr'?
+  158 |         pSPIHandle->DMACfg.pDMA_Tx->CCR |= (1 << 4);
+      |                            ^~~~~~~
+      |                            pDMA_TxAddr
+../Src/spi_driver.c:161:28: error: 'struct <anonymous>' has no member named 'pDMA_Tx'; did you mean 'pDMA_TxAddr'?
+  161 |         pSPIHandle->DMACfg.pDMA_Tx->CCR |= (1 << 7);
+      |                            ^~~~~~~
+      |                            pDMA_TxAddr
+../Src/spi_driver.c:164:28: error: 'struct <anonymous>' has no member named 'pDMA_Tx'; did you mean 'pDMA_TxAddr'?
+  164 |         pSPIHandle->DMACfg.pDMA_Tx->CCR &= ~((1 << 8) | (1 << 10));
+      |                            ^~~~~~~
+      |                            pDMA_TxAddr
+../Src/spi_driver.c:167:28: error: 'struct <anonymous>' has no member named 'pDMA_Tx'; did you mean 'pDMA_TxAddr'?
+  167 |         pSPIHandle->DMACfg.pDMA_Tx->CCR |= (1 << 1);
+      |                            ^~~~~~~
+      |                            pDMA_TxAddr
+../Src/spi_driver.c: In function 'SPI_DMA_RxInit':
+../Src/spi_driver.c:180:28: error: 'struct <anonymous>' has no member named 'pDMA_Rx'; did you mean 'pDMA_RxAddr'?
+  180 |         pSPIHandle->DMACfg.pDMA_Rx->CCR &= ~(1 << 0);
+      |                            ^~~~~~~
+      |                            pDMA_RxAddr
+../Src/spi_driver.c:182:28: error: 'struct <anonymous>' has no member named 'pDMA_Rx'; did you mean 'pDMA_RxAddr'?
+  182 |         pSPIHandle->DMACfg.pDMA_Rx->CPAR = (uint32_t)&(pSPIHandle->pSPIx->DR);
+      |                            ^~~~~~~
+      |                            pDMA_RxAddr
+../Src/spi_driver.c:183:28: error: 'struct <anonymous>' has no member named 'pDMA_Rx'; did you mean 'pDMA_RxAddr'?
+  183 |         pSPIHandle->DMACfg.pDMA_Rx->CMAR = (uint32_t)pRxBuffer;
+      |                            ^~~~~~~
+      |                            pDMA_RxAddr
+../Src/spi_driver.c:184:28: error: 'struct <anonymous>' has no member named 'pDMA_Rx'; did you mean 'pDMA_RxAddr'?
+  184 |         pSPIHandle->DMACfg.pDMA_Rx->CNDTR = Len;
+      |                            ^~~~~~~
+      |                            pDMA_RxAddr
+../Src/spi_driver.c:187:28: error: 'struct <anonymous>' has no member named 'pDMA_Rx'; did you mean 'pDMA_RxAddr'?
+  187 |         pSPIHandle->DMACfg.pDMA_Rx->CCR &= ~(1 << 4);
+      |                            ^~~~~~~
+      |                            pDMA_RxAddr
+../Src/spi_driver.c:190:28: error: 'struct <anonymous>' has no member named 'pDMA_Rx'; did you mean 'pDMA_RxAddr'?
+  190 |         pSPIHandle->DMACfg.pDMA_Rx->CCR |= (1 << 7);
+      |                            ^~~~~~~
+      |                            pDMA_RxAddr
+../Src/spi_driver.c:193:28: error: 'struct <anonymous>' has no member named 'pDMA_Rx'; did you mean 'pDMA_RxAddr'?
+  193 |         pSPIHandle->DMACfg.pDMA_Rx->CCR &= ~((1 << 8) | (1 << 10));
+      |                            ^~~~~~~
+      |                            pDMA_RxAddr
+../Src/spi_driver.c:196:28: error: 'struct <anonymous>' has no member named 'pDMA_Rx'; did you mean 'pDMA_RxAddr'?
+  196 |         pSPIHandle->DMACfg.pDMA_Rx->CCR |= (1 << 1);
+      |                            ^~~~~~~
+      |                            pDMA_RxAddr
+../Src/spi_driver.c: In function 'SPI_DMA_Enable':
+../Src/spi_driver.c:205:36: error: 'struct <anonymous>' has no member named 'pDMA_Tx'; did you mean 'pDMA_TxAddr'?
+  205 |                 pSPIHandle->DMACfg.pDMA_Tx->CCR |= (1 << 0);
+      |                                    ^~~~~~~
+      |                                    pDMA_TxAddr
+../Src/spi_driver.c:208:36: error: 'struct <anonymous>' has no member named 'pDMA_Rx'; did you mean 'pDMA_RxAddr'?
+  208 |                 pSPIHandle->DMACfg.pDMA_Rx->CCR |= (1 << 0);
+      |                                    ^~~~~~~
+      |                                    pDMA_RxAddr
+../Src/spi_driver.c: In function 'SPI_DMA_Disable':
+../Src/spi_driver.c:213:28: error: 'struct <anonymous>' has no member named 'pDMA_Tx'; did you mean 'pDMA_TxAddr'?
+  213 |         pSPIHandle->DMACfg.pDMA_Tx->CCR &= ~(1 << 0);
+      |                            ^~~~~~~
+      |                            pDMA_TxAddr
+../Src/spi_driver.c:214:28: error: 'struct <anonymous>' has no member named 'pDMA_Rx'; did you mean 'pDMA_RxAddr'?
+  214 |         pSPIHandle->DMACfg.pDMA_Rx->CCR &= ~(1 << 0);
+      |                            ^~~~~~~
+      |                            pDMA_RxAddr
+../Src/spi_driver.c: In function 'SPI_DMA_TxCompleteCallback':
+../Src/spi_driver.c:221:28: error: 'struct <anonymous>' has no member named 'pDMA_Tx'; did you mean 'pDMA_TxAddr'?
+  221 |         pSPIHandle->DMACfg.pDMA_Tx->CCR &= ~(1 << 0);
+      |                            ^~~~~~~
+      |                            pDMA_TxAddr
+../Src/spi_driver.c: In function 'SPI_DMA_RxCompleteCallback':
+../Src/spi_driver.c:227:5: error: unknown type name 'DMA_Channel_TypeDef'
+  227 |     DMA_Channel_TypeDef *pDMARx = pSPIHandle->DMACfg.pDMA_Rx;
+      |     ^~~~~~~~~~~~~~~~~~~
+../Src/spi_driver.c:227:54: error: 'struct <anonymous>' has no member named 'pDMA_Rx'; did you mean 'pDMA_RxAddr'?
+  227 |     DMA_Channel_TypeDef *pDMARx = pSPIHandle->DMACfg.pDMA_Rx;
+      |                                                      ^~~~~~~
+      |                                                      pDMA_RxAddr
+../Src/spi_driver.c:230:11: error: request for member 'CCR' in something not a structure or union
+  230 |     pDMARx->CCR &= ~(1 << 0);
+      |           ^~
+make: *** [Src/subdir.mk:31: Src/spi_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:04:17 **** Incremental Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/spi_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_driver.d" -MT"Src/spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_driver.o"
+arm-none-eabi-gcc -o "DMA_SPI_driver.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Haril_bitsilica\STM_training_module\driver_playist_2\L_series_SPI_DMA_driver\DMA_SPI_driver\STM32L053C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA_SPI_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Src/main.o: in function `main':
+C:/Haril_bitsilica/STM_training_module/driver_playist_2/L_series_SPI_DMA_driver/DMA_SPI_driver/Debug/../Src/main.c:28:(.text.main+0x4): undefined reference to `HAL_Init'
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Haril_bitsilica/STM_training_module/driver_playist_2/L_series_SPI_DMA_driver/DMA_SPI_driver/Debug/../Src/main.c:29:(.text.main+0x8): undefined reference to `SystemClock_Config'
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Haril_bitsilica/STM_training_module/driver_playist_2/L_series_SPI_DMA_driver/DMA_SPI_driver/Debug/../Src/main.c:30:(.text.main+0xc): undefined reference to `SPI1_Init'
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Haril_bitsilica/STM_training_module/driver_playist_2/L_series_SPI_DMA_driver/DMA_SPI_driver/Debug/../Src/main.c:31:(.text.main+0x10): undefined reference to `SPI1_DMA_Init'
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Haril_bitsilica/STM_training_module/driver_playist_2/L_series_SPI_DMA_driver/DMA_SPI_driver/Debug/../Src/main.c:35:(.text.main+0x1c): undefined reference to `SPI1_DMA_TransmitReceive'
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Haril_bitsilica/STM_training_module/driver_playist_2/L_series_SPI_DMA_driver/DMA_SPI_driver/Debug/../Src/main.c:36:(.text.main+0x26): undefined reference to `HAL_Delay'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:63: DMA_SPI_driver.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:05:22 **** Incremental Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'GPIO_Config':
+../Src/main.c:44:12: error: 'GPIO_RegDef_t' has no member named 'AFR'; did you mean 'AFRL'?
+   44 |     GPIOA->AFR[0] &= ~((0xF<<(5*4)) | (0xF<<(6*4)) | (0xF<<(7*4)));
+      |            ^~~
+      |            AFRL
+../Src/main.c: In function 'SPI1_DMA_Config':
+../Src/main.c:65:47: error: 'DMA1_Channel3' undeclared (first use in this function)
+   65 |     spi1Handle.DMACfg.pDMA_TxAddr = (uint32_t)DMA1_Channel3;
+      |                                               ^~~~~~~~~~~~~
+../Src/main.c:65:47: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:66:47: error: 'DMA1_Channel2' undeclared (first use in this function)
+   66 |     spi1Handle.DMACfg.pDMA_RxAddr = (uint32_t)DMA1_Channel2;
+      |                                               ^~~~~~~~~~~~~
+make: *** [Src/subdir.mk:31: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:06:00 **** Incremental Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'GPIO_Config':
+../Src/main.c:39:12: error: 'GPIO_RegDef_t' has no member named 'AFR'; did you mean 'AFRL'?
+   39 |     GPIOA->AFR[0] &= ~((0xF << (5 * 4)) | (0xF << (6 * 4)) | (0xF << (7 * 4)));
+      |            ^~~
+      |            AFRL
+../Src/main.c:40:12: error: 'GPIO_RegDef_t' has no member named 'AFR'; did you mean 'AFRL'?
+   40 |     GPIOA->AFR[0] |= ((0x0 << (5 * 4)) | (0x0 << (6 * 4)) | (0x0 << (7 * 4))); // AF0 for SPI1
+      |            ^~~
+      |            AFRL
+../Src/main.c: In function 'SPI1_DMA_Config':
+../Src/main.c:61:47: error: 'DMA1_Channel3' undeclared (first use in this function)
+   61 |     spi1Handle.DMACfg.pDMA_TxAddr = (uint32_t)DMA1_Channel3;
+      |                                               ^~~~~~~~~~~~~
+../Src/main.c:61:47: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:62:47: error: 'DMA1_Channel2' undeclared (first use in this function)
+   62 |     spi1Handle.DMACfg.pDMA_RxAddr = (uint32_t)DMA1_Channel2;
+      |                                               ^~~~~~~~~~~~~
+make: *** [Src/subdir.mk:31: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:07:21 **** Incremental Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'GPIO_Config':
+../Src/main.c:44:12: error: 'GPIO_RegDef_t' has no member named 'AFR'; did you mean 'AFRL'?
+   44 |     GPIOA->AFR[0] &= ~((0xF<<(5*4)) | (0xF<<(6*4)) | (0xF<<(7*4)));
+      |            ^~~
+      |            AFRL
+../Src/main.c: In function 'SPI1_DMA_Config':
+../Src/main.c:65:20: error: 'RCC_AHBENR_DMA1EN' undeclared (first use in this function); did you mean 'RCC_APB1ENR_I2C1EN'?
+   65 |     RCC->AHBENR |= RCC_AHBENR_DMA1EN;
+      |                    ^~~~~~~~~~~~~~~~~
+      |                    RCC_APB1ENR_I2C1EN
+../Src/main.c:65:20: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:67:23: error: 'struct <anonymous>' has no member named 'pDMA_Tx'; did you mean 'pDMA_TxAddr'?
+   67 |     spi1Handle.DMACfg.pDMA_Tx = DMA1_Channel3; // SPI1_TX
+      |                       ^~~~~~~
+      |                       pDMA_TxAddr
+../Src/main.c:67:33: error: 'DMA1_Channel3' undeclared (first use in this function)
+   67 |     spi1Handle.DMACfg.pDMA_Tx = DMA1_Channel3; // SPI1_TX
+      |                                 ^~~~~~~~~~~~~
+../Src/main.c:68:23: error: 'struct <anonymous>' has no member named 'pDMA_Rx'; did you mean 'pDMA_RxAddr'?
+   68 |     spi1Handle.DMACfg.pDMA_Rx = DMA1_Channel2; // SPI1_RX
+      |                       ^~~~~~~
+      |                       pDMA_RxAddr
+../Src/main.c:68:33: error: 'DMA1_Channel2' undeclared (first use in this function)
+   68 |     spi1Handle.DMACfg.pDMA_Rx = DMA1_Channel2; // SPI1_RX
+      |                                 ^~~~~~~~~~~~~
+../Src/main.c:70:23: error: 'struct <anonymous>' has no member named 'pDMA_Tx'; did you mean 'pDMA_TxAddr'?
+   70 |     spi1Handle.DMACfg.pDMA_Tx->CCR = 0;
+      |                       ^~~~~~~
+      |                       pDMA_TxAddr
+../Src/main.c:71:23: error: 'struct <anonymous>' has no member named 'pDMA_Rx'; did you mean 'pDMA_RxAddr'?
+   71 |     spi1Handle.DMACfg.pDMA_Rx->CCR = 0;
+      |                       ^~~~~~~
+      |                       pDMA_RxAddr
+../Src/main.c:73:23: error: 'struct <anonymous>' has no member named 'pDMA_Tx'; did you mean 'pDMA_TxAddr'?
+   73 |     spi1Handle.DMACfg.pDMA_Tx->CCR |= (1 << 7) | (1 << 4); // MEM2MEM disable, MINC enable
+      |                       ^~~~~~~
+      |                       pDMA_TxAddr
+../Src/main.c:74:23: error: 'struct <anonymous>' has no member named 'pDMA_Rx'; did you mean 'pDMA_RxAddr'?
+   74 |     spi1Handle.DMACfg.pDMA_Rx->CCR |= (1 << 7) | (1 << 4); // MINC enable
+      |                       ^~~~~~~
+      |                       pDMA_RxAddr
+make: *** [Src/subdir.mk:31: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:08:00 **** Incremental Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'SPI1_DMA_Config':
+../Src/main.c:67:47: error: 'DMA1_Channel3' undeclared (first use in this function)
+   67 |     spi1Handle.DMACfg.pDMA_TxAddr = (uint32_t)DMA1_Channel3;
+      |                                               ^~~~~~~~~~~~~
+../Src/main.c:67:47: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:68:47: error: 'DMA1_Channel2' undeclared (first use in this function)
+   68 |     spi1Handle.DMACfg.pDMA_RxAddr = (uint32_t)DMA1_Channel2;
+      |                                               ^~~~~~~~~~~~~
+make: *** [Src/subdir.mk:31: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:08:42 **** Incremental Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'SPI1_DMA_Config':
+../Src/main.c:71:48: error: 'DMA1' undeclared (first use in this function)
+   71 |     spi1Handle.DMACfg.pDMA_TxAddr = (uint32_t)&DMA1->Channel3;
+      |                                                ^~~~
+../Src/main.c:71:48: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:31: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:09:59 **** Incremental Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/spi_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_driver.d" -MT"Src/spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_driver.o"
+In file included from ../Src/main.c:20:
+../Src/main.c: In function 'SPI1_DMA_Config':
+../Inc/spi_driver.h:141:31: error: 'DMA_TypeDef' undeclared (first use in this function); did you mean 'GPIO_TypeDef'?
+  141 | #define DMA1                ((DMA_TypeDef *) DMA1_BASE)
+      |                               ^~~~~~~~~~~
+../Src/main.c:67:48: note: in expansion of macro 'DMA1'
+   67 |     spi1Handle.DMACfg.pDMA_TxAddr = (uint32_t)&DMA1->Channel3;
+      |                                                ^~~~
+../Inc/spi_driver.h:141:31: note: each undeclared identifier is reported only once for each function it appears in
+  141 | #define DMA1                ((DMA_TypeDef *) DMA1_BASE)
+      |                               ^~~~~~~~~~~
+../Src/main.c:67:48: note: in expansion of macro 'DMA1'
+   67 |     spi1Handle.DMACfg.pDMA_TxAddr = (uint32_t)&DMA1->Channel3;
+      |                                                ^~~~
+../Inc/spi_driver.h:141:44: error: expected expression before ')' token
+  141 | #define DMA1                ((DMA_TypeDef *) DMA1_BASE)
+      |                                            ^
+../Src/main.c:67:48: note: in expansion of macro 'DMA1'
+   67 |     spi1Handle.DMACfg.pDMA_TxAddr = (uint32_t)&DMA1->Channel3;
+      |                                                ^~~~
+../Inc/spi_driver.h:141:44: error: expected expression before ')' token
+  141 | #define DMA1                ((DMA_TypeDef *) DMA1_BASE)
+      |                                            ^
+../Src/main.c:68:48: note: in expansion of macro 'DMA1'
+   68 |     spi1Handle.DMACfg.pDMA_RxAddr = (uint32_t)&DMA1->Channel2;
+      |                                                ^~~~
+make: *** [Src/subdir.mk:31: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:10:09 **** Incremental Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/spi_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_driver.d" -MT"Src/spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_driver.o"
+In file included from ../Src/main.c:20:
+../Inc/spi_driver.h:142: warning: "RCC" redefined
+  142 | #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+      | 
+In file included from ../Inc/spi_driver.h:11:
+../Inc/STM32_L0538xx.h:72: note: this is the location of the previous definition
+   72 | #define RCC     ((RCC_RegDef_t *)RCC_BASEADDR)
+      | 
+../Inc/spi_driver.h:143: warning: "GPIOA" redefined
+  143 | #define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+      | 
+../Inc/STM32_L0538xx.h:73: note: this is the location of the previous definition
+   73 | #define GPIOA   ((GPIO_RegDef_t *)GPIOA_BASEADDR)
+      | 
+../Src/main.c: In function 'GPIO_Config':
+../Inc/spi_driver.h:142:31: error: 'RCC_TypeDef' undeclared (first use in this function); did you mean 'GPIO_TypeDef'?
+  142 | #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+      |                               ^~~~~~~~~~~
+../Src/main.c:33:5: note: in expansion of macro 'RCC'
+   33 |     RCC->IOPENR |= (1U << 0);
+      |     ^~~
+../Inc/spi_driver.h:142:31: note: each undeclared identifier is reported only once for each function it appears in
+  142 | #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+      |                               ^~~~~~~~~~~
+../Src/main.c:33:5: note: in expansion of macro 'RCC'
+   33 |     RCC->IOPENR |= (1U << 0);
+      |     ^~~
+../Inc/spi_driver.h:142:44: error: expected expression before ')' token
+  142 | #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+      |                                            ^
+../Src/main.c:33:5: note: in expansion of macro 'RCC'
+   33 |     RCC->IOPENR |= (1U << 0);
+      |     ^~~
+../Inc/spi_driver.h:143:47: error: 'GPIOA_BASE' undeclared (first use in this function)
+  143 | #define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+      |                                               ^~~~~~~~~~
+../Src/main.c:41:5: note: in expansion of macro 'GPIOA'
+   41 |     GPIOA->MODER &= ~((3U << (5 * 2)) | (3U << (6 * 2)) | (3U << (7 * 2)));
+      |     ^~~~~
+../Src/main.c: In function 'SPI1_DMA_Config':
+../Inc/spi_driver.h:141:31: error: 'DMA_TypeDef' undeclared (first use in this function); did you mean 'GPIO_TypeDef'?
+  141 | #define DMA1                ((DMA_TypeDef *) DMA1_BASE)
+      |                               ^~~~~~~~~~~
+../Src/main.c:67:48: note: in expansion of macro 'DMA1'
+   67 |     spi1Handle.DMACfg.pDMA_TxAddr = (uint32_t)&DMA1->Channel3;
+      |                                                ^~~~
+../Inc/spi_driver.h:141:44: error: expected expression before ')' token
+  141 | #define DMA1                ((DMA_TypeDef *) DMA1_BASE)
+      |                                            ^
+../Src/main.c:67:48: note: in expansion of macro 'DMA1'
+   67 |     spi1Handle.DMACfg.pDMA_TxAddr = (uint32_t)&DMA1->Channel3;
+      |                                                ^~~~
+../Inc/spi_driver.h:141:44: error: expected expression before ')' token
+  141 | #define DMA1                ((DMA_TypeDef *) DMA1_BASE)
+      |                                            ^
+../Src/main.c:68:48: note: in expansion of macro 'DMA1'
+   68 |     spi1Handle.DMACfg.pDMA_RxAddr = (uint32_t)&DMA1->Channel2;
+      |                                                ^~~~
+In file included from ../Src/spi_driver.c:8:
+../Inc/spi_driver.h:142: warning: "RCC" redefined
+  142 | #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+      | 
+In file included from ../Inc/spi_driver.h:11:
+../Inc/STM32_L0538xx.h:72: note: this is the location of the previous definition
+   72 | #define RCC     ((RCC_RegDef_t *)RCC_BASEADDR)
+      | 
+../Inc/spi_driver.h:143: warning: "GPIOA" redefined
+  143 | #define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
+      | 
+../Inc/STM32_L0538xx.h:73: note: this is the location of the previous definition
+   73 | #define GPIOA   ((GPIO_RegDef_t *)GPIOA_BASEADDR)
+      | 
+../Src/spi_driver.c: In function 'SPI_PeriClockControl':
+../Inc/spi_driver.h:142:31: error: 'RCC_TypeDef' undeclared (first use in this function); did you mean 'GPIO_TypeDef'?
+  142 | #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+      |                               ^~~~~~~~~~~
+../Src/spi_driver.c:16:36: note: in expansion of macro 'RCC'
+   16 |                 if (pSPIx == SPI1) RCC->APB2ENR |= (1 << 12);
+      |                                    ^~~
+../Inc/spi_driver.h:142:31: note: each undeclared identifier is reported only once for each function it appears in
+  142 | #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+      |                               ^~~~~~~~~~~
+../Src/spi_driver.c:16:36: note: in expansion of macro 'RCC'
+   16 |                 if (pSPIx == SPI1) RCC->APB2ENR |= (1 << 12);
+      |                                    ^~~
+../Inc/spi_driver.h:142:44: error: expected expression before ')' token
+  142 | #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+      |                                            ^
+../Src/spi_driver.c:16:36: note: in expansion of macro 'RCC'
+   16 |                 if (pSPIx == SPI1) RCC->APB2ENR |= (1 << 12);
+      |                                    ^~~
+../Inc/spi_driver.h:142:44: error: expected expression before ')' token
+  142 | #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+      |                                            ^
+../Src/spi_driver.c:17:41: note: in expansion of macro 'RCC'
+   17 |                 else if (pSPIx == SPI2) RCC->APB1ENR |= (1 << 14);
+      |                                         ^~~
+make: *** [Src/subdir.mk:31: Src/main.o] Error 1
+../Inc/spi_driver.h:142:44: error: expected expression before ')' token
+  142 | #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+      |                                            ^
+../Src/spi_driver.c:21:36: note: in expansion of macro 'RCC'
+   21 |                 if (pSPIx == SPI1) RCC->APB2ENR &= ~(1 << 12);
+      |                                    ^~~
+../Inc/spi_driver.h:142:44: error: expected expression before ')' token
+  142 | #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+      |                                            ^
+../Src/spi_driver.c:22:41: note: in expansion of macro 'RCC'
+   22 |                 else if (pSPIx == SPI2) RCC->APB1ENR &= ~(1 << 14);
+      |                                         ^~~
+make: *** Waiting for unfinished jobs....
+../Src/spi_driver.c: In function 'SPI_DeInit':
+../Inc/spi_driver.h:142:31: error: 'RCC_TypeDef' undeclared (first use in this function); did you mean 'GPIO_TypeDef'?
+  142 | #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+      |                               ^~~~~~~~~~~
+../Src/spi_driver.c:65:28: note: in expansion of macro 'RCC'
+   65 |         if (pSPIx == SPI1) RCC->APB2RSTR |= (1 << 12);
+      |                            ^~~
+../Inc/spi_driver.h:142:44: error: expected expression before ')' token
+  142 | #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+      |                                            ^
+../Src/spi_driver.c:65:28: note: in expansion of macro 'RCC'
+   65 |         if (pSPIx == SPI1) RCC->APB2RSTR |= (1 << 12);
+      |                            ^~~
+../Inc/spi_driver.h:142:44: error: expected expression before ')' token
+  142 | #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+      |                                            ^
+../Src/spi_driver.c:66:33: note: in expansion of macro 'RCC'
+   66 |         else if (pSPIx == SPI2) RCC->APB1RSTR |= (1 << 14);
+      |                                 ^~~
+../Src/spi_driver.c: In function 'SPI_ClockControl':
+../Inc/spi_driver.h:142:31: error: 'RCC_TypeDef' undeclared (first use in this function); did you mean 'GPIO_TypeDef'?
+  142 | #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+      |                               ^~~~~~~~~~~
+../Src/spi_driver.c:81:36: note: in expansion of macro 'RCC'
+   81 |                 if (pSPIx == SPI1) RCC->APB2ENR |= (1 << 12);
+      |                                    ^~~
+../Inc/spi_driver.h:142:44: error: expected expression before ')' token
+  142 | #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+      |                                            ^
+../Src/spi_driver.c:81:36: note: in expansion of macro 'RCC'
+   81 |                 if (pSPIx == SPI1) RCC->APB2ENR |= (1 << 12);
+      |                                    ^~~
+../Inc/spi_driver.h:142:44: error: expected expression before ')' token
+  142 | #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+      |                                            ^
+../Src/spi_driver.c:82:41: note: in expansion of macro 'RCC'
+   82 |                 else if (pSPIx == SPI2) RCC->APB1ENR |= (1 << 14);
+      |                                         ^~~
+../Inc/spi_driver.h:142:44: error: expected expression before ')' token
+  142 | #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+      |                                            ^
+../Src/spi_driver.c:86:36: note: in expansion of macro 'RCC'
+   86 |                 if (pSPIx == SPI1) RCC->APB2ENR &= ~(1 << 12);
+      |                                    ^~~
+../Inc/spi_driver.h:142:44: error: expected expression before ')' token
+  142 | #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+      |                                            ^
+../Src/spi_driver.c:87:41: note: in expansion of macro 'RCC'
+   87 |                 else if (pSPIx == SPI2) RCC->APB1ENR &= ~(1 << 14);
+      |                                         ^~~
+../Src/spi_driver.c: In function 'SPI_DMA_TxInit':
+../Inc/spi_driver.h:142:31: error: 'RCC_TypeDef' undeclared (first use in this function); did you mean 'GPIO_TypeDef'?
+  142 | #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+      |                               ^~~~~~~~~~~
+../Src/spi_driver.c:198:5: note: in expansion of macro 'RCC'
+  198 |     RCC->AHBENR |= (1U << 0);
+      |     ^~~
+../Inc/spi_driver.h:142:44: error: expected expression before ')' token
+  142 | #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+      |                                            ^
+../Src/spi_driver.c:198:5: note: in expansion of macro 'RCC'
+  198 |     RCC->AHBENR |= (1U << 0);
+      |     ^~~
+../Src/spi_driver.c: In function 'SPI_DMA_RxInit':
+../Inc/spi_driver.h:142:31: error: 'RCC_TypeDef' undeclared (first use in this function); did you mean 'GPIO_TypeDef'?
+  142 | #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+      |                               ^~~~~~~~~~~
+../Src/spi_driver.c:224:5: note: in expansion of macro 'RCC'
+  224 |     RCC->AHBENR |= (1U << 0);
+      |     ^~~
+../Inc/spi_driver.h:142:44: error: expected expression before ')' token
+  142 | #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+      |                                            ^
+../Src/spi_driver.c:224:5: note: in expansion of macro 'RCC'
+  224 |     RCC->AHBENR |= (1U << 0);
+      |     ^~~
+make: *** [Src/subdir.mk:31: Src/spi_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:11:03 **** Incremental Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/gpio_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/gpio_driver.d" -MT"Src/gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/gpio_driver.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/spi_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_driver.d" -MT"Src/spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_driver.o"
+In file included from ../Src/main.c:20:
+../Src/main.c: In function 'SPI1_DMA_Config':
+../Inc/spi_driver.h:141:31: error: 'DMA_TypeDef' undeclared (first use in this function); did you mean 'GPIO_TypeDef'?
+  141 | #define DMA1                ((DMA_TypeDef *) DMA1_BASE)
+      |                               ^~~~~~~~~~~
+../Src/main.c:67:48: note: in expansion of macro 'DMA1'
+   67 |     spi1Handle.DMACfg.pDMA_TxAddr = (uint32_t)&DMA1->Channel3;
+      |                                                ^~~~
+../Inc/spi_driver.h:141:31: note: each undeclared identifier is reported only once for each function it appears in
+  141 | #define DMA1                ((DMA_TypeDef *) DMA1_BASE)
+      |                               ^~~~~~~~~~~
+../Src/main.c:67:48: note: in expansion of macro 'DMA1'
+   67 |     spi1Handle.DMACfg.pDMA_TxAddr = (uint32_t)&DMA1->Channel3;
+      |                                                ^~~~
+../Inc/spi_driver.h:141:44: error: expected expression before ')' token
+  141 | #define DMA1                ((DMA_TypeDef *) DMA1_BASE)
+      |                                            ^
+../Src/main.c:67:48: note: in expansion of macro 'DMA1'
+   67 |     spi1Handle.DMACfg.pDMA_TxAddr = (uint32_t)&DMA1->Channel3;
+      |                                                ^~~~
+../Inc/spi_driver.h:141:44: error: expected expression before ')' token
+  141 | #define DMA1                ((DMA_TypeDef *) DMA1_BASE)
+      |                                            ^
+../Src/main.c:68:48: note: in expansion of macro 'DMA1'
+   68 |     spi1Handle.DMACfg.pDMA_RxAddr = (uint32_t)&DMA1->Channel2;
+      |                                                ^~~~
+../Src/gpio_driver.c: In function 'GPIO_Init':
+../Src/gpio_driver.c:11:14: warning: comparison of distinct pointer types lacks a cast
+   11 |     if (port == GPIOA) RCC->IOPENR |= (1 << 0);
+      |              ^~
+../Src/gpio_driver.c:12:19: warning: comparison of distinct pointer types lacks a cast
+   12 |     else if (port == GPIOB) RCC->IOPENR |= (1 << 1);
+      |                   ^~
+../Src/gpio_driver.c:13:19: warning: comparison of distinct pointer types lacks a cast
+   13 |     else if (port == GPIOC) RCC->IOPENR |= (1 << 2);
+      |                   ^~
+../Src/gpio_driver.c:14:19: warning: comparison of distinct pointer types lacks a cast
+   14 |     else if (port == GPIOD) RCC->IOPENR |= (1 << 3);
+      |                   ^~
+../Src/gpio_driver.c:15:19: warning: comparison of distinct pointer types lacks a cast
+   15 |     else if (port == GPIOH) RCC->IOPENR |= (1 << 7);
+      |                   ^~
+../Src/gpio_driver.c: In function 'GPIO_DeInit':
+../Src/gpio_driver.c:49:14: warning: comparison of distinct pointer types lacks a cast
+   49 |     if (port == GPIOA)
+      |              ^~
+../Src/gpio_driver.c:54:19: warning: comparison of distinct pointer types lacks a cast
+   54 |     else if (port == GPIOB)
+      |                   ^~
+../Src/gpio_driver.c:59:19: warning: comparison of distinct pointer types lacks a cast
+   59 |     else if (port == GPIOC)
+      |                   ^~
+../Src/gpio_driver.c:64:19: warning: comparison of distinct pointer types lacks a cast
+   64 |     else if (port == GPIOD)
+      |                   ^~
+../Src/gpio_driver.c:69:19: warning: comparison of distinct pointer types lacks a cast
+   69 |     else if (port == GPIOH)
+      |                   ^~
+make: *** [Src/subdir.mk:31: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:11:48 **** Incremental Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/spi_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_driver.d" -MT"Src/spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_driver.o"
+../Src/main.c: In function 'SPI1_DMA_Config':
+../Src/main.c:67:54: error: 'DMA_TypeDef' has no member named 'Channel3'; did you mean 'Channel'?
+   67 |     spi1Handle.DMACfg.pDMA_TxAddr = (uint32_t)&DMA1->Channel3;
+      |                                                      ^~~~~~~~
+      |                                                      Channel
+../Src/main.c:68:54: error: 'DMA_TypeDef' has no member named 'Channel2'; did you mean 'Channel'?
+   68 |     spi1Handle.DMACfg.pDMA_RxAddr = (uint32_t)&DMA1->Channel2;
+      |                                                      ^~~~~~~~
+      |                                                      Channel
+make: *** [Src/subdir.mk:31: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:12:42 **** Incremental Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "DMA_SPI_driver.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Haril_bitsilica\STM_training_module\driver_playist_2\L_series_SPI_DMA_driver\DMA_SPI_driver\STM32L053C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA_SPI_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: DMA_SPI_driver.elf
+ 
+arm-none-eabi-size  DMA_SPI_driver.elf 
+arm-none-eabi-objdump -h -S DMA_SPI_driver.elf  > "DMA_SPI_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   1888	      4	   1612	   3504	    db0	DMA_SPI_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: DMA_SPI_driver.list
+ 
+12:12:53 **** Incremental Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "DMA_SPI_driver.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Haril_bitsilica\STM_training_module\driver_playist_2\L_series_SPI_DMA_driver\DMA_SPI_driver\STM32L053C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA_SPI_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: DMA_SPI_driver.elf
+ 
+arm-none-eabi-size  DMA_SPI_driver.elf 
+arm-none-eabi-objdump -h -S DMA_SPI_driver.elf  > "DMA_SPI_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   1888	      4	   1612	   3504	    db0	DMA_SPI_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: DMA_SPI_driver.list
+ 
+12:16:58 **** Incremental Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/spi_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_driver.d" -MT"Src/spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_driver.o"
+arm-none-eabi-gcc -o "DMA_SPI_driver.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Haril_bitsilica\STM_training_module\driver_playist_2\L_series_SPI_DMA_driver\DMA_SPI_driver\STM32L053C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA_SPI_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: DMA_SPI_driver.elf
+ 
+arm-none-eabi-size  DMA_SPI_driver.elf 
+arm-none-eabi-objdump -h -S DMA_SPI_driver.elf  > "DMA_SPI_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   1888	      4	   1612	   3504	    db0	DMA_SPI_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: DMA_SPI_driver.list
+ 
+12:18:20 **** Incremental Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/spi_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/spi_driver.d" -MT"Src/spi_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_driver.o"
+arm-none-eabi-gcc -o "DMA_SPI_driver.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Haril_bitsilica\STM_training_module\driver_playist_2\L_series_SPI_DMA_driver\DMA_SPI_driver\STM32L053C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA_SPI_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: DMA_SPI_driver.elf
+ 
+arm-none-eabi-size  DMA_SPI_driver.elf 
+arm-none-eabi-objdump -h -S DMA_SPI_driver.elf  > "DMA_SPI_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   1888	      4	   1612	   3504	    db0	DMA_SPI_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: DMA_SPI_driver.list
+ 
+12:19:45 **** Incremental Build of configuration Debug for project DMA_SPI_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "DMA_SPI_driver.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Haril_bitsilica\STM_training_module\driver_playist_2\L_series_SPI_DMA_driver\DMA_SPI_driver\STM32L053C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA_SPI_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: DMA_SPI_driver.elf
+ 
+arm-none-eabi-size  DMA_SPI_driver.elf 
+arm-none-eabi-objdump -h -S DMA_SPI_driver.elf  > "DMA_SPI_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   1876	      4	   1612	   3492	    da4	DMA_SPI_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: DMA_SPI_driver.list
+ 

@@ -1,0 +1,21 @@
+11:28:08 **** Clean-only build of configuration Debug for project UART_interrupt_driver ****
+make -j8 clean 
+rm -rf ./Startup/startup_stm32l053c8tx.d ./Startup/startup_stm32l053c8tx.o
+rm -rf ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su ./Src/uart_int_driver.cyclo ./Src/uart_int_driver.d ./Src/uart_int_driver.o ./Src/uart_int_driver.su
+rm -rf UART_interrupt_driver.elf UART_interrupt_driver.list UART_interrupt_driver.map default.size.stdout
+ 
+11:28:11 **** Build of configuration Debug for project UART_interrupt_driver ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m0plus -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32l053c8tx.d" -MT"Startup/startup_stm32l053c8tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32l053c8tx.o" "../Startup/startup_stm32l053c8tx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Src/uart_int_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/uart_int_driver.d" -MT"Src/uart_int_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/uart_int_driver.o"
+arm-none-eabi-gcc -o "UART_interrupt_driver.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Haril_bitsilica\STM_training_module\driver_playist_2\UART_interrupt_driver\UART_interrupt_driver\STM32L053C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_interrupt_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Src/main.o: in function `main':
+C:/Haril_bitsilica/STM_training_module/driver_playist_2/UART_interrupt_driver/UART_interrupt_driver/Debug/../Src/main.c:28:(.text.main+0xe): undefined reference to `USART1_Init'
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Haril_bitsilica/STM_training_module/driver_playist_2/UART_interrupt_driver/UART_interrupt_driver/Debug/../Src/main.c:29:(.text.main+0x12): undefined reference to `USART1_EnableInterrupt'
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Haril_bitsilica/STM_training_module/driver_playist_2/UART_interrupt_driver/UART_interrupt_driver/Debug/../Src/main.c:30:(.text.main+0x1a): undefined reference to `USART1_SendString'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:63: UART_interrupt_driver.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.

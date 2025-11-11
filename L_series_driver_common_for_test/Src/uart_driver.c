@@ -1,0 +1,239 @@
+#include "uart_driver.h"
+
+/* ========================== Peripheral Clock Control ========================== */
+void UART_PeriClockControl(USART_RegDef_t *pUSARTx, uint8_t EnOrDi)
+{
+    if (EnOrDi == ENABLE)
+    {
+        if (pUSARTx == USART1)
+            USART1_PCLK_EN();
+        else if (pUSARTx == USART2)
+            USART2_PCLK_EN();
+    }
+    else
+    {
+        if (pUSARTx == USART1)
+            USART1_PCLK_DI();
+        else if (pUSARTx == USART2)
+            USART2_PCLK_DI();
+    }
+}
+
+/* ========================== UART Initialization ========================== */
+void UART_Init(UART_Handle_t *pUARTHandle)
+{
+    uint32_t tempreg = 0;
+
+    /* Enable peripheral clock */
+    UART_PeriClockControl(pUARTHandle->pUSARTx, ENABLE);
+
+    /* Disable USART before configuration */
+    pUARTHandle->pUSARTx->CR1 &= ~(1U << 0);
+
+    /* Configure Word Length */
+    tempreg = 0;
+    if (pUARTHandle->Init.WordLength == UART_WORDLEN_9BITS)
+        tempreg |= (1U << 12);
+    else
+        tempreg &= ~(1U << 12);
+
+    /* Configure Parity */
+    if (pUARTHandle->Init.Parity == UART_PARITY_EVEN)
+        tempreg |= (1U << 10);
+    else if (pUARTHandle->Init.Parity == UART_PARITY_ODD)
+        tempreg |= ((1U << 10) | (1U << 9));
+    else
+        tempreg &= ~((1U << 10) | (1U << 9));
+
+    /* Configure Mode (TE, RE) */
+    if (pUARTHandle->Init.Mode == UART_MODE_TX)
+        tempreg |= (1U << 3);
+    else if (pUARTHandle->Init.Mode == UART_MODE_RX)
+        tempreg |= (1U << 2);
+    else if (pUARTHandle->Init.Mode == UART_MODE_TXRX)
+        tempreg |= ((1U << 3) | (1U << 2));
+
+    pUARTHandle->pUSARTx->CR1 = tempreg;
+
+    /* Stop Bits */
+    tempreg = 0;
+    tempreg |= (pUARTHandle->Init.StopBits << 12);
+    pUARTHandle->pUSARTx->CR2 = tempreg;
+
+    /* Oversampling = 16, CR3 default 0 */
+    pUARTHandle->pUSARTx->CR3 = 0x0000;
+
+    /* Baud rate configuration */
+    uint32_t pclk;
+    if (pUARTHandle->pUSARTx == USART1)
+        pclk = 32000000; /* APB2 default 32 MHz */
+    else
+        pclk = 32000000; /* APB1 also 32 MHz for simplicity */
+
+    uint32_t usartdiv = (pclk + (pUARTHandle->Init.BaudRate / 2U)) / pUARTHandle->Init.BaudRate;
+    pUARTHandle->pUSARTx->BRR = usartdiv;
+
+    /* Enable USART peripheral */
+    pUARTHandle->pUSARTx->CR1 |= (1U << 0);
+}
+
+/* ========================== UART De-Initialization ========================== */
+void UART_DeInit(USART_RegDef_t *pUSARTx)
+{
+    if (pUSARTx == USART1)
+    {
+        USART1_PCLK_DI();
+    }
+    else if (pUSARTx == USART2)
+    {
+        USART2_PCLK_DI();
+    }
+}
+
+/* ========================== Blocking Send ========================== */
+void UART_SendData(UART_Handle_t *pUARTHandle, uint8_t *pTxBuffer, uint32_t Len)
+{
+    while (Len--)
+    {
+        while (!(pUARTHandle->pUSARTx->ISR & UART_FLAG_TXE));
+        pUARTHandle->pUSARTx->TDR = (*pTxBuffer & 0xFF);
+        pTxBuffer++;
+    }
+    while (!(pUARTHandle->pUSARTx->ISR & UART_FLAG_TC));
+}
+
+/* ========================== Blocking Receive ========================== */
+void UART_ReceiveData(UART_Handle_t *pUARTHandle, uint8_t *pRxBuffer, uint32_t Len)
+{
+    while (Len--)
+    {
+        while (!(pUARTHandle->pUSARTx->ISR & UART_FLAG_RXNE));
+        *pRxBuffer = (uint8_t)(pUARTHandle->pUSARTx->RDR & 0xFF);
+        pRxBuffer++;
+    }
+}
+
+/* ========================== Interrupt Send ========================== */
+uint8_t UART_SendDataIT(UART_Handle_t *pUARTHandle, uint8_t *pTxBuffer, uint32_t Len)
+{
+    uint8_t TxState = pUARTHandle->TxState;
+
+    if (TxState != UART_BUSY_IN_TX)
+    {
+        pUARTHandle->pTxBuffer = pTxBuffer;
+        pUARTHandle->TxLen = Len;
+        pUARTHandle->TxState = UART_BUSY_IN_TX;
+
+        /* Enable TXE interrupt */
+        pUARTHandle->pUSARTx->CR1 |= (1U << 7);
+        /* Enable TC interrupt */
+        pUARTHandle->pUSARTx->CR1 |= (1U << 6);
+    }
+
+    return TxState;
+}
+
+/* ========================== Interrupt Receive ========================== */
+uint8_t UART_ReceiveDataIT(UART_Handle_t *pUARTHandle, uint8_t *pRxBuffer, uint32_t Len)
+{
+    uint8_t RxState = pUARTHandle->RxState;
+
+    if (RxState != UART_BUSY_IN_RX)
+    {
+        pUARTHandle->pRxBuffer = pRxBuffer;
+        pUARTHandle->RxLen = Len;
+        pUARTHandle->RxState = UART_BUSY_IN_RX;
+
+        /* Enable RXNE interrupt */
+        pUARTHandle->pUSARTx->CR1 |= (1U << 5);
+    }
+
+    return RxState;
+}
+
+/* ========================== IRQ Handling ========================== */
+void UART_IRQHandling(UART_Handle_t *pUARTHandle)
+{
+    uint32_t isr = pUARTHandle->pUSARTx->ISR;
+
+    /* TXE flag */
+    if ((isr & UART_FLAG_TXE) && (pUARTHandle->pUSARTx->CR1 & (1U << 7)))
+    {
+        if (pUARTHandle->TxLen > 0)
+        {
+            pUARTHandle->pUSARTx->TDR = (*pUARTHandle->pTxBuffer & 0xFF);
+            pUARTHandle->pTxBuffer++;
+            pUARTHandle->TxLen--;
+        }
+
+        if (pUARTHandle->TxLen == 0)
+        {
+            /* Disable TXE interrupt */
+            pUARTHandle->pUSARTx->CR1 &= ~(1U << 7);
+        }
+    }
+
+    /* TC flag */
+    if ((isr & UART_FLAG_TC) && (pUARTHandle->pUSARTx->CR1 & (1U << 6)))
+    {
+        /* Transmission complete */
+        pUARTHandle->pUSARTx->ISR &= ~UART_FLAG_TC;
+        pUARTHandle->TxState = UART_READY;
+        /* Disable TC interrupt */
+        pUARTHandle->pUSARTx->CR1 &= ~(1U << 6);
+    }
+
+    /* RXNE flag */
+    if ((isr & UART_FLAG_RXNE) && (pUARTHandle->pUSARTx->CR1 & (1U << 5)))
+    {
+        if (pUARTHandle->RxLen > 0)
+        {
+            *pUARTHandle->pRxBuffer = (uint8_t)(pUARTHandle->pUSARTx->RDR & 0xFF);
+            pUARTHandle->pRxBuffer++;
+            pUARTHandle->RxLen--;
+        }
+
+        if (pUARTHandle->RxLen == 0)
+        {
+            /* Disable RXNE interrupt */
+            pUARTHandle->pUSARTx->CR1 &= ~(1U << 5);
+            pUARTHandle->RxState = UART_READY;
+        }
+    }
+}
+
+/* ========================== Peripheral Enable / Disable ========================== */
+void UART_PeripheralControl(USART_RegDef_t *pUSARTx, uint8_t EnOrDi)
+{
+    if (EnOrDi == ENABLE)
+        pUSARTx->CR1 |= (1U << 0);
+    else
+        pUSARTx->CR1 &= ~(1U << 0);
+}
+
+/* ========================== Flag Status Check ========================== */
+uint8_t UART_GetFlagStatus(USART_RegDef_t *pUSARTx, uint32_t FlagName)
+{
+    if (pUSARTx->ISR & FlagName)
+        return SET;
+    return RESET;
+}
+
+/* ========================== Error Clear Helpers ========================== */
+void UART_ClearOREFlag(USART_RegDef_t *pUSARTx) { pUSARTx->ICR |= (1U << 3); }
+void UART_ClearNEFlag(USART_RegDef_t *pUSARTx)  { pUSARTx->ICR |= (1U << 2); }
+void UART_ClearFEFlag(USART_RegDef_t *pUSARTx)  { pUSARTx->ICR |= (1U << 1); }
+
+/* ========================== IRQ Config / Priority (basic templates) ========================== */
+void UART_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnOrDi)
+{
+    if (EnOrDi == ENABLE)
+        NVIC_EnableIRQ(IRQNumber);
+    else
+        NVIC_DisableIRQ(IRQNumber);
+}
+
+void UART_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQPriority)
+{
+    NVIC_SetPriority(IRQNumber, IRQPriority);
+}

@@ -1,0 +1,72 @@
+!SESSION 2025-10-30 15:45:50.693 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-10-30 15:46:33.692
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-10-30 15:46:33.695
+!MESSAGE Log4j2 initialized with config file C:\Haril_bitsilica\STM_training_module\driver_playist_2\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-10-30 15:46:48.214
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-10-30 15:47:59.410
+!MESSAGE Indexed 'Drivers_1' (3 sources, 53 headers) in 2.29 sec: 1,954 declarations; 2,863 references; 0 unresolved inclusions; 2 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-10-30 15:56:12.235
+!MESSAGE Indexed 'Drivers_1' (3 sources, 53 headers) in 0.524 sec: 1,954 declarations; 2,863 references; 0 unresolved inclusions; 2 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-10-30 15:56:16.162
+!MESSAGE Indexed 'Drivers_1' (3 sources, 53 headers) in 0.777 sec: 1,954 declarations; 2,863 references; 0 unresolved inclusions; 2 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-10-30 16:12:54.895
+!MESSAGE Indexed 'Drivers_1' (3 sources, 54 headers) in 0.581 sec: 1,954 declarations; 2,864 references; 0 unresolved inclusions; 2 syntax errors; 2 unresolved names (0.041%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-10-30 16:14:22.336
+!MESSAGE Indexed 'Drivers_1' (3 sources, 54 headers) in 0.554 sec: 1,954 declarations; 2,864 references; 0 unresolved inclusions; 2 syntax errors; 2 unresolved names (0.041%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-10-30 16:16:45.563
+!MESSAGE Indexed 'Drivers_1' (3 sources, 54 headers) in 0.505 sec: 1,954 declarations; 2,862 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-10-30 16:17:04.766
+!MESSAGE Indexed 'Drivers_1' (3 sources, 54 headers) in 0.402 sec: 1,954 declarations; 2,862 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-10-30 16:18:07.093
+!MESSAGE Indexed 'Drivers_1' (3 sources, 53 headers) in 0.38 sec: 1,954 declarations; 2,861 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-10-30 17:12:16.873
+!MESSAGE Indexed 'L_series_driver' (3 sources, 53 headers) in 0.872 sec: 1,954 declarations; 2,862 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-10-30 17:16:52.731
+!MESSAGE Indexed 'L_series_driver' (3 sources, 54 headers) in 0.349 sec: 1,954 declarations; 2,861 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-10-30 17:43:44.448
+!MESSAGE Indexed 'L_series_driver_LED_blink' (3 sources, 55 headers) in 0.379 sec: 1,990 declarations; 2,926 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.041%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-10-30 18:06:28.167
+!MESSAGE Indexed 'L_series_driver_LED_blink' (3 sources, 56 headers) in 0.749 sec: 2,025 declarations; 2,951 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.04%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-10-30 18:09:29.759
+!MESSAGE Indexed 'L_series_driver_LED_blink' (3 sources, 56 headers) in 0.484 sec: 2,025 declarations; 2,951 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.04%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-10-30 18:10:48.984
+!MESSAGE Indexed 'L_series_driver_LED_blink' (3 sources, 56 headers) in 0.539 sec: 2,025 declarations; 2,951 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.04%)
+!SESSION 2025-10-31 10:29:47.673 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-10-31 10:30:09.631
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-10-31 10:30:09.633
+!MESSAGE Log4j2 initialized with config file C:\Haril_bitsilica\STM_training_module\driver_playist_2\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-10-31 10:30:17.324
+!MESSAGE Started RMI Server, listening on port 41338

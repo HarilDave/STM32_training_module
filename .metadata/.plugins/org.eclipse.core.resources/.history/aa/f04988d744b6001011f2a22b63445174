@@ -1,0 +1,77 @@
+/*
+ * gpio_driver.h
+ *
+ *  Created on: Oct 30, 2025
+ *      Author: Himshree
+ */
+
+#ifndef DRIVERS_INC_GPIO_DRIVER_H_
+#define DRIVERS_INC_GPIO_DRIVER_H_
+
+
+#include "STM32_L0538xx.h"
+#include <stdint.h>
+
+/* ---------------- GPIO Mode ---------------- */
+#define GPIO_MODE_INPUT         0x00
+#define GPIO_MODE_OUTPUT        0x01
+#define GPIO_MODE_ALTFN         0x02
+#define GPIO_MODE_ANALOG        0x03
+
+/* ---------------- GPIO Output Type ---------------- */
+#define GPIO_OTYPE_PP           0x00
+#define GPIO_OTYPE_OD           0x01
+
+/* ---------------- GPIO Speed ---------------- */
+#define GPIO_SPEED_LOW          0x00
+#define GPIO_SPEED_MEDIUM       0x01
+#define GPIO_SPEED_HIGH         0x02
+#define GPIO_SPEED_VERY_HIGH    0x03
+
+/* ---------------- GPIO Pull-up/Pull-down ---------------- */
+#define GPIO_NO_PUPD            0x00
+#define GPIO_PULL_UP            0x01
+#define GPIO_PULL_DOWN          0x02
+#define GPIO_NOPULL             GPIO_NO_PUPD
+
+/* ---------------- GPIO Pin Numbers ---------------- */
+#define GPIO_PIN_0              0
+#define GPIO_PIN_1              1
+#define GPIO_PIN_2              2
+#define GPIO_PIN_3              3
+#define GPIO_PIN_4              4
+#define GPIO_PIN_5              5
+#define GPIO_PIN_6              6
+#define GPIO_PIN_7              7
+#define GPIO_PIN_8              8
+#define GPIO_PIN_9              9
+#define GPIO_PIN_10             10
+#define GPIO_PIN_11             11
+#define GPIO_PIN_12             12
+#define GPIO_PIN_13             13
+#define GPIO_PIN_14             14
+#define GPIO_PIN_15             15
+
+/* ---------------- GPIO Pin Config Structure ---------------- */
+typedef struct
+{
+    uint8_t PinNumber;       // GPIO_PIN_x
+    uint8_t Mode;            // INPUT / OUTPUT / ALTFN / ANALOG
+    uint8_t Pull;            // NO_PUPD / PULL_UP / PULL_DOWN
+    uint8_t Speed;           // LOW / MED / HIGH / VERY_HIGH
+    uint8_t OType;           // Push-pull / Open-drain
+    uint8_t AltFunc;         // Alternate function number (0–15)
+} GPIO_Config_t;
+
+/* ---------------- Function Prototypes ---------------- */
+void GPIO_Init(GPIO_TypeDef *port, GPIO_Config_t *config);
+void GPIO_DeInit(GPIO_TypeDef *port);
+
+void GPIO_WritePin(GPIO_TypeDef *port, uint8_t pin, uint8_t state);
+uint8_t GPIO_ReadPin(GPIO_TypeDef *port, uint8_t pin);
+void GPIO_TogglePin(GPIO_TypeDef *port, uint8_t pin);
+
+#define GPIO_MODE_AF GPIO_MODE_ALTFN
+
+
+#endif /* DRIVERS_INC_GPIO_DRIVER_H_ */

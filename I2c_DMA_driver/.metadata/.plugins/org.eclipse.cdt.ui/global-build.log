@@ -1,0 +1,201 @@
+14:31:25 **** Build of configuration Debug for project I2C_DMA_driver ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m0plus -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32l053c8tx.d" -MT"Startup/startup_stm32l053c8tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32l053c8tx.o" "../Startup/startup_stm32l053c8tx.s"
+arm-none-eabi-gcc "../Src/gpio_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/gpio_driver.d" -MT"Src/gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/gpio_driver.o"
+arm-none-eabi-gcc "../Src/i2c_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/i2c_driver.d" -MT"Src/i2c_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/i2c_driver.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "I2C_DMA_driver.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Haril_bitsilica\STM_training_module\driver_playist_2\L_series_I2c_DMA_driver\I2C_DMA_driver\STM32L053C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_DMA_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_DMA_driver.elf
+ 
+arm-none-eabi-size  I2C_DMA_driver.elf 
+arm-none-eabi-objdump -h -S I2C_DMA_driver.elf  > "I2C_DMA_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+    460	      0	   1568	   2028	    7ec	I2C_DMA_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_DMA_driver.list
+ 
+14:33:25 **** Incremental Build of configuration Debug for project I2C_DMA_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/i2c_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/i2c_driver.d" -MT"Src/i2c_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/i2c_driver.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/i2c_driver.c:9:
+../Inc/I2c_driver.h:37:5: error: unknown type name 'DMA_RegDef_t'
+   37 |     DMA_RegDef_t *Instance;      /* DMA channel instance */
+      |     ^~~~~~~~~~~~
+In file included from ../Src/main.c:20:
+../Inc/I2c_driver.h:37:5: error: unknown type name 'DMA_RegDef_t'
+   37 |     DMA_RegDef_t *Instance;      /* DMA channel instance */
+      |     ^~~~~~~~~~~~
+make: *** [Src/subdir.mk:31: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Src/subdir.mk:31: Src/i2c_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+14:34:01 **** Incremental Build of configuration Debug for project I2C_DMA_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/i2c_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/i2c_driver.d" -MT"Src/i2c_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/i2c_driver.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "I2C_DMA_driver.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Haril_bitsilica\STM_training_module\driver_playist_2\L_series_I2c_DMA_driver\I2C_DMA_driver\STM32L053C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_DMA_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_DMA_driver.elf
+ 
+arm-none-eabi-size  I2C_DMA_driver.elf 
+arm-none-eabi-objdump -h -S I2C_DMA_driver.elf  > "I2C_DMA_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+    460	      0	   1568	   2028	    7ec	I2C_DMA_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_DMA_driver.list
+ 
+14:37:22 **** Incremental Build of configuration Debug for project I2C_DMA_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/i2c_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/i2c_driver.d" -MT"Src/i2c_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/i2c_driver.o"
+../Src/i2c_driver.c: In function 'I2C_DMA_Init':
+../Src/i2c_driver.c:62:32: error: 'I2C_CR1_TXDMAEN' undeclared (first use in this function)
+   62 |         hi2c->Instance->CR1 |= I2C_CR1_TXDMAEN;
+      |                                ^~~~~~~~~~~~~~~
+../Src/i2c_driver.c:62:32: note: each undeclared identifier is reported only once for each function it appears in
+../Src/i2c_driver.c:64:32: error: 'I2C_CR1_RXDMAEN' undeclared (first use in this function)
+   64 |         hi2c->Instance->CR1 |= I2C_CR1_RXDMAEN;
+      |                                ^~~~~~~~~~~~~~~
+../Src/i2c_driver.c: In function 'I2C_DMA_Stop':
+../Src/i2c_driver.c:86:30: error: 'I2C_CR1_TXDMAEN' undeclared (first use in this function)
+   86 |     hi2c->Instance->CR1 &= ~(I2C_CR1_TXDMAEN | I2C_CR1_RXDMAEN);
+      |                              ^~~~~~~~~~~~~~~
+../Src/i2c_driver.c:86:48: error: 'I2C_CR1_RXDMAEN' undeclared (first use in this function)
+   86 |     hi2c->Instance->CR1 &= ~(I2C_CR1_TXDMAEN | I2C_CR1_RXDMAEN);
+      |                                                ^~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:31: Src/i2c_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+14:38:42 **** Incremental Build of configuration Debug for project I2C_DMA_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/i2c_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/i2c_driver.d" -MT"Src/i2c_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/i2c_driver.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "I2C_DMA_driver.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Haril_bitsilica\STM_training_module\driver_playist_2\L_series_I2c_DMA_driver\I2C_DMA_driver\STM32L053C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_DMA_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_DMA_driver.elf
+ 
+arm-none-eabi-size  I2C_DMA_driver.elf 
+arm-none-eabi-objdump -h -S I2C_DMA_driver.elf  > "I2C_DMA_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+    460	      0	   1568	   2028	    7ec	I2C_DMA_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_DMA_driver.list
+ 
+14:38:52 **** Incremental Build of configuration Debug for project I2C_DMA_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/i2c_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/i2c_driver.d" -MT"Src/i2c_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/i2c_driver.o"
+arm-none-eabi-gcc -o "I2C_DMA_driver.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Haril_bitsilica\STM_training_module\driver_playist_2\L_series_I2c_DMA_driver\I2C_DMA_driver\STM32L053C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_DMA_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_DMA_driver.elf
+ 
+arm-none-eabi-size  I2C_DMA_driver.elf 
+arm-none-eabi-objdump -h -S I2C_DMA_driver.elf  > "I2C_DMA_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+    460	      0	   1568	   2028	    7ec	I2C_DMA_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_DMA_driver.list
+ 
+14:45:44 **** Incremental Build of configuration Debug for project I2C_DMA_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:61:20: error: 'RCC_AHBENR_DMA1EN' undeclared (first use in this function); did you mean 'RCC_APB1ENR_I2C1EN'?
+   61 |     RCC->AHBENR |= RCC_AHBENR_DMA1EN;  // Enable DMA1 clock
+      |                    ^~~~~~~~~~~~~~~~~
+      |                    RCC_APB1ENR_I2C1EN
+../Src/main.c:61:20: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:63:29: error: 'DMA1' undeclared (first use in this function)
+   63 |     hdma_i2c1_tx.Instance = DMA1;  // DMA controller
+      |                             ^~~~
+../Src/main.c:65:27: error: 'NULL' undeclared (first use in this function)
+   65 |     hdma_i2c1_tx.Buffer = NULL;    // Will assign later
+      |                           ^~~~
+../Src/main.c:23:1: note: 'NULL' is defined in header '<stddef.h>'; did you forget to '#include <stddef.h>'?
+   22 | #include "gpio_driver.h"
+  +++ |+#include <stddef.h>
+   23 | 
+make: *** [Src/subdir.mk:31: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+14:46:21 **** Incremental Build of configuration Debug for project I2C_DMA_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/i2c_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/i2c_driver.d" -MT"Src/i2c_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/i2c_driver.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:63:29: error: 'DMA1' undeclared (first use in this function)
+   63 |     hdma_i2c1_tx.Instance = DMA1;  // DMA controller
+      |                             ^~~~
+../Src/main.c:63:29: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:65:27: error: 'NULL' undeclared (first use in this function)
+   65 |     hdma_i2c1_tx.Buffer = NULL;    // Will assign later
+      |                           ^~~~
+../Src/main.c:23:1: note: 'NULL' is defined in header '<stddef.h>'; did you forget to '#include <stddef.h>'?
+   22 | #include "gpio_driver.h"
+  +++ |+#include <stddef.h>
+   23 | 
+make: *** [Src/subdir.mk:31: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+14:47:11 **** Incremental Build of configuration Debug for project I2C_DMA_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/i2c_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/i2c_driver.d" -MT"Src/i2c_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/i2c_driver.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:65:27: error: 'NULL' undeclared (first use in this function)
+   65 |     hdma_i2c1_tx.Buffer = NULL;    // Will assign later
+      |                           ^~~~
+../Src/main.c:23:1: note: 'NULL' is defined in header '<stddef.h>'; did you forget to '#include <stddef.h>'?
+   22 | #include "gpio_driver.h"
+  +++ |+#include <stddef.h>
+   23 | 
+../Src/main.c:65:27: note: each undeclared identifier is reported only once for each function it appears in
+   65 |     hdma_i2c1_tx.Buffer = NULL;    // Will assign later
+      |                           ^~~~
+make: *** [Src/subdir.mk:31: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+14:47:31 **** Incremental Build of configuration Debug for project I2C_DMA_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "I2C_DMA_driver.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Haril_bitsilica\STM_training_module\driver_playist_2\L_series_I2c_DMA_driver\I2C_DMA_driver\STM32L053C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_DMA_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_DMA_driver.elf
+ 
+arm-none-eabi-size  I2C_DMA_driver.elf 
+arm-none-eabi-objdump -h -S I2C_DMA_driver.elf  > "I2C_DMA_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   2076	      0	   1600	   3676	    e5c	I2C_DMA_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_DMA_driver.list
+ 
+14:50:10 **** Incremental Build of configuration Debug for project I2C_DMA_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/i2c_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/i2c_driver.d" -MT"Src/i2c_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/i2c_driver.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "I2C_DMA_driver.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Haril_bitsilica\STM_training_module\driver_playist_2\L_series_I2c_DMA_driver\I2C_DMA_driver\STM32L053C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_DMA_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_DMA_driver.elf
+ 
+arm-none-eabi-size  I2C_DMA_driver.elf 
+arm-none-eabi-objdump -h -S I2C_DMA_driver.elf  > "I2C_DMA_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   2076	      0	   1600	   3676	    e5c	I2C_DMA_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_DMA_driver.list
+ 
+14:54:12 **** Incremental Build of configuration Debug for project I2C_DMA_driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/i2c_driver.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/i2c_driver.d" -MT"Src/i2c_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/i2c_driver.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DSTM32L0538_DISCO -DSTM32 -DSTM32L053C8Tx -DSTM32L0 -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "I2C_DMA_driver.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Haril_bitsilica\STM_training_module\driver_playist_2\L_series_I2c_DMA_driver\I2C_DMA_driver\STM32L053C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_DMA_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_DMA_driver.elf
+ 
+arm-none-eabi-size  I2C_DMA_driver.elf 
+arm-none-eabi-objdump -h -S I2C_DMA_driver.elf  > "I2C_DMA_driver.list"
+   text	   data	    bss	    dec	    hex	filename
+   2076	      0	   1600	   3676	    e5c	I2C_DMA_driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_DMA_driver.list
+ 

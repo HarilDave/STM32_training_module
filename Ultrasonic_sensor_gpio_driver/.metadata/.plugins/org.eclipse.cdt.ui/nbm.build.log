@@ -1,0 +1,125 @@
+12:34:24 **** Incremental Build of configuration Debug for project nbm ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:46:1: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   46 | TIM_HandleTypeDef htim1;
+      | ^~~~~~~~~~~~~~~~~
+      | EXTI_HandleTypeDef
+../Core/Src/main.c:83:33: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   83 | void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
+      |                                 ^~~~~~~~~~~~~~~~~
+      |                                 EXTI_HandleTypeDef
+../Core/Src/main.c: In function 'HCSR04_Read':
+../Core/Src/main.c:133:5: warning: implicit declaration of function '__HAL_TIM_ENABLE_IT' [-Wimplicit-function-declaration]
+  133 |     __HAL_TIM_ENABLE_IT(&htim1, TIM_IT_CC1);
+      |     ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:133:33: error: 'TIM_IT_CC1' undeclared (first use in this function)
+  133 |     __HAL_TIM_ENABLE_IT(&htim1, TIM_IT_CC1);
+      |                                 ^~~~~~~~~~
+../Core/Src/main.c:133:33: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:287:3: warning: implicit declaration of function 'HAL_TIM_IC_Start_IT'; did you mean 'HAL_DMA_Start_IT'? [-Wimplicit-function-declaration]
+  287 |   HAL_TIM_IC_Start_IT(&htim1, TIM_CHANNEL_1);
+      |   ^~~~~~~~~~~~~~~~~~~
+      |   HAL_DMA_Start_IT
+../Core/Src/main.c:287:31: error: 'TIM_CHANNEL_1' undeclared (first use in this function); did you mean 'DAC2_CHANNEL_1'?
+  287 |   HAL_TIM_IC_Start_IT(&htim1, TIM_CHANNEL_1);
+      |                               ^~~~~~~~~~~~~
+      |                               DAC2_CHANNEL_1
+../Core/Src/main.c: In function 'MX_TIM1_Init':
+../Core/Src/main.c:402:3: error: unknown type name 'TIM_MasterConfigTypeDef'
+  402 |   TIM_MasterConfigTypeDef sMasterConfig = {0};
+      |   ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:403:3: error: unknown type name 'TIM_IC_InitTypeDef'; did you mean 'DMA_InitTypeDef'?
+  403 |   TIM_IC_InitTypeDef sConfigIC = {0};
+      |   ^~~~~~~~~~~~~~~~~~
+      |   DMA_InitTypeDef
+../Core/Src/main.c:408:8: error: request for member 'Instance' in something not a structure or union
+  408 |   htim1.Instance = TIM1;
+      |        ^
+../Core/Src/main.c:409:8: error: request for member 'Init' in something not a structure or union
+  409 |   htim1.Init.Prescaler = 80-1;
+      |        ^
+../Core/Src/main.c:410:8: error: request for member 'Init' in something not a structure or union
+  410 |   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
+      |        ^
+../Core/Src/main.c:410:28: error: 'TIM_COUNTERMODE_UP' undeclared (first use in this function)
+  410 |   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
+      |                            ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:411:8: error: request for member 'Init' in something not a structure or union
+  411 |   htim1.Init.Period = 65535-1;
+      |        ^
+../Core/Src/main.c:412:8: error: request for member 'Init' in something not a structure or union
+  412 |   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+      |        ^
+../Core/Src/main.c:412:30: error: 'TIM_CLOCKDIVISION_DIV1' undeclared (first use in this function)
+  412 |   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:413:8: error: request for member 'Init' in something not a structure or union
+  413 |   htim1.Init.RepetitionCounter = 0;
+      |        ^
+../Core/Src/main.c:414:8: error: request for member 'Init' in something not a structure or union
+  414 |   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+      |        ^
+../Core/Src/main.c:414:34: error: 'TIM_AUTORELOAD_PRELOAD_DISABLE' undeclared (first use in this function)
+  414 |   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:415:7: warning: implicit declaration of function 'HAL_TIM_IC_Init'; did you mean 'HAL_LIN_Init'? [-Wimplicit-function-declaration]
+  415 |   if (HAL_TIM_IC_Init(&htim1) != HAL_OK)
+      |       ^~~~~~~~~~~~~~~
+      |       HAL_LIN_Init
+../Core/Src/main.c:419:16: error: request for member 'MasterOutputTrigger' in something not a structure or union
+  419 |   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+      |                ^
+../Core/Src/main.c:419:39: error: 'TIM_TRGO_RESET' undeclared (first use in this function)
+  419 |   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+      |                                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:420:16: error: request for member 'MasterOutputTrigger2' in something not a structure or union
+  420 |   sMasterConfig.MasterOutputTrigger2 = TIM_TRGO2_RESET;
+      |                ^
+../Core/Src/main.c:420:40: error: 'TIM_TRGO2_RESET' undeclared (first use in this function)
+  420 |   sMasterConfig.MasterOutputTrigger2 = TIM_TRGO2_RESET;
+      |                                        ^~~~~~~~~~~~~~~
+../Core/Src/main.c:421:16: error: request for member 'MasterSlaveMode' in something not a structure or union
+  421 |   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+      |                ^
+../Core/Src/main.c:421:35: error: 'TIM_MASTERSLAVEMODE_DISABLE' undeclared (first use in this function)
+  421 |   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:422:7: warning: implicit declaration of function 'HAL_TIMEx_MasterConfigSynchronization'; did you mean 'HAL_TIM_SlaveConfigSynchronization'? [-Wimplicit-function-declaration]
+  422 |   if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |       HAL_TIM_SlaveConfigSynchronization
+../Core/Src/main.c:426:12: error: request for member 'ICPolarity' in something not a structure or union
+  426 |   sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
+      |            ^
+../Core/Src/main.c:426:26: error: 'TIM_INPUTCHANNELPOLARITY_RISING' undeclared (first use in this function)
+  426 |   sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:427:12: error: request for member 'ICSelection' in something not a structure or union
+  427 |   sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
+      |            ^
+../Core/Src/main.c:427:27: error: 'TIM_ICSELECTION_DIRECTTI' undeclared (first use in this function)
+  427 |   sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:428:12: error: request for member 'ICPrescaler' in something not a structure or union
+  428 |   sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
+      |            ^
+../Core/Src/main.c:428:27: error: 'TIM_ICPSC_DIV1' undeclared (first use in this function)
+  428 |   sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
+      |                           ^~~~~~~~~~~~~~
+../Core/Src/main.c:429:12: error: request for member 'ICFilter' in something not a structure or union
+  429 |   sConfigIC.ICFilter = 0;
+      |            ^
+../Core/Src/main.c:430:7: warning: implicit declaration of function 'HAL_TIM_IC_ConfigChannel' [-Wimplicit-function-declaration]
+  430 |   if (HAL_TIM_IC_ConfigChannel(&htim1, &sConfigIC, TIM_CHANNEL_1) != HAL_OK)
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:430:52: error: 'TIM_CHANNEL_1' undeclared (first use in this function); did you mean 'DAC2_CHANNEL_1'?
+  430 |   if (HAL_TIM_IC_ConfigChannel(&htim1, &sConfigIC, TIM_CHANNEL_1) != HAL_OK)
+      |                                                    ^~~~~~~~~~~~~
+      |                                                    DAC2_CHANNEL_1
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+12:34:27 Build Failed. 31 errors, 5 warnings. (took 3s.188ms)
+

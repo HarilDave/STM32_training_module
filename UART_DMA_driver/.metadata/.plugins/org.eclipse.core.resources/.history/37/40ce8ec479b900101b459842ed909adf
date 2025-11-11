@@ -1,0 +1,131 @@
+/* USER CODE BEGIN Header */
+/**
+ ******************************************************************************
+ * @file           : main.c
+ * @brief          : Main program body
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2025 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
+/* USER CODE END Header */
+#include "main.h"
+
+/* Private variables ---------------------------------------------------------*/
+UART_HandleTypeDef huart2;
+
+/* USER CODE BEGIN PV */
+#define TX_LEN 12
+uint8_t TxBuffer[TX_LEN] = "DMA LOOPBACK";
+volatile uint8_t RxBuffer[TX_LEN];
+volatile uint8_t RxData[TX_LEN];  // visible in debugger
+/* USER CODE END PV */
+
+/* Private function prototypes -----------------------------------------------*/
+
+static void MX_USART2_UART_Init(void);
+
+void SystemClock_Config(void) {}     // Dummy clock config
+void MX_GPIO_Init(void) {}           // Dummy GPIO init
+void Error_Handler(void) { while(1); } // Trap on error
+
+/* USER CODE BEGIN PFP */
+void DMA_Init(void);
+void UART2_DMA_Start(void);
+/* USER CODE END PFP */
+
+/* USER CODE BEGIN 0 */
+void DMA_Init(void)
+{
+    RCC->AHB1ENR |= RCC_AHB1ENR_DMA1EN;
+    DMA1->IFCR = 0xFFFFFFFF;
+
+    // RX: DMA1 Channel 6
+    DMA1_Channel6->CCR = 0;
+    DMA1_Channel6->CPAR = (uint32_t)&USART2->RDR;
+    DMA1_Channel6->CMAR = (uint32_t)RxBuffer;
+    DMA1_Channel6->CNDTR = TX_LEN;
+    DMA1_Channel6->CCR = (1 << 7) | (1 << 4); // MINC, PER->MEM
+
+    // TX: DMA1 Channel 7
+    DMA1_Channel7->CCR = 0;
+    DMA1_Channel7->CPAR = (uint32_t)&USART2->TDR;
+    DMA1_Channel7->CMAR = (uint32_t)TxBuffer;
+    DMA1_Channel7->CNDTR = TX_LEN;
+    DMA1_Channel7->CCR = (1 << 7) | (1 << 4) | (1 << 1); // MINC, MEM->PER
+}
+
+void UART2_DMA_Start(void)
+{
+    USART2->CR3 |= USART_CR3_DMAT | USART_CR3_DMAR; // enable DMA for TX/RX
+    DMA1_Channel6->CCR |= 1; // Enable RX
+    DMA1_Channel7->CCR |= 1; // Enable TX
+}
+/* USER CODE END 0 */
+
+/**
+  * @brief  The application entry point.
+  * @retval int
+  */
+int main(void)
+{
+  HAL_Init();
+  SystemClock_Config();
+  MX_GPIO_Init();
+  MX_USART2_UART_Init();
+
+  /* USER CODE BEGIN 2 */
+  DMA_Init();
+  UART2_DMA_Start();
+
+  // Wait for TX complete (Channel 7)
+  while (!(DMA1->ISR & (1 << 25)));
+  DMA1->IFCR = (1 << 25);
+
+  // Wait for RX complete (Channel 6)
+  while (!(DMA1->ISR & (1 << 21)));
+  DMA1->IFCR = (1 << 21);
+
+  // Copy received data to visible buffer
+  for (int i = 0; i < TX_LEN; i++)
+      RxData[i] = RxBuffer[i];
+
+  /* USER CODE END 2 */
+
+  while (1)
+  {
+    /* USER CODE BEGIN WHILE */
+    HAL_Delay(1000);  // Set breakpoint and observe RxData[] = "DMA LOOPBACK"
+    /* USER CODE END WHILE */
+  }
+}
+
+/**
+  * @brief USART2 Initialization Function
+  */
+static void MX_USART2_UART_Init(void)
+{
+  huart2.Instance = USART2;
+  huart2.Init.BaudRate = 115200;
+  huart2.Init.WordLength = UART_WORDLENGTH_8B;
+  huart2.Init.StopBits = UART_STOPBITS_1;
+  huart2.Init.Parity = UART_PARITY_NONE;
+  huart2.Init.Mode = UART_MODE_TX_RX;
+  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+  huart2.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+  huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+  if (HAL_UART_Init(&huart2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
+
+/* GPIO, clock, and other CubeMX code remain unchanged */

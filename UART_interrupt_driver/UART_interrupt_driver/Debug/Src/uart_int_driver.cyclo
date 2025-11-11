@@ -1,0 +1,5 @@
+../Inc/stm32l.h:85:20:NVIC_EnableIRQ	1
+../Src/uart_int_driver.c:6:6:USART2_Init	1
+../Src/uart_int_driver.c:21:6:USART2_SendChar	2
+../Src/uart_int_driver.c:27:6:USART2_EnableInterrupt	1
+../Src/uart_int_driver.c:33:6:USART2_IRQHandler	2

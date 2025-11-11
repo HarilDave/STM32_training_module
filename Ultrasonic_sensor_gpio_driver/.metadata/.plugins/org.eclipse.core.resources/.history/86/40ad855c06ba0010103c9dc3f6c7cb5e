@@ -1,0 +1,99 @@
+#include "stm32l.h"
+
+static void delay_us(uint32_t us)
+{
+    // assuming 16 MHz CPU clock -> 1 iteration ≈ 1 µs
+    for (volatile uint32_t i = 0; i < us * 16; i++)
+        __asm volatile("nop");
+}
+
+static void delay_ms(uint32_t ms)
+{
+    while (ms--) delay_us(1000);
+}
+
+static void SystemClock_HSI16(void)
+{
+    // Enable HSI16
+    RCC->CR |= (1U << 8);
+    while (!(RCC->CR & (1U << 10)));
+
+    // Switch system clock to HSI16
+    RCC->CFGR &= ~(3U << 0);
+    RCC->CFGR |=  (1U << 0);
+    while (((RCC->CFGR >> 2) & 0x3) != 1);
+}
+
+static void GPIO_Init(void)
+{
+    // Enable GPIOA clock
+    RCC->AHB2ENR |= (1U << 0);
+
+    // PA1 -> TRIG (output)
+    GPIOA->MODER &= ~(3U << (1 * 2));
+    GPIOA->MODER |=  (1U << (1 * 2));
+
+    // PA2 -> ECHO (input)
+    GPIOA->MODER &= ~(3U << (2 * 2));
+}
+
+static void TIM2_Init(void)
+{
+    // Enable TIM2 clock
+    RCC->APB1ENR1 |= (1U << 0);
+
+    // Timer frequency = 1 MHz (1 µs tick)
+    TIM2->PSC = 16 - 1;
+    TIM2->ARR = 0xFFFF;
+    TIM2->CR1 = 1;  // enable counter
+}
+
+static uint32_t get_distance_cm(void)
+{
+    uint32_t duration;
+    uint32_t timeout;
+
+    // Send trigger pulse (10 µs)
+    GPIOA->BSRR = (1U << 1);
+    delay_us(10);
+    GPIOA->BRR  = (1U << 1);
+
+    // Wait for ECHO to go HIGH (start)
+    timeout = 60000; // ~60 ms
+    while (!(GPIOA->IDR & (1U << 2))) {
+        if (--timeout == 0)
+            return 0; // no echo start
+    }
+
+    // Start timer
+    TIM2->CNT = 0;
+
+    // Wait for ECHO to go LOW (end)
+    timeout = 60000;
+    while (GPIOA->IDR & (1U << 2)) {
+        if (--timeout == 0)
+            return 0; // echo too long
+    }
+
+    // Read time in µs
+    duration = TIM2->CNT;
+
+    // Convert time to distance (cm)
+    return duration / 58;  // sound speed = 34300 cm/s
+}
+int main(void)
+{
+    SystemClock_HSI16();
+    GPIO_Init();
+    TIM2_Init();
+
+    uint32_t distance;
+
+    while (1)
+    {
+        distance = get_distance_cm();
+        delay_ms(60); // 60ms delay between readings
+        // observe 'distance' variable in debugger watch
+    }
+    return distance;
+}

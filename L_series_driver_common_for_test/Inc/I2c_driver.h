@@ -1,0 +1,31 @@
+#ifndef I2C_DRIVER_H_
+#define I2C_DRIVER_H_
+
+#include "STM32_L0538xx.h"
+
+typedef struct
+{
+    uint32_t ClockSpeed;
+    uint8_t AddressMode;
+    uint16_t OwnAddress;
+} I2C_Config_t;
+
+typedef struct
+{
+    I2C_RegDef_t *Instance;
+    I2C_Config_t Init;
+} I2C_Handle_t;
+
+#define I2C_7BIT_ADDR   0
+#define I2C_10BIT_ADDR  1
+
+#define I2C_WRITE 0
+#define I2C_READ  1
+
+void I2C_Init(I2C_Handle_t *hi2c);
+void I2C_Start(I2C_Handle_t *hi2c, uint8_t address, uint8_t direction);
+void I2C_WriteData(I2C_Handle_t *hi2c, uint8_t data);
+uint8_t I2C_ReadData(I2C_Handle_t *hi2c);
+void I2C_Stop(I2C_Handle_t *hi2c);
+
+#endif /* I2C_DRIVER_H_ */

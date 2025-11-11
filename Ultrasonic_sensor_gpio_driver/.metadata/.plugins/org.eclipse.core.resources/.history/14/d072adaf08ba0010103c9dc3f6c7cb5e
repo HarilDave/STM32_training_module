@@ -1,0 +1,82 @@
+#ifndef STM32L_H
+#define STM32L_H
+
+#include <stdint.h>
+
+/* ---------------- Base addresses ---------------- */
+#define PERIPH_BASE        0x40000000UL
+
+#define APB1PERIPH_BASE    (PERIPH_BASE + 0x00000000UL)
+#define APB2PERIPH_BASE    (PERIPH_BASE + 0x00010000UL)
+#define AHB1PERIPH_BASE    (PERIPH_BASE + 0x00020000UL)
+#define AHB2PERIPH_BASE    (PERIPH_BASE + 0x08000000UL)
+
+/* Peripheral base addresses */
+#define RCC_BASE           (AHB1PERIPH_BASE + 0x1000UL)
+#define GPIOA_BASE         (AHB2PERIPH_BASE + 0x0000UL)
+#define TIM2_BASE          (APB1PERIPH_BASE + 0x0000UL)
+
+/* ---------------- Peripheral structures ---------------- */
+
+typedef struct {
+    volatile uint32_t MODER;    // 0x00
+    volatile uint32_t OTYPER;   // 0x04
+    volatile uint32_t OSPEEDR;  // 0x08
+    volatile uint32_t PUPDR;    // 0x0C
+    volatile uint32_t IDR;      // 0x10
+    volatile uint32_t ODR;      // 0x14
+    volatile uint32_t BSRR;     // 0x18
+    volatile uint32_t LCKR;     // 0x1C
+    volatile uint32_t AFRL;     // 0x20
+    volatile uint32_t AFRH;     // 0x24
+    volatile uint32_t BRR;      // 0x28
+} GPIO_TypeDef;
+
+typedef struct {
+    volatile uint32_t CR;          // 0x00
+    volatile uint32_t ICSCR;       // 0x04
+    volatile uint32_t CFGR;        // 0x08
+    volatile uint32_t PLLCFGR;     // 0x0C
+    volatile uint32_t PLLSAI1CFGR; // 0x10
+    volatile uint32_t PLLSAI2CFGR; // 0x14
+    volatile uint32_t CIER;        // 0x18
+    volatile uint32_t CIFR;        // 0x1C
+    volatile uint32_t CICR;        // 0x20
+    volatile uint32_t AHB1RSTR;    // 0x28
+    volatile uint32_t AHB2RSTR;    // 0x2C
+    volatile uint32_t AHB3RSTR;    // 0x30
+    uint32_t RESERVED0;
+    volatile uint32_t APB1RSTR1;   // 0x38
+    volatile uint32_t APB1RSTR2;   // 0x3C
+    volatile uint32_t APB2RSTR;    // 0x40
+    uint32_t RESERVED1;
+    volatile uint32_t AHB1ENR;     // 0x48
+    volatile uint32_t AHB2ENR;     // 0x4C
+    volatile uint32_t AHB3ENR;     // 0x50
+    uint32_t RESERVED2;
+    volatile uint32_t APB1ENR1;    // 0x58
+    volatile uint32_t APB1ENR2;    // 0x5C
+    volatile uint32_t APB2ENR;     // 0x60
+} RCC_TypeDef;
+
+typedef struct {
+    volatile uint32_t CR1;     // 0x00
+    volatile uint32_t CR2;     // 0x04
+    volatile uint32_t SMCR;    // 0x08
+    volatile uint32_t DIER;    // 0x0C
+    volatile uint32_t SR;      // 0x10
+    volatile uint32_t EGR;     // 0x14
+    volatile uint32_t CCMR1;   // 0x18
+    volatile uint32_t CCMR2;   // 0x1C
+    volatile uint32_t CCER;    // 0x20
+    volatile uint32_t CNT;     // 0x24
+    volatile uint32_t PSC;     // 0x28
+    volatile uint32_t ARR;     // 0x2C
+} TIM_TypeDef;
+
+/* ---------------- Peripheral declarations ---------------- */
+#define RCC     ((RCC_TypeDef *) RCC_BASE)
+#define GPIOA   ((GPIO_TypeDef *) GPIOA_BASE)
+#define TIM2    ((TIM_TypeDef *) TIM2_BASE)
+
+#endif

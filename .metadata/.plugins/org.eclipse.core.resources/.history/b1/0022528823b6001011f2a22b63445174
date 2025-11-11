@@ -1,0 +1,220 @@
+/*
+ * STM32_L0538xx.h
+ *
+ *  Created on: Oct 30, 2025
+ *      Author: Himshree
+ */
+
+#ifndef DRIVERS_INC_STM32_L0538XX_H_
+#define DRIVERS_INC_STM32_L0538XX_H_
+
+#include <stdint.h>
+
+/* ---------------------------- BASE ADDRESSES ---------------------------- */
+#define PERIPH_BASE             (0x40000000UL)
+#define AHB_BASE                (PERIPH_BASE + 0x00020000UL)
+#define APB1_BASE               (PERIPH_BASE + 0x00000000UL)
+#define APB2_BASE               (PERIPH_BASE + 0x00010000UL)
+
+/* ---------------------------- RCC BASE ADDRESS ---------------------------- */
+#define RCC_BASEADDR            (AHB_BASE + 0x1000UL)
+
+/* ---------------------------- GPIO BASE ADDRESSES ---------------------------- */
+#define GPIOA_BASEADDR          (0x50000000UL)
+#define GPIOB_BASEADDR          (0x50000400UL)
+#define GPIOC_BASEADDR          (0x50000800UL)
+#define GPIOD_BASEADDR          (0x50000C00UL)
+#define GPIOE_BASEADDR          (0x50001000UL)
+#define GPIOH_BASEADDR          (0x50001C00UL)
+
+/* ---------------------------- RCC REGISTER DEFINITION ---------------------------- */
+typedef struct
+{
+    volatile uint32_t CR;
+    volatile uint32_t ICSCR;
+    volatile uint32_t CRRCR;
+    volatile uint32_t CFGR;
+    volatile uint32_t CIER;
+    volatile uint32_t CIFR;
+    volatile uint32_t CICR;
+    volatile uint32_t IOPRSTR;
+    volatile uint32_t AHBRSTR;
+    volatile uint32_t APB2RSTR;
+    volatile uint32_t APB1RSTR;
+    volatile uint32_t IOPENR;
+    volatile uint32_t AHBENR;
+    volatile uint32_t APB2ENR;
+    volatile uint32_t APB1ENR;
+    volatile uint32_t IOPSMEN;
+    volatile uint32_t AHBSMENR;
+    volatile uint32_t APB2SMENR;
+    volatile uint32_t APB1SMENR;
+    volatile uint32_t CCIPR;
+    volatile uint32_t CSR;
+} RCC_RegDef_t;
+
+/* ---------------------------- GPIO REGISTER DEFINITION ---------------------------- */
+typedef struct
+{
+    volatile uint32_t MODER;
+    volatile uint32_t OTYPER;
+    volatile uint32_t OSPEEDR;
+    volatile uint32_t PUPDR;
+    volatile uint32_t IDR;
+    volatile uint32_t ODR;
+    volatile uint32_t BSRR;
+    volatile uint32_t LCKR;
+    volatile uint32_t AFRL;
+    volatile uint32_t AFRH;
+} GPIO_RegDef_t;
+
+/* ---------------------------- PERIPHERAL DEFINITIONS ---------------------------- */
+#define RCC     ((RCC_RegDef_t *)RCC_BASEADDR)
+#define GPIOA   ((GPIO_RegDef_t *)GPIOA_BASEADDR)
+#define GPIOB   ((GPIO_RegDef_t *)GPIOB_BASEADDR)
+#define GPIOC   ((GPIO_RegDef_t *)GPIOC_BASEADDR)
+#define GPIOD   ((GPIO_RegDef_t *)GPIOD_BASEADDR)
+#define GPIOE   ((GPIO_RegDef_t *)GPIOE_BASEADDR)
+#define GPIOH   ((GPIO_RegDef_t *)GPIOH_BASEADDR)
+
+/* ---------------------------- CLOCK ENABLE MACROS ---------------------------- */
+#define GPIOA_PCLK_EN()    (RCC->IOPENR |= (1 << 0))
+#define GPIOB_PCLK_EN()    (RCC->IOPENR |= (1 << 1))
+#define GPIOC_PCLK_EN()    (RCC->IOPENR |= (1 << 2))
+#define GPIOD_PCLK_EN()    (RCC->IOPENR |= (1 << 3))
+#define GPIOE_PCLK_EN()    (RCC->IOPENR |= (1 << 4))
+#define GPIOH_PCLK_EN()    (RCC->IOPENR |= (1 << 7))
+
+/* ---------------------------- CLOCK DISABLE MACROS ---------------------------- */
+#define GPIOA_PCLK_DI()    (RCC->IOPENR &= ~(1 << 0))
+#define GPIOB_PCLK_DI()    (RCC->IOPENR &= ~(1 << 1))
+#define GPIOC_PCLK_DI()    (RCC->IOPENR &= ~(1 << 2))
+#define GPIOD_PCLK_DI()    (RCC->IOPENR &= ~(1 << 3))
+#define GPIOE_PCLK_DI()    (RCC->IOPENR &= ~(1 << 4))
+#define GPIOH_PCLK_DI()    (RCC->IOPENR &= ~(1 << 7))
+
+/* ---------------------------- GENERIC UTILITY MACROS ---------------------------- */
+#define ENABLE              1
+#define DISABLE             0
+#define SET                 ENABLE
+#define RESET               DISABLE
+#define GPIO_PIN_SET        1
+#define GPIO_PIN_RESET      0
+
+
+typedef struct
+{
+  volatile uint32_t MODER;
+  volatile uint32_t OTYPER;
+  volatile uint32_t OSPEEDR;
+  volatile uint32_t PUPDR;
+  volatile uint32_t IDR;
+  volatile uint32_t ODR;
+  volatile uint32_t BSRR;
+  volatile uint32_t LCKR;
+  volatile uint32_t AFR[2];
+} GPIO_TypeDef;
+
+
+typedef struct
+{
+    volatile uint32_t CR1;
+    volatile uint32_t CR2;
+    volatile uint32_t SR;
+    volatile uint32_t DR;
+    volatile uint32_t CRCPR;
+    volatile uint32_t RXCRCR;
+    volatile uint32_t TXCRCR;
+    volatile uint32_t I2SCFGR;
+    volatile uint32_t I2SPR;
+} SPI_RegDef_t;
+
+
+#define SPI1_BASEADDR     (APB2_BASE + 0x3000)
+#define SPI2_BASEADDR     (APB1_BASE + 0x3800)
+
+
+#define SPI1    ((SPI_RegDef_t*) SPI1_BASEADDR)
+#define SPI2    ((SPI_RegDef_t*) SPI2_BASEADDR)
+
+
+
+
+/* ---------------- I2C BIT DEFINITIONS ---------------- */
+
+#define RCC_APB1ENR_I2C1EN     (1 << 21)
+#define RCC_APB1ENR_I2C2EN     (1 << 22)
+
+#define I2C_CR1_PE             (1 << 0)
+#define I2C_CR2_START          (1 << 13)
+#define I2C_CR2_STOP           (1 << 14)
+
+#define I2C_ISR_TXIS           (1 << 1)
+#define I2C_ISR_RXNE           (1 << 2)
+#define I2C_ISR_STOPF          (1 << 5)
+#define I2C_ISR_NACKF          (1 << 4)
+#define I2C_ISR_TC             (1 << 6)
+
+#define I2C_ICR_STOPCF         (1 << 5)
+
+#define I2C_OAR1_OA1EN         (1 << 15)
+
+
+typedef struct
+{
+    volatile uint32_t CR1;
+    volatile uint32_t CR2;
+    volatile uint32_t OAR1;
+    volatile uint32_t OAR2;
+    volatile uint32_t TIMINGR;
+    volatile uint32_t TIMEOUTR;
+    volatile uint32_t ISR;
+    volatile uint32_t ICR;
+    volatile uint32_t PECR;
+    volatile uint32_t RXDR;
+    volatile uint32_t TXDR;
+} I2C_RegDef_t;
+
+#define I2C1_BASEADDR     (APB1_BASE + 0x5400UL)
+#define I2C2_BASEADDR     (APB1_BASE + 0x5800UL)
+
+#define I2C1  ((I2C_RegDef_t*) I2C1_BASEADDR)
+#define I2C2  ((I2C_RegDef_t*) I2C2_BASEADDR)
+
+
+
+
+/* ---------------------------- USART REGISTER DEFINITION ---------------------------- */
+typedef struct
+{
+    volatile uint32_t CR1;
+    volatile uint32_t CR2;
+    volatile uint32_t CR3;
+    volatile uint32_t BRR;
+    volatile uint32_t GTPR;
+    volatile uint32_t RTOR;
+    volatile uint32_t RQR;
+    volatile uint32_t ISR;
+    volatile uint32_t ICR;
+    volatile uint32_t RDR;
+    volatile uint32_t TDR;
+} USART_RegDef_t;
+
+/* ---------------------------- USART BASE ADDRESSES ---------------------------- */
+#define USART1_BASEADDR      (APB2_BASE + 0x3800UL)
+#define USART2_BASEADDR      (APB1_BASE + 0x4400UL)
+
+/* ---------------------------- USART PERIPHERAL DEFINITIONS ---------------------------- */
+#define USART1    ((USART_RegDef_t *)USART1_BASEADDR)
+#define USART2    ((USART_RegDef_t *)USART2_BASEADDR)
+
+/* ---------------------------- USART CLOCK ENABLE MACROS ---------------------------- */
+#define USART1_PCLK_EN()     (RCC->APB2ENR |= (1 << 14))
+#define USART2_PCLK_EN()     (RCC->APB1ENR |= (1 << 17))
+
+/* ---------------------------- USART CLOCK DISABLE MACROS ---------------------------- */
+#define USART1_PCLK_DI()     (RCC->APB2ENR &= ~(1 << 14))
+#define USART2_PCLK_DI()     (RCC->APB1ENR &= ~(1 << 17))
+
+
+#endif /* DRIVERS_INC_STM32_L0538XX_H_ */

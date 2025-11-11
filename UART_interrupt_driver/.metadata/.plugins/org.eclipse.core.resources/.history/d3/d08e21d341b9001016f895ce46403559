@@ -1,0 +1,9 @@
+/*
+ * uart_int_driver.c
+ *
+ *  Created on: Nov 4, 2025
+ *      Author: Himshree
+ */
+
+#include "uart_int_driver.h"
+

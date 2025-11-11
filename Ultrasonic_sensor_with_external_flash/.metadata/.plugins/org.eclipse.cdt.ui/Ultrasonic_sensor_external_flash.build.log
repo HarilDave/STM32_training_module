@@ -1,0 +1,21 @@
+12:59:11 **** Incremental Build of configuration Debug for project Ultrasonic_sensor_external_flash ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:219:26: warning: unused variable 'stored' [-Wunused-variable]
+  219 |                 uint32_t stored = (readback[0] << 24) | (readback[1] << 16) | (readback[2] << 8) | readback[3];
+      |                          ^~~~~~
+arm-none-eabi-gcc -o "Ultrasonic_sensor_external_flash.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\driver_playist_2\Ultrasonic_sensor_with_external_flash\Ultrasonic_sensor_external_flash\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ultrasonic_sensor_external_flash.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ultrasonic_sensor_external_flash.elf
+ 
+arm-none-eabi-size  Ultrasonic_sensor_external_flash.elf 
+arm-none-eabi-objdump -h -S Ultrasonic_sensor_external_flash.elf  > "Ultrasonic_sensor_external_flash.list"
+   text	   data	    bss	    dec	    hex	filename
+  14852	     12	   1748	  16612	   40e4	Ultrasonic_sensor_external_flash.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ultrasonic_sensor_external_flash.list
+ 
+
+12:59:14 Build Finished. 0 errors, 1 warnings. (took 2s.339ms)
+

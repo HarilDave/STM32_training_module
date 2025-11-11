@@ -1,0 +1,9 @@
+../Core/Src/w25qxx.c:112:6:InitW25QxxFlash	1
+../Core/Src/w25qxx.c:138:14:W25QxxFlashWriteData	6
+../Core/Src/w25qxx.c:235:14:W25QxxFlashReadData	5
+../Core/Src/w25qxx.c:288:10:GetW25QxxJEDECId	3
+../Core/Src/w25qxx.c:332:13:W25QxxSlaveControl	2
+../Core/Src/w25qxx.c:359:13:W25QxxSectorErase	1
+../Core/Src/w25qxx.c:398:13:W25QxxFlashWriteControl	4
+../Core/Src/w25qxx.c:445:21:W25QxxWaitForReady	2
+../Core/Src/w25qxx.c:482:13:W25QxxResetContinousReadMode	1
