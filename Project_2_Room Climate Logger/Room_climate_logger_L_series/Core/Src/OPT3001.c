@@ -1,0 +1,134 @@
+/*
+ * OPT3001.c
+ *
+ *  Created on: Nov 7, 2025
+ *      Author: Himshree
+ */
+#include "OPT3001.h"
+
+
+#define SLAVE_ADDR		(0x47)
+#define MEM_REG			(0x7F)
+
+uint8_t ucTxData[100] = {0};
+uint16_t uhTxSize = 0;
+uint8_t ucResult[100] = {0};
+uint16_t uhDeviceId = 0;
+uint16_t uhTemp = 0;
+
+uint8_t rx_buf[2];
+uint16_t device_id;
+
+void read_OPT3001_dev_ID()
+{
+	uhTxSize = 0;
+
+	/* USER CODE BEGIN 3 */
+
+	ucTxData[0] = MEM_REG;
+
+	if(HAL_OK == HAL_I2C_Master_Transmit(&hi2c1, SLAVE_ADDR << 1, ucTxData, 1, 100))
+	{
+		if(HAL_OK == HAL_I2C_Master_Receive(&hi2c1, SLAVE_ADDR << 1, (uint8_t*)&uhDeviceId, 2, 100))
+		{
+
+			uhTemp = ((uhDeviceId >> 8 ) | ((uhDeviceId & 0xFF ) << 8));
+
+			uhTxSize = sprintf((char*)ucResult, "Device Id is %X\n",uhTemp);
+
+			HAL_UART_Transmit(&huart2, ucResult, uhTxSize, 100);
+
+		}
+		else
+		{
+			uhTxSize = sprintf((char*)ucResult, "Error In Reading\n");
+
+			HAL_UART_Transmit(&huart2, ucResult, uhTxSize, 100);
+		}
+	}
+	else
+	{
+		uhTxSize = sprintf((char*)ucResult, "Error In Writing\n");
+
+		HAL_UART_Transmit(&huart2, ucResult, uhTxSize, 100);
+	}
+}
+
+
+uint16_t GetOPT3001LightRes(void)
+{
+    uint8_t ucTxData[3] = {0};
+    uint8_t ucRxData[2] = {0};
+    uint16_t uhResult = 0;
+    uint16_t uhConfig = 0xCA10;  // Single-shot, 800ms
+
+    // Step 1: Configure sensor
+    ucTxData[0] = REG_OPT3001_CONFIG;
+    ucTxData[1] = (uhConfig >> 8) & 0xFF;
+    ucTxData[2] = uhConfig & 0xFF;
+
+    if (HAL_OK == HAL_I2C_Master_Transmit(&hi2c1, SLAVE_ADDR << 1, ucTxData, 3, 100))
+    {
+        // Step 2: Wait for conversion
+        HAL_Delay(850);
+
+        // Step 3: Read result
+        ucTxData[0] = REG_OPT3001_RES;
+
+        if (HAL_OK == HAL_I2C_Master_Transmit(&hi2c1, SLAVE_ADDR << 1, ucTxData, 1, 100))
+        {
+            if (HAL_OK == HAL_I2C_Master_Receive(&hi2c1, SLAVE_ADDR << 1, ucRxData, 2, 100))
+            {
+                uhResult = (ucRxData[0] << 8) | ucRxData[1];
+
+                // Step 4: Convert to Lux and transmit
+                uint16_t exp  = (uhResult >> 12) & 0x0F;
+                uint16_t mant = uhResult & 0x0FFF;
+                float lux = 0.01f * (1 << exp) * mant;
+
+                char ucResult[50];
+                int uhTxSize = sprintf(ucResult, "Light: %.2f Lux\r\n", lux);
+                HAL_UART_Transmit(&huart2, (uint8_t*)ucResult, uhTxSize, HAL_MAX_DELAY);
+            }
+        }
+    }
+
+    return uhResult;
+}
+
+
+//uint16_t GetOPT3001LightRes(void)
+//{
+//    uint8_t ucTxData[3] = {0};
+//    uint8_t ucRxData[2] = {0};
+//    uint16_t uhResult = 0;
+//    uint16_t uhConfig = 0xCA10;  // Single-shot, 800ms
+//
+//    ucTxData[0] = REG_OPT3001_CONFIG;
+//    ucTxData[1] = (uhConfig >> 8) & 0xFF;
+//    ucTxData[2] = uhConfig & 0xFF;
+//
+//    /* Step 1: Configure sensor using sequential write */
+//    if(HAL_OK == HAL_I2C_Master_Transmit(&hi2c1, SLAVE_ADDR << 1,
+//                               ucTxData, 3, 100))
+//    {
+//        /* Step 2: Wait for conversion */
+//        HAL_Delay(850);
+//
+//        /* Step 3: Read result using sequential read */
+//        ucTxData[0] = REG_OPT3001_RES;
+//
+//        if(HAL_OK == HAL_I2C_Master_Transmit(&hi2c1, SLAVE_ADDR << 1,
+//                                   ucTxData, 1, 100))
+//        {
+//            if(HAL_OK == HAL_I2C_Master_Receive(&hi2c1, SLAVE_ADDR << 1,
+//                                      ucRxData, 2, 100))
+//            {
+//                uhResult = (ucRxData[0] << 8) | ucRxData[1];
+//            }
+//        }
+//    }
+//
+//    /* Return the result. */
+//    return uhResult;
+//}

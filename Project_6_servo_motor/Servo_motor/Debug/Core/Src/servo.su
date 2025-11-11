@@ -1,0 +1,2 @@
+../Core/Src/servo.c:16:6:Servo_Init	24	static
+../Core/Src/servo.c:24:6:Servo_SetAngle	72	static

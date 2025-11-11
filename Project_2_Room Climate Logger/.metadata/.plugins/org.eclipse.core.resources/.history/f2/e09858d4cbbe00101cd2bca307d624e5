@@ -1,0 +1,120 @@
+/*
+ * tm007_driver.c
+ *
+ *  Created on: Nov 11, 2025
+ *      Author: Himshree
+ */
+
+#include "tm007_driver.h"
+
+#include <stdio.h>
+
+static I2C_HandleTypeDef *htmp_i2c = NULL;
+
+/* Internal read and write routines */
+static TMP007_Status_t TMP007_WriteReg(uint8_t reg, uint16_t val)
+{
+    uint8_t buf[3];
+    buf[0] = reg;
+    buf[1] = (uint8_t)( (val >> 8) & 0xFF );
+    buf[2] = (uint8_t)( val & 0xFF );
+    if (HAL_I2C_Master_Transmit(htmp_i2c, TMP007_I2C_ADDR << 1, buf, 3, 100) != HAL_OK) {
+        return TMP007_I2C_ERROR;
+    }
+    return TMP007_OK;
+}
+
+static TMP007_Status_t TMP007_ReadReg(uint8_t reg, uint16_t *val)
+{
+    uint8_t buf[2];
+    if (HAL_I2C_Master_Transmit(htmp_i2c, TMP007_I2C_ADDR << 1, &reg, 1, 100) != HAL_OK) {
+        return TMP007_I2C_ERROR;
+    }
+    if (HAL_I2C_Master_Receive(htmp_i2c, TMP007_I2C_ADDR << 1, buf, 2, 100) != HAL_OK) {
+        return TMP007_I2C_ERROR;
+    }
+    *val = ((uint16_t)buf[0] << 8) | buf[1];
+    return TMP007_OK;
+}
+
+void TMP007_Init(I2C_HandleTypeDef *hi2c)
+{
+    htmp_i2c = hi2c;
+    // Reset device
+    TMP007_WriteReg(TMP007_CONFIG_REG, TMP007_CONFIG_RST_Msk);
+    HAL_Delay(50);
+
+    // Wake up and set default conversion rate (e.g., CR = 001 => 0.5s average)
+    uint16_t cfg = (1u << TMP007_CONFIG_CR0_Pos);
+    TMP007_WriteReg(TMP007_CONFIG_REG, cfg & (~TMP007_CONFIG_SHUTDOWN_Msk));
+    HAL_Delay(100);
+}
+
+TMP007_Status_t TMP007_ReadDieTempC(float *tempC)
+{
+    uint16_t raw;
+    TMP007_Status_t status = TMP007_ReadReg(TMP007_TDIE_REG, &raw);
+    if (status != TMP007_OK) return status;
+    int16_t temp_raw = (int16_t)raw >> 2;  // 14-bit, signed? per datasheet :contentReference[oaicite:18]{index=18}
+    *tempC = temp_raw * 0.03125f;  // LSB = 0.03125°C :contentReference[oaicite:19]{index=19}
+    return TMP007_OK;
+}
+
+TMP007_Status_t TMP007_ReadObjTempC(float *tempC)
+{
+    uint16_t raw;
+    TMP007_Status_t status = TMP007_ReadReg(TMP007_TOBJ_REG, &raw);
+    if (status != TMP007_OK) return status;
+    int16_t temp_raw = (int16_t)raw >> 2;
+    *tempC = temp_raw * 0.03125f;
+    return TMP007_OK;
+}
+
+TMP007_Status_t TMP007_SetConversionRate(uint8_t cr_bits)
+{
+    // cr_bits = 0..7 for CR2:CR0
+    if (cr_bits > 7) return TMP007_ERROR;
+    uint16_t cur;
+    TMP007_ReadReg(TMP007_CONFIG_REG, &cur);
+    cur &= ~(TMP007_CONFIG_CR2_Msk | TMP007_CONFIG_CR1_Msk | TMP007_CONFIG_CR0_Msk);
+    cur |= ((uint16_t)cr_bits << TMP007_CONFIG_CR0_Pos);
+    return TMP007_WriteReg(TMP007_CONFIG_REG, cur);
+}
+
+TMP007_Status_t TMP007_Shutdown(void)
+{
+    uint16_t cur;
+    TMP007_ReadReg(TMP007_CONFIG_REG, &cur);
+    cur |= TMP007_CONFIG_SHUTDOWN_Msk;
+    return TMP007_WriteReg(TMP007_CONFIG_REG, cur);
+}
+
+TMP007_Status_t TMP007_Wakeup(void)
+{
+    uint16_t cur;
+    TMP007_ReadReg(TMP007_CONFIG_REG, &cur);
+    cur &= ~TMP007_CONFIG_SHUTDOWN_Msk;
+    return TMP007_WriteReg(TMP007_CONFIG_REG, cur);
+}
+
+TMP007_Status_t TMP007_SetAlertLimitsObj(float lowC, float highC)
+{
+    // convert float °C to register format: value = tempC / 0.03125
+    uint16_t lowReg = (uint16_t)(lowC / 0.03125f) << 2;
+    uint16_t highReg = (uint16_t)(highC / 0.03125f) << 2;
+    if (TMP007_WriteReg(TMP007_TOBJ_LOW_REG, lowReg) != TMP007_OK) return TMP007_ERROR;
+    if (TMP007_WriteReg(TMP007_TOBJ_HIGH_REG, highReg) != TMP007_OK) return TMP007_ERROR;
+    return TMP007_OK;
+}
+
+TMP007_Status_t TMP007_EnableAlertObject(bool enable)
+{
+    uint16_t cur;
+    TMP007_ReadReg(TMP007_MASK_ENABLE_REG, &cur);
+    if (enable) {
+        cur |= TMP007_MASK_ENABLE_DIE_HIGH_Msk;  // example: enable object high alert
+    } else {
+        cur &= ~TMP007_MASK_ENABLE_DIE_HIGH_Msk;
+    }
+    return TMP007_WriteReg(TMP007_MASK_ENABLE_REG, cur);
+}

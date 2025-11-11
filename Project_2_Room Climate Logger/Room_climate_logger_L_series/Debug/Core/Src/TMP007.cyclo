@@ -1,0 +1,9 @@
+../Core/Src/TMP007.c:44:13:delay_ms	2
+../Core/Src/TMP007.c:49:6:TMP007_UART_Init	1
+../Core/Src/TMP007.c:61:6:TMP007_UART_Write	2
+../Core/Src/TMP007.c:66:6:TMP007_UART_Print	2
+../Core/Src/TMP007.c:71:13:i2c1_init	1
+../Core/Src/TMP007.c:86:13:i2c1_write16	5
+../Core/Src/TMP007.c:103:17:i2c1_read16	5
+../Core/Src/TMP007.c:124:6:TMP007_Init	1
+../Core/Src/TMP007.c:134:6:TMP007_ReadTemp	1

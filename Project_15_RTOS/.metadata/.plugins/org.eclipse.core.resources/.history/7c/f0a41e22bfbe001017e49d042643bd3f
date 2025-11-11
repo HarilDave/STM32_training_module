@@ -1,0 +1,163 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file           : main.c
+  * @brief          : Multi-tasking RGB LED + SWV console printing
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+
+#include "main.h"
+#include "cmsis_os.h"
+#include <stdio.h>
+#include <stdarg.h>
+
+/* Private variables ---------------------------------------------------------*/
+UART_HandleTypeDef huart2;
+osThreadId LEDTaskHandle;
+
+/* USER CODE BEGIN PV */
+#define RED_PIN    5
+#define GREEN_PIN  6
+#define BLUE_PIN   7
+#define TASK_DELAY_MS 2000  // 2 seconds
+/* USER CODE END PV */
+
+/* Private function prototypes -----------------------------------------------*/
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+static void MX_USART2_UART_Init(void);
+void LED_Task(void const * argument);
+
+/* USER CODE BEGIN 0 */
+// Debug printf for SWV
+void debug_printf(const char *fmt, ...)
+{
+    char buffer[64];
+    va_list args;
+    va_start(args, fmt);
+    vsnprintf(buffer, sizeof(buffer), fmt, args);
+    va_end(args);
+
+    uint16_t i = 0;
+    while(buffer[i] != '\0')
+    {
+        ITM_SendChar(buffer[i]);
+        i++;
+    }
+}
+
+// Set RGB LED color
+void RGB_SetColor(uint8_t r, uint8_t g, uint8_t b)
+{
+    if(r) GPIOA->BSRR = (1 << RED_PIN); else GPIOA->BSRR = (1 << (RED_PIN + 16));
+    if(g) GPIOA->BSRR = (1 << GREEN_PIN); else GPIOA->BSRR = (1 << (GREEN_PIN + 16));
+    if(b) GPIOA->BSRR = (1 << BLUE_PIN); else GPIOA->BSRR = (1 << (BLUE_PIN + 16));
+}
+/* USER CODE END 0 */
+
+int main(void)
+{
+    HAL_Init();
+    SystemClock_Config();
+    MX_GPIO_Init();
+    MX_USART2_UART_Init();
+
+    // Create LED Task
+    osThreadDef(LEDTaskDef, LED_Task, osPriorityNormal, 0, 128);
+    LEDTaskHandle = osThreadCreate(osThread(LEDTaskDef), NULL);
+
+    // Start scheduler
+    osKernelStart();
+
+    while(1); // Should never reach here
+}
+
+/* USER CODE BEGIN 4 */
+// Single task cycles through all messages & colors
+void LED_Task(void const * argument)
+{
+    while(1)
+    {
+        debug_printf("Task1 running\r\n");
+        RGB_SetColor(1,0,0); // Red
+        vTaskDelay(pdMS_TO_TICKS(TASK_DELAY_MS));
+
+        debug_printf("Task2 running\r\n");
+        RGB_SetColor(0,1,0); // Green
+        vTaskDelay(pdMS_TO_TICKS(TASK_DELAY_MS));
+
+        debug_printf("Task3 running\r\n");
+        RGB_SetColor(0,0,1); // Blue
+        vTaskDelay(pdMS_TO_TICKS(TASK_DELAY_MS));
+    }
+}
+/* USER CODE END 4 */
+
+/* GPIO Initialization */
+static void MX_GPIO_Init(void)
+{
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+    __HAL_RCC_GPIOA_CLK_ENABLE();
+
+    // Set PA5, PA6, PA7 as output (RGB LED)
+    GPIO_InitStruct.Pin = (1<<RED_PIN)|(1<<GREEN_PIN)|(1<<BLUE_PIN);
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+}
+
+/* USART2 Initialization */
+static void MX_USART2_UART_Init(void)
+{
+    huart2.Instance = USART2;
+    huart2.Init.BaudRate = 115200;
+    huart2.Init.WordLength = UART_WORDLENGTH_8B;
+    huart2.Init.StopBits = UART_STOPBITS_1;
+    huart2.Init.Parity = UART_PARITY_NONE;
+    huart2.Init.Mode = UART_MODE_TX_RX;
+    huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+    huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+    HAL_UART_Init(&huart2);
+}
+
+/* System Clock Configuration */
+void SystemClock_Config(void)
+{
+    RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+    RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+
+    if(HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1) != HAL_OK)
+        Error_Handler();
+
+    RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+    RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+    RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+
+    RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+    RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+    RCC_OscInitStruct.PLL.PLLM = 1;
+    RCC_OscInitStruct.PLL.PLLN = 10;
+    RCC_OscInitStruct.PLL.PLLR = RCC_PLLR_DIV2;
+    RCC_OscInitStruct.PLL.PLLQ = RCC_PLLQ_DIV2;
+
+    if(HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+        Error_Handler();
+
+    RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+                                |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+    RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+    RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+    RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+    RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+    if(HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK)
+        Error_Handler();
+}
+
+/* Error Handler */
+void Error_Handler(void)
+{
+    __disable_irq();
+    while(1);
+}

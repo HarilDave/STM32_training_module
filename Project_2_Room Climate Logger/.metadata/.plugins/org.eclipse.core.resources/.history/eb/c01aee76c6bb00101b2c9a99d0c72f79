@@ -1,0 +1,25 @@
+/*
+ * BMI160.h
+ *
+ *  Created on: Nov 7, 2025
+ *      Author: Himshree
+ */
+
+#ifndef INC_BMI160_H_
+#define INC_BMI160_H_
+
+#include "main.h"
+#include <stdint.h>
+#include "i2c.h"
+
+#define BMI160_ADDR          0x68
+#define BMI160_CHIP_ID_REG   0x00
+#define BMI160_CMD_REG       0x7E
+#define BMI160_ACC_DATA_REG  0x12
+#define BMI160_GYR_DATA_REG  0x0C
+
+void BMI160_Init(void);
+void BMI160_ReadAccel(int16_t *ax, int16_t *ay, int16_t *az);
+void BMI160_ReadGyro(int16_t *gx, int16_t *gy, int16_t *gz);
+
+#endif /* INC_BMI160_H_ */

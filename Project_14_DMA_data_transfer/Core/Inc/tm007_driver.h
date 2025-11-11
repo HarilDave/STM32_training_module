@@ -1,0 +1,23 @@
+/*
+ * tm007_driver.h
+ *
+ *  Created on: Nov 11, 2025
+ *      Author: Himshree
+ */
+
+#ifndef INC_TM007_DRIVER_H_
+#define INC_TM007_DRIVER_H_
+
+#include <stdint.h>
+#include <stdio.h>
+
+#define TMP007_ADDR        0x40
+#define TMP007_TDIE_REG    0x01
+#define TMP007_CONFIG_REG  0x02
+#define TMP007_CONFIG_RST  0x8000
+#define TMP007_CONFIG_CR0  0x1000
+
+void TMP007_Init(void);
+void TMP007_ReadTemp(void);
+
+#endif /* INC_TM007_DRIVER_H_ */

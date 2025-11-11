@@ -1,0 +1,59 @@
+/*
+ * BMI160.c
+ *
+ *  Created on: Nov 7, 2025
+ *      Author: Himshree
+ */
+
+
+#include "BMI160.h"
+
+uint8_t txBuf[2];
+uint8_t rxBuf[10];
+uint8_t uartBuf[50];
+uint16_t uartLen;
+
+static void BMI160_Write(uint8_t reg, uint8_t val)
+{
+    txBuf[0] = reg;
+    txBuf[1] = val;
+    if (HAL_I2C_Master_Transmit(&hi2c1, BMI160_ADDR << 1, txBuf, 2, 100) != HAL_OK)
+        Error_Handler();
+}
+
+static void BMI160_Read(uint8_t reg, uint8_t *data, uint8_t len)
+{
+    if (HAL_I2C_Master_Transmit(&hi2c1, BMI160_ADDR << 1, &reg, 1, 100) != HAL_OK)
+        Error_Handler();
+    if (HAL_I2C_Master_Receive(&hi2c1, BMI160_ADDR << 1, data, len, 100) != HAL_OK)
+        Error_Handler();
+}
+
+void BMI160_Init(void)
+{
+    uint8_t id;
+    BMI160_Read(BMI160_CHIP_ID_REG, &id, 1);
+    uartLen = sprintf((char*)uartBuf, "BMI160 ID: 0x%X\n", id);
+    HAL_UART_Transmit(&huart2, uartBuf, uartLen, 100);
+    HAL_Delay(100);
+    BMI160_Write(BMI160_CMD_REG, 0x11);
+    HAL_Delay(50);
+    BMI160_Write(BMI160_CMD_REG, 0x15);
+    HAL_Delay(50);
+}
+
+void BMI160_ReadAccel(int16_t *ax, int16_t *ay, int16_t *az)
+{
+    BMI160_Read(BMI160_ACC_DATA_REG, rxBuf, 6);
+    *ax = (int16_t)((rxBuf[1] << 8) | rxBuf[0]);
+    *ay = (int16_t)((rxBuf[3] << 8) | rxBuf[2]);
+    *az = (int16_t)((rxBuf[5] << 8) | rxBuf[4]);
+}
+
+void BMI160_ReadGyro(int16_t *gx, int16_t *gy, int16_t *gz)
+{
+    BMI160_Read(BMI160_GYR_DATA_REG, rxBuf, 6);
+    *gx = (int16_t)((rxBuf[1] << 8) | rxBuf[0]);
+    *gy = (int16_t)((rxBuf[3] << 8) | rxBuf[2]);
+    *gz = (int16_t)((rxBuf[5] << 8) | rxBuf[4]);
+}

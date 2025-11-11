@@ -1,0 +1,39 @@
+/*
+ * tmp007.c
+ *
+ *  Created on: Nov 6, 2025
+ *      Author: Himshree
+ */
+
+
+#include "tmp007.h"
+#include <stdint.h>
+
+static I2C_HandleTypeDef *TMP007_hi2c;
+
+void TMP007_Init(I2C_HandleTypeDef *hi2c)
+{
+    TMP007_hi2c = hi2c;
+    // Could write config registers here if needed
+}
+
+uint16_t TMP007_ReadRaw(uint8_t reg)
+{
+    uint8_t data[2] = {0};
+    HAL_I2C_Mem_Read(TMP007_hi2c, TMP007_ADDR<<1, reg, I2C_MEMADD_SIZE_8BIT, data, 2, 100);
+    return (data[0] << 8) | data[1];
+}
+
+float TMP007_ReadAmbientTemp(I2C_HandleTypeDef *hi2c)
+{
+    uint16_t raw = TMP007_ReadRaw(TMP007_TA);
+    // TMP007 datasheet: TA = raw * 0.03125 °C
+    return (float)raw * 0.03125f;
+}
+
+float TMP007_ReadObjectTemp(I2C_HandleTypeDef *hi2c)
+{
+    uint16_t raw = TMP007_ReadRaw(TMP007_TOBJ);
+    // TMP007 datasheet: Tobj = raw * 0.03125 °C
+    return (float)raw * 0.03125f;
+}

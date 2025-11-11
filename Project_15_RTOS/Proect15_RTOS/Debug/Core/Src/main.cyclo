@@ -1,0 +1,9 @@
+../Core/Src/main.c:207:6:RGB_SetColor	4
+../Core/Src/main.c:214:5:main	1
+../Core/Src/main.c:249:6:Red_Task	1
+../Core/Src/main.c:263:6:Green_Task	1
+../Core/Src/main.c:277:6:Blue_Task	1
+../Core/Src/main.c:291:13:MX_GPIO_Init	1
+../Core/Src/main.c:302:13:MX_USART2_UART_Init	1
+../Core/Src/main.c:315:6:SystemClock_Config	4
+../Core/Src/main.c:345:6:Error_Handler	1

@@ -1,0 +1,35 @@
+/*
+ * servo.c
+ *
+ *  Created on: Nov 7, 2025
+ *      Author: Himshree
+ */
+
+
+#include "servo.h"
+#include <stdio.h>
+
+static TIM_HandleTypeDef *ServoTim;
+static uint32_t ServoChannel;
+static UART_HandleTypeDef *ServoUart;
+
+void Servo_Init(TIM_HandleTypeDef *htim, uint32_t channel, UART_HandleTypeDef *huart)
+{
+    ServoTim = htim;
+    ServoChannel = channel;
+    ServoUart = huart;
+    HAL_TIM_PWM_Start(ServoTim, ServoChannel);
+}
+
+void Servo_SetAngle(float angle)
+{
+    if(angle < 0) angle = 0;
+    if(angle > 180) angle = 180;
+
+    uint32_t pulse_length = (uint32_t)((angle / 180.0f) * 1000 + 1000);
+    __HAL_TIM_SET_COMPARE(ServoTim, ServoChannel, pulse_length);
+
+    char buf[50];
+  //  int len = sprintf(buf, "Servo Angle: %.2f deg\r\n", angle);
+    HAL_UART_Transmit(ServoUart, (uint8_t*)buf, len, 100);
+}

@@ -1,0 +1,4 @@
+../Core/Src/keypad.c:15:6:KEYPAD_Init	4	static
+../Core/Src/keypad.c:19:6:KEYPAD_ReadStatus	80	static
+../Core/Src/keypad.c:44:6:KEYPAD_GetKey	16	static
+../Core/Src/keypad.c:68:6:KEYPAD_SendUART	24	static

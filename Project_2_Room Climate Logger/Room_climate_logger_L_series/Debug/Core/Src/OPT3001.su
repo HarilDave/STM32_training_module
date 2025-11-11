@@ -1,0 +1,2 @@
+../Core/Src/OPT3001.c:22:6:read_OPT3001_dev_ID	16	static
+../Core/Src/OPT3001.c:58:10:GetOPT3001LightRes	96	static

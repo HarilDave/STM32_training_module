@@ -1,0 +1,61 @@
+#include "tm007_driver.h"
+#include <stdio.h>
+#include <string.h>
+
+
+static TMP007_Status_t TMP007_WriteReg(uint8_t reg, uint16_t val)
+{
+    uint8_t buf[3];
+    buf[0] = reg;
+    buf[1] = (uint8_t)((val >> 8) & 0xFF);
+    buf[2] = (uint8_t)(val & 0xFF);
+    if (HAL_I2C_Master_Transmit(htmp_i2c, TMP007_I2C_ADDR << 1, buf, 3, 100) != HAL_OK) {
+        return TMP007_I2C_ERROR;
+    }
+    return TMP007_OK;
+}
+
+static TMP007_Status_t TMP007_ReadReg(uint8_t reg, uint16_t *val)
+{
+    uint8_t buf[2];
+    if (HAL_I2C_Master_Transmit(htmp_i2c, TMP007_I2C_ADDR << 1, &reg, 1, 100) != HAL_OK)
+        return TMP007_I2C_ERROR;
+    if (HAL_I2C_Master_Receive(htmp_i2c, TMP007_I2C_ADDR << 1, buf, 2, 100) != HAL_OK)
+        return TMP007_I2C_ERROR;
+    *val = ((uint16_t)buf[0] << 8) | buf[1];
+    return TMP007_OK;
+}
+
+void TMP007_Init(I2C_HandleTypeDef *hi2c, UART_HandleTypeDef *huart)
+{
+    htmp_i2c = hi2c;
+    htmp_uart = huart;
+
+    TMP007_WriteReg(TMP007_CONFIG_REG, TMP007_CONFIG_RST_Msk);
+    HAL_Delay(50);
+
+    uint16_t cfg = (1u << TMP007_CONFIG_CR0_Pos);
+    TMP007_WriteReg(TMP007_CONFIG_REG, cfg & (~TMP007_CONFIG_SHUTDOWN_Msk));
+    HAL_Delay(100);
+}
+
+TMP007_Status_t TMP007_ReadDieTempC(float *tempC)
+{
+    uint16_t raw;
+    TMP007_Status_t status = TMP007_ReadReg(TMP007_TDIE_REG, &raw);
+    if (status != TMP007_OK) return status;
+    int16_t temp_raw = (int16_t)raw >> 2;
+    *tempC = temp_raw * 0.03125f;
+    return TMP007_OK;
+}
+
+void TMP007_PrintTemp(void)
+{
+    float tempC;
+    if (TMP007_ReadDieTempC(&tempC) == TMP007_OK)
+    {
+        char buf[50];
+        int len = sprintf(buf, "TMP007 Temp: %.2f C\r\n", tempC);
+        HAL_UART_Transmit(htmp_uart, (uint8_t*)buf, len, HAL_MAX_DELAY);
+    }
+}

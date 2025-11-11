@@ -1,0 +1,29 @@
+/*
+ * BMI160.h
+ *
+ *  Created on: Nov 7, 2025
+ *      Author: Himshree
+ */
+
+#ifndef INC_BMI160_H_
+#define INC_BMI160_H_
+
+#include <stdint.h>
+
+/* BMI160 I2C address */
+#define BMI160_ADDR     0x69
+#define BMI160_WHOAMI   0x00
+#define BMI160_CMD      0x7E
+#define BMI160_ACC_DATA 0x12
+#define BMI160_GYR_DATA 0x0C
+
+/* Initialize BMI160 (wake up accel+gyro) */
+void BMI160_Init(void);
+
+/* Read accelerometer values (pointer-based) and send over UART */
+void BMI160_ReadAccel(int16_t *ax, int16_t *ay, int16_t *az);
+
+/* Read gyro values (pointer-based) and send over UART */
+void BMI160_ReadGyro(int16_t *gx, int16_t *gy, int16_t *gz);
+
+#endif /* INC_BMI160_H_ */

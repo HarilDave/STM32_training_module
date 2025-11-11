@@ -1,0 +1,46 @@
+#include "tm007_driver.h"
+#include "main.h"   // for hi2c1 and huart2
+#include <stdio.h>
+
+#define TMP007_ADDR        0x40
+//#define TMP007_TDIE_REG    0x01
+//#define TMP007_CONFIG_REG  0x02
+#define TMP007_CONFIG_RST  0x8000
+#define TMP007_CONFIG_CR0  0x0001
+#define TMP007_CONFIG_SHUTDOWN 0x0100
+
+static void TMP007_WriteReg(uint8_t reg, uint16_t val)
+{
+    uint8_t buf[3];
+    buf[0] = reg;
+    buf[1] = (val >> 8) & 0xFF;
+    buf[2] = val & 0xFF;
+    HAL_I2C_Master_Transmit(&hi2c1, TMP007_ADDR << 1, buf, 3, 100);
+}
+
+static uint16_t TMP007_ReadReg(uint8_t reg)
+{
+    uint8_t buf[2];
+    HAL_I2C_Master_Transmit(&hi2c1, TMP007_ADDR << 1, &reg, 1, 100);
+    HAL_I2C_Master_Receive(&hi2c1, TMP007_ADDR << 1, buf, 2, 100);
+    return ((uint16_t)buf[0] << 8) | buf[1];
+}
+
+void TMP007_Init(void)
+{
+    TMP007_WriteReg(TMP007_CONFIG_REG, TMP007_CONFIG_RST);
+    HAL_Delay(50);
+    TMP007_WriteReg(TMP007_CONFIG_REG, TMP007_CONFIG_CR0);  // Wake up, normal conversion
+    HAL_Delay(100);
+}
+
+void TMP007_ReadTemp(void)
+{
+    uint16_t raw = TMP007_ReadReg(TMP007_TDIE_REG);
+    int16_t temp_raw = (int16_t)(raw >> 2);
+    float tempC = temp_raw * 0.03125f;
+
+    char buf[50];
+    int len = sprintf(buf, "TMP007 Temp: %.2f C\r\n", tempC);
+    HAL_UART_Transmit(&huart2, (uint8_t*)buf, len, HAL_MAX_DELAY);
+}

@@ -1,0 +1,13 @@
+/*
+ * gpio_config.h
+ *
+ *  Created on: Nov 6, 2025
+ *      Author: Himshree
+ */
+
+#ifndef INC_GPIO_CONFIG_H_
+#define INC_GPIO_CONFIG_H_
+
+
+
+#endif /* INC_GPIO_CONFIG_H_ */

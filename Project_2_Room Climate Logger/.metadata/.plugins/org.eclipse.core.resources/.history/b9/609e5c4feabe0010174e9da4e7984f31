@@ -1,0 +1,74 @@
+/*
+ * tm007_driver.h
+ *
+ *  Created on: Nov 11, 2025
+ *      Author: Himshree
+ */
+
+#ifndef INC_TM007_DRIVER_H_
+#define INC_TM007_DRIVER_H_
+
+#include "stm32l4xx_hal.h"
+#include <stdbool.h>
+
+
+#define TMP007_I2C_ADDR        (0x40u)  // default 7-bit address (ADDR0/1 = GND) :contentReference[oaicite:2]{index=2}
+
+/* Register addresses */
+#define TMP007_VOBJ_REG        (0x00u)  // Sensor voltage register (thermopile) :contentReference[oaicite:3]{index=3}
+#define TMP007_TDIE_REG        (0x01u)  // Local (die) temperature register :contentReference[oaicite:4]{index=4}
+#define TMP007_TOBJ_REG        (0x03u)  // Object (calculated) temperature register :contentReference[oaicite:5]{index=5}
+#define TMP007_CONFIG_REG      (0x02u)  // Configuration register :contentReference[oaicite:6]{index=6}
+#define TMP007_MFG_ID_REG      (0xFEu)  // Manufacturer ID register :contentReference[oaicite:7]{index=7}
+#define TMP007_DEVICE_ID_REG   (0xFFu)  // Device ID register :contentReference[oaicite:8]{index=8}
+#define TMP007_TOBJ_HIGH_REG   (0x06u)  // High-limit temperature register (object) :contentReference[oaicite:9]{index=9}
+#define TMP007_TOBJ_LOW_REG    (0x07u)  // Low‐limit temperature register (object) :contentReference[oaicite:10]{index=10}
+#define TMP007_TDIE_HIGH_REG   (0x08u)  // High-limit temperature register (die/local) :contentReference[oaicite:11]{index=11}
+#define TMP007_TDIE_LOW_REG    (0x09u)  // Low‐limit temperature register (die/local) :contentReference[oaicite:12]{index=12}
+#define TMP007_MASK_ENABLE_REG (0x04u)  // Mask/Enable register for alerts :contentReference[oaicite:13]{index=13}
+#define TMP007_STATUS_REG      (0x05u)  // Status register flags :contentReference[oaicite:14]{index=14}
+
+/* CONFIG register bit definitions */
+#define TMP007_CONFIG_CR2_Pos  0u
+#define TMP007_CONFIG_CR2_Msk  (1u << TMP007_CONFIG_CR2_Pos)
+#define TMP007_CONFIG_CR1_Pos  1u
+#define TMP007_CONFIG_CR1_Msk  (1u << TMP007_CONFIG_CR1_Pos)
+#define TMP007_CONFIG_CR0_Pos  2u
+#define TMP007_CONFIG_CR0_Msk  (1u << TMP007_CONFIG_CR0_Pos)
+#define TMP007_CONFIG_TM_Pos   3u
+#define TMP007_CONFIG_TM_Msk   (1u << TMP007_CONFIG_TM_Pos)
+#define TMP007_CONFIG_RST_Pos  4u
+#define TMP007_CONFIG_RST_Msk   (1u << TMP007_CONFIG_RST_Pos)
+#define TMP007_CONFIG_SHUTDOWN_Pos 5u
+#define TMP007_CONFIG_SHUTDOWN_Msk   (1u << TMP007_CONFIG_SHUTDOWN_Pos)
+// ... (other bits available per datasheet) :contentReference[oaicite:15]{index=15}
+
+/* Mask & Enable register bits */
+#define TMP007_MASK_ENABLE_DIE_HIGH_Pos   0u
+#define TMP007_MASK_ENABLE_DIE_HIGH_Msk   (1u << TMP007_MASK_ENABLE_DIE_HIGH_Pos)
+// ... (similarly for other alert bits) :contentReference[oaicite:16]{index=16}
+
+/* Status register bits */
+#define TMP007_STATUS_DATA_INVALID_Pos     0u
+#define TMP007_STATUS_DATA_INVALID_Msk     (1u << TMP007_STATUS_DATA_INVALID_Pos)
+// ... (other status bits) :contentReference[oaicite:17]{index=17}
+
+/* Data types */
+typedef enum {
+    TMP007_OK = 0,
+    TMP007_ERROR = 1,
+    TMP007_I2C_ERROR = 2,
+} TMP007_Status_t;
+
+void TMP007_Init(I2C_HandleTypeDef *hi2c);
+TMP007_Status_t TMP007_ReadDieTempC(float *tempC);
+TMP007_Status_t TMP007_ReadObjTempC(float *tempC);
+
+TMP007_Status_t TMP007_SetConversionRate(uint8_t cr_bits);
+TMP007_Status_t TMP007_Shutdown(void);
+TMP007_Status_t TMP007_Wakeup(void);
+
+TMP007_Status_t TMP007_SetAlertLimitsObj(float lowC, float highC);
+TMP007_Status_t TMP007_EnableAlertObject(bool enable);
+
+#endif /* INC_TM007_DRIVER_H_ */

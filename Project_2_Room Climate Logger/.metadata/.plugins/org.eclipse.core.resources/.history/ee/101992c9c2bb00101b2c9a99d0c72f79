@@ -1,0 +1,42 @@
+/*
+ * OPT3001.c
+ *
+ *  Created on: Nov 7, 2025
+ *      Author: Himshree
+ */
+
+
+void read_dev_ID()
+{
+	uhTxSize = 0;
+
+	/* USER CODE BEGIN 3 */
+
+	ucTxData[0] = MEM_REG;
+
+	if(HAL_OK == HAL_I2C_Master_Transmit(&hi2c1, SLAVE_ADDR << 1, ucTxData, 1, 100))
+	{
+		if(HAL_OK == HAL_I2C_Master_Receive(&hi2c1, SLAVE_ADDR << 1, (uint8_t*)&uhDeviceId, 2, 100))
+		{
+
+			uhTemp = ((uhDeviceId >> 8 ) | ((uhDeviceId & 0xFF ) << 8));
+
+			uhTxSize = sprintf((char*)ucResult, "Device Id is %X\n",uhTemp);
+
+			HAL_UART_Transmit(&huart2, ucResult, uhTxSize, 100);
+
+		}
+		else
+		{
+			uhTxSize = sprintf((char*)ucResult, "Error In Reading\n");
+
+			HAL_UART_Transmit(&huart2, ucResult, uhTxSize, 100);
+		}
+	}
+	else
+	{
+		uhTxSize = sprintf((char*)ucResult, "Error In Writing\n");
+
+		HAL_UART_Transmit(&huart2, ucResult, uhTxSize, 100);
+	}
+}

@@ -1,0 +1,2030 @@
+16:18:41 **** Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma_ex.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32l476rgtx.d" -MT"Core/Startup/startup_stm32l476rgtx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32l476rgtx.o" "../Core/Startup/startup_stm32l476rgtx.s"
+arm-none-eabi-gcc "../Core/Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/gpio.d" -MT"Core/Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/gpio.o"
+arm-none-eabi-gcc "../Core/Src/i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/i2c.d" -MT"Core/Src/i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/i2c.o"
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32l4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32l4xx_hal_msp.d" -MT"Core/Src/stm32l4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32l4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32l4xx.d" -MT"Core/Src/system_stm32l4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32l4xx.o"
+arm-none-eabi-gcc "../Core/Src/usart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/usart.d" -MT"Core/Src/usart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/usart.o"
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  15468	     12	   1788	  17268	   4374	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+16:19:37 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  15468	     12	   1788	  17268	   4374	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+16:20:35 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  15468	     12	   1788	  17268	   4374	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+16:21:04 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/gpio.d" -MT"Core/Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/gpio.o"
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  15564	     12	   1796	  17372	   43dc	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+16:21:30 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  15564	     12	   1796	  17372	   43dc	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+16:22:10 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  18032	     12	   1796	  19840	   4d80	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+16:22:55 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-size  Touch_Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18032	     12	   1796	  19840	   4d80	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+16:30:12 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-size  Touch_Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18032	     12	   1796	  19840	   4d80	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+16:34:28 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  18092	     12	   1796	  19900	   4dbc	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+16:34:38 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-size  Touch_Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18092	     12	   1796	  19900	   4dbc	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+17:00:52 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  18092	     16	   1792	  19900	   4dbc	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+17:07:49 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-size  Touch_Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18092	     16	   1792	  19900	   4dbc	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+17:08:12 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-size  Touch_Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18092	     16	   1792	  19900	   4dbc	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+17:13:11 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  18720	     16	   1792	  20528	   5030	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+17:13:18 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  18720	     16	   1792	  20528	   5030	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+17:13:24 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  18720	     12	   1796	  20528	   5030	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+17:14:01 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-size  Touch_Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18720	     12	   1796	  20528	   5030	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+17:15:25 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-size  Touch_Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18720	     12	   1796	  20528	   5030	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+17:25:34 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  18720	     16	   1792	  20528	   5030	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+17:28:20 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  18720	     16	   1792	  20528	   5030	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+17:29:41 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  18720	     16	   1792	  20528	   5030	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+17:29:46 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-size  Touch_Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18720	     16	   1792	  20528	   5030	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+17:32:23 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  18720	     12	   1796	  20528	   5030	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+17:32:29 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-size  Touch_Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18720	     12	   1796	  20528	   5030	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+17:34:29 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  18732	     12	   1796	  20540	   503c	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+17:34:36 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-size  Touch_Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18732	     12	   1796	  20540	   503c	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+17:42:50 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  18716	     12	   1796	  20524	   502c	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+17:45:27 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/gpio.o: in function `EXTI0_IRQHandler':
+C:/Haril_bitsilica/STM_training_module/Worksheet_projects/Project_11_touch_keypad/Touch_Keypad/Debug/../Core/Src/gpio.c:84:(.text.EXTI0_IRQHandler+0x14): undefined reference to `keypad_event'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: Touch_Keypad.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+17:45:58 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  18764	     12	   1796	  20572	   505c	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+17:46:10 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-size  Touch_Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18764	     12	   1796	  20572	   505c	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+17:47:53 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+../Core/Src/keypad.c: In function 'KEYPAD_ReadStatus':
+../Core/Src/keypad.c:31:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   31 |         sprintf(debug, "%02X %02X\r\n", status_lo, status_hi);
+      |         ^~~~~~~
+../Core/Src/keypad.c:9:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+    8 | #include "keypad.h"
+  +++ |+#include <stdio.h>
+    9 | 
+../Core/Src/keypad.c:31:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   31 |         sprintf(debug, "%02X %02X\r\n", status_lo, status_hi);
+      |         ^~~~~~~
+../Core/Src/keypad.c:31:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/keypad.c:32:28: error: 'huart2' undeclared (first use in this function)
+   32 |         HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                            ^~~~~~
+../Core/Src/keypad.c:32:28: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/keypad.c:32:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+   32 |         HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                                                     ^~~~~~
+../Core/Src/keypad.c:9:1: note: include '<string.h>' or provide a declaration of 'strlen'
+    8 | #include "keypad.h"
+  +++ |+#include <string.h>
+    9 | 
+../Core/Src/keypad.c:32:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+   32 |         HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                                                     ^~~~~~
+../Core/Src/keypad.c:32:53: note: include '<string.h>' or provide a declaration of 'strlen'
+make: *** [Core/Src/subdir.mk:46: Core/Src/keypad.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+17:48:16 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'KEYPAD_ReadStatus':
+../Core/Src/main.c:67:9: error: 'status_lo' undeclared (first use in this function)
+   67 |         status_lo = buf[0];
+      |         ^~~~~~~~~
+../Core/Src/main.c:67:9: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:68:9: error: 'status_hi' undeclared (first use in this function)
+   68 |         status_hi = buf[1];
+      |         ^~~~~~~~~
+../Core/Src/main.c:71:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   71 |         sprintf(debug, "%02X %02X\r\n", status_lo, status_hi);
+      |         ^~~~~~~
+../Core/Src/main.c:28:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   27 | #include "keypad.h"
+  +++ |+#include <stdio.h>
+   28 | /* USER CODE END Includes */
+../Core/Src/main.c:71:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   71 |         sprintf(debug, "%02X %02X\r\n", status_lo, status_hi);
+      |         ^~~~~~~
+../Core/Src/main.c:71:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:72:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+   72 |         HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                                                     ^~~~~~
+../Core/Src/main.c:28:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   27 | #include "keypad.h"
+  +++ |+#include <string.h>
+   28 | /* USER CODE END Includes */
+../Core/Src/main.c:72:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+   72 |         HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                                                     ^~~~~~
+../Core/Src/main.c:72:53: note: include '<string.h>' or provide a declaration of 'strlen'
+make: *** [Core/Src/subdir.mk:46: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+17:48:48 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'KEYPAD_ReadStatus':
+../Core/Src/main.c:67:36: error: initializer element is not constant
+   67 |         static uint8_t status_lo = buf[0];
+      |                                    ^~~
+../Core/Src/main.c:68:36: error: initializer element is not constant
+   68 |         static uint8_t status_hi = buf[1];
+      |                                    ^~~
+../Core/Src/main.c:71:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   71 |         sprintf(debug, "%02X %02X\r\n", status_lo, status_hi);
+      |         ^~~~~~~
+../Core/Src/main.c:28:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   27 | #include "keypad.h"
+  +++ |+#include <stdio.h>
+   28 | /* USER CODE END Includes */
+../Core/Src/main.c:71:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   71 |         sprintf(debug, "%02X %02X\r\n", status_lo, status_hi);
+      |         ^~~~~~~
+../Core/Src/main.c:71:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:72:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+   72 |         HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                                                     ^~~~~~
+../Core/Src/main.c:28:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   27 | #include "keypad.h"
+  +++ |+#include <string.h>
+   28 | /* USER CODE END Includes */
+../Core/Src/main.c:72:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+   72 |         HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                                                     ^~~~~~
+../Core/Src/main.c:72:53: note: include '<string.h>' or provide a declaration of 'strlen'
+make: *** [Core/Src/subdir.mk:46: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+17:49:05 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/keypad.c: In function 'KEYPAD_ReadStatus':
+../Core/Src/keypad.c:31:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   31 |         sprintf(debug, "%02X %02X\r\n", status_lo, status_hi);
+      |         ^~~~~~~
+../Core/Src/keypad.c:9:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+    8 | #include "keypad.h"
+  +++ |+#include <stdio.h>
+    9 | 
+../Core/Src/keypad.c:31:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   31 |         sprintf(debug, "%02X %02X\r\n", status_lo, status_hi);
+      |         ^~~~~~~
+../Core/Src/keypad.c:31:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/keypad.c:32:28: error: 'huart2' undeclared (first use in this function)
+   32 |         HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                            ^~~~~~
+../Core/Src/keypad.c:32:28: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/keypad.c:32:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+   32 |         HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                                                     ^~~~~~
+../Core/Src/keypad.c:9:1: note: include '<string.h>' or provide a declaration of 'strlen'
+    8 | #include "keypad.h"
+  +++ |+#include <string.h>
+    9 | 
+../Core/Src/keypad.c:32:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+   32 |         HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                                                     ^~~~~~
+../Core/Src/keypad.c:32:53: note: include '<string.h>' or provide a declaration of 'strlen'
+make: *** [Core/Src/subdir.mk:46: Core/Src/keypad.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+17:50:13 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/keypad.c: In function 'KEYPAD_ReadStatus':
+../Core/Src/keypad.c:31:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   31 |         sprintf(debug, "%02X %02X\r\n", status_lo, status_hi);
+      |         ^~~~~~~
+../Core/Src/keypad.c:9:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+    8 | #include "keypad.h"
+  +++ |+#include <stdio.h>
+    9 | 
+../Core/Src/keypad.c:31:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   31 |         sprintf(debug, "%02X %02X\r\n", status_lo, status_hi);
+      |         ^~~~~~~
+../Core/Src/keypad.c:31:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/keypad.c:32:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+   32 |         HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                                                     ^~~~~~
+../Core/Src/keypad.c:9:1: note: include '<string.h>' or provide a declaration of 'strlen'
+    8 | #include "keypad.h"
+  +++ |+#include <string.h>
+    9 | 
+../Core/Src/keypad.c:32:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+   32 |         HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                                                     ^~~~~~
+../Core/Src/keypad.c:32:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  21444	     92	   2124	  23660	   5c6c	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+17:50:33 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  21116	     92	   2124	  23332	   5b24	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+17:50:38 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-size  Touch_Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21116	     92	   2124	  23332	   5b24	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+17:52:09 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+../Core/Src/keypad.c: In function 'KEYPAD_ReadStatus':
+../Core/Src/keypad.c:29:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   29 |         sprintf(debug, "%02X %02X %02X %02X\r\n", buf[0], buf[1], buf[2], buf[3]);
+      |         ^~~~~~~
+../Core/Src/keypad.c:9:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+    8 | #include "keypad.h"
+  +++ |+#include <stdio.h>
+    9 | 
+../Core/Src/keypad.c:29:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   29 |         sprintf(debug, "%02X %02X %02X %02X\r\n", buf[0], buf[1], buf[2], buf[3]);
+      |         ^~~~~~~
+../Core/Src/keypad.c:29:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/keypad.c:30:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+   30 |         HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                                                     ^~~~~~
+../Core/Src/keypad.c:9:1: note: include '<string.h>' or provide a declaration of 'strlen'
+    8 | #include "keypad.h"
+  +++ |+#include <string.h>
+    9 | 
+../Core/Src/keypad.c:30:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+   30 |         HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                                                     ^~~~~~
+../Core/Src/keypad.c:30:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  21128	     92	   2124	  23344	   5b30	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+17:52:14 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-size  Touch_Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21128	     92	   2124	  23344	   5b30	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+17:53:37 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+../Core/Src/keypad.c: In function 'KEYPAD_ReadStatus':
+../Core/Src/keypad.c:30:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   30 |         sprintf(debug, "%02X %02X %02X %02X\r\n", buf[0], buf[1], buf[2], buf[3]);
+      |         ^~~~~~~
+../Core/Src/keypad.c:9:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+    8 | #include "keypad.h"
+  +++ |+#include <stdio.h>
+    9 | 
+../Core/Src/keypad.c:30:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   30 |         sprintf(debug, "%02X %02X %02X %02X\r\n", buf[0], buf[1], buf[2], buf[3]);
+      |         ^~~~~~~
+../Core/Src/keypad.c:30:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/keypad.c:31:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+   31 |         HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                                                     ^~~~~~
+../Core/Src/keypad.c:9:1: note: include '<string.h>' or provide a declaration of 'strlen'
+    8 | #include "keypad.h"
+  +++ |+#include <string.h>
+    9 | 
+../Core/Src/keypad.c:31:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+   31 |         HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                                                     ^~~~~~
+../Core/Src/keypad.c:31:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  21180	     92	   2124	  23396	   5b64	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+17:53:41 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-size  Touch_Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21180	     92	   2124	  23396	   5b64	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+17:58:46 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/keypad.c: In function 'KEYPAD_ReadStatus':
+../Core/Src/keypad.c:30:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   30 |         sprintf(debug, "%02X %02X %02X %02X\r\n", buf[0], buf[1], buf[2], buf[3]);
+      |         ^~~~~~~
+../Core/Src/keypad.c:9:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+    8 | #include "keypad.h"
+  +++ |+#include <stdio.h>
+    9 | 
+../Core/Src/keypad.c:30:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   30 |         sprintf(debug, "%02X %02X %02X %02X\r\n", buf[0], buf[1], buf[2], buf[3]);
+      |         ^~~~~~~
+../Core/Src/keypad.c:30:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/keypad.c:31:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+   31 |         HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                                                     ^~~~~~
+../Core/Src/keypad.c:9:1: note: include '<string.h>' or provide a declaration of 'strlen'
+    8 | #include "keypad.h"
+  +++ |+#include <string.h>
+    9 | 
+../Core/Src/keypad.c:31:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+   31 |         HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                                                     ^~~~~~
+../Core/Src/keypad.c:31:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  21180	     92	   2124	  23396	   5b64	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+17:58:51 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-size  Touch_Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21180	     92	   2124	  23396	   5b64	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+18:00:06 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/keypad.c: In function 'KEYPAD_ReadStatus':
+../Core/Src/keypad.c:30:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   30 |         sprintf(debug, "%02X %02X %02X %02X\r\n", buf[0], buf[1], buf[2], buf[3]);
+      |         ^~~~~~~
+../Core/Src/keypad.c:9:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+    8 | #include "keypad.h"
+  +++ |+#include <stdio.h>
+    9 | 
+../Core/Src/keypad.c:30:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   30 |         sprintf(debug, "%02X %02X %02X %02X\r\n", buf[0], buf[1], buf[2], buf[3]);
+      |         ^~~~~~~
+../Core/Src/keypad.c:30:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/keypad.c:31:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+   31 |         HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                                                     ^~~~~~
+../Core/Src/keypad.c:9:1: note: include '<string.h>' or provide a declaration of 'strlen'
+    8 | #include "keypad.h"
+  +++ |+#include <string.h>
+    9 | 
+../Core/Src/keypad.c:31:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+   31 |         HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                                                     ^~~~~~
+../Core/Src/keypad.c:31:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  21180	     92	   2124	  23396	   5b64	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+18:12:42 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/keypad.c: In function 'KEYPAD_ReadStatus':
+../Core/Src/keypad.c:30:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   30 |         sprintf(debug, "%02X %02X %02X %02X\r\n", buf[0], buf[1], buf[2], buf[3]);
+      |         ^~~~~~~
+../Core/Src/keypad.c:9:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+    8 | #include "keypad.h"
+  +++ |+#include <stdio.h>
+    9 | 
+../Core/Src/keypad.c:30:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   30 |         sprintf(debug, "%02X %02X %02X %02X\r\n", buf[0], buf[1], buf[2], buf[3]);
+      |         ^~~~~~~
+../Core/Src/keypad.c:30:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/keypad.c:31:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+   31 |         HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                                                     ^~~~~~
+../Core/Src/keypad.c:9:1: note: include '<string.h>' or provide a declaration of 'strlen'
+    8 | #include "keypad.h"
+  +++ |+#include <string.h>
+    9 | 
+../Core/Src/keypad.c:31:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+   31 |         HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                                                     ^~~~~~
+../Core/Src/keypad.c:31:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  21180	     92	   2124	  23396	   5b64	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+18:12:48 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-size  Touch_Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21180	     92	   2124	  23396	   5b64	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+18:13:23 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-size  Touch_Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21180	     92	   2124	  23396	   5b64	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+18:13:56 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/keypad.c: In function 'KEYPAD_ReadStatus':
+../Core/Src/keypad.c:30:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   30 |         sprintf(debug, "%02X %02X %02X %02X\r\n", buf[0], buf[1], buf[2], buf[3]);
+      |         ^~~~~~~
+../Core/Src/keypad.c:9:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+    8 | #include "keypad.h"
+  +++ |+#include <stdio.h>
+    9 | 
+../Core/Src/keypad.c:30:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   30 |         sprintf(debug, "%02X %02X %02X %02X\r\n", buf[0], buf[1], buf[2], buf[3]);
+      |         ^~~~~~~
+../Core/Src/keypad.c:30:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/keypad.c:31:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+   31 |         HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                                                     ^~~~~~
+../Core/Src/keypad.c:9:1: note: include '<string.h>' or provide a declaration of 'strlen'
+    8 | #include "keypad.h"
+  +++ |+#include <string.h>
+    9 | 
+../Core/Src/keypad.c:31:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+   31 |         HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                                                     ^~~~~~
+../Core/Src/keypad.c:31:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  21180	     92	   2124	  23396	   5b64	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+18:14:00 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-size  Touch_Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21180	     92	   2124	  23396	   5b64	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+18:17:21 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-size  Touch_Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21180	     92	   2124	  23396	   5b64	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+18:17:48 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-size  Touch_Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21180	     92	   2124	  23396	   5b64	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+18:21:26 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:115:35: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  115 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:12:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   11 | #include <string.h>
+  +++ |+#include <stdio.h>
+   12 | /* Private includes ----------------------------------------------------------*/
+../Core/Src/main.c:115:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  115 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:115:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:125:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  125 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:125:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:137:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  137 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:137:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:149:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  149 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:149:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:161:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  161 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:161:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:173:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  173 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:173:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:186:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  186 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:186:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:196:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  196 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:196:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:208:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  208 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:208:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:217:42: warning: value computed is not used [-Wunused-value]
+  217 |                                       pho[i++];
+      |                                       ~~~^~~~~
+../Core/Src/main.c:220:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  220 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:220:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:223:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  223 |                                   printf("Key Correct Pressed\n");
+      |                                   ^~~~~~
+../Core/Src/main.c:223:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:230:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  230 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:230:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:239:42: warning: value computed is not used [-Wunused-value]
+  239 |                                       pho[i++];
+      |                                       ~~~^~~~~
+../Core/Src/main.c:241:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  241 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:241:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:242:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  242 |                                   printf("Key cancle Pressed\n");
+      |                                   ^~~~~~
+../Core/Src/main.c:242:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:490:9: error: redefinition of 'status'
+  490 | uint8_t status[2]={0},pho[12]={0};
+      |         ^~~~~~
+../Core/Src/main.c:35:9: note: previous definition of 'status' with type 'uint8_t[2]' {aka 'unsigned char[2]'}
+   35 | uint8_t status[2]={0},pho[12]={0};
+      |         ^~~~~~
+../Core/Src/main.c:490:23: error: redefinition of 'pho'
+  490 | uint8_t status[2]={0},pho[12]={0};
+      |                       ^~~
+../Core/Src/main.c:35:23: note: previous definition of 'pho' with type 'uint8_t[12]' {aka 'unsigned char[12]'}
+   35 | uint8_t status[2]={0},pho[12]={0};
+      |                       ^~~
+../Core/Src/main.c:491:10: error: redefinition of 'i'
+  491 | uint32_t i=0;
+      |          ^
+../Core/Src/main.c:36:10: note: previous definition of 'i' with type 'uint32_t' {aka 'long unsigned int'}
+   36 | uint32_t i=0;
+      |          ^
+../Core/Src/main.c:516:5: error: redefinition of 'main'
+  516 | int main(void)
+      |     ^~~~
+../Core/Src/main.c:61:5: note: previous definition of 'main' with type 'int(void)'
+   61 | int main(void)
+      |     ^~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:570:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  570 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:570:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:580:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  580 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:580:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:592:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  592 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:592:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:604:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  604 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:604:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:616:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  616 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:616:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:628:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  628 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:628:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:641:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  641 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:641:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:651:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  651 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:651:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:663:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  663 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:663:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:672:42: warning: value computed is not used [-Wunused-value]
+  672 |                                       pho[i++];
+      |                                       ~~~^~~~~
+../Core/Src/main.c:675:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  675 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:675:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:678:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  678 |                                   printf("Key Correct Pressed\n");
+      |                                   ^~~~~~
+../Core/Src/main.c:678:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:685:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  685 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:685:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:694:42: warning: value computed is not used [-Wunused-value]
+  694 |                                       pho[i++];
+      |                                       ~~~^~~~~
+../Core/Src/main.c:696:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  696 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:696:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:697:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  697 |                                   printf("Key cancle Pressed\n");
+      |                                   ^~~~~~
+../Core/Src/main.c:697:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:710:6: error: redefinition of 'SystemClock_Config'
+  710 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:255:6: note: previous definition of 'SystemClock_Config' with type 'void(void)'
+  255 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:760:13: error: redefinition of 'MX_I2C1_Init'
+  760 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:305:13: note: previous definition of 'MX_I2C1_Init' with type 'void(void)'
+  305 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:808:13: error: redefinition of 'MX_USART2_UART_Init'
+  808 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:353:13: note: previous definition of 'MX_USART2_UART_Init' with type 'void(void)'
+  353 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:843:13: error: redefinition of 'MX_GPIO_Init'
+  843 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:388:13: note: previous definition of 'MX_GPIO_Init' with type 'void(void)'
+  388 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:885:6: error: redefinition of 'Error_Handler'
+  885 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:430:6: note: previous definition of 'Error_Handler' with type 'void(void)'
+  430 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:843:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  843 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:808:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  808 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:760:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  760 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:46: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+18:21:40 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:115:35: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  115 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:12:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   11 | #include <string.h>
+  +++ |+#include <stdio.h>
+   12 | /* Private includes ----------------------------------------------------------*/
+../Core/Src/main.c:115:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  115 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:115:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:125:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  125 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:125:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:137:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  137 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:137:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:149:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  149 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:149:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:161:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  161 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:161:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:173:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  173 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:173:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:186:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  186 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:186:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:196:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  196 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:196:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:208:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  208 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:208:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:217:42: warning: value computed is not used [-Wunused-value]
+  217 |                                       pho[i++];
+      |                                       ~~~^~~~~
+../Core/Src/main.c:220:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  220 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:220:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:223:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  223 |                                   printf("Key Correct Pressed\n");
+      |                                   ^~~~~~
+../Core/Src/main.c:223:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:230:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  230 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:230:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:239:42: warning: value computed is not used [-Wunused-value]
+  239 |                                       pho[i++];
+      |                                       ~~~^~~~~
+../Core/Src/main.c:241:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  241 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:241:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:242:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  242 |                                   printf("Key cancle Pressed\n");
+      |                                   ^~~~~~
+../Core/Src/main.c:242:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:490:9: error: redefinition of 'status'
+  490 | uint8_t status[2]={0},pho[12]={0};
+      |         ^~~~~~
+../Core/Src/main.c:35:9: note: previous definition of 'status' with type 'uint8_t[2]' {aka 'unsigned char[2]'}
+   35 | uint8_t status[2]={0},pho[12]={0};
+      |         ^~~~~~
+../Core/Src/main.c:490:23: error: redefinition of 'pho'
+  490 | uint8_t status[2]={0},pho[12]={0};
+      |                       ^~~
+../Core/Src/main.c:35:23: note: previous definition of 'pho' with type 'uint8_t[12]' {aka 'unsigned char[12]'}
+   35 | uint8_t status[2]={0},pho[12]={0};
+      |                       ^~~
+../Core/Src/main.c:491:10: error: redefinition of 'i'
+  491 | uint32_t i=0;
+      |          ^
+../Core/Src/main.c:36:10: note: previous definition of 'i' with type 'uint32_t' {aka 'long unsigned int'}
+   36 | uint32_t i=0;
+      |          ^
+../Core/Src/main.c:516:5: error: redefinition of 'main'
+  516 | int main(void)
+      |     ^~~~
+../Core/Src/main.c:61:5: note: previous definition of 'main' with type 'int(void)'
+   61 | int main(void)
+      |     ^~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:570:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  570 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:570:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:580:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  580 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:580:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:592:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  592 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:592:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:604:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  604 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:604:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:616:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  616 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:616:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:628:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  628 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:628:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:641:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  641 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:641:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:651:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  651 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:651:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:663:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  663 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:663:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:672:42: warning: value computed is not used [-Wunused-value]
+  672 |                                       pho[i++];
+      |                                       ~~~^~~~~
+../Core/Src/main.c:675:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  675 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:675:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:678:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  678 |                                   printf("Key Correct Pressed\n");
+      |                                   ^~~~~~
+../Core/Src/main.c:678:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:685:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  685 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:685:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:694:42: warning: value computed is not used [-Wunused-value]
+  694 |                                       pho[i++];
+      |                                       ~~~^~~~~
+../Core/Src/main.c:696:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  696 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:696:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:697:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  697 |                                   printf("Key cancle Pressed\n");
+      |                                   ^~~~~~
+../Core/Src/main.c:697:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:710:6: error: redefinition of 'SystemClock_Config'
+  710 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:255:6: note: previous definition of 'SystemClock_Config' with type 'void(void)'
+  255 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:760:13: error: redefinition of 'MX_I2C1_Init'
+  760 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:305:13: note: previous definition of 'MX_I2C1_Init' with type 'void(void)'
+  305 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:808:13: error: redefinition of 'MX_USART2_UART_Init'
+  808 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:353:13: note: previous definition of 'MX_USART2_UART_Init' with type 'void(void)'
+  353 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:843:13: error: redefinition of 'MX_GPIO_Init'
+  843 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:388:13: note: previous definition of 'MX_GPIO_Init' with type 'void(void)'
+  388 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:843:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  843 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:808:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  808 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:760:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  760 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:46: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+18:22:09 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:115:35: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  115 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:12:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   11 | #include <string.h>
+  +++ |+#include <stdio.h>
+   12 | /* Private includes ----------------------------------------------------------*/
+../Core/Src/main.c:115:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  115 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:115:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:125:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  125 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:125:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:137:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  137 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:137:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:149:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  149 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:149:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:161:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  161 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:161:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:173:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  173 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:173:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:186:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  186 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:186:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:196:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  196 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:196:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:208:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  208 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:208:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:217:42: warning: value computed is not used [-Wunused-value]
+  217 |                                       pho[i++];
+      |                                       ~~~^~~~~
+../Core/Src/main.c:220:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  220 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:220:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:223:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  223 |                                   printf("Key Correct Pressed\n");
+      |                                   ^~~~~~
+../Core/Src/main.c:223:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:230:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  230 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:230:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:239:42: warning: value computed is not used [-Wunused-value]
+  239 |                                       pho[i++];
+      |                                       ~~~^~~~~
+../Core/Src/main.c:241:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  241 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:241:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:242:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  242 |                                   printf("Key cancle Pressed\n");
+      |                                   ^~~~~~
+../Core/Src/main.c:242:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:516:5: error: redefinition of 'main'
+  516 | int main(void)
+      |     ^~~~
+../Core/Src/main.c:61:5: note: previous definition of 'main' with type 'int(void)'
+   61 | int main(void)
+      |     ^~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:570:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  570 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:570:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:580:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  580 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:580:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:592:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  592 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:592:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:604:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  604 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:604:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:616:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  616 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:616:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:628:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  628 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:628:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:641:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  641 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:641:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:651:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  651 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:651:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:663:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  663 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:663:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:672:42: warning: value computed is not used [-Wunused-value]
+  672 |                                       pho[i++];
+      |                                       ~~~^~~~~
+../Core/Src/main.c:675:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  675 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:675:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:678:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  678 |                                   printf("Key Correct Pressed\n");
+      |                                   ^~~~~~
+../Core/Src/main.c:678:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:685:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  685 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:685:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:694:42: warning: value computed is not used [-Wunused-value]
+  694 |                                       pho[i++];
+      |                                       ~~~^~~~~
+../Core/Src/main.c:696:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  696 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:696:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:697:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  697 |                                   printf("Key cancle Pressed\n");
+      |                                   ^~~~~~
+../Core/Src/main.c:697:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:710:6: error: redefinition of 'SystemClock_Config'
+  710 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:255:6: note: previous definition of 'SystemClock_Config' with type 'void(void)'
+  255 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:760:13: error: redefinition of 'MX_I2C1_Init'
+  760 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:305:13: note: previous definition of 'MX_I2C1_Init' with type 'void(void)'
+  305 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:808:13: error: redefinition of 'MX_USART2_UART_Init'
+  808 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:353:13: note: previous definition of 'MX_USART2_UART_Init' with type 'void(void)'
+  353 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:843:13: error: redefinition of 'MX_GPIO_Init'
+  843 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:388:13: note: previous definition of 'MX_GPIO_Init' with type 'void(void)'
+  388 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:843:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  843 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:808:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  808 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:760:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  760 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:46: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+18:22:39 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  21508	     92	   2124	  23724	   5cac	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+18:24:14 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-size  Touch_Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21508	     92	   2124	  23724	   5cac	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+18:24:15 **** Build of configuration Debug for project touch_try ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma_ex.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.o"
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32l476rgtx.d" -MT"Core/Startup/startup_stm32l476rgtx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32l476rgtx.o" "../Core/Startup/startup_stm32l476rgtx.s"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32l4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32l4xx_hal_msp.d" -MT"Core/Src/stm32l4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32l4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32l4xx.d" -MT"Core/Src/system_stm32l4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32l4xx.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:115:35: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  115 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:12:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   11 | #include <string.h>
+  +++ |+#include <stdio.h>
+   12 | /* Private includes ----------------------------------------------------------*/
+../Core/Src/main.c:115:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  115 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:115:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:125:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  125 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:125:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:137:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  137 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:137:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:149:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  149 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:149:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:161:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  161 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:161:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:173:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  173 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:173:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:186:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  186 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:186:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:196:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  196 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:196:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:208:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  208 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:208:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:217:42: warning: value computed is not used [-Wunused-value]
+  217 |                                       pho[i++];
+      |                                       ~~~^~~~~
+../Core/Src/main.c:220:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  220 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:220:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:223:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  223 |                                   printf("Key Correct Pressed\n");
+      |                                   ^~~~~~
+../Core/Src/main.c:223:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:230:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  230 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:230:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:239:42: warning: value computed is not used [-Wunused-value]
+  239 |                                       pho[i++];
+      |                                       ~~~^~~~~
+../Core/Src/main.c:241:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  241 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:241:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:242:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  242 |                                   printf("Key cancle Pressed\n");
+      |                                   ^~~~~~
+../Core/Src/main.c:242:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:490:9: error: redefinition of 'status'
+  490 | uint8_t status[2]={0},pho[12]={0};
+      |         ^~~~~~
+../Core/Src/main.c:35:9: note: previous definition of 'status' with type 'uint8_t[2]' {aka 'unsigned char[2]'}
+   35 | uint8_t status[2]={0},pho[12]={0};
+      |         ^~~~~~
+../Core/Src/main.c:490:23: error: redefinition of 'pho'
+  490 | uint8_t status[2]={0},pho[12]={0};
+      |                       ^~~
+../Core/Src/main.c:35:23: note: previous definition of 'pho' with type 'uint8_t[12]' {aka 'unsigned char[12]'}
+   35 | uint8_t status[2]={0},pho[12]={0};
+      |                       ^~~
+../Core/Src/main.c:491:10: error: redefinition of 'i'
+  491 | uint32_t i=0;
+      |          ^
+../Core/Src/main.c:36:10: note: previous definition of 'i' with type 'uint32_t' {aka 'long unsigned int'}
+   36 | uint32_t i=0;
+      |          ^
+../Core/Src/main.c:516:5: error: redefinition of 'main'
+  516 | int main(void)
+      |     ^~~~
+../Core/Src/main.c:61:5: note: previous definition of 'main' with type 'int(void)'
+   61 | int main(void)
+      |     ^~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:570:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  570 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:570:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:580:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  580 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:580:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:592:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  592 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:592:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:604:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  604 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:604:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:616:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  616 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:616:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:628:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  628 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:628:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:641:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  641 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:641:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:651:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  651 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:651:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:663:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  663 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:663:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:672:42: warning: value computed is not used [-Wunused-value]
+  672 |                                       pho[i++];
+      |                                       ~~~^~~~~
+../Core/Src/main.c:675:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  675 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:675:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:678:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  678 |                                   printf("Key Correct Pressed\n");
+      |                                   ^~~~~~
+../Core/Src/main.c:678:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:685:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  685 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:685:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:694:42: warning: value computed is not used [-Wunused-value]
+  694 |                                       pho[i++];
+      |                                       ~~~^~~~~
+../Core/Src/main.c:696:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  696 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:696:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:697:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  697 |                                   printf("Key cancle Pressed\n");
+      |                                   ^~~~~~
+../Core/Src/main.c:697:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:710:6: error: redefinition of 'SystemClock_Config'
+  710 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:255:6: note: previous definition of 'SystemClock_Config' with type 'void(void)'
+  255 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:760:13: error: redefinition of 'MX_I2C1_Init'
+  760 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:305:13: note: previous definition of 'MX_I2C1_Init' with type 'void(void)'
+  305 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:808:13: error: redefinition of 'MX_USART2_UART_Init'
+  808 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:353:13: note: previous definition of 'MX_USART2_UART_Init' with type 'void(void)'
+  353 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:843:13: error: redefinition of 'MX_GPIO_Init'
+  843 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:388:13: note: previous definition of 'MX_GPIO_Init' with type 'void(void)'
+  388 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:885:6: error: redefinition of 'Error_Handler'
+  885 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:430:6: note: previous definition of 'Error_Handler' with type 'void(void)'
+  430 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:843:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  843 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:808:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  808 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:760:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  760 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+18:26:07 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-size  Touch_Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21508	     92	   2124	  23724	   5cac	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+18:26:07 **** Incremental Build of configuration Debug for project touch_try ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:115:35: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  115 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:12:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   11 | #include <string.h>
+  +++ |+#include <stdio.h>
+   12 | /* Private includes ----------------------------------------------------------*/
+../Core/Src/main.c:115:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  115 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:115:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:125:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  125 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:125:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:137:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  137 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:137:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:149:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  149 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:149:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:161:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  161 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:161:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:173:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  173 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:173:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:186:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  186 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:186:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:196:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  196 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:196:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:208:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  208 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:208:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:217:42: warning: value computed is not used [-Wunused-value]
+  217 |                                       pho[i++];
+      |                                       ~~~^~~~~
+../Core/Src/main.c:220:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  220 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:220:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:223:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  223 |                                   printf("Key Correct Pressed\n");
+      |                                   ^~~~~~
+../Core/Src/main.c:223:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:230:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  230 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:230:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:239:42: warning: value computed is not used [-Wunused-value]
+  239 |                                       pho[i++];
+      |                                       ~~~^~~~~
+../Core/Src/main.c:241:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  241 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:241:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:242:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  242 |                                   printf("Key cancle Pressed\n");
+      |                                   ^~~~~~
+../Core/Src/main.c:242:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:490:9: error: redefinition of 'status'
+  490 | uint8_t status[2]={0},pho[12]={0};
+      |         ^~~~~~
+../Core/Src/main.c:35:9: note: previous definition of 'status' with type 'uint8_t[2]' {aka 'unsigned char[2]'}
+   35 | uint8_t status[2]={0},pho[12]={0};
+      |         ^~~~~~
+../Core/Src/main.c:490:23: error: redefinition of 'pho'
+  490 | uint8_t status[2]={0},pho[12]={0};
+      |                       ^~~
+../Core/Src/main.c:35:23: note: previous definition of 'pho' with type 'uint8_t[12]' {aka 'unsigned char[12]'}
+   35 | uint8_t status[2]={0},pho[12]={0};
+      |                       ^~~
+../Core/Src/main.c:491:10: error: redefinition of 'i'
+  491 | uint32_t i=0;
+      |          ^
+../Core/Src/main.c:36:10: note: previous definition of 'i' with type 'uint32_t' {aka 'long unsigned int'}
+   36 | uint32_t i=0;
+      |          ^
+../Core/Src/main.c:516:5: error: redefinition of 'main'
+  516 | int main(void)
+      |     ^~~~
+../Core/Src/main.c:61:5: note: previous definition of 'main' with type 'int(void)'
+   61 | int main(void)
+      |     ^~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:570:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  570 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:570:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:580:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  580 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:580:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:592:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  592 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:592:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:604:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  604 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:604:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:616:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  616 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:616:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:628:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  628 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:628:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:641:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  641 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:641:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:651:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  651 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:651:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:663:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  663 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:663:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:672:42: warning: value computed is not used [-Wunused-value]
+  672 |                                       pho[i++];
+      |                                       ~~~^~~~~
+../Core/Src/main.c:675:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  675 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:675:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:678:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  678 |                                   printf("Key Correct Pressed\n");
+      |                                   ^~~~~~
+../Core/Src/main.c:678:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:685:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  685 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:685:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:694:42: warning: value computed is not used [-Wunused-value]
+  694 |                                       pho[i++];
+      |                                       ~~~^~~~~
+../Core/Src/main.c:696:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  696 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:696:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:697:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  697 |                                   printf("Key cancle Pressed\n");
+      |                                   ^~~~~~
+../Core/Src/main.c:697:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:710:6: error: redefinition of 'SystemClock_Config'
+  710 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:255:6: note: previous definition of 'SystemClock_Config' with type 'void(void)'
+  255 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:760:13: error: redefinition of 'MX_I2C1_Init'
+  760 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:305:13: note: previous definition of 'MX_I2C1_Init' with type 'void(void)'
+  305 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:808:13: error: redefinition of 'MX_USART2_UART_Init'
+  808 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:353:13: note: previous definition of 'MX_USART2_UART_Init' with type 'void(void)'
+  353 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:843:13: error: redefinition of 'MX_GPIO_Init'
+  843 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:388:13: note: previous definition of 'MX_GPIO_Init' with type 'void(void)'
+  388 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:885:6: error: redefinition of 'Error_Handler'
+  885 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:430:6: note: previous definition of 'Error_Handler' with type 'void(void)'
+  430 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:843:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  843 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:808:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  808 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:760:13: warning: 'MX_I2C1_Init' defined but not used [-Wunused-function]
+  760 | static void MX_I2C1_Init(void)
+      |             ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+18:27:07 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-size  Touch_Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21508	     92	   2124	  23724	   5cac	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+18:27:08 **** Incremental Build of configuration Debug for project touch_try ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:108:35: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  108 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:5:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+    4 | #include <string.h>
+  +++ |+#include <stdio.h>
+    5 | /* Private includes ----------------------------------------------------------*/
+../Core/Src/main.c:108:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  108 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:108:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:118:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  118 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:118:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:130:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  130 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:130:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:142:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  142 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:142:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:154:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  154 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:154:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:166:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  166 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:166:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:179:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  179 |                                   printf("phone number is:-- %s\n",pho);
+      |                                   ^~~~~~
+../Core/Src/main.c:179:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:189:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  189 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:189:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:201:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  201 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:201:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:210:42: warning: value computed is not used [-Wunused-value]
+  210 |                                       pho[i++];
+      |                                       ~~~^~~~~
+../Core/Src/main.c:213:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  213 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:213:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:216:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  216 |                                   printf("Key Correct Pressed\n");
+      |                                   ^~~~~~
+../Core/Src/main.c:216:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:223:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  223 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:223:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:232:42: warning: value computed is not used [-Wunused-value]
+  232 |                                       pho[i++];
+      |                                       ~~~^~~~~
+../Core/Src/main.c:234:43: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  234 |                                           printf("phone number is:-- %s\n",pho);
+      |                                           ^~~~~~
+../Core/Src/main.c:234:43: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:235:35: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  235 |                                   printf("Key cancle Pressed\n");
+      |                                   ^~~~~~
+../Core/Src/main.c:235:35: note: include '<stdio.h>' or provide a declaration of 'printf'
+arm-none-eabi-gcc -o "touch_try.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\touch_try\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="touch_try.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: touch_try.elf
+ 
+arm-none-eabi-size  touch_try.elf 
+arm-none-eabi-objdump -h -S touch_try.elf  > "touch_try.list"
+   text	   data	    bss	    dec	    hex	filename
+  21312	    104	   2144	  23560	   5c08	touch_try.elf
+Finished building: default.size.stdout
+ 
+Finished building: touch_try.list
+ 
+18:27:50 **** Incremental Build of configuration Debug for project touch_try ****
+make -j8 all 
+arm-none-eabi-size  touch_try.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21312	    104	   2144	  23560	   5c08	touch_try.elf
+Finished building: default.size.stdout
+ 
+18:39:38 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/keypad.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/keypad.d" -MT"Core/Src/keypad.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/keypad.o"
+../Core/Src/keypad.c: In function 'KEYPAD_ReadStatus':
+../Core/Src/keypad.c:31:13: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   31 |             sprintf(debug, "BUF: %02X %02X %02X %02X\r\n", buf[0], buf[1], buf[2], buf[3]);
+      |             ^~~~~~~
+../Core/Src/keypad.c:9:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+    8 | #include "keypad.h"
+  +++ |+#include <stdio.h>
+    9 | 
+../Core/Src/keypad.c:31:13: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   31 |             sprintf(debug, "BUF: %02X %02X %02X %02X\r\n", buf[0], buf[1], buf[2], buf[3]);
+      |             ^~~~~~~
+../Core/Src/keypad.c:31:13: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/keypad.c:32:57: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+   32 |             HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                                                         ^~~~~~
+../Core/Src/keypad.c:9:1: note: include '<string.h>' or provide a declaration of 'strlen'
+    8 | #include "keypad.h"
+  +++ |+#include <string.h>
+    9 | 
+../Core/Src/keypad.c:32:57: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+   32 |             HAL_UART_Transmit(&huart2, (uint8_t*)debug, strlen(debug), 100);
+      |                                                         ^~~~~~
+../Core/Src/keypad.c:32:57: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Touch_Keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Haril_bitsilica\STM_training_module\Worksheet_projects\Project_11_touch_keypad\Touch_Keypad\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Touch_Keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Touch_Keypad.elf
+ 
+arm-none-eabi-size  Touch_Keypad.elf 
+arm-none-eabi-objdump -h -S Touch_Keypad.elf  > "Touch_Keypad.list"
+   text	   data	    bss	    dec	    hex	filename
+  21512	     92	   2124	  23728	   5cb0	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+Finished building: Touch_Keypad.list
+ 
+18:40:13 **** Incremental Build of configuration Debug for project Touch_Keypad ****
+make -j8 all 
+arm-none-eabi-size  Touch_Keypad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21512	     92	   2124	  23728	   5cb0	Touch_Keypad.elf
+Finished building: default.size.stdout
+ 
+18:41:32 **** Incremental Build of configuration Debug for project touch_try ****
+make -j8 all 
+arm-none-eabi-size  touch_try.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21312	    104	   2144	  23560	   5c08	touch_try.elf
+Finished building: default.size.stdout
+ 

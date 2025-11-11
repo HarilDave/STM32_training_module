@@ -1,0 +1,10 @@
+17:21:09 **** Incremental Build of configuration Debug for project Room Climate Logger ****
+make -j8 all 
+arm-none-eabi-size  Room\ Climate\ Logger.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29364	    468	   2356	  32188	   7dbc	Room Climate Logger.elf
+Finished building: default.size.stdout
+ 
+
+17:21:10 Build Finished. 0 errors, 0 warnings. (took 693ms)
+

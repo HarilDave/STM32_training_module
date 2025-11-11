@@ -1,0 +1,50 @@
+/*
+ * BMI160.c
+ *
+ *  Created on: Nov 7, 2025
+ *      Author: Himshree
+ */
+
+
+#include "BMI160.h"
+
+static void BMI160_Write(uint8_t reg, uint8_t val)
+{
+    uint8_t buf[2] = {reg, val};
+    HAL_I2C_Master_Transmit(&hi2c1, BMI160_ADDR << 1, buf, 2, 100);
+}
+
+static void BMI160_Read(uint8_t reg, uint8_t *data, uint8_t len)
+{
+    HAL_I2C_Master_Transmit(&hi2c1, BMI160_ADDR << 1, &reg, 1, 100);
+    HAL_I2C_Master_Receive(&hi2c1, BMI160_ADDR << 1, data, len, 100);
+}
+
+void BMI160_Init(void)
+{
+    uint8_t id = 0;
+    BMI160_Read(BMI160_CHIP_ID_REG, &id, 1);
+    HAL_Delay(100);
+    BMI160_Write(BMI160_CMD_REG, 0x11);
+    HAL_Delay(50);
+    BMI160_Write(BMI160_CMD_REG, 0x15);
+    HAL_Delay(50);
+}
+
+void BMI160_ReadAccel(int16_t *ax, int16_t *ay, int16_t *az)
+{
+    uint8_t buf[6];
+    BMI160_Read(BMI160_ACC_DATA_REG, buf, 6);
+    *ax = (int16_t)((buf[1] << 8) | buf[0]);
+    *ay = (int16_t)((buf[3] << 8) | buf[2]);
+    *az = (int16_t)((buf[5] << 8) | buf[4]);
+}
+
+void BMI160_ReadGyro(int16_t *gx, int16_t *gy, int16_t *gz)
+{
+    uint8_t buf[6];
+    BMI160_Read(BMI160_GYR_DATA_REG, buf, 6);
+    *gx = (int16_t)((buf[1] << 8) | buf[0]);
+    *gy = (int16_t)((buf[3] << 8) | buf[2]);
+    *gz = (int16_t)((buf[5] << 8) | buf[4]);
+}

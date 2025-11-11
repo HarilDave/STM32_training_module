@@ -1,0 +1,26 @@
+/*
+ * OPT3001.h
+ *
+ *  Created on: Nov 7, 2025
+ *      Author: Himshree
+ */
+
+#ifndef INC_OPT3001_H_
+#define INC_OPT3001_H_
+
+#define SLAVE_ADDR		(0x47)
+#define MEM_REG			(0x7F)
+
+uint8_t ucTxData[100] = {0};
+uint16_t uhTxSize = 0;
+uint8_t ucResult[100] = {0};
+uint16_t uhDeviceId = 0;
+uint16_t uhTemp = 0;
+
+uint8_t rx_buf[2];
+uint16_t device_id;
+
+
+void read_OPT3001_dev_ID();
+
+#endif /* INC_OPT3001_H_ */
