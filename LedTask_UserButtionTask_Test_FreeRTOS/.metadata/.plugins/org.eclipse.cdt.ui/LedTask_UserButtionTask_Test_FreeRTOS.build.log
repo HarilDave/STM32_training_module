@@ -1,0 +1,10 @@
+16:55:43 **** Incremental Build of configuration Debug for project LedTask_UserButtionTask_Test_FreeRTOS ****
+make -j8 all 
+arm-none-eabi-size  LedTask_UserButtionTask_Test_FreeRTOS.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18888	     16	  20424	  39328	   99a0	LedTask_UserButtionTask_Test_FreeRTOS.elf
+Finished building: default.size.stdout
+ 
+
+16:55:43 Build Finished. 0 errors, 0 warnings. (took 627ms)
+

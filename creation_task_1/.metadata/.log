@@ -1,0 +1,36 @@
+!SESSION 2025-11-03 15:55:30.489 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-11-03 15:56:02.070
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-11-03 15:56:02.070
+!MESSAGE Log4j2 initialized with config file C:\Haril_bitsilica\STM_training_module\RTOS_playlist_3\creation_task_1\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-11-03 15:56:15.604
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-11-03 16:16:53.850
+!MESSAGE Indexed 'hello_world_rtos' (27 sources, 89 headers) in 5.16 sec: 6,387 declarations; 46,126 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0038%)
+!SESSION 2025-11-05 14:13:48.652 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-11-05 14:14:16.878
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-11-05 14:14:16.880
+!MESSAGE Log4j2 initialized with config file C:\Haril_bitsilica\STM_training_module\RTOS_playlist_3\creation_task_1\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-11-05 14:14:27.786
+!MESSAGE Started RMI Server, listening on port 41340
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-11-05 15:30:38.816
+!MESSAGE Indexed 'Creation_task_1_L476RG' (21 sources, 80 headers) in 5.75 sec: 4,838 declarations; 22,714 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0073%)
